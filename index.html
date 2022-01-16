@@ -187,7 +187,7 @@
             </div>
 
             <div class="item overlay">
-                <img src="./img/ia_100001467.webp" alt="">
+                <img src="./img/all.webp" alt="">
                 <a href="rooms.html">All Rooms</a>
             </div>
 
@@ -196,7 +196,23 @@
 
     </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        var cards = $(".container-content .items .item");
+        for (var i = 0; i < cards.length; i++) {
+            var target = Math.floor(Math.random() * cards.length - 1) + 1;
+            var target2 = Math.floor(Math.random() * cards.length - 1) + 1;
+            cards.eq(target).before(cards.eq(target2));
+        }
 
+        var url = $('.item a:first').attr('href');
+
+        var delay = 96000;
+        var timeoutID = setTimeout(function () {
+            window.location.href = url;
+        }, delay);
+
+    </script>
 </body>
 
 </html>
