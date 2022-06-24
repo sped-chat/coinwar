@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GTA6</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <!-- L10n -->
+    <link rel="prefetch" type="application/l10n" href="locales/locales.ini" />
+</head>
+
+<body>
+    <div class="container" style="width: 100%; padding: 0">
+        <nav class="navbar navbar-inverse" role="navigation">
+
+            <!-- Small Width Menu -->
+            <div class="navbar-header">
+                <span class="navbar-brand visible-xs xs-stats"><span class="city"></span><span class=""></span><span
+                        class=""></span></span>
+                <div class="btn-group navbar-move visible-xs">
+                    <a type="button" class="btn btn-default" data-toggle="modal" href="#modal-cities"><i class=""></i>
+                        <span data-l10n-id="move"></span></a>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mid and Wide Width Menu -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                    <li class="hidden-xs"><a data-toggle="modal" href="#modal-cities"><i class=""></i> <span
+                                data-l10n-id="move"></span></a></li>
+                    <li><a data-toggle="modal" href="#modal-pawn-shop"><i class=""></i>
+                            <span data-l10n-id="pawn-shop"></span></a></li>
+                    <li><a href="#modal-about" data-toggle="modal" data-l10n-id="about"></a></li>
+                    <ul class="dropdown-menu">
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Stats -->
+        <div class="col-md-12 stats hidden-xs">
+            <div class="col-md-3 col-xs-4">
+                <i class=""></i> <span>Location : </span><span class="city"></span><br />
+                <i class=""></i> <span data-l10n-id="day"></span> : <span class="day"></span>/<span class="end"></span>
+            </div>
+            <div class="col-md-3 col-xs-4">
+                <i class=""></i> <span data-l10n-id="stock"></span> : <span class="used_space"></span>/<span
+                    class="total_space"></span><br />
+                <i class=""></i> <span data-l10n-id="cash"></span> : $<span class="cash"></span><br />
+                <i class=""></i> <span data-l10n-id="guns"></span> : <span class="guns"></span>
+            </div>
+            <div class="col-md-3">
+                <i class=""></i> <span data-l10n-id="bank-account"></span> : $<span class="bank_deposit"></span><br />
+                <i class=""></i> <span data-l10n-id="debt"></span> : $<span class="debt"></span><br />
+                <i class=""></i> <span data-l10n-id="health"></span> : <span class="health"></span>
+            </div>
+            <div class="col-md-3 hidden-xs">
+            </div>
+        </div>
+
+        <!-- Drugs -->
+        <div class="col-md-6 col-md-offset-1">
+            <h2 class="visible-xs xs-stats"><span data-l10n-id="stock"></span> : <span class="used_space"></span>/<span
+                    class="total_space"></span><br />Wallet : $<span class="cash"></span></h2>
+            <h2 class="hidden-xs"><span data-l10n-id="drugs"></span></h2>
+            <table class="table table-condensed drugs">
+                <tbody>
+                    <tr>
+                        <th><span data-l10n-id="item"></span></th>
+                        <th class="text-center"><span data-l10n-id="stock"></span></th>
+                        <th class="text-center"><span data-l10n-id="value"></span></th>
+                        <th class="text-center"><i class=""></i></th>
+                        <th class="text-center"><i class=""></i></th>
+                    </tr>
+                    <tr data-drug="0">
+                        <td></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <!-- Wide: Buy -->
+                        <td class="hidden-xs">
+                            <button data-toggle="modal" class="btn buy-xs" href="#modal-transaction">
+                                <span data-l10n-id="buy"></span>
+                            </button>
+                        </td>
+                        <!-- Wide: Sell -->
+                        <td class="hidden-xs">
+                            <button data-toggle="modal" class="btn sell-xs" href="#modal-transaction">
+                                <span data-l10n-id="sell"></span>
+                            </button>
+                        </td>
+                        <td class="visible-xs">
+                            <button data-toggle="modal" class="btn buy-xs" href="#modal-transaction">
+                                <span data-l10n-id="buy"></span>
+                            </button>
+                        </td>
+                        <td class="visible-xs">
+                            <button data-toggle="modal" class="btn sell-xs" href="#modal-transaction">
+                                <span data-l10n-id="sell"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- News 
+        <div class="col-md-4 news visible-xs">
+            <ul>
+            </ul>
+        </div>
+
+        <div class="col-md-4 news hidden-xs">
+            <h2><span data-l10n-id="news"></span></h2>
+            <ul class="readmore">
+            </ul>
+        </div>
+        -->
+    </div>
+
+    <!-- Modals (Lightboxes) -->
+    <!-- Modal : Cities -->
+    <div class="modal fade" id="modal-cities" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" data-l10n-id="choose-city"></h4>
+                </div>
+                <div class="modal-body cities">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal : Pawn -->
+    <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" data-l10n-id="pawn-shop"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <p class="col-md-12"><span data-l10n-id="you-currently-owe"></span> <span class="debt"></span>$.
+                        </p>
+                        <div class="col-md-6">
+                            <label>
+                                <span data-l10n-id="borrow-more-money"></span> :
+                                <div class="input-group">
+                                    <input type="number" min="0" value="0" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button class="btn land" type="button" data-dismiss="modal"
+                                            data-l10n-id="borrow"></button>
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <label class="form-group">
+                                <span data-l10n-id="pay-debt"></span> :
+                                <div class="input-group">
+                                    <input type="number" min="0" value="0" class="form-control" />
+                                    <span class="input-group-btn">
+                                        <button class="btn pay-max" type="button" data-l10n-id="max"></button>
+                                        <button class="btn pay" type="button" data-dismiss="modal"
+                                            data-l10n-id="pay"></button>
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal : Inventory -->
+    <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><span data-l10n-id="inventory"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-condensed">
+                        <tbody>
+                            <tr>
+                                <th><span data-l10n-id="item"></span></th>
+                                <th class="text-center hidden-xs"><span data-l10n-id="stock"></span></th>
+                                <th><span class="visible-xs"><span data-l10n-id="stock"></span></span></th>
+                                <th class="text-center"><span data-l10n-id="action"></span></th>
+                            </tr>
+                            <tr class="template hidden">
+                                <td></td>
+                                <td class="text-center hidden-xs"></td>
+                                <td class="form-group">
+                                    <label class="input-group" style="width: 100%;">
+                                        <input type="number" min="0" value="0" class="form-control" />
+                                        <span class="input-group-btn hidden-xs">
+                                            <button class="btn max" type="button" data-l10n-id="max"></button>
+                                        </span>
+                                    </label>
+                                </td>
+                                <td class="text-center form-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn consume"><i class="glyphicon glyphicon-cutlery"></i></button>
+                                        <button class="btn drop"><i class="glyphicon glyphicon-hand-down"></i></button>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal : Transaction -->
+    <div class="modal fade" id="modal-transaction" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-md-6 col-xs-12">
+                        <label class="form-group">
+                            How much ?
+                            <div class="input-group">
+                                <input type="number" min="0" value="0" class="form-control" />
+                                <span class="input-group-btn">
+                                    <button class="btn max" type="button" data-l10n-id="max">
+                                    </button>
+                                    <button class="btn action" type="button" data-dismiss="modal">
+                                    </button>
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal : About -->
+    <div class="modal fade" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" data-l10n-id="about-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p data-l10n-id="about-text"></p>
+                    <p data-l10n-id="about-attribution"></p>
+                    <p>
+                        <a href="privacy-policy.html" data-l10n-id="about-privacy-policy"></a><br />
+                        <a href="https://github.com/316k/DopeWars.js" data-l10n-id="about-glyphicons"></a>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal : Scoreboard -->
+    <div class="modal fade" id="modal-high-score" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" data-l10n-id="high-score"></h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                    </ul>
+                    <p><span class="final-score"></span> <span class="message"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/readmore.min.js"></script>
+    <script defer src="assets/js/l10n.js" charset="utf-8"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/view.js"></script>
+    <script src="assets/js/models.js"></script>
+    <script src="assets/js/controller.js"></script>
+</body>
+
+</html>
