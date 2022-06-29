@@ -24,16 +24,13 @@
                 <h1>THE COIN WAR</h1>
             </a>
         </nav>
-
         <!--SECOND NAVBAR-->
         <div class="stats text-center">
-            <a data-toggle="modal" href="#modal-pawn-shop">DEFI LOANS</a> : $<span class="debt"></span>
-            (COMP)<br />
-            <a data-toggle="modal" href="#modal-inventory"><span>WALLET</span></a> : $<span class="cash"></span>
-            (DAI)<br />
+            <a data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span class="cash"></span> <a data-toggle="modal" href="#modal-dai">(DEPOSIT)</a><br />
+            <a data-toggle="modal" href="#modal-pawn-shop">DEFI LOANS</a> : $<span class="debt"></span><br />
             <a data-toggle="modal" href="#modal-reset">YEAR</a> : <span class="day"></span>
         </div>
-
+    
         <!--ASSETS-->
         <div>
             <table class="table table-condensed drugs text-center">
@@ -115,6 +112,34 @@
         </div>
     </div>
 
+     <!-- Modal : DAI -->
+     <div class="modal fade" id="modal-dai" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center xs-stats">
+                        <label>
+                            <div class="input-group" style="max-width: 200px;">
+                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                    value="42" class="form-control text-center" />
+                                <span class="input-group-btn">
+                                    <button
+                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
+                                        class="btn land" type="button" data-dismiss="modal">DEPOSIT DAI
+                                    </button>
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal : INVENTORY -->
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -123,7 +148,10 @@
                     <div class="text-center xs-stats">
                         <h3 class="modal-title">WEB3 WALLET</h3>
                         <h4>DAI : $<span class=" cash"></span></h4>
-                        <br />
+
+                        <a type="button" class="btn btn-default new-name" data-dismiss="modal" href="#">ALIAS</a>
+                        
+                        <br /> <br />
                         <table class="table table-condensed">
                             <tbody>
                                 <tr>
@@ -137,18 +165,6 @@
                             </tbody>
                         </table>
                         <p class="text-center"></p><br />
-                        <label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="42" class="form-control text-center" />
-                                <span class="input-group-btn">
-                                    <button
-                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
-                                        class="btn land" type="button" data-dismiss="modal">DEPOSIT DAI
-                                    </button>
-                                </span>
-                            </div>
-                        </label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -261,9 +277,7 @@
                     advance to 2091 with as much value as possible, and no debt.
                     <br /><br />
                     Leaderboard (local.storage only) is <a data-dismiss="modal" data-toggle="modal"
-                        href="#modal-high-score">here</a>, and you
-                    can change your
-                    alias <a data-dismiss="modal" class="new-name" href="#">here</a>.
+                        href="#modal-high-score">here</a>.
                     <br /><br /><br />
                     <h2>THE COIN WAR</h2>
                     In late 2022 omicron variant b.9 erradicated over 75% of the world's population, which resulted in
@@ -8639,12 +8653,7 @@
         });
 
         function Controller() {
-            var self = this;
-
-            // Ask for player's name
-            if (!window.localStorage.getItem('player_name')) {
-                self.new_name();
-            }
+            var self = this;         
 
             this.coat = new Coat();
 
@@ -8928,10 +8937,6 @@
 
         Controller.prototype.new_name = function () {
             var name = prompt(navigator.mozL10n.get('prompt-name'));
-
-            while (!name) {
-                name = prompt(navigator.mozL10n.get('prompt-name-again'));
-            }
 
             window.localStorage.setItem('player_name', name);
         };
