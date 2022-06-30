@@ -1,1 +1,2 @@
-we suffer more in imagination than in reality -seneca
+we suffer more in imagination than in reality
+-seneca
