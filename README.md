@@ -1,2 +1,1 @@
-we suffer more in imagination than in reality
--seneca
+Life, which you so nobly serve, comes from destruction, disorder and chaos. - Jean Baptiste Emmanuel
