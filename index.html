@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!-- we suffer more in imagination than in reality (seneca) -->
+<!-- character is what you are in the dark -->
 
 <head>
     <title>THE COIN WAR</title>
@@ -13,24 +13,18 @@
     <link rel="stylesheet" href="#stylesheet">
 </head>
 
-<!-- character is what you are in the dark (dwight moody) -->
+<!-- we suffer more in imagination than in reality -->
 
 <body>
     <div class="container" style="width: 100%; padding: 0">
-
-        <!--TOP NAVBAR-->
         <nav class="navbar navbar-inverse text-center" role="navigation">
             <a data-toggle="modal" href="#modal-about" style="text-decoration: none;">
                 <h3>THE COIN WAR</h3>
             </a>
         </nav>
-
-        <!--SECOND NAVBAR-->
         <div class="stats text-center">
             <a data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span class="cash"></span> (DAI)
         </div>
-
-        <!--ASSETS-->
         <div>
             <table class="table table-condensed drugs text-center">
                 <tbody>
@@ -55,15 +49,13 @@
                     href="#modal-cities"><span class="city"></span></a></h4>
             <br />
         </div>
-
-        <!-- NEWS -->
         <div class="news text-center">
             <ul class="readmore">
             </ul>
         </div>
     </div>
 
-    <!-- Modal : INVENTORY -->
+    <!-- MODALS -->
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -86,6 +78,21 @@
                                         class="btn land" type="button" data-dismiss="modal">DEPOSIT
                                     </button>
                                     <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>
+                                    
+                                    
+                                    <!-- WEB3 
+
+                                    <section class="login-section">
+                                        <button class="login-btn">login</button>
+                                      </section>
+                                      <section class="dashboard-section">
+                                        <span class="wallet-address"></span>
+                                        <span class="wallet-balance"></span>
+                                        <button class="logout-btn">logout</button>
+                                      </section>
+
+                                    -->
+
                                 </span>
                             </div>
                         </label>
@@ -113,8 +120,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal : PAWN -->
+    
     <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -156,7 +162,6 @@
         </div>
     </div>
 
-    <!-- Modal : CITY -->
     <div class="modal fade text-center" id="modal-cities" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -173,7 +178,6 @@
         </div>
     </div>
 
-    <!-- Modal : TRANSACTION -->
     <div class="modal fade" id="modal-transaction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -204,7 +208,6 @@
         </div>
     </div>
 
-    <!-- Modal : ABOUT -->
     <div class="modal fade" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -422,7 +425,7 @@
         </div>
     </div>
 
-    <!-- STYLESHEET -->
+    <!-- LOCAL STYLESHEET -->
     <div id="stylesheet">
         <style rel="stylesheet" media="screen">
             html {
@@ -10523,8 +10526,90 @@
 
         })(this);
     </script>
+   <!--
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                    WEB3
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -->
+    <script>
+    const script = document.createElement("script")
+    script.type = "text/javascript"
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
+    document.head.appendChild(script)
+    
+     window.userWalletAddress = null;
+      window.onload = async (event) => {
+        if (window.ethereum) {
+          window.web3 = new Web3(window.ethereum);
+        } else {
+          alert("WEB3 WALLET NOT FOUND");
+        }
+        window.userWalletAddress = window.localStorage.getItem("userWalletAddress");
+        showUserDashboard();
+      };
+      const loginWithEth = async () => {
+        if (window.web3) {
+          try {
+            const selectedAccount = await window.ethereum
+              .request({
+                method: "eth_requestAccounts",
+              })
+              .then((accounts) => accounts[0])
+              .catch(() => {
+                throw Error("SELECT ACCOUNT");
+              });
+            window.userWalletAddress = selectedAccount;
+            window.localStorage.setItem("userWalletAddress", selectedAccount);
+            showUserDashboard();
+          } catch (error) {
+            alert(error);
+          }
+        } else {
+          alert("WEB3 WALLET NOT FOUND");
+        }
+      };
+      const showUserDashboard = async () => {
+        if (!window.userWalletAddress) {
+          document.querySelector(".login-section").style.display = "flex";
+          document.querySelector(".dashboard-section").style.display = "none";
+          return false;
+        }
+        document.querySelector(".login-section").style.display = "none";
+        document.querySelector(".dashboard-section").style.display = "flex";
+        showUserWalletAddress();
+        getWalletBalance();
+      };
+      const showUserWalletAddress = () => {
+        const walletAddressEl = document.querySelector(".wallet-address");
+        walletAddressEl.innerHTML = window.userWalletAddress;
+      };
+      const getWalletBalance = async () => {
+        if (!window.userWalletAddress) {
+          return false;
+        }
+        const balance = await window.web3.eth.getBalance(window.userWalletAddress);
+        document.querySelector(".wallet-balance").innerHTML = web3.utils.fromWei(
+          balance,
+          "ether"
+        );
+      };
+      const logout = () => {
+        window.userWalletAddress = null;
+        window.localStorage.removeItem("userWalletAddress");
+        showUserDashboard();
+      };
+      document.querySelector(".login-btn").addEventListener("click", loginWithEth);
+      document.querySelector(".logout-btn").addEventListener("click", logout);
+    </script>
+    <!-- COINBASE -->
     <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"></script>
 </body>
-
 </html>
