@@ -13,24 +13,21 @@
     <link rel="stylesheet" href="#stylesheet">
 </head>
 
-<!-- support @ yoshway.com -->
-
 <body>
     <div class="container" style="width: 100%; padding: 0">
 
         <!--TOP NAVBAR-->
         <nav class="navbar navbar-inverse text-center" role="navigation">
             <a data-toggle="modal" href="#modal-about" style="text-decoration: none;">
-                <h1>THE COIN WAR</h1>
+                <h3>THE COIN WAR</h3>
             </a>
         </nav>
+
         <!--SECOND NAVBAR-->
         <div class="stats text-center">
-            <a data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span class="cash"></span> <a data-toggle="modal" href="#modal-dai">(DEPOSIT)</a><br />
-            <a data-toggle="modal" href="#modal-pawn-shop">DEFI LOANS</a> : $<span class="debt"></span><br />
-            <a data-toggle="modal" href="#modal-reset">YEAR</a> : <span class="day"></span>
+            <a data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span class="cash"></span> (DAI)
         </div>
-    
+
         <!--ASSETS-->
         <div>
             <table class="table table-condensed drugs text-center">
@@ -64,82 +61,6 @@
         </div>
     </div>
 
-    <!-- Modal : RESET -->
-    <div class="modal fade text-center" id="modal-reset" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>RESET</h3>
-                    <p>THIS WILL RESET TO 2022<br />WITH $1983 IN DAI AND LOANS<br />ALL DEPOSITED FUNDS WILL BE
-                        LOST
-                    </p>
-                    <button type="button" class="btn btn-default" data-toggle="modal">
-                        <a class="new-game" href="#">YES</a></button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal : TRANSACTION -->
-    <div class="modal fade" id="modal-transaction" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body row">
-                    <div class="col-md-6 col-xs-12">
-                        <label class="form-group">
-                            <div class="input-group" style="max-width: 200px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="42" class="form-control text-center" />
-                                <span class="input-group-btn">
-                                    <button class="btn max" type="button" data-l10n-id="max">
-                                    </button>
-                                    <button class="btn action" type="button" data-dismiss="modal">
-                                    </button>
-                                </span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-     <!-- Modal : DAI -->
-     <div class="modal fade" id="modal-dai" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="text-center xs-stats">
-                        <label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="42" class="form-control text-center" />
-                                <span class="input-group-btn">
-                                    <button
-                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
-                                        class="btn land" type="button" data-dismiss="modal">DEPOSIT DAI
-                                    </button>
-                                </span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal : INVENTORY -->
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -147,11 +68,26 @@
                 <div class="modal-body">
                     <div class="text-center xs-stats">
                         <h3 class="modal-title">WEB3 WALLET</h3>
-                        <h4>DAI : $<span class=" cash"></span></h4>
+                        STABLECOINS : $<span class=" cash"></span>
+                        <br />
+                        <a data-toggle="modal" href="#modal-pawn-shop" data-dismiss="modal">DEFI LOANS</a> : $<span
+                            class="debt"></span>
+                            <br /><br />
 
-                        <a type="button" class="btn btn-default new-name" data-dismiss="modal" href="#">ALIAS</a>
-                        
-                        <br /> <br />
+                            <label>
+                                <div class="input-group" style="max-width: 200px;">
+                                    <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                        value="0" class="form-control text-center" />
+                                    <span class="input-group-btn">
+                                        <button
+                                            onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
+                                            class="btn land" type="button" data-dismiss="modal">DEPOSIT DAI
+                                        </button>
+                                    </span>
+                                </div>
+                            </label>
+
+                            <br /><br /> 
                         <table class="table table-condensed">
                             <tbody>
                                 <tr>
@@ -181,17 +117,16 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="text-center">
-                        <h3>DEFI LENDING MARKETS</h3>
+                        <h3>DEFI LENDING</h3>
                         <br />
                     </div>
                     <div class="row">
                         <div class="text-center">
                             <h4 class="modal-title">COMPOUND FINANCE (29% APR)<br /></h4>
-                            <h5>OUTSTANDING LOANS : $<span class="debt"></span></h5>
                             <label>
                                 <div class="input-group" style="max-width: 225px;">
                                     <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                        value="42" class="form-control text-center" />
+                                        value="" class="form-control text-center" />
                                     <span class="input-group-btn">
                                         <button class="btn land" type="button" data-dismiss="modal">BORROW
                                         </button>
@@ -199,11 +134,14 @@
                                     </span>
                                 </div>
                             </label>
+                            <h5>OUTSTANDING LOANS : $<span class="debt"></span></h5>
+                            <!--
                             <br /> <br />
                             <h4>COLLAPSED MARKETS:</h5>
                                 <h5><s>COLLATERALIZED LENDING (VARIABLE APR)</s></h5>
                                 <h5><s>AAVE LENDING (9% APR)</s></h5>
                                 <h5><s>YIELD FARMING</s></h5>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -232,18 +170,28 @@
         </div>
     </div>
 
-    <!-- Modal : HIGH SCORE -->
-    <div class="modal fade" id="modal-high-score" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Modal : TRANSACTION -->
+    <div class="modal fade" id="modal-transaction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" data-l10n-id="high-score"></h4>
+                    <h4 class="modal-title"></h4>
                 </div>
-                <div class="modal-body">
-                    <ul>
-                    </ul>
-                    <p><span class="final-score"></span> <span class="message"></span></p>
+                <div class="modal-body row">
+                    <div class="col-md-6 col-xs-12">
+                        <label class="form-group">
+                            <div class="input-group" style="max-width: 200px;">
+                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                    value="" class="form-control text-center" />
+                                <span class="input-group-btn">
+                                    <button class="btn max" type="button" data-l10n-id="max">
+                                    </button>
+                                    <button class="btn action" type="button" data-dismiss="modal">
+                                    </button>
+                                </span>
+                            </div>
+                        </label>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
@@ -262,6 +210,7 @@
                     <h1>FAQ</h1>
                 </div>
                 <div class="modal-body">
+                    <!--
                     <h2>HOW TO PLAY</h2>
                     You start with with $1,983 worth of DAI (the only stablecoin to survive the wars), which was taken
                     out of a high interest (29% APR) loan.
@@ -279,6 +228,7 @@
                     Leaderboard (local.storage only) is <a data-dismiss="modal" data-toggle="modal"
                         href="#modal-high-score">here</a>.
                     <br /><br /><br />
+                    
                     <h2>THE COIN WAR</h2>
                     In late 2022 omicron variant b.9 erradicated over 75% of the world's population, which resulted in
                     complete collapse of all governments and financial institutions. All fiat currency devalued and
@@ -295,8 +245,10 @@
                     <br /><br />
                     Live with me if you want to come.
                     <br /><br /><br />
+                    -->
                     <h2>SOURCE</h2>
-                    GitHub repository is <a href="https://github.com/yoshway/coinwar.app">here</a> and was forked from
+                    GitHub repository is <a href="https://github.com/thecoinwar/thecoinwar.github.io">here</a> and was
+                    forked from
                     <a href="https://github.com/316k/DopeWars.js/">316k/dopewars.js</a>, which is a fork of
                     <a href="https://en.wikipedia.org/wiki/Drug_Wars_(video_game)">Drug Wars</a>. What a forkin' good
                     time.
@@ -8431,8 +8383,8 @@
         // GameManager
         function GameManager() {
             this.day = 2022;
-            this.end = 2091;
-            this.debt = 1983;
+            this.end = 2999;
+            this.debt = 0;
             this.bank_deposit = 0;
             this.stone_level = 0;
             this.city = new City(0);
@@ -8499,10 +8451,10 @@
         // Coat
         function Coat() {
             this.drugs = [];
-            this.cash = 1983;
+            this.cash = 42;
             this.guns = [];
             this.health = 100;
-            this.total_space = 420;
+            this.total_space = 69;
         }
 
         Coat.prototype.available_space = function () {
@@ -8653,7 +8605,7 @@
         });
 
         function Controller() {
-            var self = this;         
+            var self = this;
 
             this.coat = new Coat();
 
