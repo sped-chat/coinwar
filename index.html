@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!-- character is what you are in the dark -->
+<!--  Life comes from destruction, disorder and chaos.  -->
 
 <head>
     <title>THE COIN WAR</title>
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="#stylesheet">
 </head>
 
-<!-- we suffer more in imagination than in reality -->
+<!-- character is what you are in the dark -->
 
 <body>
     <div class="container" style="width: 100%; padding: 0">
@@ -55,7 +55,38 @@
         </div>
     </div>
 
+    <!-- we suffer more in imagination than in reality -->
+
     <!-- MODALS -->
+    <div class="modal fade text-center" id="modal-web3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>IRL-BRIDGE</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="login-section">
+                        <button type="button" class="btn"><a class="login-btn">LOGIN</a></button>
+                    </div>
+                    <div class="dashboard-section">
+                        <h4>IRL WEB3 ADDRESS</h4>
+                        <span class="wallet-address"></span>
+                        <br /> <br />
+                        <h4>IRL WEB3 BALANCE (ETH)</h4>
+                        <span class="wallet-balance"></span>
+                        <br /><br />
+                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -66,10 +97,11 @@
                         <br />
                         <a data-toggle="modal" href="#modal-pawn-shop" data-dismiss="modal">DEFI LOANS</a> : $<span
                             class="debt"></span>
+                        <br />
+                        <a data-toggle="modal" data-dismiss="modal" href="#modal-web3">IRL-BRIDGE</a>
                         <br /><br />
-
                         <label>
-                            <div class="input-group" style="max-width: 300px;">
+                            <div class="input-group" style="max-width: 250px;">
                                 <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
                                     value="0" class="form-control text-center" />
                                 <span class="input-group-btn">
@@ -77,26 +109,12 @@
                                         onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
                                         class="btn land" type="button" data-dismiss="modal">DEPOSIT
                                     </button>
+                                    <!--
                                     <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>
-                                    
-                                    
-                                    <!-- WEB3 
-
-                                    <section class="login-section">
-                                        <button class="login-btn">login</button>
-                                      </section>
-                                      <section class="dashboard-section">
-                                        <span class="wallet-address"></span>
-                                        <span class="wallet-balance"></span>
-                                        <button class="logout-btn">logout</button>
-                                      </section>
-
                                     -->
-
                                 </span>
                             </div>
                         </label>
-
                         <br /><br />
                         <table class="table table-condensed">
                             <tbody>
@@ -120,7 +138,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -10526,7 +10544,8 @@
 
         })(this);
     </script>
-   <!--
+
+    <!--
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -10540,76 +10559,77 @@
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -->
     <script>
-    const script = document.createElement("script")
-    script.type = "text/javascript"
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
-    document.head.appendChild(script)
-    
-     window.userWalletAddress = null;
-      window.onload = async (event) => {
-        if (window.ethereum) {
-          window.web3 = new Web3(window.ethereum);
-        } else {
-          alert("WEB3 WALLET NOT FOUND");
-        }
-        window.userWalletAddress = window.localStorage.getItem("userWalletAddress");
-        showUserDashboard();
-      };
-      const loginWithEth = async () => {
-        if (window.web3) {
-          try {
-            const selectedAccount = await window.ethereum
-              .request({
-                method: "eth_requestAccounts",
-              })
-              .then((accounts) => accounts[0])
-              .catch(() => {
-                throw Error("SELECT ACCOUNT");
-              });
-            window.userWalletAddress = selectedAccount;
-            window.localStorage.setItem("userWalletAddress", selectedAccount);
-            showUserDashboard();
-          } catch (error) {
-            alert(error);
-          }
-        } else {
-          alert("WEB3 WALLET NOT FOUND");
-        }
-      };
-      const showUserDashboard = async () => {
-        if (!window.userWalletAddress) {
-          document.querySelector(".login-section").style.display = "flex";
-          document.querySelector(".dashboard-section").style.display = "none";
-          return false;
-        }
-        document.querySelector(".login-section").style.display = "none";
-        document.querySelector(".dashboard-section").style.display = "flex";
-        showUserWalletAddress();
-        getWalletBalance();
-      };
-      const showUserWalletAddress = () => {
-        const walletAddressEl = document.querySelector(".wallet-address");
-        walletAddressEl.innerHTML = window.userWalletAddress;
-      };
-      const getWalletBalance = async () => {
-        if (!window.userWalletAddress) {
-          return false;
-        }
-        const balance = await window.web3.eth.getBalance(window.userWalletAddress);
-        document.querySelector(".wallet-balance").innerHTML = web3.utils.fromWei(
-          balance,
-          "ether"
-        );
-      };
-      const logout = () => {
+        const script = document.createElement("script")
+        script.type = "text/javascript"
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
+        document.head.appendChild(script)
+
         window.userWalletAddress = null;
-        window.localStorage.removeItem("userWalletAddress");
-        showUserDashboard();
-      };
-      document.querySelector(".login-btn").addEventListener("click", loginWithEth);
-      document.querySelector(".logout-btn").addEventListener("click", logout);
+        window.onload = async (event) => {
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum);
+            }
+            window.userWalletAddress = window.localStorage.getItem("userWalletAddress");
+            showUserDashboard();
+        };
+        const loginWithEth = async () => {
+            if (window.web3) {
+                try {
+                    const selectedAccount = await window.ethereum
+                        .request({
+                            method: "eth_requestAccounts",
+                        })
+                        .then((accounts) => accounts[0])
+                        .catch(() => {
+                            throw Error("SELECT ACCOUNT");
+                        });
+                    window.userWalletAddress = selectedAccount;
+                    window.localStorage.setItem("userWalletAddress", selectedAccount);
+                    showUserDashboard();
+                } catch (error) {
+                    alert(error);
+                }
+            } else {
+                alert("WEB3 WALLET NOT FOUND");
+            }
+        };
+        const showUserDashboard = async () => {
+            if (!window.userWalletAddress) {
+                document.querySelector(".login-section").style.display = "";
+                document.querySelector(".dashboard-section").style.display = "none"
+                return false;
+            }
+            document.querySelector(".login-section").style.display = "none";
+            document.querySelector(".dashboard-section").style.display = ""
+            showUserWalletAddress();
+            getWalletBalance();
+        };
+        const showUserWalletAddress = () => {
+            const walletAddressEl = document.querySelector(".wallet-address");
+            walletAddressEl.innerHTML = window.userWalletAddress;
+        };
+        const getWalletBalance = async () => {
+            if (!window.userWalletAddress) {
+                return false;
+            }
+            const balance = await window.web3.eth.getBalance(window.userWalletAddress);
+            document.querySelector(".wallet-balance").innerHTML = web3.utils.fromWei(
+                balance,
+                "ether"
+            );
+        };
+        const logout = () => {
+            window.userWalletAddress = null;
+            window.localStorage.removeItem("userWalletAddress");
+            showUserDashboard();
+        };
+        document.querySelector(".login-btn").addEventListener("click", loginWithEth);
+        document.querySelector(".logout-btn").addEventListener("click", logout);
     </script>
+
     <!-- COINBASE -->
     <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
+
 </body>
+
 </html>
