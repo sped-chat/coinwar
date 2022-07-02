@@ -8,8 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="prefetch" type="application/l10n" href="engrish.json" />
-    <link type="image/png" sizes="58x58" rel="icon"
-        href="https://img.icons8.com/external-sbts2018-outline-color-sbts2018/58/000000/external-coin-bag-cryptocurrency-sbts2018-outline-color-sbts2018.png">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
     <link rel="stylesheet" href="#stylesheet">
 </head>
 
@@ -77,9 +77,9 @@
                                         onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
                                         class="btn land" type="button" data-dismiss="modal">DEPOSIT
                                     </button>
-                                    <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>
-                                    
-                                    
+
+
+
                                     <!-- WEB3 
 
                                     <section class="login-section">
@@ -96,6 +96,8 @@
                                 </span>
                             </div>
                         </label>
+
+                        <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>
 
                         <br /><br />
                         <table class="table table-condensed">
@@ -120,7 +122,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -10526,7 +10528,7 @@
 
         })(this);
     </script>
-   <!--
+    <!--
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -10540,76 +10542,77 @@
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -->
     <script>
-    const script = document.createElement("script")
-    script.type = "text/javascript"
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
-    document.head.appendChild(script)
-    
-     window.userWalletAddress = null;
-      window.onload = async (event) => {
-        if (window.ethereum) {
-          window.web3 = new Web3(window.ethereum);
-        } else {
-          alert("WEB3 WALLET NOT FOUND");
-        }
-        window.userWalletAddress = window.localStorage.getItem("userWalletAddress");
-        showUserDashboard();
-      };
-      const loginWithEth = async () => {
-        if (window.web3) {
-          try {
-            const selectedAccount = await window.ethereum
-              .request({
-                method: "eth_requestAccounts",
-              })
-              .then((accounts) => accounts[0])
-              .catch(() => {
-                throw Error("SELECT ACCOUNT");
-              });
-            window.userWalletAddress = selectedAccount;
-            window.localStorage.setItem("userWalletAddress", selectedAccount);
-            showUserDashboard();
-          } catch (error) {
-            alert(error);
-          }
-        } else {
-          alert("WEB3 WALLET NOT FOUND");
-        }
-      };
-      const showUserDashboard = async () => {
-        if (!window.userWalletAddress) {
-          document.querySelector(".login-section").style.display = "flex";
-          document.querySelector(".dashboard-section").style.display = "none";
-          return false;
-        }
-        document.querySelector(".login-section").style.display = "none";
-        document.querySelector(".dashboard-section").style.display = "flex";
-        showUserWalletAddress();
-        getWalletBalance();
-      };
-      const showUserWalletAddress = () => {
-        const walletAddressEl = document.querySelector(".wallet-address");
-        walletAddressEl.innerHTML = window.userWalletAddress;
-      };
-      const getWalletBalance = async () => {
-        if (!window.userWalletAddress) {
-          return false;
-        }
-        const balance = await window.web3.eth.getBalance(window.userWalletAddress);
-        document.querySelector(".wallet-balance").innerHTML = web3.utils.fromWei(
-          balance,
-          "ether"
-        );
-      };
-      const logout = () => {
+        const script = document.createElement("script")
+        script.type = "text/javascript"
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
+        document.head.appendChild(script)
+
         window.userWalletAddress = null;
-        window.localStorage.removeItem("userWalletAddress");
-        showUserDashboard();
-      };
-      document.querySelector(".login-btn").addEventListener("click", loginWithEth);
-      document.querySelector(".logout-btn").addEventListener("click", logout);
+        window.onload = async (event) => {
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum);
+            } else {
+                alert("WEB3 WALLET NOT FOUND");
+            }
+            window.userWalletAddress = window.localStorage.getItem("userWalletAddress");
+            showUserDashboard();
+        };
+        const loginWithEth = async () => {
+            if (window.web3) {
+                try {
+                    const selectedAccount = await window.ethereum
+                        .request({
+                            method: "eth_requestAccounts",
+                        })
+                        .then((accounts) => accounts[0])
+                        .catch(() => {
+                            throw Error("SELECT ACCOUNT");
+                        });
+                    window.userWalletAddress = selectedAccount;
+                    window.localStorage.setItem("userWalletAddress", selectedAccount);
+                    showUserDashboard();
+                } catch (error) {
+                    alert(error);
+                }
+            } else {
+                alert("WEB3 WALLET NOT FOUND");
+            }
+        };
+        const showUserDashboard = async () => {
+            if (!window.userWalletAddress) {
+                document.querySelector(".login-section").style.display = "flex";
+                document.querySelector(".dashboard-section").style.display = "none";
+                return false;
+            }
+            document.querySelector(".login-section").style.display = "none";
+            document.querySelector(".dashboard-section").style.display = "flex";
+            showUserWalletAddress();
+            getWalletBalance();
+        };
+        const showUserWalletAddress = () => {
+            const walletAddressEl = document.querySelector(".wallet-address");
+            walletAddressEl.innerHTML = window.userWalletAddress;
+        };
+        const getWalletBalance = async () => {
+            if (!window.userWalletAddress) {
+                return false;
+            }
+            const balance = await window.web3.eth.getBalance(window.userWalletAddress);
+            document.querySelector(".wallet-balance").innerHTML = web3.utils.fromWei(
+                balance,
+                "ether"
+            );
+        };
+        const logout = () => {
+            window.userWalletAddress = null;
+            window.localStorage.removeItem("userWalletAddress");
+            showUserDashboard();
+        };
+        document.querySelector(".login-btn").addEventListener("click", loginWithEth);
+        document.querySelector(".logout-btn").addEventListener("click", logout);
     </script>
     <!-- COINBASE -->
     <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
 </body>
+
 </html>
