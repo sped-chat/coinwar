@@ -103,41 +103,47 @@
                         LOGIN will connect to your (actual) <a href="https://metamask.io/" target="_blank">WEB3
                             WALLET</a><br />which allows for deposits and withdraws.
                         <br /><br />
-                        This is the part where your mom<br />reminds you to be careful.
+                        Deposited funds can be used to create unique currencies that are traded among other players.
                         <br /><br />
                         <button type="button" class="btn"><a class="login-btn">LOGIN</a></button>
                     </div>
                     <div class="dashboard-section">
+                        <h4>DEPOSIT DAI (VIA DONATION)</h4>
+                        <label>
+                            <div class="input-group" style="max-width: 175px;">
+                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                    value="0" class="form-control text-center" />
+                                <span class="input-group-btn">
+                                    <button
+                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
+                                        class="btn land" type="button" data-dismiss="modal">EXTERNAL
+                                    </button>
+                                </span>
+                            </div>
+                        </label>
+                        <br />
+                        <label>
+                            <div class="input-group" style="max-width: 175px;">
+                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                    value="0" class="form-control text-center" />
+                                <span class="input-group-btn">
+                                    <button class="btn land" type="button" data-dismiss="modal">DIRECT</button>
+                                </span>
+                            </div>
+                        </label>
+                        <br /><br />
                         <h4><a href="#modal-high-score" data-toggle="modal" data-dismiss="modal">LEADERBOARD</a></h4>
                         <a class="new-name" href="#">DEFINE ALIAS</a>
-                        <br />
+                        <br /><br />
                         <!--
+                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
+                        
                         <span class="wallet-address"></span>
                         <br /> <br />
                         
                         <h4>IRL WEB3 BALANCE (ETH)</h4>
                         <span class="wallet-balance"></span>
                         <br /><br />
-                        -->
-                        <br />
-                        <label>
-                            <div class="input-group" style="max-width: 250px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="0" class="form-control text-center" />
-                                <span class="input-group-btn">
-                                    <button
-                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
-                                        class="btn land" type="button" data-dismiss="modal">DONATION
-                                    </button>
-                                    <!--
-                                    <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>  
-                                    -->
-                                </span>
-                            </div>
-                        </label>
-                        <br /><br />
-                        <!--
-                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
                         -->
                     </div>
                 </div>
@@ -260,14 +266,14 @@
                     <h3 class="modal-title">LEADERBOARD</h3>
                 </div>
                 <div class="modal-body">
+                    <ul>
+                    </ul>
+                    <p><span class="final-score"></span> <span class="message"></span></p>
                     <h4>
                         I'm going to be honest, this will take a while to build.
                     </h4>
                     <BR />
                     <img src="https://c.tenor.com/6zykalSzugYAAAAC/could-use-some-help-here-bro-ivy.gif" />
-                    <ul>
-                    </ul>
-                    <p><span class="final-score"></span> <span class="message"></span></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
@@ -8807,6 +8813,14 @@
             });
 
             $('#modal-inventory button.land').click(function () {
+                var amount = parseInt($(this).parent().prev().val());
+                self.coat.cash += amount;
+
+                $(this).parent().prev().val(0);
+                self.view.refresh_stats(self.game, self.coat);
+            });
+
+            $('#modal-web3 button.land').click(function () {
                 var amount = parseInt($(this).parent().prev().val());
                 self.coat.cash += amount;
 
