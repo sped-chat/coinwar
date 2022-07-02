@@ -55,11 +55,13 @@
 
     <!-- MODALS -->
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog text-center">
             <div class="modal-content">
+                <div class="modal-header">
+                    <h3>WEB3 WALLET</h3>
+                </div>
                 <div class="modal-body">
-                    <div class="text-center xs-stats">
-                        <h3 class="modal-title">WEB3 WALLET</h3>
+                    <div class="xs-stats">
                         STABLECOINS : $<span class=" cash"></span>
                         <br />
                         <a data-toggle="modal" href="#modal-pawn-shop" data-dismiss="modal">DEFI LOANS</a> : $<span
@@ -106,7 +108,9 @@
                         <button type="button" class="btn"><a class="login-btn">LOGIN</a></button>
                     </div>
                     <div class="dashboard-section">
-                        <h4><a class="new-name" href="#">DEFINE ALIAS</a></h4>
+                        <h4><a href="#modal-high-score" data-toggle="modal" data-dismiss="modal">LEADERBOARD</a></h4>
+                        <a class="new-name" href="#">DEFINE ALIAS</a>
+                        <br />
                         <!--
                         <span class="wallet-address"></span>
                         <br /> <br />
@@ -126,8 +130,7 @@
                                         class="btn land" type="button" data-dismiss="modal">DONATION
                                     </button>
                                     <!--
-                                    <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>
-                                    <a href="#modal-high-score" data-toggle="modal" data-dismiss="modal">LEADERBOARD</a>
+                                    <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>  
                                     -->
                                 </span>
                             </div>
@@ -148,37 +151,34 @@
     </div>
 
     <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog text-center">
             <div class="modal-content">
+
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">DEFI LENDING</h3>
+                </div>
                 <div class="modal-body">
-                    <div class="text-center">
-                        <h3>DEFI LENDING</h3>
-                        <br />
-                    </div>
-                    <div class="row">
-                        <div class="text-center">
-                            <h4 class="modal-title">COMPOUND FINANCE (29% APR)<br /></h4>
-                            <label>
-                                <div class="input-group" style="max-width: 225px;">
-                                    <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                        value="" class="form-control text-center" />
-                                    <span class="input-group-btn">
-                                        <button class="btn land" type="button" data-dismiss="modal">BORROW
-                                        </button>
-                                        <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
-                                    </span>
-                                </div>
-                            </label>
-                            <h5>OUTSTANDING LOANS : $<span class="debt"></span></h5>
-                            <!--
+                    <h4 class="modal-title">COMPOUND FINANCE (29% APR)<br /></h4>
+                    <br />
+                    <label>
+                        <div class="input-group" style="max-width: 225px;">
+                            <input style="background-color:#222; border: solid 1px #333;" type="number" min="0" value=""
+                                class="form-control text-center" />
+                            <span class="input-group-btn">
+                                <button class="btn land" type="button" data-dismiss="modal">BORROW
+                                </button>
+                                <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
+                            </span>
+                        </div>
+                    </label>
+                    <h5>OUTSTANDING LOANS : $<span class="debt"></span></h5>
+                    <!--
                             <br /> <br />
                             <h4>COLLAPSED MARKETS:</h5>
                                 <h5><s>COLLATERALIZED LENDING (VARIABLE APR)</s></h5>
                                 <h5><s>AAVE LENDING (9% APR)</s></h5>
                                 <h5><s>YIELD FARMING</s></h5>
                             -->
-                        </div>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
@@ -241,7 +241,7 @@
                     <h3>RESET</h3>
                 </div>
                 <div class="modal-body">
-                    <h4>This will reset the game to 2022 with $42.</h4>
+                    <h4>THIS WILL RESET TO 2022 WITH $42.</h4>
                     <p>ALL DEPOSITED FUNDS WILL BE LOST</p>
                     <br />
                     <button type="button" class="btn" data-dismiss="modal"><a class="new-game" href="#">YES</a></button>
@@ -252,15 +252,19 @@
         </div>
     </div>
 
-    <!-- LEADERBOARD 
+
     <div class="modal fade" id="modal-high-score" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog text-center">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" data-l10n-id="high-score"></h4>
+                    <h3 class="modal-title">LEADERBOARD</h3>
                 </div>
                 <div class="modal-body">
+                    <h4>
+                        I'm going to be honest, this will take a while to build.
+                    </h4>
+                    <BR />
+                    <img src="https://c.tenor.com/6zykalSzugYAAAAC/could-use-some-help-here-bro-ivy.gif" />
                     <ul>
                     </ul>
                     <p><span class="final-score"></span> <span class="message"></span></p>
@@ -272,7 +276,7 @@
             </div>
         </div>
     </div>
--->
+
 
     <div class="modal fade" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -8479,7 +8483,7 @@
         // GameManager
         function GameManager() {
             this.day = 2022;
-            this.end = 2999;
+            this.end = 2091;
             this.debt = 0;
             this.bank_deposit = 0;
             this.stone_level = 0;
@@ -9007,6 +9011,7 @@
 
             $('#modal-high-score').modal('show');
         };
+
     </script>
     <!--
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
