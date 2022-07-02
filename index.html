@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-<!--  Life comes from destruction, disorder and chaos.  -->
-
 <head>
     <title>THE COIN WAR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="prefetch" type="application/l10n" href="engrish.json" />
+    <link rel="apple-touch-icon" href="safari_is_ancient.png">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
 </head>
-
-<!-- character is what you are in the dark -->
 
 <body>
     <div class="container" style="width: 100%; padding: 0">
@@ -23,6 +20,8 @@
         </nav>
         <div class="stats text-center">
             <a data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span class="cash"></span> (DAI)
+            <BR />
+            <a data-toggle="modal" href="#modal-reset">YEAR</a> : <span class="day"></span>
         </div>
         <div>
             <table class="table table-condensed drugs text-center">
@@ -54,38 +53,7 @@
         </div>
     </div>
 
-    <!-- we suffer more in imagination than in reality -->
-
     <!-- MODALS -->
-    <div class="modal fade text-center" id="modal-web3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>IRL-BRIDGE</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="login-section">
-                        <button type="button" class="btn"><a class="login-btn">LOGIN</a></button>
-                    </div>
-                    <div class="dashboard-section">
-                        <h4>IRL WEB3 ADDRESS</h4>
-                        <span class="wallet-address"></span>
-                        <br /> <br />
-                        <h4>IRL WEB3 BALANCE (ETH)</h4>
-                        <span class="wallet-balance"></span>
-                        <br /><br />
-                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -98,22 +66,6 @@
                             class="debt"></span>
                         <br />
                         <a data-toggle="modal" data-dismiss="modal" href="#modal-web3">IRL-BRIDGE</a>
-                        <br /><br />
-                        <label>
-                            <div class="input-group" style="max-width: 250px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="0" class="form-control text-center" />
-                                <span class="input-group-btn">
-                                    <button
-                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
-                                        class="btn land" type="button" data-dismiss="modal">DEPOSIT
-                                    </button>
-                                    <!--
-                                    <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>
-                                    -->
-                                </span>
-                            </div>
-                        </label>
                         <br /><br />
                         <table class="table table-condensed">
                             <tbody>
@@ -136,6 +88,63 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="modal fade text-center" id="modal-web3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>IRL-BRIDGE</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="login-section">
+                        LOGIN will connect to your (actual) <a href="https://metamask.io/" target="_blank">WEB3
+                            WALLET</a><br />which allows for deposits and withdraws.
+                        <br /><br />
+                        This is the part where your mom<br />reminds you to be careful.
+                        <br /><br />
+                        <button type="button" class="btn"><a class="login-btn">LOGIN</a></button>
+                    </div>
+                    <div class="dashboard-section">
+                        <h4><a class="new-name" href="#">DEFINE ALIAS</a></h4>
+                        <!--
+                        <span class="wallet-address"></span>
+                        <br /> <br />
+                        
+                        <h4>IRL WEB3 BALANCE (ETH)</h4>
+                        <span class="wallet-balance"></span>
+                        <br /><br />
+                        -->
+                        <br />
+                        <label>
+                            <div class="input-group" style="max-width: 250px;">
+                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                    value="0" class="form-control text-center" />
+                                <span class="input-group-btn">
+                                    <button
+                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
+                                        class="btn land" type="button" data-dismiss="modal">DONATION
+                                    </button>
+                                    <!--
+                                    <button class="btn" type="button" data-dismiss="modal">WITHDRAW</button>
+                                    <a href="#modal-high-score" data-toggle="modal" data-dismiss="modal">LEADERBOARD</a>
+                                    -->
+                                </span>
+                            </div>
+                        </label>
+                        <br /><br />
+                        <!--
+                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
+                        -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
@@ -225,6 +234,46 @@
         </div>
     </div>
 
+    <div class="modal fade" id="modal-reset" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog text-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>RESET</h3>
+                </div>
+                <div class="modal-body">
+                    <h4>This will reset the game to 2022 with $42.</h4>
+                    <p>ALL DEPOSITED FUNDS WILL BE LOST</p>
+                    <br />
+                    <button type="button" class="btn" data-dismiss="modal"><a class="new-game" href="#">YES</a></button>
+                    <button type="button" class="btn" data-dismiss="modal"><a class="" href="#">NO</a></button>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEADERBOARD 
+    <div class="modal fade" id="modal-high-score" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" data-l10n-id="high-score"></h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                    </ul>
+                    <p><span class="final-score"></span> <span class="message"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+
     <div class="modal fade" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -235,25 +284,22 @@
                 <div class="modal-body">
 
                     <h2>HOW TO PLAY</h2>
-                    You start with with $42 worth of DAI (the only stablecoin to survive the wars), so you'll most
-                    likely want to take out a loan.
-                    You can do this by clicking the <a data-dismiss="modal" data-toggle="modal"
-                        href="#modal-pawn-shop"><span>DEFI LOANS</span></a> link to pull out a
-                    collateralized (against you mom) loan from Compound. Click the <a data-dismiss="modal"
-                        data-toggle="modal" href="#modal-inventory"><span>WALLET</span></a> link to
-                    open your wallet if you need to check inventory, deposit DAI (which sure feels like cheating), or
-                    withdraw funds to an <a href="https://metamask.io/" target="_blank">IRL WEB3 WALLET</a>.
+                    You start with with $42 worth of DAI, so you'll most likely want to take out a loan. You can do this
+                    by clicking the <a data-dismiss="modal" data-toggle="modal"
+                        href="#modal-inventory"><span>WALLET</span></a> link to
+                    open your wallet, and from there the <a data-dismiss="modal" data-toggle="modal"
+                        href="#modal-pawn-shop"><span>DEFI LOANS</span></a> link
+                    to pull out a collateralized loan from Compound. <a data-dismiss="modal" data-toggle="modal"
+                        href="#modal-web3"><span>IRL-BRIDGE</span></a> will connect to your (actual) <a
+                        href="https://metamask.io/" target="_blank">WEB3 WALLET</a> and allow you to deposit DAI.
+                    Deposited DAI can then be converted into your personal coin (on which you define the price variants)
+                    which can be traded with other players as well. That's the plan at least...
+                    <br /> <br />
                     Clicking the name of the <a data-dismiss="modal" data-toggle="modal"
                         href="#modal-cities">EXCHANGE</a> will display updated
-                    rates
-                    for the
-                    exchange you have chosen, and APR debt will be added to your current balance.
+                    rates for the exchange you have chosen, and any APR debt will be added to your current balance.
                     <br /><br />
-                    <!--
-                    Leaderboard (local.storage only) is <a data-dismiss="modal" data-toggle="modal"
-                        href="#modal-high-score">here</a>.
-                    <br /><br /><br />
-                    -->
+
                     <h2>THE COIN WAR</h2>
                     In late 2022 omicron variant b.9 erradicated over 75% of the world's population, which resulted
                     in
