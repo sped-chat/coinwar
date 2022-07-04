@@ -205,9 +205,9 @@
                     <ul>
                     </ul>
                     <p><span class="final-score"></span> <span class="message"></span></p>
-                    <br /><br />
-                    I suppose you could say they're invisible,<br />hidden in a dark <a href="metaverse/rooms.html"
-                        target="_blank">room</a> that's<br />at the centre of a maze.
+                    <br />
+                    The key is hidden in a dark <a href="metaverse/rooms.html" target="_blank">room</a><br />
+                    that's at the centre of a maze.
                     <br />
                 </div>
                 <div class="modal-footer">
@@ -8175,9 +8175,29 @@
                     "maximum_price": 632
                 },
                 {
+                    "name": "amc",
+                    "minimum_price": 2,
+                    "maximum_price": 59
+                },
+                {
+                    "name": "ape",
+                    "minimum_price": 3,
+                    "maximum_price": 26
+                },
+                {
+                    "name": "atom",
+                    "minimum_price": 2,
+                    "maximum_price": 45
+                },
+                {
                     "name": "avax",
                     "minimum_price": 3,
                     "maximum_price": 134
+                },
+                {
+                    "name": "axs",
+                    "minimum_price": 1,
+                    "maximum_price": 160
                 },
                 {
                     "name": "bnb",
@@ -8195,6 +8215,16 @@
                     "maximum_price": 1000000
                 },
                 {
+                    "name": "cake",
+                    "minimum_price": 1,
+                    "maximum_price": 42
+                },
+                {
+                    "name": "comp",
+                    "minimum_price": 27,
+                    "maximum_price": 854
+                },
+                {
                     "name": "doge",
                     "minimum_price": 69,
                     "maximum_price": 420
@@ -8210,14 +8240,44 @@
                     "maximum_price": 5000
                 },
                 {
+                    "name": "fil",
+                    "minimum_price": 5,
+                    "maximum_price": 188
+                },
+                {
                     "name": "ftm",
                     "minimum_price": 1,
                     "maximum_price": 1000
                 },
                 {
+                    "name": "ftx",
+                    "minimum_price": 2,
+                    "maximum_price": 80
+                },
+                {
+                    "name": "gme",
+                    "minimum_price": 4,
+                    "maximum_price": 325
+                },
+                {
+                    "name": "icp",
+                    "minimum_price": 5,
+                    "maximum_price": 364
+                },
+                {
+                    "name": "link",
+                    "minimum_price": 2,
+                    "maximum_price": 53
+                },
+                {
                     "name": "ltc",
                     "minimum_price": 2,
                     "maximum_price": 278
+                },
+                {
+                    "name": "mana",
+                    "minimum_price": 1,
+                    "maximum_price": 6
                 },
                 {
                     "name": "matic",
@@ -8235,7 +8295,12 @@
                     "maximum_price": 10000
                 },
                 {
-                    "name": "shiba",
+                    "name": "sand",
+                    "minimum_price": 1,
+                    "maximum_price": 9
+                },
+                {
+                    "name": "shib",
                     "minimum_price": 1,
                     "maximum_price": 100000
                 },
@@ -8254,6 +8319,12 @@
                     "minimum_price": 2,
                     "maximum_price": 43
                 },
+                {
+                    "name": "xrp",
+                    "minimum_price": 1,
+                    "maximum_price": 4
+                },
+
                 /*  ENABLE TO ADD DRUGS BACK INTO THE MIX
                                 {
                                     "name": "acid",
@@ -9082,7 +9153,7 @@
             this.game.add_high_score(high_score_string);
             this.view.refresh_high_score(this.game.high_score());
 
-            $('#modal-high-score .modal-footer .btn').text(navigator.mozL10n.get('new-game') + ' !');
+            $('#modal-high-score .modal-footer .btn').text(navigator.mozL10n.get('new-game'));
             $('#modal-high-score .modal-body .final-score').html('<b>' + navigator.mozL10n.get('final-score') + '</b> : ' + score + '$');
             $('#modal-high-score .modal-body .message').html('.....<span class="hidden-xs">............................................</span> ' + this.game.message(score));
 
