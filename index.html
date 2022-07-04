@@ -84,6 +84,11 @@
                                 </span>
                             </div>
                         </label>
+                        <!--
+                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
+                        <span class="wallet-address"></span>
+                        <span class="wallet-balance"></span>
+                        -->
                     </div>
                     <br />
                     <h4>
@@ -100,7 +105,7 @@
                             </span>
                         </div>
                     </label>
-                    <br />
+                    <br /> <br />
                     <table class="table table-condensed">
                         <tbody>
                             <tr>
@@ -114,16 +119,6 @@
                         </tbody>
                     </table>
                     <p></p>
-                    <br />
-                    <h4>
-                        <a class="new-name" href="#">ALIAS</a>
-                    </h4><span class="wallet-address"></span>
-                    <!--
-                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
-                        WEB3 BALANCE : <span class="wallet-balance"></span> (ETH)
-                        <a data-toggle="modal" href="#modal-pawn-shop" data-dismiss="modal">DEFI LOANS</a> : $<span
-                            class="debt"></span>
-                        -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
@@ -188,7 +183,6 @@
                 <div class="modal-body">
                     <h4>THIS WILL RESET TO 2022 WITH $42.</h4>
                     <p>ALL DEPOSITED FUNDS WILL BE LOST</p>
-                    <h4><a href="#modal-high-score" data-toggle="modal" data-dismiss="modal">LEADERBOARD</a></h4>
                     <br />
                     <button type="button" class="btn" data-dismiss="modal"><a class="new-game" href="#">YES</a></button>
                     <button type="button" class="btn" data-dismiss="modal"><a class="" href="#">NO</a></button>
@@ -202,16 +196,12 @@
         <div class="modal-dialog text-center">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">LEADERBOARD</h3>
+                    <h3>LEADERBOARD</h3>
                 </div>
                 <div class="modal-body">
                     <ul>
                     </ul>
-                    <p><span class="final-score"></span> <span class="message"></span></p>
-                    <br />
-                    The key is hidden in a dark <a href="metaverse/rooms.html" target="_blank">room</a><br />
-                    that's at the centre of a maze.
-                    <br />
+                    <h4><a class="new-name" href="#">DEFINE ALIAS</a></h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
@@ -421,8 +411,8 @@
 
                     This policy is effective as of April 20, 2022.
                     <br /> <br /><br />
-                    You like Bailey’s? Mmmm... <a href="https://opensea.io/collection/shlong"
-                        target="_blank">creamy</a>. Soft, creamy beige.
+                    The key is hidden in a dark <a href="metaverse/rooms.html" target="_blank">room</a> that's at the
+                    centre of a maze.
                     <br />
 
                 </div>
@@ -8425,7 +8415,7 @@
             cities: [
                 {
                     "name": "binance",
-                    "min_drugs": 1,
+                    "min_drugs": 10,
                     "max_drugs": 10
                 },
                 {
@@ -9135,14 +9125,14 @@
         Controller.prototype.game_over = function () {
             var score = this.coat.score(this.game, this.game.city.prices);
 
-            var high_score_string = score + '$ <span style="font-size: medium;"> <span class="hidden-xs">.................................................</span> ' + navigator.mozL10n.get('by') + ' ' + this.game.player_name() + ' <small class="hidden-xs"> - ' + new Date().toLocaleString() + '</small></span>';
+            var high_score_string = '$' + score + ' by ' + this.game.player_name() + '  on  ' + new Date().toLocaleString() + '</small></span>';
 
             this.game.add_high_score(high_score_string);
             this.view.refresh_high_score(this.game.high_score());
 
             $('#modal-high-score .modal-footer .btn').text(navigator.mozL10n.get('new-game'));
-            $('#modal-high-score .modal-body .final-score').html('<b>' + navigator.mozL10n.get('final-score') + '</b> : ' + score + '$');
-            $('#modal-high-score .modal-body .message').html('.....<span class="hidden-xs">............................................</span> ' + this.game.message(score));
+            $('#modal-high-score .modal-body .final-score').html('FINAL SCORE : $' + score);
+            $('#modal-high-score .modal-body .message').html('' + this.game.message(score));
 
             $('#modal-high-score').on('hidden.bs.modal', function () {
                 window.location = '';
