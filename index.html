@@ -8793,6 +8793,11 @@
         function Controller() {
             var self = this;
 
+            // Ask for player's name
+            if (!window.localStorage.getItem('player_name')) {
+                self.new_name();
+            }
+
             this.coat = new Coat();
 
             this.view = new View();
