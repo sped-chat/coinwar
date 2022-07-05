@@ -84,11 +84,24 @@
                     </div>
                     <div class="dashboard-section">
                         <br />
-                        <h4>DEPOSIT DAI</h4>
+                        <h4>DEPOSIT DAI VIA</h4>
+                        <label>
+                            <div class="input-group" style="max-width: 250px;">
+                                <input style="display: none;" type="number" min="1000000" value="1000000"
+                                    class="form-control text-center" />
+                                <span class="input-group-btn">
+                                    <button
+                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
+                                        class="btn land" type="button" data-dismiss="modal">BTC, DOGE, ALTCOINS
+                                    </button>
+                                </span>
+                            </div>
+                        </label>
+                        <br />
                         <label>
                             <div class="input-group" style="max-width: 225px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="" class="form-control text-center" />
+                                <input style="background-color:#222; border: solid 1px #333; display: none;"
+                                    type="number" min="1000000" value="1000000" class="form-control text-center" />
                                 <span class="input-group-btn">
                                     <button onclick="DePayWidgets.Donation({
                                             integration: 'a1bd3709-23f4-40a0-8112-358ce1095697',
@@ -159,20 +172,7 @@
                                                 receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                               }
                                             ]
-                                          })" class="btn land" type="button" data-dismiss="modal">VIA ETH NETWORK
-                                    </button>
-                                </span>
-                            </div>
-                        </label>
-                        <br />
-                        <label>
-                            <div class="input-group" style="max-width: 250px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="" class="form-control text-center" />
-                                <span class="input-group-btn">
-                                    <button
-                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')"
-                                        class="btn land" type="button" data-dismiss="modal">VIA BTC, DOGE, ETC
+                                          })" class="btn land" type="button" data-dismiss="modal">ETH NETWORK
                                     </button>
                                 </span>
                             </div>
@@ -180,8 +180,8 @@
                         <br />
                         <label>
                             <div class="input-group" style="max-width: 275px;">
-                                <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                    value="" class="form-control text-center" />
+                                <input style="background-color:#222; border: solid 1px #333; display: none;"
+                                    type="number" min="0" value="" class="form-control text-center" />
                                 <span class="input-group-btn">
                                     <button class="btn" type="button" data-dismiss="modal"
                                         onclick="alert('UNSUPPORTED')">WITHDRAW</button>
