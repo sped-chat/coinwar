@@ -8482,83 +8482,99 @@
             cities: [
                 {
                     "name": "binance",
+                    "cops": 100,
                     "min_drugs": 10,
-                    "max_drugs": 10
+                    "max_drugs": 30
                 },
                 {
                     "name": "coinbase",
-                    "min_drugs": 1,
-                    "max_drugs": 8
+                    "cops": 100,
+                    "min_drugs": 11,
+                    "max_drugs": 30
                 },
                 {
                     "name": "curve",
-                    "min_drugs": 1,
-                    "max_drugs": 13
+                    "cops": 100,
+                    "min_drugs": 12,
+                    "max_drugs": 30
                 },
                 {
                     "name": "dydx",
-                    "min_drugs": 1,
-                    "max_drugs": 7
+                    "cops": 100,
+                    "min_drugs": 13,
+                    "max_drugs": 30
                 },
                 {
                     "name": "ftx",
-                    "min_drugs": 1,
-                    "max_drugs": 15
+                    "cops": 100,
+                    "min_drugs": 14,
+                    "max_drugs": 30
                 },
                 {
                     "name": "gemini",
-                    "min_drugs": 1,
-                    "max_drugs": 16
+                    "cops": 100,
+                    "min_drugs": 15,
+                    "max_drugs": 30
                 },
                 {
                     "name": "honey",
-                    "min_drugs": 1,
-                    "max_drugs": 12
+                    "cops": 100,
+                    "min_drugs": 16,
+                    "max_drugs": 30
                 },
                 {
                     "name": "jupiter",
-                    "min_drugs": 1,
-                    "max_drugs": 14
+                    "cops": 100,
+                    "min_drugs": 17,
+                    "max_drugs": 30
                 },
                 {
                     "name": "kine",
-                    "min_drugs": 1,
-                    "max_drugs": 11
+                    "cops": 100,
+                    "min_drugs": 18,
+                    "max_drugs": 30
                 },
                 {
                     "name": "kraken",
-                    "min_drugs": 1,
-                    "max_drugs": 16
+                    "cops": 100,
+                    "min_drugs": 19,
+                    "max_drugs": 30
                 },
                 {
                     "name": "kucoin",
-                    "min_drugs": 1,
-                    "max_drugs": 9
+                    "cops": 100,
+                    "min_drugs": 20,
+                    "max_drugs": 30
                 },
                 {
                     "name": "pancake",
-                    "min_drugs": 1,
-                    "max_drugs": 4
+                    "cops": 100,
+                    "min_drugs": 21,
+                    "max_drugs": 30
                 },
                 {
                     "name": "spooky",
-                    "min_drugs": 1,
-                    "max_drugs": 3
+                    "cops": 100,
+                    "min_drugs": 22,
+                    "max_drugs": 30
                 },
                 {
                     "name": "sushi",
-                    "min_drugs": 1,
-                    "max_drugs": 5
+                    "cops": 100,
+                    "min_drugs": 23,
+                    "max_drugs": 30
                 },
                 {
                     "name": "traderjoe",
-                    "min_drugs": 1,
-                    "max_drugs": 75
+                    "cops": 100,
+                    "min_drugs": 24,
+                    "max_drugs": 30
                 },
                 {
                     "name": "uni",
-                    "min_drugs": 1,
-                    "max_drugs": 6
+                    "cops": 100,
+                    "min_drugs": 25,
+                    "max_drugs": 30
                 },
             ],
             messages: [
@@ -8784,7 +8800,7 @@
         // City
         function City(number, news_manager) {
             this.city_name = navigator.mozL10n.get('city-' + DataCenter.cities[number].name);
-            this.is_cop = Math.random() * 1000 < DataCenter.cities[number].cops;
+            this.is_cop = Math.random() * 100 < DataCenter.cities[number].cops;
             this.prices = [];
             this.number = number;
             this.available_drugs = [];
