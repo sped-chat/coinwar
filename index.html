@@ -9,6 +9,16 @@
     <link rel="apple-touch-icon" href="safari_is_ancient.png">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+
+    <!-- deathstar -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL01XG424Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GL01XG424Y');
+    </script>
 </head>
 
 <body>
@@ -59,18 +69,16 @@
         <div class="modal-dialog text-center">
             <div class="modal-content" style="background-color: #111;">
                 <div class="modal-header">
-                    <h2>COINWAR WALLET</h2>
+                    <h1>COINWAR WALLET</h1>
                 </div>
                 <div class="modal-body xs-stats">
                     <table class="table">
                         <tbody>
                             <tr>
                                 <td>
-                                    <a data-toggle="modal" href="#modal-about">
-                                        <h4>DEFI LENDING</h4>
-                                    </a>
-                                    COMP : $<span class="debt"></span>
-                                    <br /> <br />
+                                    <h3>DEFI LENDING</h3>
+                                    <h4>COMP : $<span class="debt"></span></h4>
+                                    <br />
                                     <label>
                                         <div class="input-group" style="max-width: 159px;">
                                             <input style="background-color:#222; border: solid 1px #333;" type="number"
@@ -87,10 +95,8 @@
                                     <br /><br />
                                 </td>
                                 <td>
-                                    <a data-toggle="modal" href="#modal-about">
-                                        <h4>STABLECOINS</h4>
-                                    </a>
-                                    DAI : $<span class=" cash"></span>
+                                    <h3>STABLECOINS</h3>
+                                    <h4>DAI : $<span class=" cash"></span></h4>
                                     <div class="login-section" style="line-height: 30px;">
                                         <br />
                                         <button type="button" class="btn"><a class="login-btn">DEPOSIT DAI<br />VIA
@@ -113,9 +119,6 @@
                                                         </button>
                                                         <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
                                                     -->
-                                                    <script src="https://integrate.depay.fi/widgets/v7.js">
-                                                        import DePayWidgets from '@depay/widgets';
-                                                    </script>
                                                     <button onclick="DePayWidgets.Payment({
                                                         integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
                                                         accept:[
@@ -10915,6 +10918,11 @@
         document.querySelector(".login-btn").addEventListener("click", loginWithEth);
         document.querySelector(".logout-btn").addEventListener("click", logout);
 
+    </script>
+
+    <!--depay.fi-->
+    <script src="https://integrate.depay.fi/widgets/v7.js">
+        import DePayWidgets from '@depay/widgets';
     </script>
 
 </body>
