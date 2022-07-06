@@ -202,10 +202,20 @@
                                             receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                           }
                                         ]
-                                      })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                      })" class="btn land" type="button" data-dismiss="modal">DONATION
                                     </button>
-                                    <button class="btn" type="button" data-dismiss="modal"
-                                        onclick="alert('UNSUPPORTED')">WITHDRAW</button>
+                                    <button onclick="DePayWidgets.Payment({
+                                        integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+                                        accept:[
+                                          {
+                                            blockchain: 'ethereum',
+                                            amount: .00088,
+                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                          }
+                                        ]
+                                      })" class="btn land" type="button" data-dismiss="modal">PAYMENT
+                                    </button>
                                 </span>
                             </div>
                         </label>
