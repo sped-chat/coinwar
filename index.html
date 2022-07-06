@@ -62,80 +62,87 @@
                     <h3>COINWAR WALLET</h3>
                 </div>
                 <div class="modal-body xs-stats">
-                    <h4>
-                        DEFI LENDING (COMP)</a> : $<span class="debt"></span>
-                    </h4>
-                    <label>
-                        <div class="input-group" style="max-width: 200px;">
-                            <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
-                                value="10000000" class="form-control text-center" />
-                            <span>
-                                <br /> <br />
-                                <button class="btn defi" type="button" data-dismiss="modal">BORROW
-                                </button>
-                                <button class="btn paydefi" type="button" data-dismiss="modal">REPAY</button>
-                            </span>
-                        </div>
-                    </label>
-                    <br /> <br />
-                    <h4>STABLECOINS (DAI) : $<span class=" cash"></span></h4>
-                    <div class="login-section">
-                        <button type="button" class="btn"><a class="login-btn">DEPOSIT VIA WEB3</a></button>
-                        <br />
-                    </div>
-                    <div class="dashboard-section">
-                        <button class="btn" type="button" data-dismiss="modal" onclick="alert('UNSUPPORTED')">WITHDRAW
-                            DAI</button>
-                        <br /><br />
-                        DEPOSIT DAI VIA
-                        <br />
-                        <label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <input style="background-color:#222; border: solid 1px #333; display: none;"
-                                    type="number" min="100000" value="100000" class="form-control text-center" />
-                                <span>
-                                    <button
-                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240', '_blank')"
-                                        class="btn land" type="button" data-dismiss="modal">COINS
-                                    </button>
-                                    <script src="https://integrate.depay.fi/widgets/v7.js">
-                                        import DePayWidgets from '@depay/widgets';
-                                    </script>
-                                    <button onclick="DePayWidgets.Payment({
-                                        integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
-                                        accept:[
-                                          {
-                                            blockchain: 'ethereum',
-                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                          }
-                                        ]
-                                      })" class="btn land" type="button" data-dismiss="modal">TOKENS
-                                    </button>
-                                </span>
-                            </div>
-                        </label>
-                        <br /><br />
-                        <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
-                    </div>
-                    <br /><br />
-                    <button data-toggle="modal" type="button" class="btn" href="#modal-high-score">LEADERBOARD</button>
-                    <br /><br />
-                    <table class="table table-condensed">
+                    <table class="table" style="background-color: #111;">
                         <tbody>
+                            <tr>
+                                <td>
+                                    <h4>DEFI LENDING</h4>
+                                    COMP : $<span class="debt"></span>
+                                    <br /> <br />
+                                    <label>
+                                        <div class="input-group" style="max-width: 175px;">
+                                            <input style="background-color:#222; border: solid 1px #333;" type="number"
+                                                min="0" value="10000000" class="form-control text-center" />
+                                            <span>
+                                                <br /> <br />
+                                                <button class="btn defi" type="button" data-dismiss="modal">BORROW
+                                                </button>
+                                                <button class="btn paydefi" type="button"
+                                                    data-dismiss="modal">REPAY</button>
+                                            </span>
+                                        </div>
+                                    </label>
+                                </td>
+                                <td>
+                                    <h4>STABLECOINS</h4>
+                                    DAI : $<span class=" cash"></span>
+                                    <br /> <br />
+                                    <div class="login-section">
+                                        <button type="button" class="btn"><a class="login-btn">DEPOSIT DAI<br />VIA
+                                                WEB3</a></button>
+                                    </div>
+                                    <div class="dashboard-section">
+                                        <h4>DEPOSIT DAI VIA</h4>
+                                        <label>
+                                            <div class="input-group" style="max-width: 200px;">
+                                                <input
+                                                    style="background-color:#222; border: solid 1px #333; display: none;"
+                                                    type="number" min="100000" value="100000"
+                                                    class="form-control text-center" />
+                                                <span>
+                                                    <button
+                                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240', '_blank')"
+                                                        class="btn land" type="button" data-dismiss="modal">COINS
+                                                    </button>
+                                                    <script src="https://integrate.depay.fi/widgets/v7.js">
+                                                        import DePayWidgets from '@depay/widgets';
+                                                    </script>
+                                                    <button onclick="DePayWidgets.Payment({
+                                                        integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+                                                        accept:[
+                                                          {
+                                                            blockchain: 'ethereum',
+                                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                          }
+                                                        ]
+                                                      })" class="btn land" type="button" data-dismiss="modal">TOKENS
+                                                    </button>
+                                                    <!--<br /><br />
+                                                    <button class="btn" type="button" data-dismiss="modal"
+                                                        onclick="alert('UNSUPPORTED')">WITHDRAW
+                                                        DAI</button>-->
+                                                </span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
                             <tr>
                                 <th class="text-center">COIN</th>
                                 <th class="text-center">QUANTITY</th>
                             </tr>
                             <tr class="template hidden">
-                                <td class="text-center"></td>
-                                <td class=" text-center"></td>
+                                <td class="text-center">
+                                </td>
+                                <td class=" text-center">
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    <p></p>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
                     </button>
                 </div>
