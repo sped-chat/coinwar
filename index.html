@@ -57,7 +57,7 @@
     <!-- MODALS -->
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog text-center">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: #111;">
                 <div class="modal-header">
                     <h3>COINWAR WALLET</h3>
                 </div>
@@ -66,13 +66,15 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <h4>DEFI LENDING</h4>
+                                    <a data-toggle="modal" href="#modal-about">
+                                        <h4>DEFI LENDING</h4>
+                                    </a>
                                     COMP : $<span class="debt"></span>
                                     <br /> <br />
                                     <label>
-                                        <div class="input-group" style="max-width: 175px;">
+                                        <div class="input-group" style="max-width: 159px;">
                                             <input style="background-color:#222; border: solid 1px #333;" type="number"
-                                                min="0" value="10000000" class="form-control text-center" />
+                                                min="0" value="1000" class="form-control text-center" />
                                             <span>
                                                 <br /> <br />
                                                 <button class="btn defi" type="button" data-dismiss="modal">BORROW
@@ -82,28 +84,33 @@
                                             </span>
                                         </div>
                                     </label>
+                                    <br /><br />
                                 </td>
                                 <td>
-                                    <h4>STABLECOINS</h4>
+                                    <a data-toggle="modal" href="#modal-about">
+                                        <h4>STABLECOINS</h4>
+                                    </a>
                                     DAI : $<span class=" cash"></span>
-                                    <br /> <br />
-                                    <div class="login-section">
+                                    <div class="login-section" style="line-height: 30px;">
+                                        <br />
                                         <button type="button" class="btn"><a class="login-btn">DEPOSIT DAI<br />VIA
                                                 WEB3</a></button>
                                     </div>
-                                    <div class="dashboard-section">
-                                        <h4>DEPOSIT DAI VIA</h4>
+                                    <div class="dashboard-section" style="line-height: 20px;">
+                                        <br />
                                         <label>
                                             <div class="input-group" style="max-width: 200px;">
                                                 <input
                                                     style="background-color:#222; border: solid 1px #333; display: none;"
                                                     type="number" min="100000" value="100000"
                                                     class="form-control text-center" />
-                                                <span>
+                                                <span style="line-height: 37px;">
                                                     <button
                                                         onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240', '_blank')"
-                                                        class="btn land" type="button" data-dismiss="modal">COINS
+                                                        class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                                        COINS
                                                     </button>
+                                                    <br />
                                                     <script src="https://integrate.depay.fi/widgets/v7.js">
                                                         import DePayWidgets from '@depay/widgets';
                                                     </script>
@@ -116,12 +123,9 @@
                                                             receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                                           }
                                                         ]
-                                                      })" class="btn land" type="button" data-dismiss="modal">TOKENS
+                                                      })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                                        TOKENS
                                                     </button>
-                                                    <!--<br /><br />
-                                                    <button class="btn" type="button" data-dismiss="modal"
-                                                        onclick="alert('UNSUPPORTED')">WITHDRAW
-                                                        DAI</button>-->
                                                 </span>
                                             </div>
                                         </label>
@@ -142,7 +146,9 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
+                    <!--<button class="btn" type="button" data-dismiss="modal" onclick="alert('UNSUPPORTED')">WITHDRAW
+                        DAI</button>
+                    <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>-->
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
                     </button>
                 </div>
