@@ -76,7 +76,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <h3>DEFI LENDING</h3>
+                                    <h3>DEFI<br />LOANS</h3>
                                     <h4>COMP : $<span class="debt"></span></h4>
                                     <br />
                                     <label>
@@ -95,7 +95,7 @@
                                     <br /><br />
                                 </td>
                                 <td>
-                                    <h3>STABLECOINS</h3>
+                                    <h3>STABLE<br />COINS</h3>
                                     <h4>DAI : $<span class=" cash"></span></h4>
                                     <div class="login-section" style="line-height: 30px;">
                                         <br />
@@ -110,15 +110,16 @@
                                                     style="background-color:#222; border: solid 1px #333; display: none;"
                                                     type="number" min="100000" value="100000"
                                                     class="form-control text-center" />
-                                                <span style="line-height: 37px;">
-                                                    <!--
-                                                        <button
-                                                        onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240', '_blank')"
-                                                        class="btn land" type="button" data-dismiss="modal">
-                                                        DEPOSIT VIA COINBASE
-                                                        </button>
-                                                        <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
-                                                    -->
+                                                <span style="line-height: 36px;">
+                                                    <script>
+                                                        window.addEventListener('load', depay)
+                                                        function depay() {
+                                                            let script = document.createElement('script');
+
+                                                            script.src = 'https://integrate.depay.fi/widgets/v7.js';
+                                                            document.body.appendChild(script);
+                                                        }
+                                                    </script>
                                                     <button onclick="DePayWidgets.Payment({
                                                         integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
                                                         accept:[
@@ -285,6 +286,10 @@
                     case you're
                     into that kind of thing. What a forkin' good time.
                     <br /><br />
+                    <a href="https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240"
+                        target="_blank">Donations
+                        are much appreciated.</a>
+                    <br /><br />
                     <h4>TL;DR</h4>Drugwars was a turn-based strategy computer game in which the player assumes the
                     role of
                     a drug
@@ -432,7 +437,8 @@
 
                     This policy is effective as of April 20, 2022.
                     <br /> <br /><br />
-                    The key is hidden in a dark <a href="metaverse/rooms.html" target="_blank">room</a> that's at the
+                    The key is hidden in a dark <a href="metaverse/rooms.html" target="_blank">room</a> that's at
+                    the
                     centre of a maze.
                     <br />
 
