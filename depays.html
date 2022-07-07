@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>THE COIN WAR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script defer src="https://integrate.depay.fi/widgets/v7.js">
+        import DePayWidgets from '@depay/widgets';
+    </script>
+    <!-- deathstar -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL01XG424Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GL01XG424Y');
+    </script>
+</head>
+
+<body>
+    <button onclick="DePayWidgets.Payment({
+        integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+        accept:[
+          {
+            blockchain: 'ethereum',
+            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+          }
+        ]
+      })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+        DAI</button>
+    <script>
+        DePayWidgets.Payment({
+            integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+            accept: [
+                {
+                    blockchain: 'ethereum',
+                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }
+            ]
+        })
+    </script>
+</body>
+
+</html>
