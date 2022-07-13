@@ -97,21 +97,25 @@
                                 <td>
                                     <h3>STABLECOINS</h3>
                                     <h4>DAI : $<span class=" cash"></span></h4>
-                                    <div class="login-section" style="line-height: 30px;">
+                                    <div class="login-section" style="line-height: 13px;">
                                         <br />
-                                        <button type="button" class="btn"><a class="login-btn">DEPOSIT DAI<br />VIA
-                                                WEB3</a></button>
+                                        <button type="button" class="btn"><a class="login-btn">DEPOSIT DAI</button></a>
                                         <span style="line-height: 40px;">
                                             <br />
                                             <button class="btn" type="button" data-dismiss="modal"
-                                                onclick="alert('WEB3 WALLET NOT FOUND')">WITHDRAW</button>
+                                                onclick="alert('DEPOSIT DAI FIRST')">WITHDRAW</button>
+                                            <br />
+                                            <button class="btn" type="button" data-dismiss="modal"
+                                                onclick="alert('DEPOSIT DAI FIRST')">LIQUIDITY</button>
                                         </span>
+
                                     </div>
-                                    <div class="dashboard-section" style="line-height: 20px;">
+                                    <div class="dashboard-section" style="line-height: 14px;">
                                         <br />
                                         <label>
                                             <div class="input-group" style="max-width: 120px;">
-                                                <input style="background-color:#222; border: solid 1px #333;"
+                                                <input
+                                                    style="background-color:#222; border: solid 1px #333;  display: none;"
                                                     type="number" min="0" value="1000"
                                                     class="form-control text-center" />
                                                 <span style="line-height: 36px;">
@@ -122,12 +126,31 @@
                                                             blockchain: 'ethereum',
                                                             token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
                                                             receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                          }, {
+                                                            blockchain: 'polygon',
+                                                            token: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                          }, {
+                                                            blockchain: 'polygon',
+                                                            token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                          }, {
+                                                            blockchain: 'ethereum',
+                                                            token: '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0',
+                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                          }, {
+                                                            blockchain: 'ethereum',
+                                                            token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                                           }
                                                         ]
                                                       })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
                                                         DAI</button>
                                                     <button class="btn" type="button" data-dismiss="modal"
                                                         onclick="alert('UNSUPPORTED')">WITHDRAW</button>
+                                                    <br />
+                                                    <button class="btn" type="button" data-dismiss="modal"
+                                                        onclick="alert('create.liquidity.pool@coinwar.app')">LIQUIDITY</button>
                                                 </span>
                                             </div>
                                         </label>
@@ -446,9 +469,9 @@
 
                     This policy is effective as of April 20, 2022.
                     <br /> <br /><br />
-                    The key is hidden in a dark <a href="metaverse/rooms.html" target="_blank">room</a> that's at
+                    The key is hidden in a dark (sh)<a href="metaverse/rooms.html" target="_blank">room</a> at
                     the
-                    centre of a maze.
+                    center of a maze.
                     <br />
 
                 </div>
@@ -785,7 +808,6 @@
                 padding: 0
             }
 
-            /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
             @media print {
 
                 *,
