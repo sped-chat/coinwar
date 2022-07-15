@@ -32,8 +32,6 @@
             DEX : <a data-toggle="modal" href="#modal-cities"><span class="city"></span></a>
             <br />
             <a data-toggle="modal" href="#modal-inventory">DAI</a> : $<span class="cash"></span>
-            <br />
-            <a data-toggle="modal" href="#modal-high-score"><span class="day"></span></a>
         </div>
         <div>
             <table class="table table-condensed drugs text-center">
@@ -78,15 +76,16 @@
                             <tr>
                                 <td>
                                     <h3>DEFI LOANS</h3>
-                                    <h4>$<span class="debt"></span></h4>
+                                    <h4>COMP : $<span class="debt"></span></h4>
                                     <br />
                                     <label>
                                         <div class="input-group" style="max-width: 100px;">
-                                            <input style="background-color:#222; border: solid 1px #333;" type="number"
-                                                min="0" value="1000" class="form-control text-center" />
                                             <span style="line-height: 36px;">
+                                                <input style="background-color:#222; border: solid 1px #333;"
+                                                    type="number" min="0" value="1000"
+                                                    class="form-control text-center" />
+                                                <br />
                                                 <button class=" btn defi" type="button" data-dismiss="modal">BORROW
-                                                    (29%)
                                                 </button>
                                                 <br />
                                                 <button class="btn paydefi" type="button"
@@ -98,21 +97,19 @@
                                 </td>
                                 <td>
                                     <h3>STABLECOINS</h3>
-                                    <h4>$<span class=" cash"></span></h4>
-                                    <div class="login-section" style="line-height: 13px;">
+                                    <h4>DAI : $<span class=" cash"></span></h4>
+                                    <div class="login-section" style="line-height: 20px;">
                                         <br />
-                                        <button type="button" class="btn"><a class="login-btn">DEPOSIT</button></a>
-                                        <span style="line-height: 40px;">
-                                            <br />
+                                        <span style="line-height: 36px;">
                                             <button class="btn" type="button" data-dismiss="modal"
                                                 onclick="alert('DEPOSIT FIRST')">WITHDRAW</button>
                                             <br />
+                                            <button type="button" class="btn"><a class="login-btn">DEPOSIT</button></a>
+                                            <br />
                                             <button class="btn" type="button" data-dismiss="modal"
-                                                onclick="alert('DEPOSIT FIRST')">LEND</button>
-                                        </span>
-
+                                                onclick="alert('DEPOSIT FIRST')">LEND</button></span>
                                     </div>
-                                    <div class="dashboard-section" style="line-height: 14px;">
+                                    <div class="dashboard-section" style="line-height: 20px;">
                                         <br />
                                         <label>
                                             <div class="input-group" style="max-width: 120px;">
@@ -152,7 +149,7 @@
                                                       })" class="btn land" type="button"
                                                         data-dismiss="modal">DEPOSIT</button>
                                                     <button class="btn" type="button" data-dismiss="modal"
-                                                        onclick="alert('create.liquidity.pool@coinwar.app')">LEND</button>
+                                                        onclick="alert('NO USDC FOUND')">LEND</button>
                                                 </span>
                                             </div>
                                         </label>
@@ -200,8 +197,8 @@
     <div class="modal fade text-center" id="modal-cities" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" data-l10n-id="choose-city"></h4>
+                <div class="modal-header xs-stats">
+                    <h3><a data-toggle="modal" href="#modal-high-score">YEAR : <span class="day"></span></a></h3>
                 </div>
                 <div class="modal-body cities">
                 </div>
@@ -276,7 +273,7 @@
                     <h2>HOW TO PLAY</h2>
                     You start with with $42 worth of DAI so you'll most likely want to take out a loan, which you can
                     do by clicking the <a data-dismiss="modal" data-toggle="modal"
-                        href="#modal-inventory"><span>WALLET</span></a> link. Connect to your <a
+                        href="#modal-inventory"><span>DAI</span></a> link. Connect to your <a
                         href="https://metamask.io/" target="_blank">WEB3 WALLET</a> to deposit and withdraw DAI.
                     Clicking the name of the <a data-dismiss="modal" data-toggle="modal"
                         href="#modal-cities">EXCHANGE</a> will advance a year (the world ends in 2031), display updated
