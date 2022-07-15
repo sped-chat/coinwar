@@ -29,11 +29,10 @@
             </a>
         </nav>
         <div class="stats text-center">
-            DEX : <a data-toggle="modal" href="#modal-cities"><span class="city"></span></a>
+            DEX : <a data-toggle="modal" href="#modal-cities"><span class="city"></span></a> (<span class="day"></span>)
             <br />
-            <a data-toggle="modal" href="#modal-inventory">DAI</a> : $<span class="cash"></span>
+            <a data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span class="cash"></span> (DAI)
             <br />
-            <a data-toggle="modal" href="#modal-high-score"><span class="day"></span></a>
         </div>
         <div>
             <table class="table table-condensed drugs text-center">
@@ -78,7 +77,7 @@
                             <tr>
                                 <td>
                                     <h3>DEFI LOANS</h3>
-                                    <h4>$<span class="debt"></span></h4>
+                                    <h4>COMP : $<span class="debt"></span></h4>
                                     <br />
                                     <label>
                                         <div class="input-group" style="max-width: 100px;">
@@ -86,7 +85,6 @@
                                                 min="0" value="1000" class="form-control text-center" />
                                             <span style="line-height: 36px;">
                                                 <button class=" btn defi" type="button" data-dismiss="modal">BORROW
-                                                    (29%)
                                                 </button>
                                                 <br />
                                                 <button class="btn paydefi" type="button"
@@ -98,17 +96,17 @@
                                 </td>
                                 <td>
                                     <h3>STABLECOINS</h3>
-                                    <h4>$<span class=" cash"></span></h4>
+                                    <h4>DAI : $<span class=" cash"></span></h4>
                                     <div class="login-section" style="line-height: 13px;">
                                         <br />
-                                        <button type="button" class="btn"><a class="login-btn">DEPOSIT</button></a>
+                                        <button type="button" class="btn"><a class="login-btn">DEPOSIT DAI</button></a>
                                         <span style="line-height: 40px;">
                                             <br />
                                             <button class="btn" type="button" data-dismiss="modal"
-                                                onclick="alert('DEPOSIT FIRST')">WITHDRAW</button>
+                                                onclick="alert('DEPOSIT DAI FIRST')">WITHDRAW</button>
                                             <br />
                                             <button class="btn" type="button" data-dismiss="modal"
-                                                onclick="alert('DEPOSIT FIRST')">LEND</button>
+                                                onclick="alert('DEPOSIT DAI FIRST')">LIQUIDITY</button>
                                         </span>
 
                                     </div>
@@ -121,9 +119,6 @@
                                                     type="number" min="0" value="1000"
                                                     class="form-control text-center" />
                                                 <span style="line-height: 36px;">
-                                                    <button class="btn" type="button" data-dismiss="modal"
-                                                        onclick="alert('NO USDC FOUND')">WITHDRAW</button>
-                                                    <br />
                                                     <button onclick="DePayWidgets.Payment({
                                                         integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
                                                         accept:[
@@ -149,10 +144,13 @@
                                                             receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                                           }
                                                         ]
-                                                      })" class="btn land" type="button"
-                                                        data-dismiss="modal">DEPOSIT</button>
+                                                      })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                                        DAI</button>
                                                     <button class="btn" type="button" data-dismiss="modal"
-                                                        onclick="alert('create.liquidity.pool@coinwar.app')">LEND</button>
+                                                        onclick="alert('UNSUPPORTED')">WITHDRAW</button>
+                                                    <br />
+                                                    <button class="btn" type="button" data-dismiss="modal"
+                                                        onclick="alert('create.liquidity.pool@coinwar.app')">LIQUIDITY</button>
                                                 </span>
                                             </div>
                                         </label>
