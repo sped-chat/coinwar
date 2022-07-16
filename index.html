@@ -68,15 +68,14 @@
         <div class="modal-dialog text-center">
             <div class="modal-content" style="background-color: #111;">
                 <div class="modal-header">
-                    <h1>COINWAR WALLET</h1>
+                    <h2>WAR WALLET</h2>
                 </div>
                 <div class="modal-body xs-stats">
                     <table class="table">
                         <tbody>
                             <tr>
                                 <td>
-                                    <h3>DEFI LOANS</h3>
-                                    <h4>COMP : $<span class="debt"></span></h4>
+                                    <h4>DEFI LOANS</h4>
                                     <br />
                                     <label>
                                         <div class="input-group" style="max-width: 100px;">
@@ -96,15 +95,15 @@
                                     <br /><br />
                                 </td>
                                 <td>
-                                    <h3>STABLECOINS</h3>
-                                    <h4>DAI : $<span class=" cash"></span></h4>
+                                    <h4>STABLECOINS</h4>
                                     <div class="login-section" style="line-height: 20px;">
                                         <br />
                                         <span style="line-height: 36px;">
+                                            <button type="button" class="btn"><a class="login-btn">DEPOSIT
+                                                    DAI</button></a>
+                                            <br />
                                             <button class="btn" type="button" data-dismiss="modal"
                                                 onclick="alert('DEPOSIT FIRST')">WITHDRAW</button>
-                                            <br />
-                                            <button type="button" class="btn"><a class="login-btn">DEPOSIT</button></a>
                                             <br />
                                             <button class="btn" type="button" data-dismiss="modal"
                                                 onclick="alert('DEPOSIT FIRST')">LEND</button></span>
@@ -118,9 +117,6 @@
                                                     type="number" min="0" value="1000"
                                                     class="form-control text-center" />
                                                 <span style="line-height: 36px;">
-                                                    <button class="btn" type="button" data-dismiss="modal"
-                                                        onclick="alert('NO USDC FOUND')">WITHDRAW</button>
-                                                    <br />
                                                     <button onclick="DePayWidgets.Payment({
                                                         integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
                                                         accept:[
@@ -146,10 +142,13 @@
                                                             receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                                           }
                                                         ]
-                                                      })" class="btn land" type="button"
-                                                        data-dismiss="modal">DEPOSIT</button>
+                                                      })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                                        DAI</button>
                                                     <button class="btn" type="button" data-dismiss="modal"
-                                                        onclick="alert('NO USDC FOUND')">LEND</button>
+                                                        onclick="alert('NO WARCOIN FOUND')">WITHDRAW</button>
+                                                    <br />
+                                                    <button class="btn" type="button" data-dismiss="modal"
+                                                        onclick="alert('NO WARCOIN FOUND')">LEND</button>
                                                 </span>
                                             </div>
                                         </label>
