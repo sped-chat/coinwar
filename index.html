@@ -31,7 +31,7 @@
         <div class="stats text-center">
             DEX : <a data-toggle="modal" href="#modal-cities"><span class="city"></span></a>
             <br />
-            <a data-toggle="modal" href="#modal-inventory">DAI</a> : $<span class="cash"></span>
+            <a data-toggle="modal" href="#modal-inventory">USDC</a> : $<span class="cash"></span>
         </div>
         <div>
             <table class="table table-condensed drugs text-center">
@@ -74,142 +74,6 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td>
-                                    <h4>DEFI LOANS</h4>
-                                    <br />
-                                    <label>
-                                        <div class="input-group" style="max-width: 100px;">
-                                            <span style="line-height: 36px;">
-                                                <input style="background-color:#222; border: solid 1px #333;"
-                                                    type="number" min="0" value="1000"
-                                                    class="form-control text-center" />
-                                                <br />
-                                                <button class=" btn defi" type="button" data-dismiss="modal">BORROW
-                                                </button>
-                                                <br />
-                                                <button class="btn paydefi" type="button"
-                                                    data-dismiss="modal">REPAY</button>
-                                            </span>
-                                        </div>
-                                    </label>
-                                    <br /><br />
-                                </td>
-                                <td>
-                                    <h4>STABLECOINS</h4>
-                                    <div class="login-section" style="line-height: 20px;">
-                                        <br />
-                                        <span style="line-height: 36px;">
-                                            <button type="button" class="btn"><a class="login-btn">DEPOSIT
-                                                    DAI</button></a>
-                                            <br />
-                                            <button class="btn" type="button" data-dismiss="modal"
-                                                onclick="alert('DEPOSIT FIRST')">WITHDRAW</button>
-                                            <br />
-                                            <button class="btn" type="button" data-dismiss="modal"
-                                                onclick="alert('DEPOSIT FIRST')">LEND</button></span>
-                                    </div>
-                                    <div class="dashboard-section" style="line-height: 20px;">
-                                        <br />
-                                        <label>
-                                            <div class="input-group" style="max-width: 120px;">
-                                                <input
-                                                    style="background-color:#222; border: solid 1px #333;  display: none;"
-                                                    type="number" min="0" value="1000"
-                                                    class="form-control text-center" />
-                                                <span style="line-height: 36px;">
-                                                    <button onclick="DePayWidgets.Payment({
-                                                        integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
-                                                        accept:[
-                                                          {
-                                                            blockchain: 'ethereum',
-                                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                          }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0xe87c2deb370231729e7248386a65420f9282d2bb',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'polygon',
-                                                            token: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'ethereum',
-                                                            token: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'ethereum',
-                                                            token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'ethereum',
-                                                            token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'ethereum',
-                                                            token: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }, {
-                                                            blockchain: 'ethereum',
-                                                            token: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
-                                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                                            }
-                                                        ]
-                                                      })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
-                                                        DAI</button>
-                                                    <button class="btn" type="button" data-dismiss="modal"
-                                                        onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">WITHDRAW
-                                                    </button>
-                                                    <br />
-                                                    <button
-                                                        onclick="DePayWidgets.Sale({
-                                                        sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});"
-                                                        class="btn land" type="button"
-                                                        data-dismiss="modal">LEND</button>
-                                                </span>
-                                            </div>
-                                        </label>
-                                        <!--
-                                        <label>
-                                            <div class="input-group" style="max-width: 200px;">
-                                                <input
-                                                    style="background-color:#222; border: solid 1px #333; display: none;"
-                                                    type="number" min="100000" value="100000"
-                                                    class="form-control text-center" />
-                                                <span style="line-height: 36px;">
-                                                    <button class="btn land" type="button" data-dismiss="modal">DEPOSIT
-                                                        </button>
-                                                </span>
-                                            </div>
-                                        </label>
-                                        -->
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
                                 <th class="text-center">COIN</th>
                                 <th class="text-center">QUANTITY</th>
                             </tr>
@@ -223,11 +87,80 @@
                     </table>
                 </div>
                 <div class="modal-footer">
+                    <label>
+                        <div class="input-group" style="max-width: 120px;">
+                            <input style="display: none;" type="number" value="1000" class="form-control" />
+                            <span>
+                                <button onclick="DePayWidgets.Payment({
+                                                integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+                                                accept:[
+                                                  {
+                                                    blockchain: 'ethereum',
+                                                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                  }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0xe87c2deb370231729e7248386a65420f9282d2bb',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'polygon',
+                                                    token: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'ethereum',
+                                                    token: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'ethereum',
+                                                    token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'ethereum',
+                                                    token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'ethereum',
+                                                    token: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }, {
+                                                    blockchain: 'ethereum',
+                                                    token: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
+                                                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                                    }
+                                                ]
+                                              })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                    USDC</button>
+                            </span>
+                        </div>
+                    </label>
                     <!--
-                    <button type="button" class="btn"><a class="logout-btn">LOGOUT</a></button>
-                    -->
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
+                    <button class="btn" type="button" data-dismiss="modal" onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">WITHDRAW</button>
+                    <button onclick="DePayWidgets.Sale({sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});" class="btn land" type="button" data-dismiss="modal">LEND</button>
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close"></button>-->
                 </div>
             </div>
         </div>
@@ -310,12 +243,11 @@
                 <div class="modal-body">
 
                     <h2>HOW TO PLAY</h2>
-                    You start with with $42 worth of DAI so you'll most likely want to take out a loan, which you can
-                    do by clicking the <a data-dismiss="modal" data-toggle="modal"
-                        href="#modal-inventory"><span>DAI</span></a> link. Connect to your <a
-                        href="https://metamask.io/" target="_blank">WEB3 WALLET</a> to deposit and withdraw DAI.
+                    You start with with $42 (USDC) so you'll most likely want to make a deposit by clicking the <a
+                        data-dismiss="modal" data-toggle="modal" href="#modal-inventory"><span>USDC</span></a> link.
                     Clicking the name of the <a data-dismiss="modal" data-toggle="modal"
-                        href="#modal-cities">EXCHANGE</a> will advance a year (the world ends in 2031), display updated
+                        href="#modal-cities">EXCHANGE</a> will advance a year
+                    (the world ends in 2031), display updated
                     rates for the exchange you have chosen, and any APR debt (29%) will be added to your current
                     balance.
                     <br /><br />
@@ -585,6 +517,24 @@
                     <h3 class="modal-title text-center">DEFI LENDING</h3>
                 </div>
                 <div class="modal-body">
+                     <h4>DEFI LOANS</h4>
+                                    <br />
+                                    <label>
+                                        <div class="input-group" style="max-width: 100px;">
+                                            <span style="line-height: 36px;">
+                                                <input style="background-color:#222; border: solid 1px #333;"
+                                                    type="number" min="0" value="1000"
+                                                    class="form-control text-center" />
+                                                <br />
+                                                <button class=" btn defi" type="button" data-dismiss="modal">BORROW
+                                                </button>
+                                                <br />
+                                                <button class="btn paydefi" type="button"
+                                                    data-dismiss="modal">REPAY</button>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    <br /><br />
                     <h4 class="modal-title">COMPOUND FINANCE (29% APR)<br /></h4>
                     <br />
                     <label>
@@ -14999,86 +14949,6 @@
             }
 
         })(this);
-
-
-
-
-
-
-
-
-
-
-
-        // web3
-
-        window.addEventListener('DOMContentLoaded', web3lib)
-        function web3lib() {
-            let script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js';
-            document.body.appendChild(script);
-        }
-        window.userWalletAddress = null;
-        window.onload = async (event) => {
-            if (window.ethereum) {
-                window.web3 = new Web3(window.ethereum);
-            }
-            window.userWalletAddress = window.localStorage.getItem("userWalletAddress");
-            showUserDashboard();
-        };
-        const loginWithEth = async () => {
-            if (window.web3) {
-                try {
-                    const selectedAccount = await window.ethereum
-                        .request({
-                            method: "eth_requestAccounts",
-                        })
-                        .then((accounts) => accounts[0])
-                        .catch(() => {
-                            throw Error("WEB3 WALLET NOT FOUND");
-                        });
-                    window.userWalletAddress = selectedAccount;
-                    window.localStorage.setItem("userWalletAddress", selectedAccount);
-                    showUserDashboard();
-                } catch (error) {
-                    alert(error);
-                }
-            } else {
-                alert("WEB3 WALLET NOT FOUND");
-            }
-        };
-        const showUserDashboard = async () => {
-            if (!window.userWalletAddress) {
-                document.querySelector(".login-section").style.display = "";
-                document.querySelector(".dashboard-section").style.display = "none"
-                return false;
-            }
-            document.querySelector(".login-section").style.display = "none";
-            document.querySelector(".dashboard-section").style.display = ""
-            showUserWalletAddress();
-            getWalletBalance();
-        };
-        const showUserWalletAddress = () => {
-            const walletAddressEl = document.querySelector(".wallet-address");
-            walletAddressEl.innerHTML = window.userWalletAddress;
-        };
-        const getWalletBalance = async () => {
-            if (!window.userWalletAddress) {
-                return false;
-            }
-            const balance = await window.web3.eth.getBalance(window.userWalletAddress);
-            document.querySelector(".wallet-balance").innerHTML = web3.utils.fromWei(
-                balance,
-                "ether"
-            );
-        };
-        const logout = () => {
-            window.userWalletAddress = null;
-            window.localStorage.removeItem("userWalletAddress");
-            showUserDashboard();
-        };
-        document.querySelector(".login-btn").addEventListener("click", loginWithEth);
-        document.querySelector(".logout-btn").addEventListener("click", logout);
     </script>
     <script>
         // depay
