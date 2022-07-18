@@ -85,10 +85,11 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="modal-footer">
+                    <br /><br />
                     <label>
-                        <div class="input-group" style="max-width: 120px;">
+                        <div class="input-group">
+                            <button data-toggle="modal" class="btn buy-xs" href="#modal-pawn-shop"
+                                data-dismiss="modal">LEND</button>
                             <input style="display: none;" type="number" value="1000" class="form-control" />
                             <span>
                                 <button onclick="DePayWidgets.Payment({
@@ -152,15 +153,45 @@
                                                     receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                                     }
                                                 ]
-                                              })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
-                                    USDC</button>
+                                              })" class="btn land" type="button" data-dismiss="modal">DEPOSIT</button>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog text-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">DEFI LENDING</h3>
+                </div>
+                <div class="modal-body xs-stats">
+                    <h4>OUTSTANDING LOANS : $<span class="debt"></span></h4><br />
+                    COMPOUND FINANCE (29% APR)<br />
+                    <label>
+                        <div class="input-group" style="max-width: 225px;">
+                            <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                value="0" class="form-control text-center" />
+                            <span class="input-group-btn">
+                                <button class="btn land" type="button" data-dismiss="modal"
+                                    onclick="DePayWidgets.Sale({sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});">BORROW
+                                </button>
+                                <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
                             </span>
                         </div>
                     </label>
                     <!--
-                    <button class="btn" type="button" data-dismiss="modal" onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">WITHDRAW</button>
-                    <button onclick="DePayWidgets.Sale({sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});" class="btn land" type="button" data-dismiss="modal">LEND</button>
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close"></button>-->
+                        <button class="btn" type="button" data-dismiss="modal"
+                        onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">ADD
+                        LIQUIDITY</button>
+                    <h4>COLLAPSED MARKETS:</h5>
+                        <h5><s>COLLATERALIZED LENDING (VARIABLE APR)</s></h5>
+                        <h5><s>AAVE LENDING (9% APR)</s></h5>
+                        <h5><s>YIELD FARMING</s></h5>
+                    -->
                 </div>
             </div>
         </div>
@@ -173,10 +204,6 @@
                     <h3><a data-toggle="modal" href="#modal-high-score">YEAR : <span class="day"></span></a></h3>
                 </div>
                 <div class="modal-body cities">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
                 </div>
             </div>
         </div>
@@ -508,63 +535,6 @@
             </div>
         </div>
     </div>
-
-    <!--
-    <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog text-center">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title text-center">DEFI LENDING</h3>
-                </div>
-                <div class="modal-body">
-                     <h4>DEFI LOANS</h4>
-                                    <br />
-                                    <label>
-                                        <div class="input-group" style="max-width: 100px;">
-                                            <span style="line-height: 36px;">
-                                                <input style="background-color:#222; border: solid 1px #333;"
-                                                    type="number" min="0" value="1000"
-                                                    class="form-control text-center" />
-                                                <br />
-                                                <button class=" btn defi" type="button" data-dismiss="modal">BORROW
-                                                </button>
-                                                <br />
-                                                <button class="btn paydefi" type="button"
-                                                    data-dismiss="modal">REPAY</button>
-                                            </span>
-                                        </div>
-                                    </label>
-                                    <br /><br />
-                    <h4 class="modal-title">COMPOUND FINANCE (29% APR)<br /></h4>
-                    <br />
-                    <label>
-                        <div class="input-group" style="max-width: 225px;">
-                            <input style="background-color:#222; border: solid 1px #333;" type="number" min="0" value=""
-                                class="form-control text-center" />
-                            <span class="input-group-btn">
-                                <button class="btn land" type="button" data-dismiss="modal">BORROW
-                                </button>
-                                <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
-                            </span>
-                        </div>
-                    </label>
-                    <h5>OUTSTANDING LOANS : $<span class="debt"></span></h5>
-                    
-                            <br /> <br />
-                            <h4>COLLAPSED MARKETS:</h5>
-                                <h5><s>COLLATERALIZED LENDING (VARIABLE APR)</s></h5>
-                                <h5><s>AAVE LENDING (9% APR)</s></h5>
-                                <h5><s>YIELD FARMING</s></h5>
-                            
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
 
     <!-- LOCAL STYLESHEET -->
     <div id="stylesheet">
