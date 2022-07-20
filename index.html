@@ -5,7 +5,6 @@
     <title>THE COIN WAR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="prefetch" type="application/l10n" href="engrish.json" />
     <link rel="apple-touch-icon" href="metaverse/img/safari_is_ancient.png">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
@@ -200,10 +199,10 @@
     <div class="modal fade text-center" id="modal-cities" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header xs-stats">
-                    <h3><a data-toggle="modal" href="#modal-high-score">YEAR : <span class="day"></span></a></h3>
-                </div>
                 <div class="modal-body cities">
+                </div>
+                <div class="modal-body xs-stats">
+                    <h4><a data-toggle="modal" href="#modal-high-score">YEAR : <span class="day"></span></a></h4>
                 </div>
             </div>
         </div>
@@ -13382,31 +13381,127 @@
                 },
 
                 loadJSON: function loadJSON(url, callback) {
-                    var xhr = new XMLHttpRequest();
-
-                    if (xhr.overrideMimeType) {
-                        xhr.overrideMimeType('application/json');
+                    let json = {
+                        "game": " ",
+                        "new-game": " RESET",
+                        "change-name": " ALIAS",
+                        "high-score": " LEADERBOARD",
+                        "about": " ",
+                        "move": " SWAP",
+                        "pawn-shop": " DEFI LOANS",
+                        "inventory": " WEB3 WALLET",
+                        "stats": " ",
+                        "day": " YEAR",
+                        "cash": " DAI",
+                        "guns": " Guns",
+                        "debt": " DEFI LOAN",
+                        "health": " ",
+                        "stock": " WALLET",
+                        "bank-account": " USD",
+                        "drugs": " ",
+                        "item": " ASSET",
+                        "value": " PRICE",
+                        "buy": " BUY",
+                        "sell": " SELL",
+                        "max": " MAX",
+                        "borrow": " BORROW",
+                        "you-currently-owe": " YOU OWE",
+                        "borrow-more-money": " BBORROW",
+                        "pay-debt": " PAY",
+                        "news": " ",
+                        "choose-city": " CHOOSE AN EXCHANGE",
+                        "close": " CLOSE",
+                        "pay": " PAY",
+                        "action": " ",
+                        "see-recent-news": " ~~~",
+                        "hide": " ",
+                        "no-drug-yet": " ... wow such empty ...",
+                        "final-score": " FINAL SCORE",
+                        "by": " by",
+                        "end": " END",
+                        "prompt-name": " DEFINE LEADERBOARD ALIAS",
+                        "prompt-name-again": " NO SOUP FOR YOU",
+                        "dope-ada": " ADA",
+                        "dope-alcx": " ALCX",
+                        "dope-aave": " AAVE",
+                        "dope-amc": " AMC",
+                        "dope-ape": " APE",
+                        "dope-atom": " ATOM",
+                        "dope-avax": " AVAX",
+                        "dope-axs": " AXS",
+                        "dope-bnb": " BNB",
+                        "dope-btc": " BTC",
+                        "dope-boo": " BOO",
+                        "dope-cake": " CAKE",
+                        "dope-comp": " COMP",
+                        "dope-doge": " DOGE",
+                        "dope-dot": " DOT",
+                        "dope-eth": " ETH",
+                        "dope-fil": " FIL",
+                        "dope-ftm": " FTM",
+                        "dope-ftx": " FTX",
+                        "dope-gme": " GME",
+                        "dope-icp": " ICP",
+                        "dope-link": " LINK",
+                        "dope-ltc": " LTC",
+                        "dope-mana": " MANA",
+                        "dope-matic": " MATIC",
+                        "dope-mkr": " MKR",
+                        "dope-oath": " OATH",
+                        "dope-sand": " SAND",
+                        "dope-shib": " SHIB",
+                        "dope-sol": " SOL",
+                        "dope-tron": " TRON",
+                        "dope-uni": " UNI",
+                        "dope-xrp": " XRP",
+                        "city-binance": " BINANCE",
+                        "city-coinbase": " COINBASE",
+                        "city-curve": " CURVE",
+                        "city-dydx": " DYDX",
+                        "city-ftx": " FTX",
+                        "city-gemini": " GEMINI",
+                        "city-honey": " HONEY",
+                        "city-jupiter": " JUPITER",
+                        "city-kine": " KINE",
+                        "city-kraken": " KRAKEN",
+                        "city-kucoin": " KUCOIN",
+                        "city-pancake": " PANCAKE",
+                        "city-spooky": " SPOOKY",
+                        "city-sushi": " SUSHI",
+                        "city-traderjoe": " TRADERJOE",
+                        "city-uni": " UNI",
+                        "notification-welcome": " Obviously, you're not a golfer.",
+                        "notification-move": "",
+                        "notification-bought": " SWAPPED \{\{quantity}} \{\{drug}} AT $\{\{price}}",
+                        "notification-sold": " SWAPPED \{\{quantity}} \{\{drug}} AT $\{\{price}}",
+                        "notification-need-more-money": " YOU'RE CASHED OUT",
+                        "notification-need-more-space": " ",
+                        "notification-do-not-own": " ",
+                        "message-100000000": " Life forms from destruction, disorder and chaos.",
+                        "message-1000000": " Character is what you are in the dark.",
+                        "message-400000": "  We suffer more in imagination than in reality.",
+                        "message-300000": " ",
+                        "message-200000": " ",
+                        "message-100000": " ",
+                        "message-50000": " ",
+                        "message-10000": " ",
+                        "message-5000": " ",
+                        "message-1000": " ",
+                        "message-0": " Maybe pull out a defi loan?",
+                        "message--4050": " Probably should pull out a defi loan?",
+                        "message--10000": " You know, it's fairly easy to pull out a defi loan.",
+                        "message--99999": " Probably should have pulled out a dfi loan, just sayin'.",
+                        "message--100000": " Maybe just reset.",
+                        "message-bad": " Ouch",
+                        "about-title": " ",
+                        "about-text": " ",
+                        "about-attribution": " ",
+                        "about-privacy-policy": " ",
+                        "about-glyphicons": " "
                     }
+                    callback(null, json);
 
-                    xhr.open('GET', url);
-
-                    xhr.responseType = 'json';
-                    xhr.addEventListener('load', function io_loadjson(e) {
-                        if (e.target.status === 200 || e.target.status === 0) {
-                            callback(null, e.target.response);
-                        } else {
-                            callback(new L10nError('Not found: ' + url));
-                        }
-                    });
-                    xhr.addEventListener('error', callback);
-                    xhr.addEventListener('timeout', callback);
-
-                    // the app: protocol throws on 404, see https://bugzil.la/827243
-                    try {
-                        xhr.send(null);
-                    } catch (e) {
-                        callback(new L10nError('Not found: ' + url));
-                    }
+                    return;
                 }
             };
 
@@ -14268,6 +14363,8 @@
                 }
 
                 if (l10nLoads === 0) {
+                    io.loadJSON("", onJSONLoaded, sync);
+
                     onL10nLoaded();
                     return;
                 }
@@ -14287,20 +14384,20 @@
                     onL10nLoaded(err);
                 }
 
+                // for (var i = 0; i < ctx.resLinks.length; i++) {
+                //     console.log("Here?")
+                //     var path = ctx.resLinks[i].replace('{{locale}}', this.id);
+                //     var type = path.substr(path.lastIndexOf('.') + 1);
 
-                for (var i = 0; i < ctx.resLinks.length; i++) {
-                    var path = ctx.resLinks[i].replace('{{locale}}', this.id);
-                    var type = path.substr(path.lastIndexOf('.') + 1);
-
-                    switch (type) {
-                        case 'json':
-                            io.loadJSON(path, onJSONLoaded, sync);
-                            break;
-                        case 'properties':
-                            io.load(path, onPropLoaded, sync);
-                            break;
-                    }
-                }
+                //     switch (type) {
+                //         case 'json':
+                //             io.loadJSON(path, onJSONLoaded, sync);
+                //             break;
+                //         case 'properties':
+                //             io.load(path, onPropLoaded, sync);
+                //             break;
+                //     }
+                // }
             };
 
             Locale.prototype.addAST = function (ast) {
@@ -14913,10 +15010,6 @@
             script.src = 'https://integrate.depay.fi/widgets/v7.js';
             document.body.appendChild(script);
         }
-
-        // fix max_drugs
-        let test = ('max_drugs' in DataCenter.cities[1] ? DataCenter.cities[1].max_drugs : DataCenter.drugs.length);
-
     </script>
 </body>
 
