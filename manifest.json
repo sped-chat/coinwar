@@ -1,0 +1,20 @@
+{
+    "name": "THE COIN WAR",
+    "short_name": "COINWAR",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "description": "Obviously, you're not a golfer.",
+    "lang": "en-US",
+    "dir": "auto",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "bag.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
