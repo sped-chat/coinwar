@@ -79,9 +79,13 @@
                     <label>
                         <div class="input-group">
                             <button data-toggle="modal" class="btn buy-xs" href="#modal-pawn-shop"
-                                data-dismiss="modal">LEND</button>
+                                data-dismiss="modal">LOANS</button>
                             <input style="display: none;" type="number" value="1000" class="form-control" />
+
                             <span>
+                                <button data-toggle="modal" class="btn land" data-dismiss="modal"
+                                    onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')" />DEPOSIT</button>
+                                <!-- depay
                                 <button onclick="DePayWidgets.Payment({
                                     integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
                                     accept:[
@@ -140,6 +144,7 @@
                                         }]
                                     })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
                                 </button>
+                            -->
                             </span>
                         </div>
                     </label>
@@ -158,13 +163,16 @@
                     <h4>OUTSTANDING LOANS : $<span class="debt"></span></h4><br />
                     COMPOUND FINANCE (29% APR)<br />
                     <label>
-                        <div class="input-group" style="max-width: 225px;">
+                        <div class="input-group" style="max-width: 250px;">
                             <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
                                 value="0" class="form-control text-center" />
                             <span class="input-group-btn">
+                                <!-- depay 
                                 <button class="btn land" type="button" data-dismiss="modal"
                                     onclick="DePayWidgets.Sale({sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});">BORROW
                                 </button>
+                            -->
+                                <button class="btn land" type="button" data-dismiss="modal">BORROW</button>
                                 <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
                             </span>
                         </div>
@@ -8423,13 +8431,14 @@
 
         })(this);
 
-        // depay
+        /*
         window.addEventListener('load', depay)
         function depay() {
             let script = document.createElement('script');
             script.src = 'https://integrate.depay.fi/widgets/v7.js';
             document.body.appendChild(script);
         }
+        */
     </script>
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
         data-cf-beacon='{"token": "78c4cd65bf1e452ea71651375e17a848"}'></script>
