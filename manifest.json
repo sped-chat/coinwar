@@ -12,8 +12,14 @@
     "icons": [
         {
             "src": "bag.png",
-            "sizes": "512x512",
+            "sizes": "16x16 32x32 64x64 128x128 256x256 512x512 1024x1024",
             "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "bag.svg",
+            "sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024 2048x2048 4096x4096",
+            "type": "image/svg+xml",
             "purpose": "any"
         }
     ]
