@@ -35,7 +35,7 @@
             </a>
         </nav>
         <div class="stats text-center">
-            DEX : <a data-toggle="modal" href="#modal-cities"><span class="city"></span></a>
+            <a data-toggle="modal" href="#modal-pawn-shop">DEFI LOANS</a> : $<span class="debt"></span>
             <br />
             <a data-toggle="modal" href="#modal-inventory">USDC</a> : $<span class="cash"></span>
         </div>
@@ -61,12 +61,6 @@
             </table>
             <h4 class="xs-stats text-center">DEX : <a type="button" class="btn btn-default" data-toggle="modal"
                     href="#modal-cities"><span class="city"></span></a></h4>
-            <br />
-        </div>
-        <div class="text-center">
-            <p>
-                <a href="https://metaverse.coinwar.app" target="_blank">Obviously, you're not a golfer</a>.
-            </p>
         </div>
     </div>
 
@@ -94,77 +88,72 @@
                     <br /><br />
                     <label>
                         <div class="input-group">
-                            <button data-toggle="modal" class="btn buy-xs" href="#modal-pawn-shop"
-                                data-dismiss="modal">DEFI LOANS</button>
                             <input style="display: none;" type="number" value="1" class="form-control" />
                             <span>
                                 <button data-toggle="modal" class="btn land" data-dismiss="modal"
                                     onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')" />DEPOSIT
                                 USDC</button>
                                 <!-- depay
-                                <button onclick="DePayWidgets.Payment({
-                                    integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
-                                    accept:[
-                                        {
-                                        blockchain: 'ethereum',
-                                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'polygon',
-                                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'polygon',
-                                        token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'polygon',
-                                        token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'polygon',
-                                        token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'polygon',
-                                        token: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'polygon',
-                                        token: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'polygon',
-                                        token: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'ethereum',
-                                        token: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'ethereum',
-                                        token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'ethereum',
-                                        token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'ethereum',
-                                        token: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }, {
-                                        blockchain: 'ethereum',
-                                        token: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                        }]
-                                    })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
-                                </button>
-                            -->
+                                    <button onclick="DePayWidgets.Payment({
+                                        integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+                                        accept:[
+                                            {
+                                            blockchain: 'ethereum',
+                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'polygon',
+                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'polygon',
+                                            token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'polygon',
+                                            token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'polygon',
+                                            token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'polygon',
+                                            token: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'polygon',
+                                            token: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'polygon',
+                                            token: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'ethereum',
+                                            token: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'ethereum',
+                                            token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'ethereum',
+                                            token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'ethereum',
+                                            token: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }, {
+                                            blockchain: 'ethereum',
+                                            token: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
+                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                            }]
+                                        })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                    </button>
+                                -->
                             </span>
-                            <br /><br />
-                            <button data-toggle="modal" class="btn buy-xs" href="#modal-prices"
-                                data-dismiss="modal">HISTORICAL DATA</button>
                         </div>
                     </label>
                 </div>
@@ -175,35 +164,41 @@
     <div class="modal fade" id="modal-pawn-shop" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog text-center">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title text-center">DEFI LENDING</h3>
-                </div>
                 <div class="modal-body xs-stats">
-                    <h4>OUTSTANDING LOANS : $<span class="debt"></span></h4><br />
-                    COMPOUND FINANCE (29% APR)<br />
+                    <h3>DEFI LOANS : $<span class="debt"></span></h3>
+                    <h4>USDC : $<span class="cash"></span></h4>
+                    <br />
                     <label>
-                        <div class="input-group" style="max-width: 250px;">
+                        <div class="input-group" style="max-width: 200px;">
                             <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
                                 value="0" class="form-control text-center" />
                             <span class="input-group-btn">
-                                <!-- depay 
-                                <button class="btn land" type="button" data-dismiss="modal"
-                                    onclick="DePayWidgets.Sale({sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});">BORROW
-                                </button>
-                            -->
                                 <button class="btn land" type="button" data-dismiss="modal">BORROW</button>
+                            </span>
+                        </div>
+                    </label>
+                    <br />
+                    <label>
+                        <div class="input-group" style="max-width: 200px;">
+                            <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                                value="0" class="form-control text-center" />
+                            <span class="input-group-btn">
                                 <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
                             </span>
                         </div>
                     </label>
                     <!--
-                        <button class="btn" type="button" data-dismiss="modal"
-                        onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">ADD
-                        LIQUIDITY</button>
+                    <br /><br />
                     <h4>COLLAPSED MARKETS:</h5>
                         <h5><s>COLLATERALIZED LENDING (VARIABLE APR)</s></h5>
                         <h5><s>AAVE LENDING (9% APR)</s></h5>
                         <h5><s>YIELD FARMING</s></h5>
+                         <button class="btn land" type="button" data-dismiss="modal"
+                                    onclick="DePayWidgets.Sale({sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});">BORROW
+                                </button>
+                        <button class="btn" type="button" data-dismiss="modal"
+                        onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">ADD
+                        LIQUIDITY</button>
                     -->
                 </div>
             </div>
@@ -265,24 +260,65 @@
                     <a class="new-name" href="#">CHANGE ALIAS</a>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close"
+                        onclick="window.open('https://metaverse.coinwar.app')">
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade text-center" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h1>HOW TO PLAY</h1>
-                    You can make a deposit or take out a loan by clicking the USDC link, which also displays all
-                    assets you currently hold in your wallet, and the 2020-2036 (the world ends in 2036) market data.
-                    Clicking the name of the exchange will advance a year. display updated
-                    rates for the exchange you have chosen, and any APR debt (29%) will be added to your current
-                    balance.
-                    <br /> <br /><br /><br />
+                    <h1>2020-2036 MARKET DATA</h1>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    ADA<br />LOW (1), HIGH (2)<br /><br />
+                                    ALCX<br />L (20), H (2K)<br /><br />
+                                    AAVE<br />L (28), H (632)<br /><br />
+                                    AMC<br />L (2), H (59)<br /><br />
+                                    APE<br />L (3), H (26)<br /><br />
+                                    ATOM<br />L (2), H (45)<br /><br />
+                                    AVAX<br />L (3), H (134)<br /><br />
+                                    AXS<br />L (1), H (160)<br /><br />
+                                    BNB<br />L (10), H (700<br /><br />
+                                    BTC<br />L (5K), H (69K)<br /><br />
+                                    BOO<br />L (1), H (10)
+                                </td>
+                                <td>
+                                    CAKE<br />LOW (1), HIGH (42)<br /><br />
+                                    COMP<br />L (27), H (854)<br /><br />
+                                    DOGE<br />L (69), H (420)<br /><br />
+                                    DOT<br />L (1), H (54)<br /><br />
+                                    ETH<br />L (100), H (5K)<br /><br />
+                                    FIL<br />L (5), H (188)<br /><br />
+                                    FTM<br />L (1), H (13)<br /><br />
+                                    FTX<br />L (2), H (80)<br /><br />
+                                    GME<br />L (4), H (325)<br /><br />
+                                    ICP<br />L (5), H (364)<br /><br />
+                                    LINK<br />L (2), H (53)
+                                </td>
+                                <td>
+                                    LTC<br />LOW (2), HIGH (278)<br /><br />
+                                    MANA<br />L (1), H (6)<br /><br />
+                                    MATIC<br />L (1), H (11)<br /><br />
+                                    MKR<br />L (206), H (6K)<br /><br />
+                                    OATH<br />L (1), H (10)<br /><br />
+                                    SAND<br />L (1), H (9)<br /><br />
+                                    SHIB<br />L (1), H (7)<br /><br />
+                                    SOL<br />L (1), H (260)<br /><br />
+                                    TRON<br />L (1), H (9)<br /><br />
+                                    UNI<br />L (2), H (43)<br /><br />
+                                    XRP<br />L (1), H (4)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br /> <br />
                     <h1>PRIVACY POLICY</h1> This agreement is between you and the gigantic business entity called
                     &quot;coinwar.app&quot; (hereafter referred to as The Corporation). By using this
                     service, you agree to the following: <br /><br />
@@ -392,71 +428,9 @@
                     with the laws of California and you irrevocably submit to the exclusive jurisdiction of the
                     courts in that State or location.<br /> <br />
                     This policy is effective as of April 20, 2022.
-                    <br /> <br /><br /><br />
-                    <h1>SOURCE</h1>
-                    GitHub repository is <a href="https://github.com/thecoinwar/thecoinwar.github.io"
-                        target="_blank">here</a> and the IPFS clone is <a href="https://icy-credit-8669.on.fleek.co"
-                        target="_blank">here</a>.
-                    <br />
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade text-center" id="modal-prices" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <table class="table" style="background-color: #111;">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    ADA<br />LOW (1), HIGH (2)<br /><br />
-                                    ALCX<br />L (20), H (2K)<br /><br />
-                                    AAVE<br />L (28), H (632)<br /><br />
-                                    AMC<br />L (2), H (59)<br /><br />
-                                    APE<br />L (3), H (26)<br /><br />
-                                    ATOM<br />L (2), H (45)<br /><br />
-                                    AVAX<br />L (3), H (134)<br /><br />
-                                    AXS<br />L (1), H (160)<br /><br />
-                                    BNB<br />L (10), H (700<br /><br />
-                                    BTC<br />L (5K), H (69K)<br /><br />
-                                    BOO<br />L (1), H (10)
-                                </td>
-                                <td>
-                                    CAKE<br />LOW (1), HIGH (42)<br /><br />
-                                    COMP<br />L (27), H (854)<br /><br />
-                                    DOGE<br />L (69), H (420)<br /><br />
-                                    DOT<br />L (1), H (54)<br /><br />
-                                    ETH<br />L (100), H (5K)<br /><br />
-                                    FIL<br />L (5), H (188)<br /><br />
-                                    FTM<br />L (1), H (13)<br /><br />
-                                    FTX<br />L (2), H (80)<br /><br />
-                                    GME<br />L (4), H (325)<br /><br />
-                                    ICP<br />L (5), H (364)<br /><br />
-                                    LINK<br />L (2), H (53)
-                                </td>
-                                <td>
-                                    LTC<br />LOW (2), HIGH (278)<br /><br />
-                                    MANA<br />L (1), H (6)<br /><br />
-                                    MATIC<br />L (1), H (11)<br /><br />
-                                    MKR<br />L (206), H (6K)<br /><br />
-                                    OATH<br />L (1), H (10)<br /><br />
-                                    SAND<br />L (1), H (9)<br /><br />
-                                    SHIB<br />L (1), H (7)<br /><br />
-                                    SOL<br />L (1), H (260)<br /><br />
-                                    TRON<br />L (1), H (9)<br /><br />
-                                    UNI<br />L (2), H (43)<br /><br />
-                                    XRP<br />L (1), H (4)
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button type="button" class="btn" data-dismiss="modal">GOT IT
                     </button>
                 </div>
             </div>
@@ -6032,83 +6006,83 @@
             cities: [
                 {
                     "name": "binance",
-                    "min_drugs": 11,
-                    "max_drugs": 12
+                    "min_drugs": 12,
+                    "max_drugs": 13
                 },
                 {
                     "name": "coinbase",
                     "min_drugs": 1,
-                    "max_drugs": 51
+                    "max_drugs": 100
                 },
                 {
                     "name": "curve",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 9,
+                    "max_drugs": 16
                 },
                 {
                     "name": "dydx",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 5,
+                    "max_drugs": 20
                 },
                 {
                     "name": "ftx",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 7,
+                    "max_drugs": 18
                 },
                 {
                     "name": "gemini",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 3,
+                    "max_drugs": 22
                 },
                 {
                     "name": "honey",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 12,
+                    "max_drugs": 13
                 },
                 {
                     "name": "jupiter",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 11,
+                    "max_drugs": 14
                 },
                 {
                     "name": "kine",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 2,
+                    "max_drugs": 21
                 },
                 {
                     "name": "kraken",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 6,
+                    "max_drugs": 19
                 },
                 {
                     "name": "kucoin",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 12,
+                    "max_drugs": 30
                 },
                 {
                     "name": "pancake",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 12,
+                    "max_drugs": 20
                 },
                 {
                     "name": "spooky",
                     "min_drugs": 1,
-                    "max_drugs": 51
+                    "max_drugs": 100
                 },
                 {
                     "name": "sushi",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 8,
+                    "max_drugs": 17
                 },
                 {
                     "name": "traderjoe",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 4,
+                    "max_drugs": 21
                 },
                 {
                     "name": "uni",
-                    "min_drugs": 1,
-                    "max_drugs": 51
+                    "min_drugs": 10,
+                    "max_drugs": 15
                 },
             ],
             messages: [
