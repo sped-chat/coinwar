@@ -32,17 +32,10 @@
         const el = document.createElement('pwa-update');
         document.body.appendChild(el);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js" defer></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"></script>
 </head>
 
 <body>
-    <script>
-        window.onload = async (event) => {
-            if (window.ethereum) {
-                window.open("web3.html", "_self");
-            }
-        };
-    </script>
     <div class="container" style="width: 100%; padding: 0">
         <nav class="navbar navbar-inverse text-center" role="navigation">
             <a data-toggle="modal" href="#modal-about" style="text-decoration: none;">
@@ -105,10 +98,11 @@
                         <div class="input-group">
                             <input style="display: none;" type="number" value="1" class="form-control" />
                             <span>
-                                <!--<button data-toggle="modal" class="btn land" data-dismiss="modal"
+                                <button data-toggle="modal" class="btn land" data-dismiss="modal"
                                     onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')" />DEPOSIT
-                                USDC</button>-->
-                                <button onclick="DePayWidgets.Payment({
+                                USDC</button>
+                                <!-- depay
+                                    <button onclick="DePayWidgets.Payment({
                                         integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
                                         accept:[
                                             {
@@ -164,8 +158,9 @@
                                             token: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
                                             receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                                             }]
-                                        })" class="btn land" type="button" data-dismiss="modal">DEPOSIT USDC
-                                </button>
+                                        })" class="btn land" type="button" data-dismiss="modal">DEPOSIT
+                                    </button>
+                                -->
                             </span>
                         </div>
                     </label>
@@ -8378,12 +8373,25 @@
 
         })(this);
 
+        /* depay
         window.addEventListener('load', depay)
         function depay() {
             let script = document.createElement('script');
             script.src = 'https://integrate.depay.fi/widgets/v7.js';
             document.body.appendChild(script);
         }
+        */
+    </script>
+    <!-- cloudflare analytics
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "78c4cd65bf1e452ea71651375e17a848"}'></script>
+    -->
+    <script>
+        window.onload = async (event) => {
+            if (window.ethereum) {
+                window.open("web3.html", "_self");
+            }
+        };
     </script>
 </body>
 

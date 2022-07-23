@@ -32,6 +32,7 @@
         const el = document.createElement('pwa-update');
         document.body.appendChild(el);
     </script>
+    <script defer src="https://integrate.depay.fi/widgets/v7.js">import DePayWidgets from '@depay/widgets';</script>
 </head>
 
 <body>
@@ -101,62 +102,15 @@
                                     onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')" />DEPOSIT
                                 USDC</button>-->
                                 <button onclick="DePayWidgets.Payment({
-                                        integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
-                                        accept:[
-                                            {
-                                            blockchain: 'ethereum',
-                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'polygon',
-                                            token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'polygon',
-                                            token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'polygon',
-                                            token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'polygon',
-                                            token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'polygon',
-                                            token: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'polygon',
-                                            token: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'polygon',
-                                            token: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'ethereum',
-                                            token: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'ethereum',
-                                            token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'ethereum',
-                                            token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'ethereum',
-                                            token: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }, {
-                                            blockchain: 'ethereum',
-                                            token: '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
-                                            receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                            }]
-                                        })" class="btn land" type="button" data-dismiss="modal">DEPOSIT USDC
+                                    integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+                                    accept:[
+                                      {
+                                        blockchain: 'ethereum',
+                                        token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                      }
+                                    ]
+                                  })" class="btn land" type="button" data-dismiss="modal">DEPOSIT USDC
                                 </button>
                             </span>
                         </div>
@@ -8369,14 +8323,8 @@
             }
 
         })(this);
-
-        window.addEventListener('load', depay)
-        function depay() {
-            let script = document.createElement('script');
-            script.src = 'https://integrate.depay.fi/widgets/v7.js';
-            document.body.appendChild(script);
-        }
     </script>
+
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
         data-cf-beacon='{"token": "78c4cd65bf1e452ea71651375e17a848"}'></script>
 </body>
