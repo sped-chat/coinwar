@@ -41,7 +41,9 @@
             }
         }
     </script>
-    <script async src="https://integrate.depay.fi/widgets/v7.js">import DePayWidgets from '@depay/widgets';</script>
+    <script async src="https://integrate.depay.fi/widgets/v7.js">
+        import DePayWidgets from '@depay/widgets';
+    </script>
 </head>
 
 <body>
@@ -107,16 +109,11 @@
                         <div class="input-group">
                             <input style="display: none;" type="number" value="1" class="form-control" />
                             <span>
-                                <button onclick="DePayWidgets.Payment({
-                                    integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
-                                    accept:[
-                                      {
-                                        blockchain: 'ethereum',
-                                        token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                      }
-                                    ]
-                                  })" class="btn land" type="button" data-dismiss="modal">DEPOSIT TOKEN
+                                <button onclick="DePayWidgets.Sale({
+                                    sell: {
+                                      'polygon': '0xa0bEd124a09ac2Bd941b10349d8d224fe3c955eb'
+                                    }
+                                  });" class="btn land" type="button" data-dismiss="modal">BUY WAR
                                 </button>
                             </span>
                         </div>
@@ -125,9 +122,16 @@
                         <div class="input-group">
                             <input style="display: none;" type="number" value="1" class="form-control" />
                             <span>
-                                <button data-toggle="modal" class="btn land" data-dismiss="modal"
-                                    onclick="window.open('https://commerce.coinbase.com/checkout/3d3b5b62-1308-4d85-a252-039f621f8240')" />
-                                DEPOSIT COIN
+                                <button onclick="DePayWidgets.Payment({
+                                    integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+                                    accept:[
+                                      {
+                                        blockchain: 'polygon',
+                                        token: '0xe87c2deb370231729e7248386a65420f9282d2bb',
+                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                      }
+                                    ]
+                                  })" class="btn land" type="button" data-dismiss="modal">DEPOSIT WAR
                                 </button>
                             </span>
                         </div>
@@ -164,17 +168,10 @@
                         </div>
                     </label>
                     <!--
-                    <br /><br />
                     <h4>COLLAPSED MARKETS:</h5>
                         <h5><s>COLLATERALIZED LENDING (VARIABLE APR)</s></h5>
                         <h5><s>AAVE LENDING (9% APR)</s></h5>
                         <h5><s>YIELD FARMING</s></h5>
-                         <button class="btn land" type="button" data-dismiss="modal"
-                                    onclick="DePayWidgets.Sale({sell: {'polygon':'0xe87c2deb370231729e7248386a65420f9282d2bb'}});">BORROW
-                                </button>
-                        <button class="btn" type="button" data-dismiss="modal"
-                        onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">ADD
-                        LIQUIDITY</button>
                     -->
                 </div>
             </div>
