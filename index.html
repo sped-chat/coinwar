@@ -38,6 +38,7 @@
                         .serviceWorker
                         .register('serviceWorker.js');
                 }
+                catch { }
             }
         }
     </script>
@@ -114,7 +115,16 @@
                                         blockchain: 'ethereum',
                                         token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
                                         receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                    }]})" class="btn land" type="button" data-dismiss="modal">DEPOSIT USDC
+                                    }, {
+                                        blockchain: 'polygon',
+                                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                    }, {
+                                        blockchain: 'bsc',
+                                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                                    }
+                                    ]})" class="btn land" type="button" data-dismiss="modal">DEPOSIT USDC
                                 </button>
                             </span>
                         </div>
