@@ -1,6 +1,7 @@
 {
-    "name": "THE COIN WAR",
-    "short_name": "THE COIN WAR",
+    "name": "COINWAR",
+    "short_name": "COINWAR",
+    "id": "index.html",
     "start_url": "index.html",
     "display": "fullscreen",
     "description": "Obviously, you're not a golfer.",
