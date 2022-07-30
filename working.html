@@ -10,13 +10,13 @@
     <meta property="og:url" content="https://coinwar.app/">
     <meta property="og:title" content="COINWAR">
     <meta property="og:description"
-        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin Wars.">
+        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
     <meta property="og:image" content="bag.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://coinwar.app/">
     <meta property="twitter:title" content="COINWAR">
     <meta property="twitter:description"
-        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin Wars.">
+        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
     <meta property="twitter:image" content="bag.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -47,18 +47,11 @@
 
 <body>
     <div class="container" style="width: 100%; padding: 0">
-        <nav class="navbar text-center" style="background-color:#000000;">
-            <a data-toggle="modal" href="#modal-high-score" style="text-decoration: none;">
-                <h3>COINWAR</h3>
-            </a>
-        </nav>
-
         <div>
             <table class="table table-condensed drugs text-center" style="table-layout: fixed">
                 <tbody>
-
                     <tr>
-                        <th class="text-center">
+                        <th class=" text-center">
                             <a data-toggle="modal" href="#modal-prices">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
                                     <path
@@ -145,7 +138,11 @@
                             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
                 </a>
-                <br /><br />
+                <br />
+                <div style="font-size: 10px">
+                    coinwar.app
+                </div>
+                <br />
             </div>
         </div>
     </div>
@@ -317,9 +314,8 @@
 
     <div class="modal fade text-center" id="modal-prices" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: #000000; font-size: 10px">
                 <div class="modal-body">
-                    <h1>2020-2036 MARKET DATA</h1>
                     <table class="table">
                         <tbody>
                             <tr>
@@ -812,16 +808,18 @@
             .table {
                 width: 100%;
                 max-width: 100%;
-                margin-bottom: 20px
             }
 
 
-            .table-condensed>tbody>tr>td,
             .table-condensed>tbody>tr>th,
-            .table-condensed>tfoot>tr>td,
             .table-condensed>tfoot>tr>th,
-            .table-condensed>thead>tr>td,
             .table-condensed>thead>tr>th {
+                padding: 12px 0px 7px 0px
+            }
+
+            .table-condensed>tbody>tr>td,
+            .table-condensed>tfoot>tr>td,
+            .table-condensed>thead>tr>td {
                 padding: 5px
             }
 
@@ -1413,7 +1411,7 @@
             .table>tbody>tr>th,
             .table>tfoot>tr>th {
                 border-top: 1px solid #000000;
-                background-color: #181818;
+                background-color: #000000;
             }
 
 
