@@ -2,25 +2,25 @@
 <html>
 
 <head>
-    <title>COINWAR</title>
+    <title>THE COIN WAR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta property="og:image" content="bag.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://coinwar.app/">
-    <meta property="og:title" content="COINWAR">
+    <meta property="og:title" content="THE COIN WAR">
     <meta property="og:description"
-        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
+        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin Wars.">
     <meta property="og:image" content="bag.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://coinwar.app/">
-    <meta property="twitter:title" content="COINWAR">
+    <meta property="twitter:title" content="THE COIN WAR">
     <meta property="twitter:description"
-        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
+        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin Wars.">
     <meta property="twitter:image" content="bag.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="COINWAR">
+    <meta name="apple-mobile-web-app-title" content="THE COIN WAR">
     <meta name="description"
         content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
     <link rel="apple-touch-icon" href="bag.png">
@@ -47,59 +47,25 @@
 
 <body>
     <div class="container" style="width: 100%; padding: 0">
+        <nav class="navbar navbar-inverse text-center" role="navigation">
+            <a data-toggle="modal" href="#modal-about" style="text-decoration: none;">
+                <h3>THE COIN WAR</h3>
+            </a>
+        </nav>
+        <div class="stats text-center">
+            <a data-toggle="modal" href="#modal-pawn-shop">DEFI LOANS</a> : $<span class="debt"></span>
+            <br />
+            <a data-toggle="modal" href="#modal-inventory">USDC</a> : $<span class="cash"></span>
+        </div>
         <div>
-            <table class="table table-condensed drugs text-center" style="table-layout: fixed">
+            <table class="table table-condensed drugs text-center">
                 <tbody>
-                    <tr>
-                        <th class=" text-center">
-                            <a data-toggle="modal" href="#modal-prices">
-                                <svg width="24" height="24" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
-                                    <path
-                                        d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z" />
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
-                                </svg>
-                            </a>
-                        </th>
-                        <th class="text-center">
-                            <a data-toggle="modal" href="#modal-inventory">
-                                <svg width="24" height="24" fill="currentColor" class="bi bi-wallet2"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
-                                </svg>
-                            </a>
-                        </th>
-                        <th class="text-center">
-                            <a data-toggle="modal" href="#modal-prices">
-                                <svg width="24" height="24" fill="currentColor" class="bi bi-currency-dollar"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
-                                </svg>
-                            </a>
-                        </th>
-                        <th class="text-center">
-                            <a data-toggle="modal" href="#modal-cities">
-                                <svg width="24" height="24" fill="currentColor" class="bi bi-arrow-repeat"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                                    <path fill-rule="evenodd"
-                                        d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                                </svg>
-                            </a>
-                        </th>
-                    </tr>
-                    <!--
                     <tr>
                         <th class="text-center">COIN</th>
                         <th class="text-center">QUANTITY</th>
                         <th class="text-center">VALUE</th>
                         <th class="text-center">TRADE</th>
                     </tr>
-                -->
                     <tr data-drug="0">
                         <td></td>
                         <td></td>
@@ -109,41 +75,10 @@
                             <button data-toggle="modal" class="btn sell-xs" href="#modal-transaction">S</button>
                         </td>
                     </tr>
-
                 </tbody>
             </table>
             <h4 class="xs-stats text-center">DEX : <a type="button" class="btn btn-default" data-toggle="modal"
                     href="#modal-cities"><span class="city"></span></a></h4>
-            <div class="text-center">
-                <br /><br />
-                <a data-toggle="modal" href="#modal-privacy">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-shield-lock" viewBox="0 0 16 16">
-                        <path
-                            d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
-                        <path
-                            d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z" />
-                    </svg>
-                </a>&nbsp;
-                <a data-toggle="modal" href="#modal-terms">
-                    <svg width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z" />
-                        <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z" />
-                    </svg>
-                </a>&nbsp;
-                <a href="https://github.com/thecoinwar/thecoinwar.github.io" target="_blank">
-                    <svg width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                    </svg>
-                </a>
-                <br />
-                <div style="font-size: 10px">
-                    coinwar.app
-                </div>
-                <br />
-            </div>
         </div>
     </div>
 
@@ -270,19 +205,6 @@
                         </label>
                     </div>
                 </div>
-                <div class="modal-body stats text-center">
-                    <a data-toggle="modal" href="#modal-pawn-shop">DEFI LOANS</a> : $<span class="debt"></span>
-                    <br />
-                    <a id="connectButton" data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span
-                        class="cash"></span>
-                    <script defer async>
-                        var button = document.getElementById("connectButton");
-                        button.addEventListener("click", async function (e) {
-                            let { account, accounts, wallet } = await DePayWidgets.Connect()
-                            console.log({ account, accounts, wallet })
-                        });
-                    </script>
-                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
                     </button>
@@ -312,10 +234,12 @@
         </div>
     </div>
 
-    <div class="modal fade text-center" id="modal-prices" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade text-center" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content" style="background-color: #000000; font-size: 10px">
+            <div class="modal-content">
                 <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h1>2020-2036 MARKET DATA</h1>
                     <table class="table">
                         <tbody>
                             <tr>
@@ -361,15 +285,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade text-center" id="modal-privacy" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
+                    <br /> <br />
                     <h1>PRIVACY POLICY</h1> This agreement is between you and the gigantic business entity called
                     &quot;coinwar.app&quot; (hereafter referred to as The Corporation). By using this
                     service, you agree to the following: <br /><br />
@@ -418,16 +334,7 @@
                     address,
                     date of birth, ATM PIN, photographs of three forms of government ID, the name of your
                     favorite teacher, the model name of your first car, and your favorite concert. If you
-                    successfully find us, please allow 4-6 weeks for processing.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade text-center" id="modal-terms" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
+                    successfully find us, please allow 4-6 weeks for processing.<br /> <br /><br /><br />
                     <h1>TERMS OF SERVICE</h1>
                     By accessing the website at https://coinwar.app, you are agreeing to be
                     bound by these terms of service, all applicable laws and regulations, and agree that you are
@@ -488,6 +395,10 @@
                     with the laws of California and you irrevocably submit to the exclusive jurisdiction of the
                     courts in that State or location.<br /> <br />
                     This policy is effective as of April 20, 2022.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
+                    </button>
                 </div>
             </div>
         </div>
@@ -808,18 +719,29 @@
             .table {
                 width: 100%;
                 max-width: 100%;
+                margin-bottom: 20px
+            }
+
+            .table>tbody>tr>td,
+            .table>tbody>tr>th,
+            .table>tfoot>tr>td,
+            .table>tfoot>tr>th,
+            .table>thead>tr>td,
+            .table>thead>tr>th {
+                padding: 8px;
+                line-height: 1.42857143;
+                vertical-align: top;
+                border-top: 1px solid #ddd
             }
 
 
-            .table-condensed>tbody>tr>th,
-            .table-condensed>tfoot>tr>th,
-            .table-condensed>thead>tr>th {
-                padding: 12px 0px 7px 0px
-            }
 
             .table-condensed>tbody>tr>td,
+            .table-condensed>tbody>tr>th,
             .table-condensed>tfoot>tr>td,
-            .table-condensed>thead>tr>td {
+            .table-condensed>tfoot>tr>th,
+            .table-condensed>thead>tr>td,
+            .table-condensed>thead>tr>th {
                 padding: 5px
             }
 
@@ -1383,15 +1305,15 @@
 
 
             body {
-                background-color: #101010;
-                color: #E8E8E8;
+                background-color: black;
+                color: #CE8C39;
                 overflow-x: hidden;
             }
 
             h1,
             h2,
             h3 {
-                color: #F5F5F5;
+                color: #AB4E00;
             }
 
             nav.navbar {
@@ -1401,24 +1323,21 @@
 
             .stats {
                 padding: 1%;
+                background-color: #333;
                 font-size: larger;
                 margin: 0;
-                color: #A8A8A8;
+                color: #999;
             }
+
 
 
             .table>thead>tr>th,
             .table>tbody>tr>th,
-            .table>tfoot>tr>th {
-                border-top: 1px solid #000000;
-                background-color: #000000;
-            }
-
-
+            .table>tfoot>tr>th,
             .table>thead>tr>td,
             .table>tbody>tr>td,
             .table>tfoot>tr>td {
-                border-top: 1px solid #181818;
+                border-top: 1px solid #555;
             }
 
             button.btn,
@@ -6054,8 +5973,8 @@
             cities: [
                 {
                     "name": "binance",
-                    "min_drugs": 14,
-                    "max_drugs": 15
+                    "min_drugs": 12,
+                    "max_drugs": 13
                 },
                 {
                     "name": "coinbase",
