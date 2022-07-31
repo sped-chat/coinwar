@@ -204,7 +204,7 @@
                     <br />
                     <label>
                         <div class="input-group" style="max-width: 200px;">
-                            <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                            <input style="background-color:#383838; border: solid 1px #333;" type="number" min="0"
                                 value="0" class="form-control text-center" />
                             <span class="input-group-btn">
                                 <button class="btn land" type="button" data-dismiss="modal">BORROW</button>
@@ -214,7 +214,7 @@
                     <br />
                     <label>
                         <div class="input-group" style="max-width: 200px;">
-                            <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
+                            <input style="background-color:#383838; border: solid 1px #333;" type="number" min="0"
                                 value="0" class="form-control text-center" />
                             <span class="input-group-btn">
                                 <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
@@ -240,13 +240,13 @@
 
     <div class="modal fade" id="modal-transaction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header text-center">
+            <div class="modal-content text-center">
+                <div class="modal-header" style="border-bottom: 0px;">
                     <h4 class="modal-title"></h4>
                 </div>
-                <div class="modal-body row">
-                    <div class="col-md-6 col-xs-12">
-                        <label class="form-group">
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <label>
                             <div class="input-group" style="max-width: 200px;">
                                 <input style="background-color:#222; border: solid 1px #333;" type="number" min="0"
                                     value="" class="form-control text-center" />
@@ -8368,11 +8368,20 @@
             }
         })(this);
 
-        // depay connect
+        // depay preload
         var button = document.getElementById("connectButton");
         button.addEventListener("click", async function (e) {
             let { account, accounts, wallet } = await DePayWidgets.Connect()
             console.log({ account, accounts, wallet })
+            DePayWidgets.Payment.preload({
+                account,
+                accept: [{
+                    blockchain: document.getElementById("paymentBlockchainInput").value,
+                    amount: parseFloat(document.getElementById("paymentAmountInput").value),
+                    token: document.getElementById("paymentTokenInput").value,
+                    receiver: document.getElementById("paymentReceiverInput").value
+                }]
+            })
         });
 
         //depay payment
@@ -8408,22 +8417,6 @@
                 },
             });
         });
-
-        // depay preload
-        var button = document.getElementById("connectButton");
-        button.addEventListener("click", async function (e) {
-            let { account, accounts, wallet } = await DePayWidgets.Connect()
-            DePayWidgets.Payment.preload({
-                account,
-                accept: [{
-                    blockchain: document.getElementById("paymentBlockchainInput").value,
-                    amount: parseFloat(document.getElementById("paymentAmountInput").value),
-                    token: document.getElementById("paymentTokenInput").value,
-                    receiver: document.getElementById("paymentReceiverInput").value
-                }]
-            })
-        });
-
     </script>
 </body>
 
