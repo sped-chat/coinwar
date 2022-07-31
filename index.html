@@ -63,7 +63,7 @@
                             </a>
                         </th>
                         <th class="text-center">
-                            <a data-toggle="modal" href="#modal-inventory" class="green">
+                            <a id="connectButton" class="green" data-toggle="modal" href="#modal-inventory">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-wallet2"
                                     viewBox="0 0 16 16">
                                     <path
@@ -72,7 +72,7 @@
                             </a>
                         </th>
                         <th class="text-center">
-                            <a data-toggle="modal" href="#modal-prices" class="green">
+                            <a data-toggle="modal" href="#modal-pawn-shop" class="green">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-currency-dollar"
                                     viewBox="0 0 16 16">
                                     <path
@@ -92,14 +92,6 @@
                             </a>
                         </th>
                     </tr>
-                    <!--
-                    <tr>
-                        <th class="text-center">COIN</th>
-                        <th class="text-center">QUANTITY</th>
-                        <th class="text-center">VALUE</th>
-                        <th class="text-center">TRADE</th>
-                    </tr>
-                -->
                     <tr data-drug="0">
                         <td></td>
                         <td></td>
@@ -109,9 +101,22 @@
                             <button data-toggle="modal" class="btn sell-xs" href="#modal-transaction">S</button>
                         </td>
                     </tr>
-
                 </tbody>
             </table>
+            <table class="table table-condensed text-center" style="table-layout: fixed">
+                <tbody>
+                    <tr class="xs-stats">
+                        <td>WAR</td>
+                        <td><span class="cash"></span></td>
+                        <td>$<span class="cash"></span></td>
+                        <td><button class="btn" id="buyButton">B</button>
+                            <button class="btn"
+                                onclick="window.open('https://quickswap.exchange/#/pools?currency0=0xe87c2deb370231729e7248386a65420f9282d2bb&currency1=0x0000000000000000000000000000000000001010')">S</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
             <h4 class="xs-stats text-center">DEX : <a type="button" class="btn btn-default" data-toggle="modal"
                     href="#modal-cities"><span class="city"></span></a></h4>
             <div class="text-center">
@@ -123,7 +128,8 @@
                         <path
                             d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z" />
                     </svg>
-                </a>&nbsp;
+                </a>
+                &nbsp;
                 <a data-toggle="modal" href="#modal-terms">
                     <svg width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -137,11 +143,10 @@
                             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
                 </a>
-                <span style="line-height: 22px;">
+                <span style="line-height: 23px;">
                     <br />
                     <div style="font-size: 10px">
-                        <a href="https://hubs.mozilla.com/cMzFjni/?vr_entry_type=2d_now&thirdPerson&default_material_quality=high&default_mobile_material_quality=high"
-                            target="_blank" />coinwar.app</a>
+                        <a href="https://metaverse.coinwar.app" target="_blank" />coinwar.app</a>
                     </div>
                     <br />
                 </span>
@@ -149,18 +154,22 @@
         </div>
     </div>
 
+
+
+
     <div class="modal fade" id="modal-inventory" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog text-center">
-            <div class="modal-content" style="background-color: #111;">
-                <div class="modal-header">
-                    <h2>WAR WALLET</h2>
-                </div>
+            <div class="modal-content">
                 <div class="modal-body xs-stats">
                     <table class="table">
                         <tbody>
                             <tr>
-                                <th class="text-center">COIN</th>
-                                <th class="text-center">QUANTITY</th>
+                                <th class="text-center"
+                                    style="background-color: #202124; font-size: 24px; border: none !important">COIN
+                                </th>
+                                <th class="text-center"
+                                    style="background-color: #202124; font-size: 24px; border: none !important">
+                                    QUANTITY</th>
                             </tr>
                             <tr class="template hidden">
                                 <td class="text-center">
@@ -168,33 +177,19 @@
                                 <td class=" text-center">
                                 </td>
                             </tr>
+                            <tr>
+                                <td style="border: none !important">WAR</td>
+                                <td style="border: none !important">$<span class="cash"></span></td>
+                            </tr>
                         </tbody>
                     </table>
                     <br /><br />
                     <label>
-                        <div class="input-group">
-                            <input style="display: none;" type="number" value="0" class="form-control" />
-                            <span>
-                                <button onclick="
-                                    DePayWidgets.Payment({
-                                    integration: '7430a68d-ca9d-4a6d-8be6-d40d0dd0463b',
-                                    accept:[{
-                                        blockchain: 'ethereum',
-                                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                    }, {
-                                        blockchain: 'polygon',
-                                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                    }, {
-                                        blockchain: 'bsc',
-                                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                                    }]
-                                    })" class="btn land" type="button" data-dismiss="modal">DEPOSIT USDC
-                                </button>
-                            </span>
-                        </div>
+                        <input style="display: none;" type="number" value="1000" />
+                        <span>
+                            <button class="btn depayland" id="payWithTracking">DEPOSIT
+                            </button>
+                        </span>
                     </label>
                 </div>
             </div>
@@ -206,7 +201,6 @@
             <div class="modal-content">
                 <div class="modal-body xs-stats">
                     <h3>DEFI LOANS : $<span class="debt"></span></h3>
-                    <h4>USDC : $<span class="cash"></span></h4>
                     <br />
                     <label>
                         <div class="input-group" style="max-width: 200px;">
@@ -227,12 +221,6 @@
                             </span>
                         </div>
                     </label>
-                    <!--
-                    <h4>COLLAPSED MARKETS:</h5>
-                        <h5><s>COLLATERALIZED LENDING (VARIABLE APR)</s></h5>
-                        <h5><s>AAVE LENDING (9% APR)</s></h5>
-                        <h5><s>YIELD FARMING</s></h5>
-                    -->
                 </div>
             </div>
         </div>
@@ -253,7 +241,7 @@
     <div class="modal fade" id="modal-transaction" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header text-center">
                     <h4 class="modal-title"></h4>
                 </div>
                 <div class="modal-body row">
@@ -270,24 +258,9 @@
                                 </span>
                             </div>
                         </label>
+                        <br /><br />
+                        <button type="button" class="btn" data-dismiss="modal">CLOSE</button>
                     </div>
-                </div>
-                <div class="modal-body stats text-center">
-                    <a data-toggle="modal" href="#modal-pawn-shop">DEFI LOANS</a> : $<span class="debt"></span>
-                    <br />
-                    <a id="connectButton" data-toggle="modal" href="#modal-inventory">WALLET</a> : $<span
-                        class="cash"></span>
-                    <script defer async>
-                        var button = document.getElementById("connectButton");
-                        button.addEventListener("click", async function (e) {
-                            let { account, accounts, wallet } = await DePayWidgets.Connect()
-                            console.log({ account, accounts, wallet })
-                        });
-                    </script>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
-                    </button>
                 </div>
             </div>
         </div>
@@ -307,7 +280,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close"
-                        onclick="window.open('https://hubs.mozilla.com/cMzFjni/?vr_entry_type=2d_now&thirdPerson&allow_multi&allow_idle&no_stats&force_enable_touchscreen&default_material_quality=high&default_mobile_material_quality=high')">
+                        onclick="window.open('https://metaverse.coinwar.app')">
                     </button>
                 </div>
             </div>
@@ -316,53 +289,57 @@
 
     <div class="modal fade text-center" id="modal-prices" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content" style="background-color: #000000; font-size: 14px">
+            <div class="modal-content" style="font-size: 12px">
                 <div class="modal-body">
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td>
-                                    ADA<br />LOW (1), HIGH (2)<br /><br />
-                                    ALCX<br />L (20), H (2K)<br /><br />
-                                    AAVE<br />L (28), H (632)<br /><br />
-                                    AMC<br />L (2), H (59)<br /><br />
-                                    APE<br />L (3), H (26)<br /><br />
-                                    ATOM<br />L (2), H (45)<br /><br />
-                                    AVAX<br />L (3), H (134)<br /><br />
-                                    AXS<br />L (1), H (160)<br /><br />
-                                    BNB<br />L (10), H (700<br /><br />
-                                    BTC<br />L (5K), H (69K)<br /><br />
-                                    BOO<br />L (1), H (10)
+                                <td style="border: none !important;">
+                                    ADA<br />LOW ($1), HIGH ($2)<br /><br />
+                                    ALCX<br />$20-$2K<br /><br />
+                                    AAVE<br />$28 - $632<br /><br />
+                                    AMC<br />$2 - $59<br /><br />
+                                    APE<br />$3 - $26<br /><br />
+                                    ATOM<br />$2 - $45<br /><br />
+                                    AVAX<br />$3 - $134<br /><br />
+                                    AXS<br />$1 - $160<br /><br />
+                                    BNB<br />$10 - $700<br /><br />
+                                    BTC<br />$5K - $69K<br /><br />
+                                    BOO<br />$1 - $10
                                 </td>
-                                <td>
-                                    CAKE<br />LOW (1), HIGH (42)<br /><br />
-                                    COMP<br />L (27), H (854)<br /><br />
-                                    DOGE<br />L (69), H (420)<br /><br />
-                                    DOT<br />L (1), H (54)<br /><br />
-                                    ETH<br />L (100), H (5K)<br /><br />
-                                    FIL<br />L (5), H (188)<br /><br />
-                                    FTM<br />L (1), H (13)<br /><br />
-                                    FTX<br />L (2), H (80)<br /><br />
-                                    GME<br />L (4), H (325)<br /><br />
-                                    ICP<br />L (5), H (364)<br /><br />
-                                    LINK<br />L (2), H (53)
+                                <td style="border: none !important;">
+                                    CAKE<br />LOW ($1), HIGH ($42)<br /><br />
+                                    COMP<br />$27 - $854<br /><br />
+                                    DOGE<br />$69 - $420<br /><br />
+                                    DOT<br />$1 - $54<br /><br />
+                                    ETH<br />$100 - $5K<br /><br />
+                                    FIL<br />$5 - $188<br /><br />
+                                    FTM<br />$1 - $13<br /><br />
+                                    FTX<br />$2 - $80<br /><br />
+                                    GME<br />$4 - 3$25<br /><br />
+                                    ICP<br />$5 - $364<br /><br />
+                                    LINK<br />$2 - $53
                                 </td>
-                                <td>
-                                    LTC<br />LOW (2), HIGH (278)<br /><br />
-                                    MANA<br />L (1), H (6)<br /><br />
-                                    MATIC<br />L (1), H (11)<br /><br />
-                                    MKR<br />L (206), H (6K)<br /><br />
-                                    OATH<br />L (1), H (10)<br /><br />
-                                    SAND<br />L (1), H (9)<br /><br />
-                                    SHIB<br />L (1), H (7)<br /><br />
-                                    SOL<br />L (1), H (260)<br /><br />
-                                    TRON<br />L (1), H (9)<br /><br />
-                                    UNI<br />L (2), H (43)<br /><br />
-                                    XRP<br />L (1), H (4)
+                                <td style="border: none !important;">
+                                    LTC<br />LOW ($2), HIGH ($278)<br /><br />
+                                    MANA<br />$1 - $6<br /><br />
+                                    MATIC<br />$1 - $11<br /><br />
+                                    MKR<br />$206 - $6K<br /><br />
+                                    OATH<br />$1 - $10<br /><br />
+                                    SAND<br />$1 - $9<br /><br />
+                                    SHIB<br />$1 - $7<br /><br />
+                                    SOL<br />$1 - $260<br /><br />
+                                    TRON<br />$1 - $9<br /><br />
+                                    UNI<br />$2 - $43<br /><br />
+                                    XRP<br />$1 - $4
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="text-center">
+                        <br /><br />
+                        <button type="button" class="btn" data-dismiss="modal">CLOSE</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -421,6 +398,9 @@
                     date of birth, ATM PIN, photographs of three forms of government ID, the name of your
                     favorite teacher, the model name of your first car, and your favorite concert. If you
                     successfully find us, please allow 4-6 weeks for processing.
+                    <br /><br />
+                    <button type="button" class="btn" data-dismiss="modal">CLOSE</button>
+                    <br />
                 </div>
             </div>
         </div>
@@ -490,6 +470,9 @@
                     with the laws of California and you irrevocably submit to the exclusive jurisdiction of the
                     courts in that State or location.<br /> <br />
                     This policy is effective as of April 20, 2022.
+                    <br /><br />
+                    <button type="button" class="btn" data-dismiss="modal">CLOSE</button>
+                    <br />
                 </div>
             </div>
         </div>
@@ -524,7 +507,7 @@
             }
 
             svg {
-                filter: drop-shadow(3px 5px 3px rgb(0 0 0 / 0.4));
+                filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
             }
 
             a {
@@ -1393,7 +1376,7 @@
 
             button.btn,
             .btn-default {
-                background-color: #202124;
+                background-color: #181818;
                 border: none;
                 color: #E31C79;
             }
@@ -1449,12 +1432,10 @@
             }
 
             .modal-content {
-                background-color: #333;
+                background-color: #202124;
             }
 
-            .modal-content button.btn {
-                background-color: #222;
-            }
+
 
             .modal-header {
                 border-bottom: solid 1px #010101;
@@ -6511,6 +6492,14 @@
                 self.view.refresh_inventory(self.coat.drugs);
             });
 
+            $('.depayland').click(function () {
+                var amount = parseInt($(this).parent().prev().val());
+                self.coat.cash += amount;
+
+                $(this).parent().prev().val(0);
+                self.view.refresh_stats(self.game, self.coat);
+            });
+
             $('#modal-inventory button.land').click(function () {
                 var amount = parseInt($(this).parent().prev().val());
                 self.coat.cash += amount;
@@ -8378,6 +8367,63 @@
                 }
             }
         })(this);
+
+        // depay connect
+        var button = document.getElementById("connectButton");
+        button.addEventListener("click", async function (e) {
+            let { account, accounts, wallet } = await DePayWidgets.Connect()
+            console.log({ account, accounts, wallet })
+        });
+
+        //depay payment
+        var button = document.getElementById("payWithTracking");
+        button.addEventListener("click", function (e) {
+            DePayWidgets.Payment({
+                integration: '7430a68d-ca9d-4a6d-8be6-d40d0dd0463b',
+                accept: [{
+                    blockchain: 'ethereum',
+                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'polygon',
+                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'bsc',
+                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }],
+                track: {
+                    endpoint: 'https://coinwar.app/track'
+                }
+            });
+        });
+
+        //depay sell token
+        var button = document.getElementById("buyButton");
+        button.addEventListener("click", function (e) {
+            DePayWidgets.Sale({
+                sell: {
+                    'polygon': '0xe87c2deb370231729e7248386a65420f9282d2bb'
+                },
+            });
+        });
+
+        // depay preload
+        var button = document.getElementById("connectButton");
+        button.addEventListener("click", async function (e) {
+            let { account, accounts, wallet } = await DePayWidgets.Connect()
+            DePayWidgets.Payment.preload({
+                account,
+                accept: [{
+                    blockchain: document.getElementById("paymentBlockchainInput").value,
+                    amount: parseFloat(document.getElementById("paymentAmountInput").value),
+                    token: document.getElementById("paymentTokenInput").value,
+                    receiver: document.getElementById("paymentReceiverInput").value
+                }]
+            })
+        });
+
     </script>
 </body>
 
