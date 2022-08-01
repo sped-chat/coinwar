@@ -48,10 +48,10 @@
 <body>
     <div class="container" style="width: 100%; padding: 0">
         <div>
-            <table class="table table-condensed drugs text-center" style="table-layout: fixed">
+            <table class="table table-condensed drugs text-center">
                 <tbody>
                     <tr>
-                        <th class="text-center">
+                        <th class="text-center" width="25%">
                             <a data-toggle="modal" href="#modal-prices" class="green">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
                                     <path
@@ -62,7 +62,7 @@
                                 </svg>
                             </a>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center" width="25%">
                             <a id="connectButton" class="green" data-toggle="modal" href="#modal-inventory">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-wallet2"
                                     viewBox="0 0 16 16">
@@ -71,7 +71,7 @@
                                 </svg>
                             </a>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center" width="25%">
                             <a data-toggle="modal" href="#modal-pawn-shop" class="green">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-currency-dollar"
                                     viewBox="0 0 16 16">
@@ -80,7 +80,7 @@
                                 </svg>
                             </a>
                         </th>
-                        <th class="text-center">
+                        <th class="text-center" width="25%">
                             <a data-toggle="modal" href="#modal-cities" class="green">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-arrow-repeat"
                                     viewBox="0 0 16 16">
@@ -103,19 +103,21 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table table-condensed text-center" style="table-layout: fixed">
+            <table class="table table-condensed text-center">
                 <tbody>
                     <tr class="xs-stats">
-                        <td>WAR</td>
-                        <td><span class="cash"></span></td>
-                        <td>$<span class="cash"></span></td>
-                        <td><button class="btn" id="buyButton">B</button>
+                        <td width="25%">WAR</td>
+                        <td width="25%"><span class="cash"></span></td>
+                        <td width="25%">$<span class="cash"></span></td>
+                        <td width="25%"><button class="btn" id="buyButton">B</button>
                             <button class="btn"
                                 onclick="window.open('https://quickswap.exchange/#/pools?currency0=0xe87c2deb370231729e7248386a65420f9282d2bb&currency1=0x0000000000000000000000000000000000001010')">S</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <span style="line-height: 15px;">
+            </span>
             <h4 class="xs-stats text-center">DEX : <a type="button" class="btn btn-default" data-toggle="modal"
                     href="#modal-cities"><span class="city"></span></a></h4>
             <div class="text-center" style="font-size: 10px">
@@ -142,9 +144,8 @@
                             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
                 </a>
-                <span style="line-height: 22px;">
-                    <br />
-                </span>
+                <br />
+                <span style="line-height: 22px;"></span>
                 <a href="https://metaverse.coinwar.app" target="_blank" />coinwar.app</a>
                 <br /><br />
             </div>
