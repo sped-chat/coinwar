@@ -116,9 +116,8 @@
                     </tr>
                 </tbody>
             </table>
-            <span style="line-height: 15px;">
-            </span>
-            <h4 class="xs-stats text-center">DEX : <a type="button" class="btn btn-default" data-toggle="modal"
+
+            <h4 class="xs-stats text-center green">DEX : <a type="button" class="btn btn-default" data-toggle="modal"
                     href="#modal-cities"><span class="city"></span></a></h4>
             <div class="text-center" style="font-size: 10px">
                 <br /><br />
@@ -158,10 +157,10 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <th class="text-center"
+                                <th class="text-center green"
                                     style="background-color: #202124; font-size: 24px; border: none !important">COIN
                                 </th>
-                                <th class="text-center"
+                                <th class="text-center green"
                                     style="background-color: #202124; font-size: 24px; border: none !important">
                                     QUANTITY</th>
                             </tr>
@@ -194,11 +193,11 @@
         <div class="modal-dialog text-center">
             <div class="modal-content">
                 <div class="modal-body xs-stats">
-                    <h3>DEFI LOANS : $<span class="debt"></span></h3>
+                    <h3><span class="green">DEFI LOANS</span> : $<span class="debt"></span></h3>
                     <br />
                     <label>
                         <div class="input-group" style="max-width: 200px;">
-                            <input style="background-color:#383838; border: solid 1px #333;" type="number" min="0"
+                            <input style="background-color:#303030; border: solid 1px #202124;" type="number" min="0"
                                 value="0" class="form-control text-center" />
                             <span class="input-group-btn">
                                 <button class="btn land" type="button" data-dismiss="modal">BORROW</button>
@@ -208,7 +207,7 @@
                     <br />
                     <label>
                         <div class="input-group" style="max-width: 200px;">
-                            <input style="background-color:#383838; border: solid 1px #333;" type="number" min="0"
+                            <input style="background-color:#303030; border: solid 1px #202124;" type="number" min="0"
                                 value="0" class="form-control text-center" />
                             <span class="input-group-btn">
                                 <button class="btn pay" type="button" data-dismiss="modal">REPAY</button>
@@ -226,7 +225,9 @@
                 <div class="modal-body cities">
                 </div>
                 <div class="modal-body xs-stats">
-                    <h4>YEAR : <span class="day"></span></h4>
+                    <h4>YEAR : <a data-toggle="modal" href="#modal-high-score" class="green"><span
+                                class="day"></span></a>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -263,18 +264,14 @@
     <div class="modal fade" id="modal-high-score" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog text-center">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h3>HIGH SCORES</h3>
-                </div>
                 <div class="modal-body">
+                    <h3>HIGH SCORES</h3>
                     <ul>
                     </ul>
                     <br /><br />
                     <a class="new-name" href="#">CHANGE ALIAS</a>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close"
-                        onclick="window.open('https://metaverse.coinwar.app')">
+                    <br /><br />
+                    <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
                     </button>
                 </div>
             </div>
@@ -285,6 +282,8 @@
         <div class="modal-dialog">
             <div class="modal-content" style="font-size: 12px">
                 <div class="modal-body">
+                    <h4 class="green">HISTORICAL MARKET DATA</h4>
+                    <br />
                     <table class="table">
                         <tbody>
                             <tr>
@@ -801,7 +800,7 @@
             .table-condensed>tbody>tr>th,
             .table-condensed>tfoot>tr>th,
             .table-condensed>thead>tr>th {
-                padding: 12px 0px 7px 0px
+                padding: 7px 0px 2px 0px
             }
 
             .table-condensed>tbody>tr>td,
