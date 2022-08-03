@@ -108,7 +108,7 @@
                         <td width="25%">WAR</td>
                         <td width="25%"><span class="cash"></span></td>
                         <td width="25%">$1</td>
-                        <td width="25%"><button class="btn" id="buyButton">B</button>
+                        <td width="25%"><button class="btn" data-toggle="modal" href="#modal-inventory">B</button>
                             <button class="btn"
                                 onclick="window.open('https://quickswap.exchange/#/pools?currency0=0xe87c2deb370231729e7248386a65420f9282d2bb&currency1=0x0000000000000000000000000000000000001010')">S</button>
                         </td>
@@ -162,9 +162,14 @@
                                 <th class="text-center green"
                                     style="background-color: #202124; font-size: 24px; border: none !important">
                                     QUANTITY</th>
+                                <th class="text-center green"
+                                    style="background-color: #202124; font-size: 24px; border: none !important">
+                                    VALUE</th>
                             </tr>
                             <tr class="template hidden">
                                 <td class="text-center">
+                                </td>
+                                <td class=" text-center">
                                 </td>
                                 <td class=" text-center">
                                 </td>
@@ -172,6 +177,7 @@
                             <tr>
                                 <td style="border: none !important">WAR</td>
                                 <td style="border: none !important"><span class="cash"></span></td>
+                                <td style="border: none !important">$<span class="cash"></span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -179,7 +185,7 @@
                     <label>
                         <input style="display: none;" type="number" value="0" />
                         <span>
-                            <button class="btn depayland" id="payWithTracking">DEPOSIT
+                            <button class="btn depayland" id="payWithTracking">DEPOSIT WAR
                             </button>
                         </span>
                     </label>
@@ -5646,9 +5652,7 @@
 
             for (var drug in drugs) {
                 var row = row_template.clone().removeClass('template');
-
                 row.data('drug', drug);
-
                 $('#modal-inventory tbody').append(row);
             }
 
@@ -6788,8 +6792,8 @@
                         "drugs": " ",
                         "item": " ASSET",
                         "value": " PRICE",
-                        "buy": " BUY",
-                        "sell": " SELL",
+                        "buy": " SWAP",
+                        "sell": " SWAP",
                         "max": " MAX",
                         "borrow": " BORROW",
                         "you-currently-owe": " YOU OWE",
@@ -8375,6 +8379,7 @@
         });
         */
 
+
         //depay payment
         var button = document.getElementById("payWithTracking");
         button.addEventListener("click", function (e) {
@@ -8399,27 +8404,16 @@
             });
         });
 
-        //depay sell token
+        /* depay sell token
         var button = document.getElementById("buyButton");
         button.addEventListener("click", function (e) {
             DePayWidgets.Sale({
                 sell: {
-                    'polygon': '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
-                },
-                sell: {
-                    'polygon': '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619'
-                },
-                sell: {
-                    'polygon': '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
-                },
-                sell: {
-                    'polygon': '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270'
-                },
-                sell: {
-                    'polygon': '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
+                    'polygon': '0xe87c2deb370231729e7248386a65420f9282d2bb'
                 }
             });
         });
+        */
     </script>
 </body>
 
