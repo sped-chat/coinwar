@@ -5,19 +5,6 @@
     <title>COINWAR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta property="og:image" content="bag.png">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coinwar.app/">
-    <meta property="og:title" content="COINWAR">
-    <meta property="og:description"
-        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
-    <meta property="og:image" content="bag.png">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://coinwar.app/">
-    <meta property="twitter:title" content="COINWAR">
-    <meta property="twitter:description"
-        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
-    <meta property="twitter:image" content="bag.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="COINWAR">
@@ -8359,7 +8346,7 @@
             }
         })(this);
 
-        // depay preload
+        /* depay preload
         var button = document.getElementById("connectButton");
         button.addEventListener("click", async function (e) {
             let { account, accounts, wallet } = await DePayWidgets.Connect()
@@ -8374,6 +8361,7 @@
                 }]
             })
         });
+        */
 
         //depay payment
         var button = document.getElementById("payWithTracking");
@@ -8404,8 +8392,20 @@
         button.addEventListener("click", function (e) {
             DePayWidgets.Sale({
                 sell: {
-                    'polygon': '0xe87c2deb370231729e7248386a65420f9282d2bb'
+                    'polygon': '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
                 },
+                sell: {
+                    'polygon': '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619'
+                },
+                sell: {
+                    'polygon': '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
+                },
+                sell: {
+                    'polygon': '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270'
+                },
+                sell: {
+                    'polygon': '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
+                }
             });
         });
     </script>
