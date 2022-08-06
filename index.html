@@ -113,9 +113,9 @@
                         <td width="25%">WAR</td>
                         <td width="25%"><span class="cash"></span></td>
                         <td width="25%">$1</td>
-                        <td width="25%"><button class="btn" data-toggle="modal" href="#modal-inventory">B</button>
-                            <button class="btn"
-                                onclick="window.open('https://quickswap.exchange/#/pools?currency0=0xe87c2deb370231729e7248386a65420f9282d2bb&currency1=0x0000000000000000000000000000000000001010')">S</button>
+                        <td width="25%"><button class="btn"
+                                onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">B</button>
+                            <button class="btn" id="sellwar">S</button>
                         </td>
                     </tr>
                 </tbody>
@@ -189,7 +189,7 @@
                     <label>
                         <input style="display: none;" type="number" value="100" />
                         <span>
-                            <button class="btn depayland" id="payWithTracking">DEPOSIT
+                            <button class="btn depayland" id="pay1">DEPOSIT
                             </button>
                         </span>
                     </label>
@@ -8374,7 +8374,7 @@
 
 
         //depay payment
-        var button = document.getElementById("payWithTracking");
+        var button = document.getElementById("pay1");
         button.addEventListener("click", function (e) {
             DePayWidgets.Payment({
                 integration: '7430a68d-ca9d-4a6d-8be6-d40d0dd0463b',
@@ -8428,8 +8428,8 @@
             });
         });
 
-        /* depay sell token
-        var button = document.getElementById("buyButton");
+
+        var button = document.getElementById("sellwar");
         button.addEventListener("click", function (e) {
             DePayWidgets.Sale({
                 sell: {
@@ -8437,7 +8437,7 @@
                 }
             });
         });
-        */
+
     </script>
 </body>
 
