@@ -20,7 +20,7 @@
         content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War." />
     <meta property="og:url" content="https://coinwar.app" />
     <meta property="og:image" content="https://coinwar.app/bag.png" />
-    <meta name="theme-color" content="#252525">
+    <meta name="theme-color" content="#101010">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="COINWAR">
@@ -120,7 +120,7 @@
                     </tr>
                 </tbody>
             </table>
-
+            <br />
             <h4 class="xs-stats text-center green">DEX : <a type="button" class="btn btn-default" data-toggle="modal"
                     href="#modal-cities"><span class="city"></span></a></h4>
             <div class="text-center" style="font-size: 10px">
@@ -187,7 +187,7 @@
                     </table>
                     <br /><br />
                     <label>
-                        <input style="display: none;" type="number" value="1000" />
+                        <input style="display: none;" type="number" value="100" />
                         <span>
                             <button class="btn depayland" id="payWithTracking">DEPOSIT
                             </button>
@@ -554,7 +554,7 @@
 
             td,
             th {
-                padding: 0
+                padding: 0;
             }
 
 
@@ -792,17 +792,29 @@
                 max-width: 100%;
             }
 
+            .table>thead>tr>th,
+            .table>tbody>tr>th,
+            .table>tfoot>tr>th {
+                background-color: #252525;
+            }
+
+
+            .table>thead>tr>td,
+            .table>tbody>tr>td,
+            .table>tfoot>tr>td {
+                border-top: 1px solid #181818;
+            }
 
             .table-condensed>tbody>tr>th,
             .table-condensed>tfoot>tr>th,
             .table-condensed>thead>tr>th {
-                padding: 7px 0px 2px 0px
+                padding: 7px 0px 2px 0px;
             }
 
             .table-condensed>tbody>tr>td,
             .table-condensed>tfoot>tr>td,
             .table-condensed>thead>tr>td {
-                padding: 5px
+                padding: 3px;
             }
 
 
@@ -1349,19 +1361,7 @@
             }
 
 
-            .table>thead>tr>th,
-            .table>tbody>tr>th,
-            .table>tfoot>tr>th {
-                border-top: 1px solid #000000;
-                background-color: #252525;
-            }
 
-
-            .table>thead>tr>td,
-            .table>tbody>tr>td,
-            .table>tfoot>tr>td {
-                border-top: 1px solid #181818;
-            }
 
             button.btn,
             .btn-default {

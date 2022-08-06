@@ -7,8 +7,8 @@
     "description": "Obviously, you're not a golfer.",
     "lang": "en-US",
     "dir": "auto",
-    "theme_color": "#252525",
-    "background_color": "#252525",
+    "theme_color": "#101010",
+    "background_color": "#101010",
     "orientation": "portrait-primary",
     "icons": [
         {
