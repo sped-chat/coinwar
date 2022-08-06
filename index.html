@@ -130,11 +130,10 @@
                     </svg>
                 </a>
                 &nbsp;
-                <a data-toggle="modal" href="#modal-terms">
-                    <svg width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z" />
-                        <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z" />
+                <a href="https://twitter.com/coinwarapp" target="_blank">
+                    <svg width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path
+                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                     </svg>
                 </a>&nbsp;
                 <a href="https://github.com/thecoinwar/thecoinwar.github.io" target="_blank">
@@ -184,9 +183,9 @@
                     </table>
                     <br /><br />
                     <label>
-                        <input style="display: none;" type="number" value="0" />
+                        <input style="display: none;" type="number" value="1000" />
                         <span>
-                            <button class="btn depayland" id="payWithTracking">DEPOSIT WAR
+                            <button class="btn depayland" id="payWithTracking">DEPOSIT
                             </button>
                         </span>
                     </label>
@@ -345,7 +344,7 @@
     <div class="modal fade text-center" id="modal-privacy" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body" style="font-size: smaller;">
                     <h1>PRIVACY POLICY</h1> This agreement is between you and the gigantic business entity called
                     &quot;coinwar.app&quot; (hereafter referred to as The Corporation). By using this
                     service, you agree to the following: <br /><br />
@@ -395,18 +394,7 @@
                     date of birth, ATM PIN, photographs of three forms of government ID, the name of your
                     favorite teacher, the model name of your first car, and your favorite concert. If you
                     successfully find us, please allow 4-6 weeks for processing.
-                    <br /><br />
-                    <button type="button" class="btn" data-dismiss="modal">CLOSE</button>
-                    <br />
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade text-center" id="modal-terms" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
+                    <br /><br /><br /><br />
                     <h1>TERMS OF SERVICE</h1>
                     By accessing the website at https://coinwar.app, you are agreeing to be
                     bound by these terms of service, all applicable laws and regulations, and agree that you are
@@ -8386,22 +8374,53 @@
         button.addEventListener("click", function (e) {
             DePayWidgets.Payment({
                 integration: '7430a68d-ca9d-4a6d-8be6-d40d0dd0463b',
-                accept: [{
-                    blockchain: 'ethereum',
-                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                }, {
-                    blockchain: 'polygon',
-                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                }, {
-                    blockchain: 'bsc',
-                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-                }],
-                track: {
-                    endpoint: 'https://coinwar.app/track'
-                }
+                accept: [
+                    {
+                        blockchain: 'ethereum',
+                        token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'polygon',
+                        token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'bsc',
+                        token: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'ethereum',
+                        token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'polygon',
+                        token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'bsc',
+                        token: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'ethereum',
+                        token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'polygon',
+                        token: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'bsc',
+                        token: '0x55d398326f99059fF775485246999027B3197955',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'bsc',
+                        token: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }, {
+                        blockchain: 'polygon',
+                        token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+                        receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                    }
+                ]
             });
         });
 
