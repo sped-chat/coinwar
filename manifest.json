@@ -7,13 +7,19 @@
     "description": "Obviously, you're not a golfer.",
     "lang": "en-US",
     "dir": "auto",
-    "theme_color": "#000000",
-    "background_color": "#000000",
+    "theme_color": "#252525",
+    "background_color": "#252525",
     "orientation": "portrait-primary",
     "icons": [
         {
             "src": "bag.png",
-            "sizes": "16x16 32x32 64x64 128x128 256x256 512x512 1024x1024",
+            "sizes": "16x16 32x32 64x64 128x128 256x256 512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "bag1k.png",
+            "sizes": "48x48 96x96 144x144 192x192 1056x1056",
             "type": "image/png",
             "purpose": "any"
         },
