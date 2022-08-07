@@ -46,7 +46,7 @@
             }
         }
     </script>
-    <script defer async src="https://integrate.depay.fi/widgets/v7.js"></script>
+    <script defer async src=""></script>
 </head>
 
 <body>
@@ -55,7 +55,7 @@
             <table class="table table-condensed drugs text-center">
                 <tbody>
                     <tr>
-                        <th class="text-center" width="25%">
+                        <th>
                             <a data-toggle="modal" href="#modal-prices" class="green">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
                                     <path
@@ -66,8 +66,8 @@
                                 </svg>
                             </a>
                         </th>
-                        <th class="text-center" width="25%">
-                            <a id="connectButton" class="green" data-toggle="modal" href="#modal-inventory">
+                        <th>
+                            <a id="loadButton" class="green" data-toggle="modal" href="#modal-inventory">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-wallet2"
                                     viewBox="0 0 16 16">
                                     <path
@@ -75,7 +75,7 @@
                                 </svg>
                             </a>
                         </th>
-                        <th class="text-center" width="25%">
+                        <th>
                             <a data-toggle="modal" href="#modal-pawn-shop" class="green">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-currency-dollar"
                                     viewBox="0 0 16 16">
@@ -84,7 +84,7 @@
                                 </svg>
                             </a>
                         </th>
-                        <th class="text-center" width="25%">
+                        <th>
                             <a data-toggle="modal" href="#modal-cities" class="green">
                                 <svg width="24" height="24" fill="currentColor" class="bi bi-arrow-repeat"
                                     viewBox="0 0 16 16">
@@ -113,9 +113,8 @@
                         <td width="25%">WAR</td>
                         <td width="25%"><span class="cash"></span></td>
                         <td width="25%">$1</td>
-                        <td width="25%"><button class="btn"
-                                onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">B</button>
-                            <button class="btn" id="sellwar">S</button>
+                        <td width="25%"><button class="btn" data-toggle="modal" href="#modal-inventory">B</button>
+                            <button class="btn" data-toggle="modal" href="#modal-inventory">S</button>
                         </td>
                     </tr>
                 </tbody>
@@ -189,10 +188,25 @@
                     <label>
                         <input style="display: none;" type="number" value="100" />
                         <span>
-                            <button class="btn depayland" id="pay1">DEPOSIT
+                            <button class="btn depayland" id="pay1">DEPOSIT TOKEN
                             </button>
                         </span>
                     </label>
+                    <label>
+                        <input style="display: none;" type="number" value="100" />
+                        <span>
+                            <button class="btn depayland" id="pay1"
+                                onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT FIAT
+                            </button>
+                        </span>
+                    </label>
+                    <!--
+                    <br /><br />
+                    <button class="btn"
+                        onclick="window.open('https://quickswap.exchange/#/analytics/pair/0x22C92Dd2293A987C2f4a1ff2eBc94d78ffc28b72')">SELL
+                        WAR</button>
+                    <button class="btn" id="sellwar">BUY WAR</button>
+                    -->
                 </div>
             </div>
         </div>
@@ -784,7 +798,9 @@
 
 
             th {
-                text-align: left
+                text-align: center;
+                position: sticky;
+                width: 25%
             }
 
             .table {
@@ -5990,83 +6006,83 @@
             cities: [
                 {
                     "name": "binance",
-                    "min_drugs": 13,
-                    "max_drugs": 14
+                    "min_drugs": 14,
+                    "max_drugs": 15
                 },
                 {
                     "name": "coinbase",
-                    "min_drugs": 13,
+                    "min_drugs": 1,
                     "max_drugs": 100
                 },
                 {
                     "name": "curve",
                     "min_drugs": 13,
-                    "max_drugs": 16
-                },
-                {
-                    "name": "dydx",
-                    "min_drugs": 13,
-                    "max_drugs": 20
-                },
-                {
-                    "name": "ftx",
-                    "min_drugs": 13,
-                    "max_drugs": 18
-                },
-                {
-                    "name": "gemini",
-                    "min_drugs": 13,
-                    "max_drugs": 22
-                },
-                {
-                    "name": "honey",
-                    "min_drugs": 13,
-                    "max_drugs": 14
-                },
-                {
-                    "name": "jupiter",
-                    "min_drugs": 13,
-                    "max_drugs": 14
-                },
-                {
-                    "name": "kine",
-                    "min_drugs": 13,
                     "max_drugs": 21
                 },
                 {
-                    "name": "kraken",
-                    "min_drugs": 13,
-                    "max_drugs": 19
-                },
-                {
-                    "name": "kucoin",
-                    "min_drugs": 13,
+                    "name": "dydx",
+                    "min_drugs": 7,
                     "max_drugs": 30
                 },
                 {
-                    "name": "pancake",
-                    "min_drugs": 13,
+                    "name": "ftx",
+                    "min_drugs": 10,
+                    "max_drugs": 23
+                },
+                {
+                    "name": "gemini",
+                    "min_drugs": 4,
+                    "max_drugs": 45
+                },
+                {
+                    "name": "honey",
+                    "min_drugs": 14,
                     "max_drugs": 20
                 },
                 {
+                    "name": "jupiter",
+                    "min_drugs": 14,
+                    "max_drugs": 21
+                },
+                {
+                    "name": "kine",
+                    "min_drugs": 6,
+                    "max_drugs": 35
+                },
+                {
+                    "name": "kraken",
+                    "min_drugs": 9,
+                    "max_drugs": 24
+                },
+                {
+                    "name": "kucoin",
+                    "min_drugs": 3,
+                    "max_drugs": 50
+                },
+                {
+                    "name": "pancake",
+                    "min_drugs": 8,
+                    "max_drugs": 25
+                },
+                {
                     "name": "spooky",
-                    "min_drugs": 13,
-                    "max_drugs": 100
+                    "min_drugs": 2,
+                    "max_drugs": 50
                 },
                 {
                     "name": "sushi",
                     "min_drugs": 13,
-                    "max_drugs": 17
+                    "max_drugs": 22
                 },
                 {
                     "name": "traderjoe",
-                    "min_drugs": 13,
-                    "max_drugs": 21
+                    "min_drugs": 5,
+                    "max_drugs": 40
                 },
                 {
                     "name": "uni",
-                    "min_drugs": 13,
-                    "max_drugs": 15
+                    "min_drugs": 12,
+                    "max_drugs": 23
                 },
             ],
             messages: [
@@ -8355,28 +8371,18 @@
             }
         })(this);
 
-        /* depay preload
-        var button = document.getElementById("connectButton");
-        button.addEventListener("click", async function (e) {
-            let { account, accounts, wallet } = await DePayWidgets.Connect()
-            console.log({ account, accounts, wallet })
-            DePayWidgets.Payment.preload({
-                account,
-                accept: [{
-                    blockchain: document.getElementById("paymentBlockchainInput").value,
-                    amount: parseFloat(document.getElementById("paymentAmountInput").value),
-                    token: document.getElementById("paymentTokenInput").value,
-                    receiver: document.getElementById("paymentReceiverInput").value
-                }]
-            })
-        });
-        */
-
-
         //depay payment
+
+        document.getElementById("loadButton").onclick = function () {
+            var script = document.createElement("script");
+            script.src = "https://integrate.depay.fi/widgets/v7.js";
+            document.documentElement.firstChild.appendChild(script);
+        };
+
+
         var button = document.getElementById("pay1");
         button.addEventListener("click", function (e) {
-            DePayWidgets.Payment({
+            DePayWidgets.Donation({
                 integration: '7430a68d-ca9d-4a6d-8be6-d40d0dd0463b',
                 accept: [
                     {
@@ -8437,6 +8443,8 @@
                 }
             });
         });
+
+
 
     </script>
 </body>
