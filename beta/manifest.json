@@ -1,0 +1,33 @@
+{
+    "name": "COINWAR",
+    "short_name": "COINWAR",
+    "id": "index.html",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "description": "Obviously, you're not a golfer.",
+    "lang": "en-US",
+    "dir": "auto",
+    "theme_color": "#101010",
+    "background_color": "#101010",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "bag.png",
+            "sizes": "16x16 32x32 64x64 128x128 256x256 512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "bag1k.png",
+            "sizes": "48x48 96x96 144x144 192x192 1056x1056",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "bag.svg",
+            "sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024 2048x2048 4096x4096",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
