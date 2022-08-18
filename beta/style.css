@@ -7,6 +7,25 @@ body {
      line-height: 1.4em;
 }
 
+.privacy {
+     margin: 0;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-size: 2vw;
+     color: #E31C79;
+     background-color: #101010;
+     line-height: 1.4em;
+     text-align: center;
+     margin: 40px
+}
+
+.privacy h1 {
+     color: #A6E327
+}
+
+.privacy h2 {
+     color: #3977d4
+}
+
 a {
      color: inherit;
      text-decoration: none
