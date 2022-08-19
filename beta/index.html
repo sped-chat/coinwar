@@ -42,14 +42,13 @@
 </head>
 
 <body>
-
     <div>
         <table class="table table-condensed drugs text-center">
             <tbody>
                 <tr>
                     <th>
                         <a data-toggle="modal" href="#modal-prices" class="green">
-                            <svg width="24" height="24" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+                            <svg fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
                                 <path
                                     d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z" />
                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -60,7 +59,7 @@
                     </th>
                     <th>
                         <a id="loadButton" class="green" data-toggle="modal" href="#modal-inventory">
-                            <svg width="24" height="24" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+                            <svg fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
                                 <path
                                     d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
                             </svg>
@@ -68,8 +67,7 @@
                     </th>
                     <th>
                         <a data-toggle="modal" href="#modal-pawn-shop" class="green">
-                            <svg width="24" height="24" fill="currentColor" class="bi bi-currency-dollar"
-                                viewBox="0 0 16 16">
+                            <svg fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
                                 <path
                                     d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
                             </svg>
@@ -77,8 +75,7 @@
                     </th>
                     <th>
                         <a data-toggle="modal" href="#modal-cities" class="green">
-                            <svg width="24" height="24" fill="currentColor" class="bi bi-arrow-repeat"
-                                viewBox="0 0 16 16">
+                            <svg fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                                 <path
                                     d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
                                 <path fill-rule="evenodd"
@@ -113,11 +110,8 @@
         <br />
         <h4 class="xs-stats dex text-center green">DEX : <button class="btn" data-toggle="modal"
                 href="#modal-cities"><span class="city"></span></button>
-
             <button class="btn" data-toggle="modal" href="#modal-high-score">high score</button>
-
         </h4>
-
         <div class="footer">
             <br /><br />
             <a href="https://twitter.com/coinwarapp" target="_blank">
@@ -141,10 +135,9 @@
             </a>
             <br />
             <span></span>
-            <a class="site-link" data-toggle="modal" href="./privacy.html" target="_blank"">coinwar.app</a>
+            <a data-toggle="modal" href="./privacy.html" target="_blank"">coinwar.app</a>
             <br /><br />
         </div>
-
     </div>
 
     <div class=" modal" id="modal-inventory" tabindex="-1" role="dialog">
@@ -272,7 +265,7 @@
                         <h3>HIGH SCORES</h3>
                         <ul>
                         </ul>
-                        <br /><br />
+                        <br />
                         <a class="new-name" href="#">CHANGE ALIAS</a>
                         <br /><br />
                         <button type="button" class="btn" data-dismiss="modal" data-l10n-id="close">
@@ -287,7 +280,6 @@
                 <div class="modal-content">
                     <div class=" modal-body">
                         <h4 class="green">HISTORICAL MARKET DATA</h4>
-                        <br />
                         <table class="table">
                             <tbody>
                                 <tr>
