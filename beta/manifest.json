@@ -12,14 +12,18 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "bag.png",
-            "sizes": "16x16 32x32 64x64 128x128 256x256 512x512",
-            "type": "image/png",
-            "purpose": "any"
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
         },
         {
             "src": "bag1k.png",
-            "sizes": "48x48 96x96 144x144 192x192 1056x1056",
+            "sizes": "1056x1056",
             "type": "image/png",
             "purpose": "any"
         },
