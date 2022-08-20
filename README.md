@@ -2,4 +2,4 @@ This project is a spiritual successor of <a href="https://github.com/316k/DopeWa
 <br /><br />
 Do you like ~~Baileys~~  <a href="https://icy-credit-8669.on.fleek.co" target="_blank">**IPFS**</a>?
 <br /><br /><br /><br />
-![COINWAR](/main/icons/1024.png)
+![COINWAR](/icons/1024.png)
