@@ -1062,7 +1062,7 @@ function Controller() {
             self.view.refresh_stats(self.game, self.coat);
 
             if (self.game.day == self.game.end) {
-                $('a[href=#modal-cities]').html('<i class="glyphicon glyphicon-stop"></i> ' + translate('end')).attr('href', '#').click(function () {
+                $('a[data-bs-target=#modal-cities]').html('<i class="glyphicon glyphicon-stop"></i> ' + translate('end')).attr('href', '#').click(function () {
                     $('#modal-cities .cities button[data-city]:not(.current)').first().click();
                 });
             }
@@ -1072,17 +1072,22 @@ function Controller() {
         $('.navbar .navbar-collapse').removeClass('in');
     });
 
-    $('a[href=#modal-pawn-shop]').click(function () {
+    $('a[data-bs-target=#modal-pawn-shop]').click(function () {
         $('#modal-pawn-shop .form-group').removeClass('has-error');
         $('#modal-pawn-shop .debt').text(self.game.debt);
         $('#modal-pawn-shop input').val(0);
     });
 
-    $('a[href=#modal-inventory]').click(function () {
+    $('a[data-bs-target=#modal-inventory]').click(function () {
+        self.view.refresh_inventory(self.coat.drugs);
+    });
+
+    $('button[data-bs-target=#modal-inventory]').click(function () {
         self.view.refresh_inventory(self.coat.drugs);
     });
 
     $('.depayland').click(function () {
+        console.log($(this).parent().prev().val())
         var amount = parseInt($(this).parent().prev().val());
         self.coat.cash += amount;
 
