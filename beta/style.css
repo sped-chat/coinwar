@@ -1,8 +1,8 @@
 body {
      color: #E31C79;
-     background-color: #101010;
+     background-color: #202020;
      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-     font-size: 1.5vh;
+     font-size: 1.7vh;
      text-align: center;
      margin: 0
 }
@@ -13,55 +13,58 @@ body {
      box-sizing: border-box
 }
 
-a {
-     color: #E4CBB6;
-     text-decoration: none;
-}
-
-a:hover {
-     color: #3977D4;
-}
-
 button {
-     background-color: #181818;
-     color: #E31C79;
-     font-size: 1.5vh;
+     background-color: transparent;
+     color: #3977D4;
+     font-size: inherit;
+     transform: scale(1.7);
      border: none;
-     margin: .2vh
-}
-
-button:hover {
-     background-color: #141414;
-     color: #3977D4
-}
-
-.button-nav {
+     margin: .7vh;
+     padding: 0 0 0 0;
      transition: transform .2s ease-in-out
 }
 
-.button-nav:hover {
-     transform: scale(1.2)
-}
-
-.button-trade {
+button:hover {
      background-color: transparent;
-     transition: transform .2s ease-in-out;
-}
-
-.button-trade:hover {
-     background-color: transparent;
-     transform: scale(2);
+     transform: scale(1.2);
      text-shadow: 0 0 1vh #3977D4
 }
 
-.footer {
-     font-size: .9vh;
-     line-height: .6vh;
+button svg {
+     width: 1.6vh;
+     fill: currentColor;
+     color: #A6E327;
 }
 
+button svg:hover {
+     color: inherit;
+}
+
+.footer {
+     line-height: .5vh;
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     color: #E4CBB6;
+}
+
+.footer a {
+     font-size: .9vh;
+     color: inherit;
+     text-decoration: none;
+}
+
+.footer button,
 .footer svg {
-     width: 1.45vh;
-     color: inherit
+     color: #E4CBB6;
+     transform: scale(1);
+     margin: -0.1vh
+}
+
+.footer svg:hover {
+     transform: scale(1.2);
+     color: #F5F5F5
 }
 
 .hidden {
@@ -116,6 +119,17 @@ h2 {
      -webkit-appearance: none
 }
 
+.modal-body {
+     padding: 15px;
+     background-color: #202124
+}
+
+.modal-dialog {
+     width: 100%;
+     max-width: 400px;
+     margin: 10px auto;
+}
+
 .modal-inventory input {
      display: none;
 }
@@ -130,29 +144,6 @@ h2 {
      background-color: #000
 }
 
-.modal-body {
-     padding: 15px;
-     background-color: #202124
-}
-
-.modal-dialog {
-     width: 100%;
-     max-width: 400px;
-     margin: 10px auto;
-}
-
-svg {
-     width: 2vh;
-     fill: currentColor;
-     color: #A6E327;
-}
-
-svg:active,
-svg:hover,
-svg:focus {
-     color: #3977d4;
-}
-
 table {
      border-collapse: collapse;
      color: #F5F5F5;
@@ -161,13 +152,13 @@ table {
 }
 
 th {
-     width: 25%;
-     background-color: #252525;
-     padding: .9vh 0 .5vh 0
+     background-color: #101010;
+     padding: 1vh 0 .2vh 0;
+     position: sticky;
+     top: 0
 }
 
 td {
-     border-top: 1px solid #181818;
      width: 25%;
      padding: .1vh 0 .1vh 0
 }
