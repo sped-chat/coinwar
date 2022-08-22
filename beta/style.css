@@ -27,7 +27,7 @@ button {
      color: #E31C79;
      font-size: 1.5vh;
      border: none;
-     margin: 2px
+     margin: .2vh
 }
 
 button:hover {
@@ -36,23 +36,21 @@ button:hover {
 }
 
 .button-nav {
-     transform: scale(.9);
      transition: transform .2s ease-in-out
 }
 
 .button-nav:hover {
-     transform: scale(1.1) translatey(-2px)
+     transform: scale(1.2)
 }
 
 .button-trade {
      background-color: transparent;
-     transform: scale(1.5);
      transition: transform .2s ease-in-out;
 }
 
 .button-trade:hover {
      background-color: transparent;
-     transform: scale(2) translatey(-0.1vh);
+     transform: scale(2);
      text-shadow: 0 0 1vh #3977D4
 }
 
@@ -64,13 +62,6 @@ button:hover {
 .footer svg {
      width: 1.45vh;
      color: inherit
-}
-
-.form {
-     text-align: inherit;
-     width: 100%;
-     height: inherit;
-     color: #555;
 }
 
 .hidden {
@@ -87,20 +78,6 @@ h2 {
      color: #3977d4
 }
 
-input {
-     background-color: #303030;
-     border: none
-}
-
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
-     -webkit-appearance: none
-}
-
-.input-group {
-     white-space: nowrap
-}
-
 .modal {
      position: fixed;
      top: 0;
@@ -108,7 +85,39 @@ input::-webkit-outer-spin-button {
      bottom: 0;
      left: 0;
      z-index: 1050;
-     display: none
+     display: none;
+}
+
+.modal ul {
+     list-style: none
+}
+
+.modal td {
+     border: none
+}
+
+.modal th {
+     background-color: inherit
+}
+
+.modal input {
+     background-color: #303030;
+     border: none;
+     white-space: nowrap;
+     max-width: 20vh;
+     text-align: inherit;
+     width: 100%;
+     height: inherit;
+     color: #555;
+}
+
+.modal input::-webkit-inner-spin-button,
+.modal input::-webkit-outer-spin-button {
+     -webkit-appearance: none
+}
+
+.modal-inventory input {
+     display: none;
 }
 
 .modal-backdrop {
@@ -132,45 +141,8 @@ input::-webkit-outer-spin-button {
      margin: 10px auto;
 }
 
-.modal-header {
-     padding: 5px
-}
-
-#modal-high-score ul {
-     list-style: none
-}
-
-#modal-inventory label input {
-     display: none
-}
-
-#modal-inventory table tr th {
-     background-color: #202124;
-     font-size: 2em;
-     line-height: 1.4em
-}
-
-#modal-inventory table tr td {
-     border: none !important
-}
-
-.modal-open .modal {
-     overflow-x: hidden;
-     overflow-y: auto
-}
-
-#modal-pawn-shop .input-group,
-#modal-transaction .input-group {
-     max-width: 180px
-}
-
-
-#modal-prices .table tr td {
-     border: none
-}
-
 svg {
-     width: 2.5vh;
+     width: 2vh;
      fill: currentColor;
      color: #A6E327;
 }
@@ -189,15 +161,13 @@ table {
 }
 
 th {
-     position: sticky;
      width: 25%;
      background-color: #252525;
-     padding: 7px 0px 2px 0px;
+     padding: .9vh 0 .5vh 0
 }
 
 td {
      border-top: 1px solid #181818;
      width: 25%;
-     padding: .5vh;
-
+     padding: .1vh 0 .1vh 0
 }
