@@ -41,8 +41,12 @@ button svg:hover {
      color: inherit;
 }
 
-button .button-buttom {
-     transform: scale(10);
+.button-bottom {
+     transform: scale(2.5);
+}
+
+.button-bottom:hover {
+     transform: scale(2);
 }
 
 .footer {
