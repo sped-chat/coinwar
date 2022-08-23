@@ -29,13 +29,12 @@
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#ffc40d">
     <link rel="apple-touch-startup-image" href="/icons/1024.png">
 
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="COINWAR">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="COINWAR">
 
     <link rel="manifest" href="./manifest.json">
-    <script type="text/javascript" src="./jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="./mechanics.js"></script>
 
@@ -109,9 +108,9 @@
             </tr>
         </tbody>
     </table>
-    <br />
-    <button class="button-bottom" data-bs-toggle="modal" data-bs-target="#modal-cities">💱</button>
     <div class="footer">
+        <button class="cycle" data-bs-toggle="modal" data-bs-target="#modal-cities">💱</button>
+        <br />
         <button>
             <a href="https://twitter.com/coinwarapp" target="_blank">
                 <svg class="bi bi-twitter" viewBox="0 0 16 16">
@@ -140,22 +139,31 @@
         </button>
         <br /><br />
         <a data-bs-toggle="modal" href="./privacy.html" target="_blank">coinwar.app</a>
-        <br /><br /><br /><br /><br /><br />
     </div>
 </body>
 
+<!-- why can't i delete this modal (#modal-high-score) without the transaction modal breaking? -->
+<div id="modal-high-score" class="modal">
+    <ul>
+    </ul>
+</div>
+
 <div id="modal-transaction" class="modal">
-    <div class="modal-dialog modal-content modal-body">
-        <div>
-            <div>
-                <div>
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <!-- why can't i delete this .modal-header / <h4> span without the transaction modal breaking? -->
+            <div class="modal-header">
+                <h4><span class="modal-title"></span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
                     <label>
                         <div>
-                            <input type="number" pattern="[0-9]*">
+                            <input type="number" pattern="[0-9]*" value="1">
                             <span>
-                                <button class="max" data-l10n-id="max">
+                                <button class="btn max" type="button" data-l10n-id="max">
                                 </button>
-                                <button class="action" data-bs-dismiss="modal">
+                                <button class="btn action" type="button" data-bs-dismiss="modal">
                                 </button>
                             </span>
                         </div>
@@ -225,23 +233,6 @@
         </div>
         <div class="modal-body xs-stats">
             <h1>YEAR : <span class="day"></span></h1>
-        </div>
-    </div>
-</div>
-
-<div id="modal-high-score" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h1>HIGH SCORES</h1>
-                <ul>
-                </ul>
-                <br />
-                <a class="new-name" href="#">CHANGE ALIAS</a>
-                <br /><br />
-                <button data-bs-dismiss="modal" data-l10n-id="close">
-                </button>
-            </div>
         </div>
     </div>
 </div>

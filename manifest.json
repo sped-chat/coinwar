@@ -12,22 +12,20 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "bag.png",
-            "sizes": "16x16 32x32 64x64 128x128 256x256 512x512",
-            "type": "image/png",
-            "purpose": "any"
+            "src": "/icons/512.png",
+            "sizes": "512x512",
+            "type": "image/png"
         },
         {
-            "src": "bag1k.png",
-            "sizes": "48x48 96x96 144x144 192x192 1056x1056",
+            "src": "/icons/512-maskable.png",
+            "sizes": "196x196",
             "type": "image/png",
-            "purpose": "any"
+            "purpose": "maskable"
         },
         {
-            "src": "bag.svg",
-            "sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024 2048x2048 4096x4096",
-            "type": "image/svg+xml",
-            "purpose": "any"
+            "src": "/icons/favicon.svg",
+            "purpose": "maskable any",
+            "sizes": "any"
         }
     ]
 }
