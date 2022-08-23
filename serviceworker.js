@@ -17,3 +17,5 @@ self.addEventListener("fetch", function (event) {
     })
   );
 });
+
+// can this be moved to mechanics.js?  or embedded into html?
