@@ -2,5 +2,5 @@
 <br />
 *What a forkin' good time!*
 <br /><br />
-Do you like <sub>~~Baileys~~</sub> <a href="https://icy-credit-8669.on.fleek.co" target="_blank">**IPFS**</a>?
-![COINWAR](/icons/1024.png)</center>
+Do you like <sub>~~Baileys~~</sub> <a href="https://icy-credit-8669.on.fleek.co" target="_blank">**IPFS**</a>?</center>
+![COINWAR](/icons/1024.png)
