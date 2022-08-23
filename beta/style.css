@@ -34,7 +34,7 @@ button svg {
      transform: scale(1.5);
      width: 1.6vh;
      fill: currentColor;
-     color: #A6E327;
+     color: #D8B497;
 }
 
 button svg:hover {
@@ -52,7 +52,7 @@ button svg:hover {
 }
 
 .footer {
-     line-height: .5vh;
+     line-height: 1vh;
      position: fixed;
      left: 0;
      bottom: 0;

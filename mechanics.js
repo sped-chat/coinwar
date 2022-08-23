@@ -173,10 +173,10 @@ View.prototype.setup_drugs = function () {
 function createElementFromHTML(htmlString) {
     var div = document.createElement('div');
     div.innerHTML = htmlString.trim();
-  
+
     // Change this to div.childNodes to support multiple top-level nodes.
     return div.firstChild;
-  }
+}
 
 View.prototype.setup_cities = function () {
     for (var city in DataCenter.cities) {
@@ -460,7 +460,7 @@ var DataCenter = {
         {
             "name": "matic",
             "minimum_price": 1,
-            "maximum_price": 1000
+            "maximum_price": 10
         },
         {
             "name": "mkr",
@@ -480,7 +480,7 @@ var DataCenter = {
         {
             "name": "shib",
             "minimum_price": 1,
-            "maximum_price": 2
+            "maximum_price": 7
         },
         {
             "name": "sol",
@@ -490,7 +490,7 @@ var DataCenter = {
         {
             "name": "tron",
             "minimum_price": 1,
-            "maximum_price": 2
+            "maximum_price": 9
         },
         {
             "name": "uni",
@@ -508,83 +508,83 @@ var DataCenter = {
     cities: [
         {
             "name": "binance",
-            "min_drugs": 13,
-            "max_drugs": 14
+            "min_drugs": 16,
+            "max_drugs": 17
         },
         {
             "name": "coinbase",
             "min_drugs": 1,
-            "max_drugs": 100
+            "max_drugs": 17
         },
         {
             "name": "curve",
             "min_drugs": 13,
-            "max_drugs": 21
+            "max_drugs": 17
         },
         {
             "name": "dydx",
             "min_drugs": 7,
-            "max_drugs": 30
+            "max_drugs": 17
         },
         {
             "name": "ftx",
             "min_drugs": 10,
-            "max_drugs": 23
+            "max_drugs": 17
         },
         {
             "name": "gemini",
             "min_drugs": 4,
-            "max_drugs": 45
+            "max_drugs": 17
         },
         {
             "name": "honey",
             "min_drugs": 14,
-            "max_drugs": 20
+            "max_drugs": 17
         },
         {
             "name": "jupiter",
             "min_drugs": 14,
-            "max_drugs": 21
+            "max_drugs": 17
         },
         {
             "name": "kine",
             "min_drugs": 6,
-            "max_drugs": 35
+            "max_drugs": 17
         },
         {
             "name": "kraken",
             "min_drugs": 9,
-            "max_drugs": 24
+            "max_drugs": 17
         },
         {
             "name": "kucoin",
             "min_drugs": 3,
-            "max_drugs": 50
+            "max_drugs": 17
         },
         {
             "name": "pancake",
             "min_drugs": 8,
-            "max_drugs": 25
+            "max_drugs": 17
         },
         {
             "name": "spooky",
             "min_drugs": 2,
-            "max_drugs": 50
+            "max_drugs": 17
         },
         {
             "name": "sushi",
             "min_drugs": 13,
-            "max_drugs": 22
+            "max_drugs": 17
         },
         {
             "name": "traderjoe",
             "min_drugs": 5,
-            "max_drugs": 40
+            "max_drugs": 17
         },
         {
             "name": "uni",
             "min_drugs": 12,
-            "max_drugs": 23
+            "max_drugs": 17
         },
     ],
     messages: [
@@ -886,7 +886,7 @@ NewsManager.prototype.add = function (news) {
 
 
 // controller
-(function(funcName, baseObj) {
+(function (funcName, baseObj) {
     // The public function name defaults to window.docReady
     // but you can pass in your own object and own function name and those will be used
     // if you want to put them in a different namespace
@@ -919,7 +919,7 @@ NewsManager.prototype.add = function (news) {
     }
 
     function readyStateChange() {
-        if ( document.readyState === "complete" ) {
+        if (document.readyState === "complete") {
             ready();
         }
     }
@@ -928,18 +928,18 @@ NewsManager.prototype.add = function (news) {
     // docReady(fn, context);
     // the context argument is optional - if present, it will be passed
     // as an argument to the callback
-    baseObj[funcName] = function(callback, context) {
+    baseObj[funcName] = function (callback, context) {
         if (typeof callback !== "function") {
             throw new TypeError("callback for docReady(fn) must be a function");
         }
         // if ready has already fired, then just schedule the callback
         // to fire asynchronously, but right away
         if (readyFired) {
-            setTimeout(function() {callback(context);}, 1);
+            setTimeout(function () { callback(context); }, 1);
             return;
         } else {
             // add the function and context to the list
-            readyList.push({fn: callback, ctx: context});
+            readyList.push({ fn: callback, ctx: context });
         }
         // if document already ready to go, schedule the ready function to run
         if (document.readyState === "complete") {
@@ -961,7 +961,7 @@ NewsManager.prototype.add = function (news) {
     }
 })("docReady", window);
 
-docReady(function() {
+docReady(function () {
     console.log("Here?")
     // Useful when debugging
     navigator.Controller = new Controller();
@@ -996,7 +996,8 @@ function Controller() {
     this.view.refresh_high_score(self.game.high_score());
 
     document.querySelectorAll('button.buy').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             if (self.buy(parseInt(elem.parentElement.parentElement.dataset['drug']), parseInt(elem.previousElementSibling.previousElementSibling.value))) {
                 elem.previousElementSibling.previousElementSibling.value = 0;
             }
@@ -1004,7 +1005,8 @@ function Controller() {
     })
 
     document.querySelectorAll('button.sell').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var index = parseInt(elem.parentNode.parentElement.dataset['drug']);
             var quantity = parseInt(elem.previousElementSibling.previousElementSibling.value);
             if (self.sell(index, quantity)) {
@@ -1015,7 +1017,8 @@ function Controller() {
     })
 
     document.querySelectorAll('button.buy-max').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var item_number = parseInt(elem.parentNode.parentElement.dataset['drug']);
             var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
             elem.previousElementSibling.value = quantity;
@@ -1023,7 +1026,8 @@ function Controller() {
     })
 
     document.querySelectorAll('button.sell-max').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var item_number = parseInt(elem.parentNode.parentElement.dataset['drug']);
             var quantity = self.coat.drugs[item_number] || 0;
             elem.previousElementSibling.value = quantity;
@@ -1031,58 +1035,62 @@ function Controller() {
     })
 
     document.querySelectorAll('a.new-game').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             window.location = '';
         }
     })
 
     document.querySelectorAll('a.new-name').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             self.new_name();
         }
     })
 
     document.querySelectorAll('#modal-cities .cities button[data-city]').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             if (self.game.city.number == elem.dataset['city']) {
                 return;
             }
-    
+
             if (self.game.day == self.game.end) {
                 self.game_over();
             } else {
                 self.news_manager.add(new News(translate('notification-move', {
                     city: translate('city-' + DataCenter.cities[elem.dataset['city']].name)
                 }), 'move'));
-    
+
                 self.game.new_city(elem.dataset['city'], self.news_manager);
                 self.view.refresh_available_drugs(self.game.city.available_drugs);
                 self.view.refresh_news(self.news_manager.news);
-    
+
                 document.querySelectorAll('button[data-city].current').forEach((elem) => {
                     elem.classList.remove('current');
                 })
                 elem.classList.add('current');
-    
+
                 document.querySelectorAll('input.number').forEach(function () {
                     elem.previousElementSibling.value = 0;
                 });
-    
+
                 self.view.refresh_news(self.news_manager.news);
                 self.view.refresh_prices(self.game.city.prices);
                 self.view.refresh_stats(self.game, self.coat);
-    
+
                 if (self.game.day == self.game.end) {
                     document.querySelectorAll('a[data-bs-target=#modal-cities]').forEach((elem) => {
                         elem.innerHTML = '<i class="glyphicon glyphicon-stop"></i> ' + translate('end');
                         elem.attributes['href'] = '#'
-                        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+                        let a = elem.onclick; elem.onclick = (ev) => {
+                            if (a) a(ev);
                             document.querySelector('#modal-cities .cities button[data-city]:not(.current)').click();
                         }
                     })
                 }
             }
-    
+
             document.querySelector('#modal-cities').classList.add('hide.bs.modal')
             document.querySelectorAll('.navbar .navbar-collapse').forEach((elem) => {
                 elem.classList.remove('in')
@@ -1091,15 +1099,16 @@ function Controller() {
     })
 
     document.querySelectorAll('a[data-bs-target="#modal-pawn-shop"]').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
-            document.querySelectorAll('#modal-pawn-shop .form-group').forEach((elem) => {elem.classList.remove('has-error')});
-            document.querySelectorAll('#modal-pawn-shop .debt').forEach((elem) => { elem.innerText = self.game.debt})
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
+            document.querySelectorAll('#modal-pawn-shop .form-group').forEach((elem) => { elem.classList.remove('has-error') });
+            document.querySelectorAll('#modal-pawn-shop .debt').forEach((elem) => { elem.innerText = self.game.debt })
             document.querySelectorAll('#modal-pawn-shop input').forEach((elem) => { elem.value = 0; })
         }
     })
     console.log("Here?")
     document.querySelectorAll('a[data-bs-target="#modal-inventory"]').forEach((elem) => {
-        let a = elem.onclick; 
+        let a = elem.onclick;
         console.log(elem)
         elem.onclick = (ev) => {
             if (a) a(ev);
@@ -1109,13 +1118,15 @@ function Controller() {
 
     document.querySelectorAll('button[data-bs-target="#modal-inventory"]').forEach((elem) => {
         let a = elem.onclick
-        elem.onclick = (ev) => {if (a) a(ev);
+        elem.onclick = (ev) => {
+            if (a) a(ev);
             self.view.refresh_inventory(self.coat.drugs);
         }
     })
 
     document.querySelectorAll('.depayland').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             let val = elem.parentNode.previousElementSibling.value;
             console.log(val);
 
@@ -1128,7 +1139,8 @@ function Controller() {
     });
 
     document.querySelectorAll('#modal-inventory button.land').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var amount = parseInt(elem.parentNode.previousElementSibling.value);
             self.coat.cash += amount;
 
@@ -1138,7 +1150,8 @@ function Controller() {
     });
 
     document.querySelectorAll('#modal-inventory button.defi').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var amount = parseInt(elem.parentNode.previousElementSibling.value);
             self.game.debt += amount;
             self.coat.cash += amount;
@@ -1149,23 +1162,25 @@ function Controller() {
     })
 
     document.querySelectorAll('#modal-inventory button.paydefi').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
 
             if (self.coat.cash >= amount) {
                 self.game.debt -= amount;
                 self.coat.cash -= amount;
                 elem.parentNode.previousElementSibling.value = 0;
-    
+
                 self.view.refresh_stats(self.game, self.coat);
             } else {
                 elem.parentNode.parentNode.parentElement.classList.add('has-error')
-            }      
+            }
         }
     })
 
     document.querySelectorAll('#modal-pawn-shop button.pay').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
 
             if (self.coat.cash >= amount) {
@@ -1181,7 +1196,8 @@ function Controller() {
     })
 
     document.querySelectorAll('#modal-pawn-shop button.land').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var amount = parseInt(elem.parentNode.previousElementSibling.value);
             self.game.debt += amount;
             self.coat.cash += amount;
@@ -1192,7 +1208,8 @@ function Controller() {
     })
 
     document.querySelectorAll('#modal-pawn-shop button.pay-max').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             elem.parentNode.previousElementSibling.value = (Math.min(self.coat.cash, self.game.debt));
         }
     })
@@ -1200,30 +1217,33 @@ function Controller() {
 
 
     document.querySelectorAll('#modal-inventory button.max').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             elem.parentNode.previousElementSibling.value = parseInt(elem.parentNode.parentNode.parentNode.previousElementSibling.innerText)
         }
     })
 
     document.querySelectorAll('#modal-inventory button.consume').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var index = parseInt(elem.parentNode.parentNode.parentElement.dataset['drug']);
             var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.drugs[index]);
-    
+
             self.coat.drugs[index] -= quantity;
             self.game.stone_level += quantity;
-    
+
             self.view.refresh_stone_level(self.game.stone_level);
             self.view.refresh_inventory(self.coat.drugs);
             self.view.refresh_quantities(self.coat.drugs);
             self.view.refresh_stats(self.game, self.coat);
-    
+
             elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = 0;
         }
     })
 
     document.querySelectorAll('#modal-inventory button.drop').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             var index = parseInt(elem.parentElement.parentElement.parentElement.dataset['drug']);
             var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.drugs[index]);
 
@@ -1240,7 +1260,8 @@ function Controller() {
 
 
     document.querySelectorAll('.buy-xs').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             document.querySelector('#modal-transaction input[type="number"]').value = (0);
 
             document.querySelector('#modal-transaction').classList.remove('sell');
@@ -1260,7 +1281,7 @@ function Controller() {
 
             document.querySelector('#modal-transaction.buy button.action').onclick = (ev) => {
                 let elem = ev.currentTarget;
-            
+
                 var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
 
                 if (self.buy(index, parseInt(elem.parentElement.previousElementSibling.value))) {
@@ -1271,7 +1292,8 @@ function Controller() {
     })
 
     document.querySelectorAll('.sell-xs').forEach((elem) => {
-        let a = elem.onclick; elem.onclick = (ev) => {if (a) a(ev);
+        let a = elem.onclick; elem.onclick = (ev) => {
+            if (a) a(ev);
             document.querySelector('#modal-transaction input[type="number"]').value = (0);
 
             document.querySelector('#modal-transaction').classList.remove('buy');
@@ -1298,7 +1320,7 @@ function Controller() {
                 if (self.sell(index, quantity)) {
                     elem.removeEventListener('click', elem.onclick);
                 }
-            };     
+            };
         }
     })
 
@@ -1384,83 +1406,6 @@ Controller.prototype.game_over = function () {
 
     document.querySelector('#modal-high-score').classList.add('show.bs.modal');
 };
-
-
-
-
-
-
-
-
-
-
-//depay payment
-
-
-
-
-
-
-document.getElementById("loadButton").onclick = function () {
-    var script = document.createElement("script");
-    script.src = "https://integrate.depay.fi/widgets/v7.js";
-    document.documentElement.firstChild.appendChild(script);
-};
-
-
-var button = document.getElementById("depoistusdc");
-button.addEventListener("click", function (e) {
-    DePayWidgets.Donation({
-        integration: '7430a68d-ca9d-4a6d-8be6-d40d0dd0463b',
-        accept: [
-            {
-                blockchain: 'ethereum',
-                token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'polygon',
-                token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'bsc',
-                token: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'ethereum',
-                token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'polygon',
-                token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'bsc',
-                token: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'ethereum',
-                token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'polygon',
-                token: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'bsc',
-                token: '0x55d398326f99059fF775485246999027B3197955',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'bsc',
-                token: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }, {
-                blockchain: 'polygon',
-                token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-                receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
-            }
-        ]
-    });
-});
 
 
 
