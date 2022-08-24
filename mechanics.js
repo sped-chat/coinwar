@@ -180,7 +180,7 @@ function createElementFromHTML(htmlString) {
 
 View.prototype.setup_cities = function () {
     for (var city in DataCenter.cities) {
-        document.querySelector('#modal-cities .cities').append(createElementFromHTML('<button class="btn" data-city="' + city + '">' +
+        document.querySelector('#modal-cities .cities').append(createElementFromHTML('<button class="btn" data-bs-dismiss="modal" data-city="' + city + '">' +
             translate('city-' + DataCenter.cities[city].name) + '</button> '));
     }
     document.querySelector('#modal-cities .cities button.btn')?.classList.add('current');
@@ -513,77 +513,77 @@ var DataCenter = {
         },
         {
             "name": "coinbase",
-            "min_drugs": 1,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "curve",
-            "min_drugs": 13,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "dydx",
-            "min_drugs": 7,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "ftx",
-            "min_drugs": 10,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "gemini",
-            "min_drugs": 4,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "honey",
-            "min_drugs": 14,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "jupiter",
-            "min_drugs": 14,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "kine",
-            "min_drugs": 6,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "kraken",
-            "min_drugs": 9,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "kucoin",
-            "min_drugs": 3,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "pancake",
-            "min_drugs": 8,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "spooky",
-            "min_drugs": 2,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "sushi",
-            "min_drugs": 13,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "traderjoe",
-            "min_drugs": 5,
+            "min_drugs": 16,
             "max_drugs": 17
         },
         {
             "name": "uni",
-            "min_drugs": 12,
+            "min_drugs": 16,
             "max_drugs": 17
         },
     ],
@@ -1080,7 +1080,7 @@ function Controller() {
                 self.view.refresh_stats(self.game, self.coat);
 
                 if (self.game.day == self.game.end) {
-                    document.querySelectorAll('a[data-bs-target=#modal-cities]').forEach((elem) => {
+                    document.querySelectorAll('a[data-bs-target="#modal-cities"]').forEach((elem) => {
                         elem.innerHTML = '<i class="glyphicon glyphicon-stop"></i> ' + translate('end');
                         elem.attributes['href'] = '#'
                         let a = elem.onclick; elem.onclick = (ev) => {
@@ -1091,7 +1091,6 @@ function Controller() {
                 }
             }
 
-            document.querySelector('#modal-cities').classList.add('hide.bs.modal')
             document.querySelectorAll('.navbar .navbar-collapse').forEach((elem) => {
                 elem.classList.remove('in')
             })
@@ -1396,15 +1395,15 @@ Controller.prototype.game_over = function () {
     this.game.add_high_score(high_score_string);
     this.view.refresh_high_score(this.game.high_score());
 
-    document.querySelector('#modal-high-score .modal-footer .btn').innerText = (translate('new-game'));
-    document.querySelector('#modal-high-score .modal-body .final-score').innerHtml = ('FINAL SCORE : $' + score);
-    document.querySelector('#modal-high-score .modal-body .message').innerHtml = ('' + this.game.message(score));
+    // document.querySelector('#modal-high-score .modal-footer .btn').innerText = (translate('new-game'));
+    // document.querySelector('#modal-high-score .modal-body .final-score').innerHTML = 'FINAL SCORE : $' + score;
+    // document.querySelector('#modal-high-score .modal-body .message').innerHTML = '' + this.game.message(score);
 
-    document.querySelectorAll('#modal-high-score').on('hidden.bs.modal', function () {
-        window.location = '';
-    });
+    // document.querySelectorAll('#modal-high-score').on('hide.bs.modal', function () {
+    //     window.location = '';
+    // });
 
-    document.querySelector('#modal-high-score').classList.add('show.bs.modal');
+    // document.querySelector('#modal-high-score').classList.add('show.bs.modal');
 };
 
 
