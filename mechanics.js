@@ -683,8 +683,8 @@ function array_sum(array) {
 function GameManager() {
     this.day = 2022;
     this.end = 2036;
-    this.debt = 0;
-    this.bank_deposit = 0;
+    this.debt = 42;
+    this.bank_deposit = 100000;
     this.stone_level = 0;
     this.city = new City(0);
 }

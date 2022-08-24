@@ -19,7 +19,7 @@ button {
      font-size: inherit;
      transform: scale(1.2);
      border: none;
-     margin: .7vh;
+     margin: .6vh;
      padding: 0 0 0 0;
      transition: transform .2s ease-in-out
 }
@@ -165,7 +165,7 @@ table {
 
 th {
      background-color: #101010;
-     padding: 1vh 0 .2vh 0;
+     padding: .3vh 0 .7vh 0;
      position: sticky;
      top: 0
 }
