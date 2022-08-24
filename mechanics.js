@@ -508,83 +508,83 @@ var DataCenter = {
     cities: [
         {
             "name": "binance",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "coinbase",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "curve",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "dydx",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "ftx",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "gemini",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "honey",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "jupiter",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "kine",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "kraken",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "kucoin",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "pancake",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "spooky",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "sushi",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "traderjoe",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
         {
             "name": "uni",
-            "min_drugs": 15,
-            "max_drugs": 16
+            "min_drugs": 14,
+            "max_drugs": 15
         },
     ],
     messages: [
