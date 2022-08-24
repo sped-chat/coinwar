@@ -47,7 +47,7 @@ button svg:hover {
 }
 
 .cycle:hover {
-     transform: scale(4) !important;
+     transform: scale(2) !important;
 
 }
 
@@ -71,7 +71,8 @@ button svg:hover {
 .footer svg {
      color: #E4CBB6;
      transform: scale(1);
-     margin: -0.1vh
+     margin: -0.2vh;
+     padding-bottom: .3vh;
 }
 
 .footer svg:hover {
