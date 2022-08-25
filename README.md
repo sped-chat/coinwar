@@ -2,5 +2,5 @@ This project is a spiritual successor of <a href="https://github.com/316k/DopeWa
 <br />
 *What a forkin' good time!*
 <br /><br />
-Do you like <sub>~~Baileys~~</sub> <a href="https://icy-credit-8669.on.fleek.co" target="_blank">**IPFS**</a>?
+Do you like <sub>~~Baileys~~</sub> <a href="https://icp.coinwar.app/" target="_blank">**IPFS**</a>?
 ![COINWAR](/icons/1024.png)
