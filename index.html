@@ -66,7 +66,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            padding-bottom: 3vh;
+            padding-bottom: 3vh
         }
 
         .footer a {
@@ -83,7 +83,7 @@
         }
 
         .footer .cycle:hover a {
-            font-size: 6vh;
+            font-size: 8vh;
         }
 
         .footer svg {
@@ -109,7 +109,13 @@
         }
 
         .offcanvas {
-            background: #101010
+            background: #101010;
+            line-height: 1.8vh
+        }
+
+        .offcanvas .table {
+            color: inherit;
+            border: none
         }
 
         .offcanvas.offcanvas-bottom {
@@ -155,7 +161,7 @@
         <tbody>
             <tr>
                 <th>
-                    <a data-bs-toggle="modal" data-bs-target="#modal-prices">
+                    <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">
                         🪙
                     </a>
                 </th>
@@ -252,11 +258,166 @@
     </div>
 </body>
 
+
+<div id="modal-high-score" class="modal">
+    <ul>
+    </ul>
+</div>
+
+<div id="modal-transaction" class="modal">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><span class="modal-title"></span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <label>
+                        <div>
+                            <input type="number" pattern="[0-9]*" value="1">
+                            <span>
+                                <button class="btn max" type="button" data-l10n-id="max">
+                                </button>
+                                <button class="btn action" type="button" data-bs-dismiss="modal">
+                                </button>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-inventory" class="modal">
+    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
+        <div>
+            <div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>COIN</th>
+                            <th>QUANTITY</th>
+                            <th>VALUE</th>
+                        </tr>
+                        <tr class="template hidden">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>USDC</td>
+                            <td><span class="cash"></span></td>
+                            <td>$<span class="cash"></span></td>
+                        </tr>
+                        <tr>
+                            <td>DEFI</td>
+                            <td><span class="debt"></span></td>
+                            <td>- $<span class="debt"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br /><br />
+                <label>
+                    <input type="number" pattern="[0-9]*" value="1">
+                    <span>
+                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
+                        <button class="depayland"
+                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT FIAT</button>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-pawn-shop" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body xs-stats">
+            <h1>DEFI LOANS : $<span class="debt"></span></h1>
+            <br />
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land" data-bs-dismiss="modal">BORROW</button>
+                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-cities" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body cities">
+        </div>
+        <div class="modal-body xs-stats">
+            <h1>YEAR : <span class="day"></span></h1>
+        </div>
+    </div>
+</div>
+
+<div id="prices" class="offcanvas offcanvas-start table" tabindex="-1" aria-labelledby="prices">
+    <div class="offcanvas-body">
+        <div>
+            <h1>HISTORICAL MARKET DATA</h1>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>
+                            ADA<br />$1 - $2<br /><br />
+                            ALCX<br />$20 - $2K<br /><br />
+                            AAVE<br />$28 - $632<br /><br />
+                            AMC<br />$2 - $59<br /><br />
+                            APE<br />$3 - $26<br /><br />
+                            ATOM<br />$2 - $45<br /><br />
+                            AVAX<br />$3 - $134<br /><br />
+                            AXS<br />$1 - $160<br /><br />
+                            BNB<br />$10 - $700<br /><br />
+                            BTC<br />$5K - $69K<br /><br />
+                            BOO<br />$1 - $10
+                        </td>
+                        <td>
+                            CAKE<br />$1 - $42<br /><br />
+                            COMP<br />$27 - $854<br /><br />
+                            DOGE<br />$69 - $420<br /><br />
+                            DOT<br />$1 - $54<br /><br />
+                            ETH<br />$100 - $5K<br /><br />
+                            FIL<br />$5 - $188<br /><br />
+                            FTM<br />$1 - $13<br /><br />
+                            FTX<br />$2 - $80<br /><br />
+                            GME<br />$4 - $325<br /><br />
+                            ICP<br />$5 - $364<br /><br />
+                            LINK<br />$2 - $53
+                        </td>
+                        <td>
+                            LTC<br />$2 - $278<br /><br />
+                            MANA<br />$1 - $6<br /><br />
+                            MATIC<br />$1 - $11<br /><br />
+                            MKR<br />$206 - $6K<br /><br />
+                            OATH<br />$1 - $10<br /><br />
+                            SAND<br />$1 - $9<br /><br />
+                            SHIB<br />$1 - $7<br /><br />
+                            SOL<br />$1 - $260<br /><br />
+                            TRON<br />$1 - $9<br /><br />
+                            UNI<br />$2 - $43<br /><br />
+                            XRP<br />$1 - $4
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-body small">
         <h1>PRIVACY POLICY</h1>
         <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot; (hereafter
-            referred to as The Corporation). By using this service, you agree to the following:</p>
+            referred to as The Corporation).
+            <br />
+            By using this service, you agree to the following:
+        </p>
         <br />
         <h2>Where We're Getting Your Data</h2>
         <p>We collect data on you from: the GPS tracking system in your car, the AirTag you've got in your wallet,
@@ -359,159 +520,6 @@
             irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
         <br />
         <p>This policy is effective as of April 20, 2022.</p>
-    </div>
-</div>
-
-<div id="modal-high-score" class="modal">
-    <ul>
-    </ul>
-</div>
-
-<div id="modal-transaction" class="modal">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4><span class="modal-title"></span></h4>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body">
-                    <label>
-                        <div>
-                            <input type="number" pattern="[0-9]*" value="1">
-                            <span>
-                                <button class="btn max" type="button" data-l10n-id="max">
-                                </button>
-                                <button class="btn action" type="button" data-bs-dismiss="modal">
-                                </button>
-                            </span>
-                        </div>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-inventory" class="modal">
-    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
-        <div>
-            <div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>COIN</th>
-                            <th>QUANTITY</th>
-                            <th>VALUE</th>
-                        </tr>
-                        <tr class="template hidden">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>USDC</td>
-                            <td><span class="cash"></span></td>
-                            <td>$<span class="cash"></span></td>
-                        </tr>
-                        <tr>
-                            <td>DEFI</td>
-                            <td><span class="debt"></span></td>
-                            <td>- $<span class="debt"></span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br /><br />
-                <label>
-                    <input type="number" pattern="[0-9]*" value="1">
-                    <span>
-                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
-                        <button class="depayland"
-                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT FIAT</button>
-                    </span>
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-pawn-shop" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body xs-stats">
-            <h1>DEFI LOANS : $<span class="debt"></span></h1>
-            <br />
-            <div>
-                <input type="number" pattern="[0-9]*">
-                <span>
-                    <button class="land" data-bs-dismiss="modal">BORROW</button>
-                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-cities" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body cities">
-        </div>
-        <div class="modal-body xs-stats">
-            <h1>YEAR : <span class="day"></span></h1>
-        </div>
-    </div>
-</div>
-
-<div id="modal-prices" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <h1>HISTORICAL MARKET DATA</h1>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>
-                                ADA<br />$1 - $2<br /><br />
-                                ALCX<br />$20 - $2K<br /><br />
-                                AAVE<br />$28 - $632<br /><br />
-                                AMC<br />$2 - $59<br /><br />
-                                APE<br />$3 - $26<br /><br />
-                                ATOM<br />$2 - $45<br /><br />
-                                AVAX<br />$3 - $134<br /><br />
-                                AXS<br />$1 - $160<br /><br />
-                                BNB<br />$10 - $700<br /><br />
-                                BTC<br />$5K - $69K<br /><br />
-                                BOO<br />$1 - $10
-                            </td>
-                            <td>
-                                CAKE<br />$1 - $42<br /><br />
-                                COMP<br />$27 - $854<br /><br />
-                                DOGE<br />$69 - $420<br /><br />
-                                DOT<br />$1 - $54<br /><br />
-                                ETH<br />$100 - $5K<br /><br />
-                                FIL<br />$5 - $188<br /><br />
-                                FTM<br />$1 - $13<br /><br />
-                                FTX<br />$2 - $80<br /><br />
-                                GME<br />$4 - $325<br /><br />
-                                ICP<br />$5 - $364<br /><br />
-                                LINK<br />$2 - $53
-                            </td>
-                            <td>
-                                LTC<br />$2 - $278<br /><br />
-                                MANA<br />$1 - $6<br /><br />
-                                MATIC<br />$1 - $11<br /><br />
-                                MKR<br />$206 - $6K<br /><br />
-                                OATH<br />$1 - $10<br /><br />
-                                SAND<br />$1 - $9<br /><br />
-                                SHIB<br />$1 - $7<br /><br />
-                                SOL<br />$1 - $260<br /><br />
-                                TRON<br />$1 - $9<br /><br />
-                                UNI<br />$2 - $43<br /><br />
-                                XRP<br />$1 - $4
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
 </div>
 
