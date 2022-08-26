@@ -52,51 +52,20 @@
 
     <style>
         body {
-            color: #BDBDBD;
+            color: #E4CBB6;
             background-color: #202020;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 1.7vh;
             text-align: center;
             margin: 0
         }
 
-        * {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box
-        }
-
-        button {
-            background-color: transparent;
-            font-size: inherit;
-            transform: scale(1.2);
-            border: none;
-            margin: .6vh;
-            padding: 0 0 0 0;
-            transition: transform .2s ease-in-out
-        }
-
-        button:hover {
-            background-color: transparent;
-            transform: scale(.9);
-            text-shadow: 0 0 1vh #8D6E63
-        }
-
-        button svg {
-            transform: scale(1.5);
-            width: 1.6vh;
-            fill: currentColor;
-            color: #BCAAA4;
-        }
-
-        button svg:hover {
-            color: #8D6E63;
-            text-shadow: 0 0 1vh #8D6E63
+        a {
+            font-size: 1.7vh;
+            text-decoration: none;
         }
 
         .footer {
-            color: #E4CBB6;
-            line-height: 1vh;
+            line-height: 2vh;
             position: fixed;
             left: 0;
             bottom: 0;
@@ -105,31 +74,30 @@
         }
 
         .footer a {
-            font-size: .9vh;
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .footer button,
-        .footer svg {
-            color: inherit;
-            transform: scale(1);
-            margin: -0.2vh;
-            padding-bottom: .3vh;
-        }
-
-        .footer svg:hover {
-            transform: scale(1.2);
+            font-size: 1vh;
             color: inherit
         }
 
-        .footer .cycle svg {
-            transform: scale(3);
+        .footer .cycle {
             margin-bottom: 4vh
         }
 
-        .footer .cycle:hover svg {
-            transform: scale(2.5)
+        .footer .cycle a {
+            font-size: 7vh
+        }
+
+        .footer .cycle:hover a {
+            font-size: 6vh;
+        }
+
+        .footer svg {
+            width: 1.5vh;
+            fill: currentColor;
+            padding: -0.9
+        }
+
+        .footer svg:hover {
+            transform: scale(.9)
         }
 
         .hidden {
@@ -144,85 +112,44 @@
             font-size: 125%
         }
 
-        .modal {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 1050;
-            display: none;
+        .offcanvas {
+            background: #101010
         }
 
-        .modal ul {
-            list-style: none
-        }
-
-        .modal td {
-            border: none
-        }
-
-        .modal th {
-            background-color: inherit
-        }
-
-        .modal input {
-            background-color: #303030;
-            border: none;
-            white-space: nowrap;
-            max-width: 20vh;
-            text-align: inherit;
-            width: 100%;
-            height: inherit;
-            color: #555;
-        }
-
-        .modal input::-webkit-inner-spin-button,
-        .modal input::-webkit-outer-spin-button {
-            -webkit-appearance: none
-        }
-
-        .modal-body {
-            padding: 15px;
-            background-color: #202124
-        }
-
-        .modal-dialog {
-            width: 100%;
-            max-width: 400px;
-            margin: 10px auto;
-        }
-
-        .modal-inventory input {
-            display: none;
-        }
-
-        .modal-backdrop {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 1040;
-            background-color: #000
+        .offcanvas.offcanvas-bottom {
+            height: 75%
         }
 
         table {
+            color: #DCDCDC;
             border-collapse: collapse;
-            width: 100%;
-            max-width: 100%;
+            width: 100%
+        }
+
+        table a {
+            font-size: 2.5vh
+        }
+
+        table a:hover {
+            font-size: 2vh
         }
 
         th {
             background-color: #101010;
-            padding: .5vh 0 .7vh 0;
             position: sticky;
             top: 0
         }
 
+        th a {
+            font-size: 4vh
+        }
+
+        th a:hover {
+            font-size: 3vh
+        }
+
         td {
-            width: 25%;
-            padding: .1vh 0 .1vh 0
+            width: 25%
         }
     </style>
 </head>
@@ -232,41 +159,24 @@
         <tbody>
             <tr>
                 <th>
-                    <button data-bs-toggle="modal" data-bs-target="#modal-prices">
-                        <svg class="bi bi-coin" viewBox="0 0 16 16">
-                            <path
-                                d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z" />
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                            <path
-                                d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
-                        </svg>
-                    </button>
+                    <a data-bs-toggle="modal" data-bs-target="#modal-prices">
+                        🪙
+                    </a>
                 </th>
                 <th>
-                    <button data-bs-toggle="modal" data-bs-target="#modal-inventory">
-                        <svg class="bi bi-wallet2" viewBox="0 0 16 16">
-                            <path
-                                d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
-                        </svg>
-                    </button>
+                    <a style="position:relative; bottom:.5vh" data-bs-toggle="modal" data-bs-target="#modal-inventory">
+                        👝
+                    </a>
                 </th>
                 <th>
-                    <button data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">
-                        <svg class="bi bi-currency-dollar" viewBox="0 0 16 16">
-                            <path
-                                d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
-                        </svg>
-                    </button>
+                    <a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">
+                        💰
+                    </a>
                 </th>
                 <th>
-                    <button data-bs-toggle="modal" data-bs-target="#modal-cities">
-                        <svg class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                        </svg>
-                    </button>
+                    <a data-bs-toggle="modal" data-bs-target="#modal-cities">
+                        💱
+                    </a>
                 </th>
             </tr>
             <tr data-drug="0">
@@ -274,8 +184,8 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <button class="buy-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">💰</button>
-                    <button class="sell-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">💸</button>
+                    <a class="buy-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">💰</a>
+                    <a class="sell-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">💸</a>
                 </td>
             </tr>
         </tbody>
@@ -286,75 +196,67 @@
                 <td>USDC</td>
                 <td>$<span class="cash"></span></td>
                 <td>FIAT</td>
-                <td><button data-bs-toggle="modal" data-bs-target="#modal-inventory">💰</button>
-                    <button data-bs-toggle="modal" data-bs-target="#modal-inventory">💸</button>
+                <td><a data-bs-toggle="modal" data-bs-target="#modal-inventory">💰</a>
+                    <a data-bs-toggle="modal" data-bs-target="#modal-inventory">💸</a>
                 </td>
             </tr>
             <tr>
                 <td>DEFI</td>
                 <td>- $<span class="debt"></span></td>
                 <td>AAVE</td>
-                <td><button data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💰</button>
-                    <button data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💸</button>
+                <td><a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💰</a>
+                    <a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💸</a>
                 </td>
             </tr>
             <tr>
                 <td>NFT</td>
                 <td>0</td>
                 <td>BAYC</td>
-                <td><button data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💰</button>
-                    <button data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💸</button>
+                <td><a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💰</a>
+                    <a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💸</a>
                 </td>
             </tr>
         </tbody>
     </table>
 
     <div class="footer">
-        <button class="cycle" data-bs-toggle="modal" data-bs-target="#modal-cities">
-            <svg class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                <path
-                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                <path fill-rule="evenodd"
-                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-            </svg>
-        </button>
-        <br />
-        <button>
+        <div class="cycle"><a data-bs-toggle="modal" data-bs-target="#modal-cities">
+                🐈
+            </a>
+        </div>
+        <a>
             <a href="https://twitter.com/coinwarapp" target="_blank">
                 <svg class="bi bi-twitter" viewBox="0 0 16 16">
                     <path
                         d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                 </svg>
             </a>
-        </button>
+        </a>
         &nbsp;
-        <button>
+        <a>
             <a href="https://metaverse.coinwar.app" target="_blank">
                 <svg class="bi bi-discord" viewBox="0 0 16 16">
                     <path
                         d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
                 </svg>
             </a>
-        </button>
+        </a>
         &nbsp;
-        <button>
+        <a>
             <a href="https://github.com/thecoinwar/thecoinwar.github.io" target="_blank">
                 <svg class="bi bi-github" viewBox="0 0 16 16">
                     <path
                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                 </svg>
             </a>
-        </button>
+        </a>
         <br />
         <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
             href="./privacy.html" target="_blank">coinwar.app</a>
     </div>
 </body>
 
-<!-- why can't i delete this modal (#modal-high-score) without the transaction modal breaking? -->
-
-<div class="offcanvas offcanvas-bottom text-bg-dark" tabindex="-1" id="offcanvasBottom"
-    aria-labelledby="offcanvasBottomLabel">
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-body small">
         <h1>PRIVACY POLICY</h1>
         <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot; (hereafter
@@ -472,7 +374,6 @@
 <div id="modal-transaction" class="modal">
     <div class="modal-dialog ">
         <div class="modal-content">
-            <!-- why can't i delete this .modal-header / <h4> span without the transaction modal breaking? -->
             <div class="modal-header">
                 <h4><span class="modal-title"></span></h4>
             </div>
