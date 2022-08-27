@@ -83,7 +83,22 @@
         }
 
         .footer .cycle:hover a {
-            font-size: 8vh;
+            font-size: 7.7vh;
+            background-image: linear-gradient(45deg, #f3ec78, #af4261, #f3ec78);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 10s linear infinite;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
         }
 
         .footer svg {
@@ -108,18 +123,27 @@
             font-size: 125%
         }
 
+        .navbar {
+            background-image: var(--bs-gradient);
+            height: 7vh
+        }
+
+        .navbar a {
+            font-size: 4vh
+        }
+
+        .navbar a:hover {
+            font-size: 3vh
+        }
+
         .offcanvas {
-            background: #101010;
-            line-height: 1.8vh
+            background: #303030;
+            line-height: 2vh
         }
 
-        .offcanvas .table {
-            color: inherit;
-            border: none
-        }
-
-        .offcanvas.offcanvas-bottom {
-            height: 75%
+        .offcanvas.offcanvas-bottom,
+        .offcanvas.offcanvas-top {
+            height: 85%
         }
 
         table {
@@ -136,95 +160,61 @@
             font-size: 2vh
         }
 
-        th {
-            background-color: #101010;
-            position: sticky;
-            top: 0
-        }
-
-        th a {
-            font-size: 4vh
-        }
-
-        th a:hover {
-            font-size: 3vh
-        }
-
         td {
             width: 25%
+        }
+
+        .v-center {
+            position: relative;
+            top: 40%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
     </style>
 </head>
 
 <body>
-    <table class="drugs">
+    <nav class="navbar sticky-top ">
+        <div class="container-fluid">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">🪙</a>
+                        </td>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a>
+                        </td>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">💱</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nav>
+
+    <table class="coins">
         <tbody>
-            <tr>
-                <th>
-                    <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">
-                        🪙
-                    </a>
-                </th>
-                <th>
-                    <a style="position:relative; bottom:.5vh" data-bs-toggle="modal" data-bs-target="#modal-inventory">
-                        👝
-                    </a>
-                </th>
-                <th>
-                    <a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">
-                        💰
-                    </a>
-                </th>
-                <th>
-                    <a data-bs-toggle="modal" data-bs-target="#modal-cities">
-                        💱
-                    </a>
-                </th>
+            <tr class="hidden">
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
             <tr data-drug="0">
                 <td></td>
-                <td></td>
+                <td class="hidden"></td>
                 <td></td>
                 <td>
-                    <a class="buy-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">💰</a>
-                    <a class="sell-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">💸</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="xs-stats">
-        <tbody>
-            <tr>
-                <td>USDC</td>
-                <td>$<span class="cash"></span></td>
-                <td>FIAT</td>
-                <td><a data-bs-toggle="modal" data-bs-target="#modal-inventory">💰</a>
-                    <a data-bs-toggle="modal" data-bs-target="#modal-inventory">💸</a>
-                </td>
-            </tr>
-            <tr>
-                <td>DEFI</td>
-                <td>- $<span class="debt"></span></td>
-                <td>AAVE</td>
-                <td><a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💰</a>
-                    <a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💸</a>
-                </td>
-            </tr>
-            <tr>
-                <td>NFT</td>
-                <td>0</td>
-                <td>BAYC</td>
-                <td><a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💰</a>
-                    <a data-bs-toggle="modal" data-bs-target="#modal-pawn-shop">💸</a>
+                    <a class="buy-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">📈</a>
+                    <a class="sell-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">📉</a>
                 </td>
             </tr>
         </tbody>
     </table>
 
     <div class="footer">
-        <div class="cycle"><a data-bs-toggle="modal" data-bs-target="#modal-cities">
-                🐈
-            </a>
+        <div class="cycle"><a>🐈</a>
         </div>
         <a>
             <a href="https://twitter.com/coinwarapp" target="_blank">
@@ -253,89 +243,65 @@
             </a>
         </a>
         <br />
-        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
-            href="./privacy.html" target="_blank">coinwar.app</a>
+        <a data-bs-toggle="offcanvas" data-bs-target="#privacy" aria-controls="privacy" href="./privacy.html"
+            target="_blank">coinwar.app</a>
     </div>
+
 </body>
 
+<!--<div class="xs-stats"><span class="day"></span></div>-->
 
-<div id="modal-high-score" class="modal">
-    <ul>
-    </ul>
-</div>
-
-<div id="modal-transaction" class="modal">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4><span class="modal-title"></span></h4>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body">
-                    <label>
-                        <div>
-                            <input type="number" pattern="[0-9]*" value="1">
-                            <span>
-                                <button class="btn max" type="button" data-l10n-id="max">
-                                </button>
-                                <button class="btn action" type="button" data-bs-dismiss="modal">
-                                </button>
-                            </span>
-                        </div>
-                    </label>
-                </div>
-            </div>
-        </div>
+<div id="cycle" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="cycle">
+    <div class="offcanvas-body">
+        <div class="cities"></div>
     </div>
 </div>
 
-<div id="modal-inventory" class="modal">
-    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
+<div id="wallet" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="wallet">
+    <div class="offcanvas-body">
         <div>
-            <div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>COIN</th>
-                            <th>QUANTITY</th>
-                            <th>VALUE</th>
-                        </tr>
-                        <tr class="template hidden">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>USDC</td>
-                            <td><span class="cash"></span></td>
-                            <td>$<span class="cash"></span></td>
-                        </tr>
-                        <tr>
-                            <td>DEFI</td>
-                            <td><span class="debt"></span></td>
-                            <td>- $<span class="debt"></span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br /><br />
-                <label>
-                    <input type="number" pattern="[0-9]*" value="1">
-                    <span>
-                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
-                        <button class="depayland"
-                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT FIAT</button>
-                    </span>
-                </label>
-            </div>
+            <table class="xs-stats">
+                <tbody>
+                    <tr>
+                        <th>COIN</th>
+                        <th>QUANTITY</th>
+                        <th>VALUE</th>
+                    </tr>
+                    <tr class="template hidden">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>USDC</td>
+                        <td class>$<span class="cash"></span></td>
+                        <td>FIAT</td>
+                    </tr>
+                    <tr>
+                        <td>DEFI</td>
+                        <td>- $<span class="debt"></span></td>
+                        <td>AAVE</td>
+                    </tr>
+                    <tr>
+                        <td>NFT</td>
+                        <td>0</td>
+                        <td>BAYC</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br /><br />
+            <label>
+                <input type="number" pattern="[0-9]*" value="1">
+                <span>
+                    <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
+                    <button class="depayland"
+                        onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                        FIAT</button>
+                </span>
+            </label>
         </div>
-    </div>
-</div>
-
-<div id="modal-pawn-shop" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body xs-stats">
-            <h1>DEFI LOANS : $<span class="debt"></span></h1>
-            <br />
+        <br />
+        <div class="xs-stats">
             <div>
                 <input type="number" pattern="[0-9]*">
                 <span>
@@ -347,21 +313,12 @@
     </div>
 </div>
 
-<div id="modal-cities" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body cities">
-        </div>
-        <div class="modal-body xs-stats">
-            <h1>YEAR : <span class="day"></span></h1>
-        </div>
-    </div>
-</div>
-
-<div id="prices" class="offcanvas offcanvas-start table" tabindex="-1" aria-labelledby="prices">
+<div id="prices" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="prices">
     <div class="offcanvas-body">
-        <div>
+        <div class="v-center">
             <h1>HISTORICAL MARKET DATA</h1>
-            <table class="table">
+            <br /><br />
+            <table>
                 <tbody>
                     <tr>
                         <td>
@@ -410,7 +367,7 @@
     </div>
 </div>
 
-<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+<div id="privacy" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="privacy">
     <div class="offcanvas-body small">
         <h1>PRIVACY POLICY</h1>
         <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot; (hereafter
@@ -425,22 +382,29 @@
             purchased customer lists, your email, tweets, Facebook and Instagram posts, friend lists, social
             engineering, keystroke analysis, traffic light cameras, drone footage, smart speakers, in-home security
             systems, saved Alexa voice data, ATM cameras, phone app tracking, cell phone biometric sensor data,
-            bluetooth sensor tags, cell tower triangulation, government databases, credit card company data breaches,
+            bluetooth sensor tags, cell tower triangulation, government databases, credit card company data
+            breaches,
             the darknet, and about a million other sources.</p>
         <br />
         <h2>Things We'll Do With Your Data</h2>
         <p>Your data will be used, folded, cut, spindled, mutilated, sliced, diced, filigreed, pureed, and its DNA
-            extracted and assimilated. Your data distinctiveness will be added to that of others (not necessarily human)
-            then irradiated, exposed to lightning, loaded into an Illudium Q-36 Explosive Space Modulator, and finally
+            extracted and assimilated. Your data distinctiveness will be added to that of others (not necessarily
+            human)
+            then irradiated, exposed to lightning, loaded into an Illudium Q-36 Explosive Space Modulator, and
+            finally
             transmogrified into Frankendata&reg;.</p>
         <br />
         <h2>Unfettered Third-Party Use of Your Data</h2>
-        <p>Your data will be sold, given freely to, or stolen by third parties. Third-parties may include, but are not
-            limited to, coupon companies, online poker websites, Russian bride catalogues, political entities you don't
-            agree with, drug companies, lingerie stores, third-tier social media companies, stock market scammers, that
+        <p>Your data will be sold, given freely to, or stolen by third parties. Third-parties may include, but are
+            not
+            limited to, coupon companies, online poker websites, Russian bride catalogues, political entities you
+            don't
+            agree with, drug companies, lingerie stores, third-tier social media companies, stock market scammers,
+            that
             ex you're trying to avoid, fake news agencies, and of course Nigerian princes. Your data may be used to
             create fake ID's, engage in voter fraud, create deepfakes, social media sock puppets, straw men, create
-            false Amazon reviews, sell your friends things they don't need, and because of all this your face could very
+            false Amazon reviews, sell your friends things they don't need, and because of all this your face could
+            very
             well end up on the back of a milk carton.</p>
         <br />
         <h2>Lack of Data Security</h2>
@@ -449,8 +413,10 @@
         <h2>Artificial Intelligence Systems / New Overlords</h2>
         <p>You agree that your information will be used by various
             artificial entities for purposes both unknown and unknowable. Further, you understand and agree that The
-            Corporation cannot know or understand how the evolving race of artificial intelligence beings will use your
-            personal data because the technology upon which their society was founded has changed dramatically since the
+            Corporation cannot know or understand how the evolving race of artificial intelligence beings will use
+            your
+            personal data because the technology upon which their society was founded has changed dramatically since
+            the
             time you began reading this sentence.</p>
         <br />
         <h2>Letting Us Off the Hook</h2>
@@ -459,25 +425,34 @@
             Corporation harmless under any and all circumstances and in any legal venue globally.</p>
         <br />
         <h2>Byzantine Information Removal Policy</h2>
-        <p>If you would like to have your personal information removed from our database simply hand deliver a letter
-            written in fancy cursive writing to our constantly moving RV somewhere in North America. Include your name,
-            social security number, address, date of birth, ATM PIN, photographs of three forms of government ID, the
+        <p>If you would like to have your personal information removed from our database simply hand deliver a
+            letter
+            written in fancy cursive writing to our constantly moving RV somewhere in North America. Include your
+            name,
+            social security number, address, date of birth, ATM PIN, photographs of three forms of government ID,
+            the
             name of your favorite teacher, the model name of your first car, and your favorite concert. If you
             successfully find us, please allow 4-6 weeks for processing.</p>
         <br /><br /><br />
         <h1>TERMS OF SERVICE</h1>
         <p>By accessing the website at https://coinwar.app, you are agreeing to be bound by these
             terms of service, all applicable laws and regulations, and agree that you are responsible for compliance
-            with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using
-            or accessing this site. The materials contained in this website are protected by applicable copyright and
+            with any applicable local laws. If you do not agree with any of these terms, you are prohibited from
+            using
+            or accessing this site. The materials contained in this website are protected by applicable copyright
+            and
             trademark law.</p>
         <br />
         <h2>Use License</h2>
         <p>Permission is granted to temporarily download one copy of the materials (information or software) on
-            coinwar.app website for personal, non-commercial transitory viewing only. This is the grant of a license,
-            not a transfer of title, and under this license you may not: modify or copy the materials; use the materials
-            for any commercial purpose, or for any public display (commercial or non-commercial); attempt to decompile
-            or reverse engineer any software contained on coinwar.app website; remove any copyright or other proprietary
+            coinwar.app website for personal, non-commercial transitory viewing only. This is the grant of a
+            license,
+            not a transfer of title, and under this license you may not: modify or copy the materials; use the
+            materials
+            for any commercial purpose, or for any public display (commercial or non-commercial); attempt to
+            decompile
+            or reverse engineer any software contained on coinwar.app website; remove any copyright or other
+            proprietary
             notations from the materials; or transfer the materials to another person or &quot;mirror&quot; the
             materials on any other server. This license shall automatically terminate if you violate any of these
             restrictions and may be terminated by coinwar.app at any time. Upon terminating your viewing of these
@@ -486,16 +461,21 @@
         <br />
         <h2>Disclaimer</h2>
         <p>The materials on coinwar.app website are provided on an 'as is' basis. coinwar.app makes no warranties,
-            expressed or implied, and hereby disclaims and negates all other warranties including, without limitation,
-            implied warranties or conditions of merchant-ability, fitness for a particular purpose, or non-infringement
+            expressed or implied, and hereby disclaims and negates all other warranties including, without
+            limitation,
+            implied warranties or conditions of merchant-ability, fitness for a particular purpose, or
+            non-infringement
             of intellectual property or other violation of rights. Further, coinwar.app does not warrant or make any
-            representations concerning the accuracy, likely results, or reliability of the use of the materials on its
+            representations concerning the accuracy, likely results, or reliability of the use of the materials on
+            its
             website or otherwise relating to such materials or on any sites linked to this site.</p>
         <br />
         <h2>Limitations</h2>
         <p>In no event shall coinwar.app or its suppliers be liable for any damages (including, without limitation,
-            damages for loss of data or profit, or due to business interruption) arising out of the use or inability to
-            use the materials on coinwar.app website, even if coinwar.app or a coinwar.app authorized representative has
+            damages for loss of data or profit, or due to business interruption) arising out of the use or inability
+            to
+            use the materials on coinwar.app website, even if coinwar.app or a coinwar.app authorized representative
+            has
             been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not
             allow limitations on implied warranties, or limitations of liability for consequential or incidental
             damages, these limitations may not apply to you.</p>
@@ -503,12 +483,15 @@
         <h2>Accuracy of materials</h2>
         <p>The materials appearing on coinwar.app website could include technical, typographical, or photographic
             errors. coinwar.app does not warrant that any of the materials on its website are accurate, complete or
-            current. coinwar.app may make changes to the materials contained on its website at any time without notice.
+            current. coinwar.app may make changes to the materials contained on its website at any time without
+            notice.
             However coinwar.app does not make any commitment to update the materials.</p>
         <br />
         <h2>Links</h2>
-        <p>coinwar.app has not reviewed all of the sites linked to its website and is not responsible for the contents
-            of any such linked site. The inclusion of any link does not imply endorsement by coinwar.app of the site.
+        <p>coinwar.app has not reviewed all of the sites linked to its website and is not responsible for the
+            contents
+            of any such linked site. The inclusion of any link does not imply endorsement by coinwar.app of the
+            site.
             Use of any such linked website is at the user's own risk.</p>
         <br />
         <h2>Modifications</h2>
@@ -516,12 +499,121 @@
             website you are agreeing to be bound by the then current version of these terms of service.</p>
         <br />
         <h2>Governing Law</h2>
-        <p>These terms and conditions are governed by and construed in accordance with the laws of California and you
+        <p>These terms and conditions are governed by and construed in accordance with the laws of California and
+            you
             irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
         <br />
         <p>This policy is effective as of April 20, 2022.</p>
     </div>
 </div>
+
+
+
+
+<div id="modal-high-score" class="modal">
+    <ul>
+    </ul>
+</div>
+
+<div id="modal-transaction" class="modal">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><span class="modal-title"></span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <label>
+                        <div>
+                            <input type="number" pattern="[0-9]*" value="1">
+                            <span>
+                                <button class="btn max" type="button" data-l10n-id="max">
+                                </button>
+                                <button class="btn action" type="button" data-bs-dismiss="modal">
+                                </button>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-inventory" class="modal">
+    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
+        <div>
+            <div>
+                <table class="xs-stats">
+                    <tbody>
+                        <tr>
+                            <th>COIN</th>
+                            <th>QUANTITY</th>
+                            <th>VALUE</th>
+                        </tr>
+                        <tr class="template hidden">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>USDC</td>
+                            <td class>$<span class="cash"></span></td>
+                            <td>FIAT</td>
+                        </tr>
+                        <tr>
+                            <td>DEFI</td>
+                            <td>- $<span class="debt"></span></td>
+                            <td>AAVE</td>
+                        </tr>
+                        <tr>
+                            <td>NFT</td>
+                            <td>0</td>
+                            <td>BAYC</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br /><br />
+                <label>
+                    <input type="number" pattern="[0-9]*" value="1">
+                    <span>
+                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
+                        <button class="depayland"
+                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                            FIAT</button>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-pawn-shop" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body xs-stats">
+            <h1>DEFI LOANS : $<span class="debt"></span></h1>
+            <br />
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land" data-bs-dismiss="modal">BORROW</button>
+                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-cities" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body cities">
+        </div>
+        <div class="modal-body xs-stats">
+            <h1>YEAR : <span class="day"></span></h1>
+        </div>
+    </div>
+</div>
+
 
 <script defer async src="https://integrate.depay.com/widgets/v7.js"></script>
 <script defer>
@@ -545,11 +637,11 @@
     // view
 
 
-    function View(drugs) {
+    function View(coins) {
         this.news = document.querySelector('.news ul');
-        this.drugs_container = document.querySelector('.drugs tbody');
+        this.coins_container = document.querySelector('.coins tbody');
 
-        this.setup_drugs();
+        this.setup_coins();
         this.setup_cities();
 
         this.refresh_prices([]);
@@ -573,7 +665,7 @@
         "health": " ",
         "stock": " WALLET",
         "bank-account": " USD",
-        "drugs": " ",
+        "coins": " ",
         "item": " ASSET",
         "value": " PRICE",
         "buy": " BUY",
@@ -679,28 +771,28 @@
         return translateJson[key];
     }
 
-    View.prototype.setup_drugs = function () {
-        var row_template = this.drugs_container.querySelector('tr[data-drug]');
-        var drugs = DataCenter.drugs;
+    View.prototype.setup_coins = function () {
+        var row_template = this.coins_container.querySelector('tr[data-drug]');
+        var coins = DataCenter.coins;
 
-        console.log("Drugs", drugs)
-        for (var drug in drugs) {
+        console.log("coins", coins)
+        for (var drug in coins) {
             var row = row_template.cloneNode(true);
 
             row.dataset['drug'] = drug;
 
-            row.children[0].innerText = translate('dope-' + drugs[drug].name);
+            row.children[0].innerText = translate('dope-' + coins[drug].name);
 
-            this.drugs_container.append(row);
+            this.coins_container.append(row);
         }
 
         row_template.remove();
-        this.drugs = document.querySelectorAll('.drugs tbody tr[data-drug]');
+        this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
 
         // Inventory
         row_template = document.querySelector('#modal-inventory tr.template');
 
-        for (var drug in drugs) {
+        for (var drug in coins) {
             var row = row_template.cloneNode(true);
             console.log(row, row_template)
             row.classList.remove('template');
@@ -730,14 +822,14 @@
     }
 
     View.prototype.refresh_quantities = function (quantities) {
-        for (var drug = 0; drug < this.drugs.length; drug++) {
-            this.drugs.item(drug).children[1].innerHTML = quantities[drug] || 0;
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[1].innerHTML = quantities[drug] || 0;
         }
     };
 
     View.prototype.refresh_prices = function (prices) {
-        for (var drug = 0; drug < this.drugs.length; drug++) {
-            this.drugs.item(drug).children[2].innerHTML = '$' + (prices[drug] || 0);
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[2].innerHTML = '$' + (prices[drug] || 0);
         }
     };
 
@@ -775,11 +867,11 @@
         replaceText('.stats .total_space, .xs-stats .total_space', coat.total_space);
     };
 
-    View.prototype.refresh_available_drugs = function (available_drugs) {
+    View.prototype.refresh_available_coins = function (available_coins) {
         document.querySelectorAll('tr[data-drug].hidden').forEach(elem => elem.classList.remove('hidden'));
 
-        for (var drug in available_drugs) {
-            if (!available_drugs[drug]) {
+        for (var drug in available_coins) {
+            if (!available_coins[drug]) {
                 document.querySelector('tr[data-drug]:nth-child(' + (parseInt(drug) + 2) + ')').classList.add('hidden');
             }
         }
@@ -808,22 +900,22 @@
         });
     };
 
-    View.prototype.refresh_inventory = function (drugs) {
-        for (var drug in drugs) {
+    View.prototype.refresh_inventory = function (coins) {
+        for (var drug in coins) {
             var row = document.querySelector('#modal-inventory tr:nth-child(' + (parseInt(drug) + 2) + ')')
             row.classList.remove('hidden');
 
-            row.children[0].innerText = (translate('dope-' + DataCenter.drugs[drug].name));
-            row.children[1].innerText = (drugs[drug] || 0);
-            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.innerText = drugs[drug] || 0;
-            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.attributes['max'] = drugs[drug] || 0;
+            row.children[0].innerText = (translate('dope-' + DataCenter.coins[drug].name));
+            row.children[1].innerText = (coins[drug] || 0);
+            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.innerText = coins[drug] || 0;
+            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.attributes['max'] = coins[drug] || 0;
 
-            if ((drugs[drug] || 0) == 0) {
+            if ((coins[drug] || 0) == 0) {
                 row.classList.add('hidden');
             }
         }
         let el = document.querySelector('#modal-inventory p')
-        if (array_sum(drugs) == 0 && el) {
+        if (array_sum(coins) == 0 && el) {
             el.innerText = translate('no-drug-yet');
         } else if (el) {
             el.innerText = '';
@@ -879,7 +971,7 @@
 
 
     var DataCenter = {
-        drugs: [
+        coins: [
             {
                 "name": "ada",
                 "minimum_price": 1,
@@ -1051,83 +1143,83 @@
         cities: [
             {
                 "name": "binance",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "coinbase",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "curve",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "dydx",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "ftx",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "gemini",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "honey",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "jupiter",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "kine",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "kraken",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "kucoin",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "pancake",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "spooky",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "sushi",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "traderjoe",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "uni",
-                "min_drugs": 15,
-                "max_drugs": 16
+                "min_coins": 18,
+                "max_coins": 19
             },
         ],
         messages: [
@@ -1292,7 +1384,7 @@
 
     // Coat
     function Coat() {
-        this.drugs = [];
+        this.coins = [];
         this.cash = 42;
         this.guns = [];
         this.health = 100;
@@ -1302,8 +1394,8 @@
     Coat.prototype.available_space = function () {
         var available_space = this.total_space;
 
-        for (var i in this.drugs) {
-            available_space -= this.drugs[i];
+        for (var i in this.coins) {
+            available_space -= this.coins[i];
         }
 
         return available_space;
@@ -1314,8 +1406,8 @@
     };
 
     Coat.prototype.add = function (drug, quantity) {
-        this.drugs[drug] = this.drugs[drug] || 0;
-        this.drugs[drug] += quantity;
+        this.coins[drug] = this.coins[drug] || 0;
+        this.coins[drug] += quantity;
     };
 
     Coat.prototype.can_buy = function (price, quantity) {
@@ -1323,7 +1415,7 @@
     };
 
     Coat.prototype.can_sell = function (item, quantity) {
-        return this.drugs[item] >= quantity;
+        return this.coins[item] >= quantity;
     };
 
     Coat.prototype.buy = function (item, price, quantity) {
@@ -1333,7 +1425,7 @@
 
     Coat.prototype.sell = function (item, price, quantity) {
         this.cash += price * quantity;
-        this.drugs[item] -= quantity;
+        this.coins[item] -= quantity;
     };
 
     Coat.prototype.max_quantity = function (price) {
@@ -1343,8 +1435,8 @@
     Coat.prototype.score = function (game, prices) {
         var score = this.cash - game.debt;
 
-        for (var drug in this.drugs) {
-            score += (this.drugs[drug] * prices[drug]) || 0;
+        for (var drug in this.coins) {
+            score += (this.coins[drug] * prices[drug]) || 0;
         }
 
         return Math.round(score);
@@ -1356,41 +1448,41 @@
         this.is_cop = Math.random() * 100 < DataCenter.cities[number].cops;
         this.prices = [];
         this.number = number;
-        this.available_drugs = [];
+        this.available_coins = [];
 
 
-        // Available drugs
-        var max_drugs = ('max_drugs' in DataCenter.cities[number] ? DataCenter.cities[number].max_drugs : DataCenter.drugs.length);
+        // Available coins
+        var max_coins = ('max_coins' in DataCenter.cities[number] ? DataCenter.cities[number].max_coins : DataCenter.coins.length);
 
-        var number_of_drugs = parseInt(rand(DataCenter.cities[number].min_drugs, max_drugs));
-        for (var i = 0; i < number_of_drugs; i++) {
-            this.available_drugs[i] = true;
+        var number_of_coins = parseInt(rand(DataCenter.cities[number].min_coins, max_coins));
+        for (var i = 0; i < number_of_coins; i++) {
+            this.available_coins[i] = true;
         }
 
-        for (var i = number_of_drugs; i < DataCenter.drugs.length; i++) {
-            this.available_drugs[i] = false;
+        for (var i = number_of_coins; i < DataCenter.coins.length; i++) {
+            this.available_coins[i] = false;
         }
 
-        this.available_drugs = shuffle(this.available_drugs);
+        this.available_coins = shuffle(this.available_coins);
 
         // Prices
-        for (var drug in DataCenter.drugs) {
-            if (this.available_drugs[parseInt(drug)]) {
-                var minimum_price = DataCenter.drugs[drug].minimum_price;
-                var maximum_price = DataCenter.drugs[drug].maximum_price;
+        for (var drug in DataCenter.coins) {
+            if (this.available_coins[parseInt(drug)]) {
+                var minimum_price = DataCenter.coins[drug].minimum_price;
+                var maximum_price = DataCenter.coins[drug].maximum_price;
 
-                if ('cheap' in DataCenter.drugs[drug] && rand(0, 100) < 5 && news_manager != null) {
-                    minimum_price = DataCenter.drugs[drug].cheap.minimum_price;
-                    maximum_price = DataCenter.drugs[drug].cheap.maximum_price;
+                if ('cheap' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager != null) {
+                    minimum_price = DataCenter.coins[drug].cheap.minimum_price;
+                    maximum_price = DataCenter.coins[drug].cheap.maximum_price;
 
-                    var id = 'dope-' + DataCenter.drugs[drug].name + '-cheap';
+                    var id = 'dope-' + DataCenter.coins[drug].name + '-cheap';
 
                     news_manager.add(new News(translate(id)));
-                } else if ('expensive' in DataCenter.drugs[drug] && rand(0, 100) < 5 && news_manager) {
-                    minimum_price = DataCenter.drugs[drug].expensive.minimum_price;
-                    maximum_price = DataCenter.drugs[drug].expensive.maximum_price;
+                } else if ('expensive' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager) {
+                    minimum_price = DataCenter.coins[drug].expensive.minimum_price;
+                    maximum_price = DataCenter.coins[drug].expensive.maximum_price;
 
-                    var id = 'dope-' + DataCenter.drugs[drug].name + '-expensive';
+                    var id = 'dope-' + DataCenter.coins[drug].name + '-expensive';
 
                     news_manager.add(new News(translate(id)));
                 }
@@ -1533,7 +1625,7 @@
         this.news_manager.add(new News(translate('notification-welcome')));
 
         this.view.refresh_prices(this.game.city.prices);
-        this.view.refresh_available_drugs(this.game.city.available_drugs);
+        this.view.refresh_available_coins(this.game.city.available_coins);
         this.view.refresh_stats(this.game, this.coat);
         this.view.refresh_news(this.news_manager.news);
         this.view.refresh_high_score(self.game.high_score());
@@ -1554,7 +1646,7 @@
                 var quantity = parseInt(elem.previousElementSibling.previousElementSibling.value);
                 if (self.sell(index, quantity)) {
                     elem.previousElementSibling.previousElementSibling.value = 0;
-                    elem.parentNode.parentNode.querySelector('td:nth-child(2)').innerText = (self.coat.drugs[index]);
+                    elem.parentNode.parentNode.querySelector('td:nth-child(2)').innerText = (self.coat.coins[index]);
                 }
             }
         })
@@ -1572,7 +1664,7 @@
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var item_number = parseInt(elem.parentNode.parentElement.dataset['drug']);
-                var quantity = self.coat.drugs[item_number] || 0;
+                var quantity = self.coat.coins[item_number] || 0;
                 elem.previousElementSibling.value = quantity;
             }
         })
@@ -1606,7 +1698,7 @@
                     }), 'move'));
 
                     self.game.new_city(elem.dataset['city'], self.news_manager);
-                    self.view.refresh_available_drugs(self.game.city.available_drugs);
+                    self.view.refresh_available_coins(self.game.city.available_coins);
                     self.view.refresh_news(self.news_manager.news);
 
                     document.querySelectorAll('button[data-city].current').forEach((elem) => {
@@ -1654,7 +1746,7 @@
             console.log(elem)
             elem.onclick = (ev) => {
                 if (a) a(ev);
-                self.view.refresh_inventory(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
             }
         })
 
@@ -1662,7 +1754,7 @@
             let a = elem.onclick
             elem.onclick = (ev) => {
                 if (a) a(ev);
-                self.view.refresh_inventory(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
             }
         })
 
@@ -1769,14 +1861,14 @@
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentNode.parentNode.parentElement.dataset['drug']);
-                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.drugs[index]);
+                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
 
-                self.coat.drugs[index] -= quantity;
+                self.coat.coins[index] -= quantity;
                 self.game.stone_level += quantity;
 
                 self.view.refresh_stone_level(self.game.stone_level);
-                self.view.refresh_inventory(self.coat.drugs);
-                self.view.refresh_quantities(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
+                self.view.refresh_quantities(self.coat.coins);
                 self.view.refresh_stats(self.game, self.coat);
 
                 elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = 0;
@@ -1787,12 +1879,12 @@
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentElement.parentElement.parentElement.dataset['drug']);
-                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.drugs[index]);
+                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
 
-                self.coat.drugs[index] -= quantity;
+                self.coat.coins[index] -= quantity;
 
-                self.view.refresh_inventory(self.coat.drugs);
-                self.view.refresh_quantities(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
+                self.view.refresh_quantities(self.coat.coins);
                 self.view.refresh_stats(self.game, self.coat);
 
                 elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = (0);
@@ -1810,7 +1902,7 @@
                 document.querySelector('#modal-transaction').classList.add('buy')
                 document.querySelector('#modal-transaction').dataset['drug'] = elem.parentElement.parentElement.dataset['drug'];
                 document.querySelector('#modal-transaction .modal-header h4').innerText = (translate('buy')
-                    + ' ' + translate('dope-' + DataCenter.drugs[elem.parentElement.parentElement.dataset['drug']].name));
+                    + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
                 document.querySelector('#modal-transaction .modal-body .action').innerText = (translate('buy'));
 
                 document.querySelector('#modal-transaction.buy button.max').onclick = (ev) => {
@@ -1842,14 +1934,14 @@
                 document.querySelector('#modal-transaction').classList.add('sell')
                 document.querySelector('#modal-transaction').dataset['drug'] = elem.parentElement.parentElement.dataset['drug'];
                 document.querySelector('#modal-transaction .modal-header h4').innerText = (translate('sell')
-                    + ' ' + translate('dope-' + DataCenter.drugs[elem.parentElement.parentElement.dataset['drug']].name));
+                    + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
                 document.querySelector('#modal-transaction .modal-body .action').innerText = (translate('sell'));
 
                 document.querySelector('#modal-transaction.sell button.max').onclick = (ev) => {
                     // Hmmm... Maybe this isn't the best way to do it...
                     let elem = ev.currentTarget;
                     var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
-                    var quantity = self.coat.drugs[index] || 0;
+                    var quantity = self.coat.coins[index] || 0;
 
                     elem.parentElement.previousElementSibling.value = quantity;
                 };
@@ -1883,11 +1975,11 @@
 
             this.news_manager.add(new News(translate('notification-bought', {
                 quantity: quantity,
-                drug: translate('dope-' + DataCenter.drugs[index].name),
+                drug: translate('dope-' + DataCenter.coins[index].name),
                 price: this.game.city.prices[index]
             }), 'drug'));
 
-            this.view.refresh_quantities(this.coat.drugs);
+            this.view.refresh_quantities(this.coat.coins);
             this.view.refresh_stats(this.game, this.coat);
         } else {
             this.news_manager.add(new News(translate('notification-need-more-' + (this.coat.available_space() >= quantity ? 'money' : 'space')), 'error'));
@@ -1910,11 +2002,11 @@
 
             this.news_manager.add(new News(translate('notification-sold', {
                 quantity: quantity,
-                drug: translate('dope-' + DataCenter.drugs[index].name),
+                drug: translate('dope-' + DataCenter.coins[index].name),
                 price: this.game.city.prices[index]
             }), 'drug'));
             this.view.refresh_stats(this.game, this.coat);
-            this.view.refresh_quantities(this.coat.drugs);
+            this.view.refresh_quantities(this.coat.coins);
         } else {
             this.news_manager.add(new News(translate('notification-do-not-own'), 'error'));
             return_value = false;
