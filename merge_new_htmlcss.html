@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>COINWAR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description"
+        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@coinwarapp">
+    <meta name="twitter:creator" content="@coinwarapp">
+    <meta name="twitter:title" content="COINWAR">
+    <meta name="twitter:description"
+        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
+    <meta name="twitter:image" content="https://coinwar.app/icons/1024.png">
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="COINWAR" />
+    <meta property="og:description"
+        content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War." />
+    <meta property="og:url" content="https://coinwar.app" />
+    <meta property="og:image" content="https://coinwar.app/icons/1024.png" />
+    <link rel="icon" href="/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#ffc40d">
+    <link rel="apple-touch-startup-image" href="/icons/1024.png">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="COINWAR">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="COINWAR">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
+    <style>
+        body {
+            color: #E4CBB6;
+            background-color: #202020;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 0
+        }
+
+        a {
+            font-size: 1.7vh;
+            text-decoration: none;
+        }
+
+        .footer {
+            line-height: 2vh;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding-bottom: 3vh
+        }
+
+        .footer a {
+            font-size: 1vh;
+            color: inherit
+        }
+
+        .footer .cycle {
+            margin-bottom: 4vh
+        }
+
+        .footer .cycle a {
+            font-size: 7vh
+        }
+
+        .footer .cycle:hover a {
+            font-size: 7.7vh;
+            background-image: linear-gradient(45deg, #f3ec78, #af4261, #f3ec78);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 10s linear infinite;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .footer svg {
+            width: 1.5vh;
+            fill: currentColor;
+            padding: -0.9
+        }
+
+        .footer svg:hover {
+            transform: scale(.9)
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        h1 {
+            font-size: 150%
+        }
+
+        h2 {
+            font-size: 125%
+        }
+
+        .navbar {
+            background-image: var(--bs-gradient);
+            height: 7vh
+        }
+
+        .navbar a {
+            font-size: 4vh
+        }
+
+        .navbar a:hover {
+            font-size: 3vh
+        }
+
+        .offcanvas {
+            background: #303030;
+            line-height: 2vh
+        }
+
+        .offcanvas.offcanvas-bottom,
+        .offcanvas.offcanvas-top {
+            height: 85%
+        }
+
+        table {
+            color: #DCDCDC;
+            border-collapse: collapse;
+            width: 100%
+        }
+
+        table a {
+            font-size: 2.5vh
+        }
+
+        table a:hover {
+            font-size: 2vh
+        }
+
+        td {
+            width: 25%
+        }
+
+        .v-center {
+            position: relative;
+            top: 40%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar sticky-top ">
+        <div class="container-fluid">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">🪙</a>
+                        </td>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a>
+                        </td>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">💱</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nav>
+    <table class="coins">
+        <tbody>
+            <tr class="hidden">
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr data-drug="0">
+                <td></td>
+                <td class="hidden"></td>
+                <td></td>
+                <td>
+                    <a class="buy-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">📈</a>
+                    <a class="sell-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">📉</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+        <div class="cycle"><a>🐈</a>
+        </div>
+        <a>
+            <a href="https://twitter.com/coinwarapp" target="_blank">
+                <svg class="bi bi-twitter" viewBox="0 0 16 16">
+                    <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                </svg>
+            </a>
+        </a>
+        &nbsp;
+        <a>
+            <a href="https://metaverse.coinwar.app" target="_blank">
+                <svg class="bi bi-discord" viewBox="0 0 16 16">
+                    <path
+                        d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
+                </svg>
+            </a>
+        </a>
+        &nbsp;
+        <a>
+            <a href="https://github.com/thecoinwar/thecoinwar.github.io" target="_blank">
+                <svg class="bi bi-github" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </a>
+        <br />
+        <a data-bs-toggle="offcanvas" data-bs-target="#privacy" aria-controls="privacy" href="./privacy.html"
+            target="_blank">coinwar.app</a>
+    </div>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "78c4cd65bf1e452ea71651375e17a848"}'></script>
+</body>
+
+<div id="cycle" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="cycle">
+    <div class="offcanvas-body">
+        <div class="cities"></div>
+    </div>
+</div>
+<div id="wallet" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="wallet">
+    <div class="offcanvas-body">
+        <div>
+            <table class="xs-stats">
+                <tbody>
+                    <tr>
+                        <th>COIN</th>
+                        <th>QUANTITY</th>
+                        <th>VALUE</th>
+                    </tr>
+                    <tr class="template hidden">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>USDC</td>
+                        <td class>$<span class="cash"></span></td>
+                        <td>FIAT</td>
+                    </tr>
+                    <tr>
+                        <td>DEFI</td>
+                        <td>- $<span class="debt"></span></td>
+                        <td>AAVE</td>
+                    </tr>
+                    <tr>
+                        <td>NFT</td>
+                        <td>0</td>
+                        <td>BAYC</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br /><br />
+            <label>
+                <input type="number" pattern="[0-9]*" value="1">
+                <span>
+                    <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
+                    <button class="depayland"
+                        onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                        FIAT</button>
+                </span>
+            </label>
+        </div>
+        <br />
+        <div class="xs-stats">
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land" data-bs-dismiss="modal">BORROW</button>
+                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="prices" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="prices">
+    <div class="offcanvas-body">
+        <div class="v-center">
+            <h1>HISTORICAL MARKET DATA</h1>
+            <br /><br />
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            ADA<br />$1 - $2<br /><br />
+                            ALCX<br />$20 - $2K<br /><br />
+                            AAVE<br />$28 - $632<br /><br />
+                            AMC<br />$2 - $59<br /><br />
+                            APE<br />$3 - $26<br /><br />
+                            ATOM<br />$2 - $45<br /><br />
+                            AVAX<br />$3 - $134<br /><br />
+                            AXS<br />$1 - $160<br /><br />
+                            BNB<br />$10 - $700<br /><br />
+                            BTC<br />$5K - $69K<br /><br />
+                            BOO<br />$1 - $10
+                        </td>
+                        <td>
+                            CAKE<br />$1 - $42<br /><br />
+                            COMP<br />$27 - $854<br /><br />
+                            DOGE<br />$69 - $420<br /><br />
+                            DOT<br />$1 - $54<br /><br />
+                            ETH<br />$100 - $5K<br /><br />
+                            FIL<br />$5 - $188<br /><br />
+                            FTM<br />$1 - $13<br /><br />
+                            FTX<br />$2 - $80<br /><br />
+                            GME<br />$4 - $325<br /><br />
+                            ICP<br />$5 - $364<br /><br />
+                            LINK<br />$2 - $53
+                        </td>
+                        <td>
+                            LTC<br />$2 - $278<br /><br />
+                            MANA<br />$1 - $6<br /><br />
+                            MATIC<br />$1 - $11<br /><br />
+                            MKR<br />$206 - $6K<br /><br />
+                            OATH<br />$1 - $10<br /><br />
+                            SAND<br />$1 - $9<br /><br />
+                            SHIB<br />$1 - $7<br /><br />
+                            SOL<br />$1 - $260<br /><br />
+                            TRON<br />$1 - $9<br /><br />
+                            UNI<br />$2 - $43<br /><br />
+                            XRP<br />$1 - $4
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="privacy" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="privacy">
+    <div class="offcanvas-body small">
+        <h1>PRIVACY POLICY</h1>
+        <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot; (hereafter
+            referred to as The Corporation).
+            <br />
+            By using this service, you agree to the following:
+        </p>
+        <br />
+        <h2>Where We're Getting Your Data</h2>
+        <p>We collect data on you from: the GPS tracking system in your car, the AirTag you've got in your wallet,
+            website cookies, old hard drives you thought you'd wiped, pay per click advertising, your IP address,
+            purchased customer lists, your email, tweets, Facebook and Instagram posts, friend lists, social
+            engineering, keystroke analysis, traffic light cameras, drone footage, smart speakers, in-home security
+            systems, saved Alexa voice data, ATM cameras, phone app tracking, cell phone biometric sensor data,
+            bluetooth sensor tags, cell tower triangulation, government databases, credit card company data
+            breaches,
+            the darknet, and about a million other sources.</p>
+        <br />
+        <h2>Things We'll Do With Your Data</h2>
+        <p>Your data will be used, folded, cut, spindled, mutilated, sliced, diced, filigreed, pureed, and its DNA
+            extracted and assimilated. Your data distinctiveness will be added to that of others (not necessarily
+            human)
+            then irradiated, exposed to lightning, loaded into an Illudium Q-36 Explosive Space Modulator, and
+            finally
+            transmogrified into Frankendata&reg;.</p>
+        <br />
+        <h2>Unfettered Third-Party Use of Your Data</h2>
+        <p>Your data will be sold, given freely to, or stolen by third parties. Third-parties may include, but are
+            not
+            limited to, coupon companies, online poker websites, Russian bride catalogues, political entities you
+            don't
+            agree with, drug companies, lingerie stores, third-tier social media companies, stock market scammers,
+            that
+            ex you're trying to avoid, fake news agencies, and of course Nigerian princes. Your data may be used to
+            create fake ID's, engage in voter fraud, create deepfakes, social media sock puppets, straw men, create
+            false Amazon reviews, sell your friends things they don't need, and because of all this your face could
+            very
+            well end up on the back of a milk carton.</p>
+        <br />
+        <h2>Lack of Data Security</h2>
+        <p>Your data will not be held securely.</p>
+        <br />
+        <h2>Artificial Intelligence Systems / New Overlords</h2>
+        <p>You agree that your information will be used by various
+            artificial entities for purposes both unknown and unknowable. Further, you understand and agree that The
+            Corporation cannot know or understand how the evolving race of artificial intelligence beings will use
+            your
+            personal data because the technology upon which their society was founded has changed dramatically since
+            the
+            time you began reading this sentence.</p>
+        <br />
+        <h2>Letting Us Off the Hook</h2>
+        <p>You agree to accept all liability now and for all time regarding the use of your data in any form by The
+            Corporation or any third-parties which may obtain your data through any means. You agree to hold The
+            Corporation harmless under any and all circumstances and in any legal venue globally.</p>
+        <br />
+        <h2>Byzantine Information Removal Policy</h2>
+        <p>If you would like to have your personal information removed from our database simply hand deliver a
+            letter
+            written in fancy cursive writing to our constantly moving RV somewhere in North America. Include your
+            name,
+            social security number, address, date of birth, ATM PIN, photographs of three forms of government ID,
+            the
+            name of your favorite teacher, the model name of your first car, and your favorite concert. If you
+            successfully find us, please allow 4-6 weeks for processing.</p>
+        <br /><br /><br />
+        <h1>TERMS OF SERVICE</h1>
+        <p>By accessing the website at https://coinwar.app, you are agreeing to be bound by these
+            terms of service, all applicable laws and regulations, and agree that you are responsible for compliance
+            with any applicable local laws. If you do not agree with any of these terms, you are prohibited from
+            using
+            or accessing this site. The materials contained in this website are protected by applicable copyright
+            and
+            trademark law.</p>
+        <br />
+        <h2>Use License</h2>
+        <p>Permission is granted to temporarily download one copy of the materials (information or software) on
+            coinwar.app website for personal, non-commercial transitory viewing only. This is the grant of a
+            license,
+            not a transfer of title, and under this license you may not: modify or copy the materials; use the
+            materials
+            for any commercial purpose, or for any public display (commercial or non-commercial); attempt to
+            decompile
+            or reverse engineer any software contained on coinwar.app website; remove any copyright or other
+            proprietary
+            notations from the materials; or transfer the materials to another person or &quot;mirror&quot; the
+            materials on any other server. This license shall automatically terminate if you violate any of these
+            restrictions and may be terminated by coinwar.app at any time. Upon terminating your viewing of these
+            materials or upon the termination of this license, you must destroy any downloaded materials in your
+            possession whether in electronic or printed format.</p>
+        <br />
+        <h2>Disclaimer</h2>
+        <p>The materials on coinwar.app website are provided on an 'as is' basis. coinwar.app makes no warranties,
+            expressed or implied, and hereby disclaims and negates all other warranties including, without
+            limitation,
+            implied warranties or conditions of merchant-ability, fitness for a particular purpose, or
+            non-infringement
+            of intellectual property or other violation of rights. Further, coinwar.app does not warrant or make any
+            representations concerning the accuracy, likely results, or reliability of the use of the materials on
+            its
+            website or otherwise relating to such materials or on any sites linked to this site.</p>
+        <br />
+        <h2>Limitations</h2>
+        <p>In no event shall coinwar.app or its suppliers be liable for any damages (including, without limitation,
+            damages for loss of data or profit, or due to business interruption) arising out of the use or inability
+            to
+            use the materials on coinwar.app website, even if coinwar.app or a coinwar.app authorized representative
+            has
+            been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not
+            allow limitations on implied warranties, or limitations of liability for consequential or incidental
+            damages, these limitations may not apply to you.</p>
+        <br />
+        <h2>Accuracy of materials</h2>
+        <p>The materials appearing on coinwar.app website could include technical, typographical, or photographic
+            errors. coinwar.app does not warrant that any of the materials on its website are accurate, complete or
+            current. coinwar.app may make changes to the materials contained on its website at any time without
+            notice.
+            However coinwar.app does not make any commitment to update the materials.</p>
+        <br />
+        <h2>Links</h2>
+        <p>coinwar.app has not reviewed all of the sites linked to its website and is not responsible for the
+            contents
+            of any such linked site. The inclusion of any link does not imply endorsement by coinwar.app of the
+            site.
+            Use of any such linked website is at the user's own risk.</p>
+        <br />
+        <h2>Modifications</h2>
+        <p>coinwar.app may revise these terms of service for its website at any time without notice. By using this
+            website you are agreeing to be bound by the then current version of these terms of service.</p>
+        <br />
+        <h2>Governing Law</h2>
+        <p>These terms and conditions are governed by and construed in accordance with the laws of California and
+            you
+            irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+        <br />
+        <p>This policy is effective as of April 20, 2022.</p>
+    </div>
+</div>
+<div id="modal-high-score" class="modal">
+    <ul>
+    </ul>
+</div>
+<div id="modal-transaction" class="modal">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><span class="modal-title"></span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <label>
+                        <div>
+                            <input type="number" pattern="[0-9]*" value="1">
+                            <span>
+                                <button class="btn max" type="button" data-l10n-id="max">
+                                </button>
+                                <button class="btn action" type="button" data-bs-dismiss="modal">
+                                </button>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-inventory" class="modal">
+    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
+        <div>
+            <div>
+                <table class="xs-stats">
+                    <tbody>
+                        <tr>
+                            <th>COIN</th>
+                            <th>QUANTITY</th>
+                            <th>VALUE</th>
+                        </tr>
+                        <tr class="template hidden">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>USDC</td>
+                            <td class>$<span class="cash"></span></td>
+                            <td>FIAT</td>
+                        </tr>
+                        <tr>
+                            <td>DEFI</td>
+                            <td>- $<span class="debt"></span></td>
+                            <td>AAVE</td>
+                        </tr>
+                        <tr>
+                            <td>NFT</td>
+                            <td>0</td>
+                            <td>BAYC</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br /><br />
+                <label>
+                    <input type="number" pattern="[0-9]*" value="1">
+                    <span>
+                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
+                        <button class="depayland"
+                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                            FIAT</button>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-pawn-shop" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body xs-stats">
+            <h1>DEFI LOANS : $<span class="debt"></span></h1>
+            <br />
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land" data-bs-dismiss="modal">BORROW</button>
+                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-cities" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body cities">
+        </div>
+        <div class="modal-body xs-stats">
+            <h1>YEAR : <span class="day"></span></h1>
+        </div>
+    </div>
+</div>
+<script defer async src="https://integrate.depay.com/widgets/v7.js"></script>
+<script defer>
+    var button = document.getElementById("depay1");
+    button.addEventListener("click", function (e) {
+        DePayWidgets.Payment({
+            integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+            accept: [
+                {
+                    blockchain: 'ethereum',
+                    token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }
+            ]
+        });
+    });
+</script>
+<script>
+
+    // view
+
+
+    function View(coins) {
+        this.news = document.querySelector('.news ul');
+        this.coins_container = document.querySelector('.coins tbody');
+
+        this.setup_coins();
+        this.setup_cities();
+
+        this.refresh_prices([]);
+        this.refresh_quantities([]);
+    }
+
+    let translateJson = {
+        "game": " ",
+        "new-game": " RESET",
+        "change-name": " ALIAS",
+        "high-score": " HISTORY",
+        "about": " ",
+        "move": " SWAP",
+        "pawn-shop": " DEFI LOANS",
+        "inventory": " WEB3 WALLET",
+        "stats": " ",
+        "day": " YEAR",
+        "cash": " DAI",
+        "guns": " Guns",
+        "debt": " DEFI LOAN",
+        "health": " ",
+        "stock": " WALLET",
+        "bank-account": " USD",
+        "coins": " ",
+        "item": " ASSET",
+        "value": " PRICE",
+        "buy": " BUY",
+        "sell": " SELL",
+        "max": " MAX",
+        "borrow": " BORROW",
+        "you-currently-owe": " YOU OWE",
+        "borrow-more-money": " BBORROW",
+        "pay-debt": " PAY",
+        "news": " ",
+        "choose-city": " CHOOSE AN EXCHANGE",
+        "close": " CLOSE",
+        "pay": " PAY",
+        "action": " ",
+        "see-recent-news": " ~~~",
+        "hide": " ",
+        "no-drug-yet": " ... wow such empty ...",
+        "final-score": " FINAL SCORE",
+        "by": " by",
+        "end": " END",
+        "prompt-name": " DEFINE ALIAS",
+        "prompt-name-again": " NO SOUP FOR YOU",
+        "dope-ada": " ADA",
+        "dope-alcx": " ALCX",
+        "dope-aave": " AAVE",
+        "dope-amc": " AMC",
+        "dope-ape": " APE",
+        "dope-atom": " ATOM",
+        "dope-avax": " AVAX",
+        "dope-axs": " AXS",
+        "dope-bnb": " BNB",
+        "dope-btc": " BTC",
+        "dope-boo": " BOO",
+        "dope-cake": " CAKE",
+        "dope-comp": " COMP",
+        "dope-doge": " DOGE",
+        "dope-dot": " DOT",
+        "dope-eth": " ETH",
+        "dope-fil": " FIL",
+        "dope-ftm": " FTM",
+        "dope-ftx": " FTX",
+        "dope-gme": " GME",
+        "dope-icp": " ICP",
+        "dope-link": " LINK",
+        "dope-ltc": " LTC",
+        "dope-mana": " MANA",
+        "dope-matic": " MATIC",
+        "dope-mkr": " MKR",
+        "dope-oath": " OATH",
+        "dope-sand": " SAND",
+        "dope-shib": " SHIB",
+        "dope-sol": " SOL",
+        "dope-tron": " TRON",
+        "dope-uni": " UNI",
+        "dope-xrp": " XRP",
+        "city-binance": " BINANCE",
+        "city-coinbase": " COINBASE",
+        "city-curve": " CURVE",
+        "city-dydx": " DYDX",
+        "city-ftx": " FTX",
+        "city-gemini": " GEMINI",
+        "city-honey": " HONEY",
+        "city-jupiter": " JUPITER",
+        "city-kine": " KINE",
+        "city-kraken": " KRAKEN",
+        "city-kucoin": " KUCOIN",
+        "city-pancake": " PANCAKE",
+        "city-spooky": " SPOOKY",
+        "city-sushi": " SUSHI",
+        "city-traderjoe": " TRADERJOE",
+        "city-uni": " UNI",
+        "notification-welcome": " Obviously, you're not a golfer.",
+        "notification-move": "",
+        "notification-bought": " SWAPPED \{\{quantity}} \{\{drug}} AT $\{\{price}}",
+        "notification-sold": " SWAPPED \{\{quantity}} \{\{drug}} AT $\{\{price}}",
+        "notification-need-more-money": " YOU'RE CASHED OUT",
+        "notification-need-more-space": " ",
+        "notification-do-not-own": " ",
+        "message-100000000": " Life forms from destruction, disorder and chaos.",
+        "message-1000000": " Character is what you are in the dark.",
+        "message-400000": "  We suffer more in imagination than in reality.",
+        "message-300000": " ",
+        "message-200000": " ",
+        "message-100000": " ",
+        "message-50000": " ",
+        "message-10000": " ",
+        "message-5000": " ",
+        "message-1000": " ",
+        "message-0": " Maybe pull out a defi loan?",
+        "message--4050": " Probably should pull out a defi loan?",
+        "message--10000": " You know, it's fairly easy to pull out a defi loan.",
+        "message--99999": " Probably should have pulled out a dfi loan, just sayin'.",
+        "message--100000": " Maybe just reset.",
+        "message-bad": " Ouch",
+        "about-title": " ",
+        "about-text": " ",
+        "about-attribution": " ",
+        "about-privacy-policy": " ",
+        "about-glyphicons": " "
+    }
+
+    function translate(key) {
+        return translateJson[key];
+    }
+
+    View.prototype.setup_coins = function () {
+        var row_template = this.coins_container.querySelector('tr[data-drug]');
+        var coins = DataCenter.coins;
+
+        console.log("coins", coins)
+        for (var drug in coins) {
+            var row = row_template.cloneNode(true);
+
+            row.dataset['drug'] = drug;
+
+            row.children[0].innerText = translate('dope-' + coins[drug].name);
+
+            this.coins_container.append(row);
+        }
+
+        row_template.remove();
+        this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
+
+        // Inventory
+        row_template = document.querySelector('#modal-inventory tr.template');
+
+        for (var drug in coins) {
+            var row = row_template.cloneNode(true);
+            console.log(row, row_template)
+            row.classList.remove('template');
+
+            row.dataset['drug'] = drug;
+
+            document.querySelector('#modal-inventory tbody').append(row);
+        }
+
+        row_template.remove();
+    };
+
+    function createElementFromHTML(htmlString) {
+        var div = document.createElement('div');
+        div.innerHTML = htmlString.trim();
+
+        // Change this to div.childNodes to support multiple top-level nodes.
+        return div.firstChild;
+    }
+
+    View.prototype.setup_cities = function () {
+        for (var city in DataCenter.cities) {
+            document.querySelector('#modal-cities .cities').append(createElementFromHTML('<button class="btn" data-bs-dismiss="modal" data-city="' + city + '">' +
+                translate('city-' + DataCenter.cities[city].name) + '</button> '));
+        }
+        document.querySelector('#modal-cities .cities button.btn')?.classList.add('current');
+    }
+
+    View.prototype.refresh_quantities = function (quantities) {
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[1].innerHTML = quantities[drug] || 0;
+        }
+    };
+
+    View.prototype.refresh_prices = function (prices) {
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[2].innerHTML = '$' + (prices[drug] || 0);
+        }
+    };
+
+    View.prototype.refresh_news = function (notifications) {
+        // this.news.empty();
+        // for (var notification in notifications) {
+        //     this.news.append('<li class="' + notifications[notification].type + '">' + notifications[notification].text + '</li>');
+        // }
+
+        // $('.news.visible-xs').readmore({
+        //     maxHeight: 40,
+        //     moreLink: '<a href="#" style="padding-top: 15px; text-align: center; font-size: small;">' + translate('see-recent-news') + '</a>',
+        //     lessLink: '<a href="#" style="padding-top: 15px; text-align: center; font-size: small;">' + translate('hide') + '</a>',
+        // });
+    };
+
+    function replaceText(selector, text) {
+        let elems = document.querySelectorAll(selector);
+        elems.forEach((elem) => {
+            elem.innerText = text;
+        })
+    }
+
+    View.prototype.refresh_stats = function (game, coat) {
+        replaceText('.stats .city, .xs-stats .city', game.city.city_name);
+        replaceText('.stats .day, .xs-stats .day', game.day);
+        replaceText('.stats .end, .xs-stats .end', game.end);
+        replaceText('.stats .debt, .xs-stats .debt', Math.round(game.debt));
+        replaceText('.stats .bank_deposit', game.bank_deposit);
+
+        replaceText('.stats .cash, .xs-stats .cash', coat.cash);
+        replaceText('.stats .guns', coat.guns.length);
+        replaceText('.stats .health', coat.health);
+        replaceText('.stats .used_space, .xs-stats .used_space', coat.used_space());
+        replaceText('.stats .total_space, .xs-stats .total_space', coat.total_space);
+    };
+
+    View.prototype.refresh_available_coins = function (available_coins) {
+        document.querySelectorAll('tr[data-drug].hidden').forEach(elem => elem.classList.remove('hidden'));
+
+        for (var drug in available_coins) {
+            if (!available_coins[drug]) {
+                document.querySelector('tr[data-drug]:nth-child(' + (parseInt(drug) + 2) + ')').classList.add('hidden');
+            }
+        }
+    };
+
+    View.prototype.refresh_high_score = function (high_score) {
+        document.querySelector('#modal-high-score ul').innerHTML = '';
+
+        for (var i in high_score) {
+            if (high_score[i] != 'null' && high_score[i] != null) {
+                document.querySelector('#modal-high-score ul').append('<li>' + high_score[i] + '</li>');
+            }
+        }
+    };
+
+    View.prototype.refresh_stone_level = function (stone_level) {
+        var colors = ['red', 'yellow', 'green', 'blue', 'orange'];
+
+        document.querySelectorAll('body *').forEach(function (elem) {
+            if (rand(0, 100) < stone_level / 2) {
+                elem.style.transform = 'rotate(' + rand(0, stone_level / 4) + 'deg)'
+                elem.style.color = parseInt(rand(0, colors.length - 1))
+                elem.style['background-color'] = colors[parseInt(rand(0, colors.length - 1))]
+                elem.style['letter-spacing'] = ((rand(0, stone_level) > stone_level / 6) ? '-4px' : '0px')
+            }
+        });
+    };
+
+    View.prototype.refresh_inventory = function (coins) {
+        for (var drug in coins) {
+            var row = document.querySelector('#modal-inventory tr:nth-child(' + (parseInt(drug) + 2) + ')')
+            row.classList.remove('hidden');
+
+            row.children[0].innerText = (translate('dope-' + DataCenter.coins[drug].name));
+            row.children[1].innerText = (coins[drug] || 0);
+            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.innerText = coins[drug] || 0;
+            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.attributes['max'] = coins[drug] || 0;
+
+            if ((coins[drug] || 0) == 0) {
+                row.classList.add('hidden');
+            }
+        }
+        let el = document.querySelector('#modal-inventory p')
+        if (array_sum(coins) == 0 && el) {
+            el.innerText = translate('no-drug-yet');
+        } else if (el) {
+            el.innerText = '';
+        }
+    };
+
+    // (function (c) {
+    //     var f = "readmore",
+    //         h = {
+    //             speed: 100,
+    //             maxHeight: 200,
+    //             heightMargin: 16,
+    //             moreLink: '<a href="#">Read More</a>',
+    //             lessLink: '<a href="#">Close</a>',
+    //             embedCSS: !0,
+    //             sectionCSS: "display: block; width: 100%;",
+    //             startOpen: !1,
+    //             expandedClass: "readmore-js-expanded",
+    //             collapsedClass: "readmore-js-collapsed",
+    //             beforeToggle: function () { },
+    //             afterToggle: function () { }
+    //         },
+    //         k = !1;
+    //     c.fn[f] = function (b) {
+    //         var a = arguments;
+    //         if (void 0 === b || "object" === typeof b) return this.each(function () {
+    //             if (c.data(this,
+    //                 "plugin_" + f)) {
+    //                 var a = c.data(this, "plugin_" + f);
+    //                 a.destroy.apply(a)
+    //             }
+    //             c.data(this, "plugin_" + f, new g(this, b))
+    //         });
+    //         if ("string" === typeof b && "_" !== b[0] && "init" !== b) return this.each(function () {
+    //             var d = c.data(this, "plugin_" + f);
+    //             d instanceof g && "function" === typeof d[b] && d[b].apply(d, Array.prototype.slice.call(a, 1))
+    //         })
+    //     }
+    // })(jQuery);
+
+
+
+
+
+
+    // data
+
+
+
+
+
+
+
+
+    var DataCenter = {
+        coins: [
+            {
+                "name": "ada",
+                "minimum_price": 1,
+                "maximum_price": 2
+            },
+            {
+                "name": "alcx",
+                "minimum_price": 20,
+                "maximum_price": 2004
+            },
+            {
+                "name": "aave",
+                "minimum_price": 28,
+                "maximum_price": 632
+            },
+            {
+                "name": "amc",
+                "minimum_price": 2,
+                "maximum_price": 59
+            },
+            {
+                "name": "ape",
+                "minimum_price": 3,
+                "maximum_price": 26
+            },
+            {
+                "name": "atom",
+                "minimum_price": 2,
+                "maximum_price": 45
+            },
+            {
+                "name": "avax",
+                "minimum_price": 3,
+                "maximum_price": 134
+            },
+            {
+                "name": "axs",
+                "minimum_price": 1,
+                "maximum_price": 160
+            },
+            {
+                "name": "bnb",
+                "minimum_price": 10,
+                "maximum_price": 700
+            },
+            {
+                "name": "btc",
+                "minimum_price": 5000,
+                "maximum_price": 69000
+            },
+            {
+                "name": "boo",
+                "minimum_price": 1,
+                "maximum_price": 12
+            },
+            {
+                "name": "cake",
+                "minimum_price": 1,
+                "maximum_price": 42
+            },
+            {
+                "name": "comp",
+                "minimum_price": 27,
+                "maximum_price": 854
+            },
+            {
+                "name": "doge",
+                "minimum_price": 69,
+                "maximum_price": 420
+            },
+            {
+                "name": "dot",
+                "minimum_price": 1,
+                "maximum_price": 54
+            },
+            {
+                "name": "eth",
+                "minimum_price": 100,
+                "maximum_price": 5000
+            },
+            {
+                "name": "fil",
+                "minimum_price": 5,
+                "maximum_price": 188
+            },
+            {
+                "name": "ftm",
+                "minimum_price": 1,
+                "maximum_price": 10
+            },
+            {
+                "name": "ftx",
+                "minimum_price": 2,
+                "maximum_price": 80
+            },
+            {
+                "name": "gme",
+                "minimum_price": 4,
+                "maximum_price": 325
+            },
+            {
+                "name": "icp",
+                "minimum_price": 5,
+                "maximum_price": 364
+            },
+            {
+                "name": "link",
+                "minimum_price": 2,
+                "maximum_price": 53
+            },
+            {
+                "name": "ltc",
+                "minimum_price": 2,
+                "maximum_price": 278
+            },
+            {
+                "name": "mana",
+                "minimum_price": 1,
+                "maximum_price": 6
+            },
+            {
+                "name": "matic",
+                "minimum_price": 1,
+                "maximum_price": 10
+            },
+            {
+                "name": "mkr",
+                "minimum_price": 206,
+                "maximum_price": 6012
+            },
+            {
+                "name": "oath",
+                "minimum_price": 1,
+                "maximum_price": 10
+            },
+            {
+                "name": "sand",
+                "minimum_price": 1,
+                "maximum_price": 9
+            },
+            {
+                "name": "shib",
+                "minimum_price": 1,
+                "maximum_price": 7
+            },
+            {
+                "name": "sol",
+                "minimum_price": 1,
+                "maximum_price": 260
+            },
+            {
+                "name": "tron",
+                "minimum_price": 1,
+                "maximum_price": 9
+            },
+            {
+                "name": "uni",
+                "minimum_price": 2,
+                "maximum_price": 43
+            },
+            {
+                "name": "xrp",
+                "minimum_price": 1,
+                "maximum_price": 4
+            },
+
+
+        ],
+        cities: [
+            {
+                "name": "binance",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "coinbase",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "curve",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "dydx",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "ftx",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "gemini",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "honey",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "jupiter",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "kine",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "kraken",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "kucoin",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "pancake",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "spooky",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "sushi",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "traderjoe",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+            {
+                "name": "uni",
+                "min_coins": 18,
+                "max_coins": 19
+            },
+        ],
+        messages: [
+            100000000,
+            1000000,
+            400000,
+            300000,
+            200000,
+            100000,
+            50000,
+            10000,
+            5000,
+            1000,
+            0,
+            -4050,
+            -10000,
+            -99999,
+            -100000,
+        ]
+    };
+
+
+
+
+
+
+
+
+
+    // models
+
+
+
+
+
+
+
+
+
+    function rand(min_rand, max_rand) {
+        return min_rand + (Math.random() * 10000 % (max_rand - min_rand));
+    }
+
+    function shuffle(array) {
+        var shuffled = [], index;
+
+        for (var i = 0; i < array.length; i++) {
+            while ((index = parseInt(rand(0, array.length))) in shuffled);
+
+            shuffled[index] = array[i];
+        }
+
+        return shuffled;
+    }
+
+    function array_sort(a, b) {
+        a = parseInt(a);
+        b = parseInt(b);
+
+        if (a < b) {
+            return -1;
+        } else if (a > b) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    function pop_array(array, from_index) {
+        var popped = [];
+
+        for (var i = 0; i < from_index; i++) {
+            popped[i] = array[i];
+        }
+
+        popped[from_index] = null;
+
+        for (var i = from_index + 1; i < array.length; i++) {
+            popped[i] = array[i - 1];
+        }
+
+        return popped;
+    }
+
+    function array_sum(array) {
+        var sum = 0;
+
+        for (var i in array) {
+            sum += parseInt(array[i] || 0);
+        }
+
+        return sum;
+    }
+
+    // GameManager
+    function GameManager() {
+        this.day = 2022;
+        this.end = 2036;
+        this.debt = 42;
+        this.bank_deposit = 100000;
+        this.stone_level = 0;
+        this.city = new City(0);
+    }
+
+    GameManager.prototype.is_game_over = function () {
+        return this.day >= this.end;
+    };
+
+    GameManager.prototype.new_city = function (number, news_manager) {
+        this.city = new City(number, news_manager);
+        this.day++;
+        this.debt *= 1.29;
+        this.debt = Math.round(this.debt);
+    };
+
+    GameManager.prototype.player_name = function () {
+        return window.localStorage.getItem('player_name') || '';
+    };
+
+    GameManager.prototype.high_score = function () {
+        var scores = [];
+
+        for (var i = 0; i < 10; i++) {
+            scores[i] = window.localStorage.getItem('high-score-' + i);
+        }
+
+        return scores;
+    };
+
+    GameManager.prototype.add_high_score = function (score) {
+        var scores = this.high_score();
+
+        for (var i = 0; i < 10; i++) {
+            if (parseInt(scores[i]) < parseInt(score) || scores[i] == 'null' || scores[i] == null) {
+                scores = pop_array(scores, i);
+                scores[i] = score;
+
+                for (var j in scores) {
+                    window.localStorage.setItem('high-score-' + j, scores[j]);
+                }
+
+                return;
+            }
+        }
+    };
+
+    GameManager.prototype.reset_high_score = function () {
+        for (var i = 0; i < 10; i++) {
+            window.localStorage.removeItem('high-score-' + i);
+        }
+    };
+
+    GameManager.prototype.message = function (score) {
+        for (var i in DataCenter.messages) {
+            var max_score = DataCenter.messages[i];
+            if (max_score <= score) {
+                return translate('message-' + DataCenter.messages[i]);
+            }
+        }
+        return translate('message-bad');
+    }
+
+    // Coat
+    function Coat() {
+        this.coins = [];
+        this.cash = 42;
+        this.guns = [];
+        this.health = 100;
+        this.total_space = 420;
+    }
+
+    Coat.prototype.available_space = function () {
+        var available_space = this.total_space;
+
+        for (var i in this.coins) {
+            available_space -= this.coins[i];
+        }
+
+        return available_space;
+    };
+
+    Coat.prototype.used_space = function () {
+        return this.total_space - this.available_space();
+    };
+
+    Coat.prototype.add = function (drug, quantity) {
+        this.coins[drug] = this.coins[drug] || 0;
+        this.coins[drug] += quantity;
+    };
+
+    Coat.prototype.can_buy = function (price, quantity) {
+        return this.available_space() >= quantity && this.cash >= price * quantity;
+    };
+
+    Coat.prototype.can_sell = function (item, quantity) {
+        return this.coins[item] >= quantity;
+    };
+
+    Coat.prototype.buy = function (item, price, quantity) {
+        this.cash -= price * quantity;
+        this.add(item, quantity);
+    };
+
+    Coat.prototype.sell = function (item, price, quantity) {
+        this.cash += price * quantity;
+        this.coins[item] -= quantity;
+    };
+
+    Coat.prototype.max_quantity = function (price) {
+        return Math.min(this.available_space(), Math.floor(this.cash / price));
+    };
+
+    Coat.prototype.score = function (game, prices) {
+        var score = this.cash - game.debt;
+
+        for (var drug in this.coins) {
+            score += (this.coins[drug] * prices[drug]) || 0;
+        }
+
+        return Math.round(score);
+    };
+
+    // City
+    function City(number, news_manager) {
+        this.city_name = translate('city-' + DataCenter.cities[number].name);
+        this.is_cop = Math.random() * 100 < DataCenter.cities[number].cops;
+        this.prices = [];
+        this.number = number;
+        this.available_coins = [];
+
+
+        // Available coins
+        var max_coins = ('max_coins' in DataCenter.cities[number] ? DataCenter.cities[number].max_coins : DataCenter.coins.length);
+
+        var number_of_coins = parseInt(rand(DataCenter.cities[number].min_coins, max_coins));
+        for (var i = 0; i < number_of_coins; i++) {
+            this.available_coins[i] = true;
+        }
+
+        for (var i = number_of_coins; i < DataCenter.coins.length; i++) {
+            this.available_coins[i] = false;
+        }
+
+        this.available_coins = shuffle(this.available_coins);
+
+        // Prices
+        for (var drug in DataCenter.coins) {
+            if (this.available_coins[parseInt(drug)]) {
+                var minimum_price = DataCenter.coins[drug].minimum_price;
+                var maximum_price = DataCenter.coins[drug].maximum_price;
+
+                if ('cheap' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager != null) {
+                    minimum_price = DataCenter.coins[drug].cheap.minimum_price;
+                    maximum_price = DataCenter.coins[drug].cheap.maximum_price;
+
+                    var id = 'dope-' + DataCenter.coins[drug].name + '-cheap';
+
+                    news_manager.add(new News(translate(id)));
+                } else if ('expensive' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager) {
+                    minimum_price = DataCenter.coins[drug].expensive.minimum_price;
+                    maximum_price = DataCenter.coins[drug].expensive.maximum_price;
+
+                    var id = 'dope-' + DataCenter.coins[drug].name + '-expensive';
+
+                    news_manager.add(new News(translate(id)));
+                }
+
+                this.prices[drug] = Math.round(rand(minimum_price, maximum_price));
+            }
+        }
+
+        console.log("Prices", this.prices)
+    }
+
+    // News & NewsManager
+    function News(text, type) {
+        this.text = text;
+        this.type = type || '';
+    }
+
+    function NewsManager() {
+        this.news = [];
+        this.limit = 15;
+    }
+
+    NewsManager.prototype.add = function (news) {
+        this.news.reverse();
+
+        // Keep only this.limit news
+        if (this.news.length == this.limit) {
+            this.news.shift();
+        }
+
+        this.news.push(news);
+
+        this.news.reverse();
+    };
+
+
+
+    // controller
+    (function (funcName, baseObj) {
+        // The public function name defaults to window.docReady
+        // but you can pass in your own object and own function name and those will be used
+        // if you want to put them in a different namespace
+
+        console.log("Here?3")
+        funcName = funcName || "docReady";
+        baseObj = baseObj || window;
+        var readyList = [];
+        var readyFired = false;
+        var readyEventHandlersInstalled = false;
+
+        // call this when the document is ready
+        // this function protects itself against being called more than once
+        function ready() {
+            if (!readyFired) {
+                // this must be set to true before we start calling callbacks
+                readyFired = true;
+                for (var i = 0; i < readyList.length; i++) {
+                    // if a callback here happens to add new ready handlers,
+                    // the docReady() function will see that it already fired
+                    // and will schedule the callback to run right after
+                    // this event loop finishes so all handlers will still execute
+                    // in order and no new ones will be added to the readyList
+                    // while we are processing the list
+                    readyList[i].fn.call(window, readyList[i].ctx);
+                }
+                // allow any closures held by these functions to free
+                readyList = [];
+            }
+        }
+
+        function readyStateChange() {
+            if (document.readyState === "complete") {
+                ready();
+            }
+        }
+
+        // This is the one public interface
+        // docReady(fn, context);
+        // the context argument is optional - if present, it will be passed
+        // as an argument to the callback
+        baseObj[funcName] = function (callback, context) {
+            if (typeof callback !== "function") {
+                throw new TypeError("callback for docReady(fn) must be a function");
+            }
+            // if ready has already fired, then just schedule the callback
+            // to fire asynchronously, but right away
+            if (readyFired) {
+                setTimeout(function () { callback(context); }, 1);
+                return;
+            } else {
+                // add the function and context to the list
+                readyList.push({ fn: callback, ctx: context });
+            }
+            // if document already ready to go, schedule the ready function to run
+            if (document.readyState === "complete") {
+                setTimeout(ready, 1);
+            } else if (!readyEventHandlersInstalled) {
+                // otherwise if we don't have event handlers installed, install them
+                if (document.addEventListener) {
+                    // first choice is DOMContentLoaded event
+                    document.addEventListener("DOMContentLoaded", ready, false);
+                    // backup is window load event
+                    window.addEventListener("load", ready, false);
+                } else {
+                    // must be IE
+                    document.attachEvent("onreadystatechange", readyStateChange);
+                    window.attachEvent("onload", ready);
+                }
+                readyEventHandlersInstalled = true;
+            }
+        }
+    })("docReady", window);
+
+    docReady(function () {
+        console.log("Here?")
+        // Useful when debugging
+        navigator.Controller = new Controller();
+
+        document.querySelectorAll("button[data-l10n-id]").forEach((elem) => {
+            let key = elem.attributes['data-l10n-id'].value;
+
+            if (key) {
+                elem.innerText = translate(key);
+            }
+        })
+    });
+
+    function Controller() {
+        var self = this;
+
+
+        this.coat = new Coat();
+
+        this.view = new View();
+
+        this.game = new GameManager();
+
+        this.news_manager = new NewsManager();
+
+        this.news_manager.add(new News(translate('notification-welcome')));
+
+        this.view.refresh_prices(this.game.city.prices);
+        this.view.refresh_available_coins(this.game.city.available_coins);
+        this.view.refresh_stats(this.game, this.coat);
+        this.view.refresh_news(this.news_manager.news);
+        this.view.refresh_high_score(self.game.high_score());
+
+        document.querySelectorAll('button.buy').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                if (self.buy(parseInt(elem.parentElement.parentElement.dataset['drug']), parseInt(elem.previousElementSibling.previousElementSibling.value))) {
+                    elem.previousElementSibling.previousElementSibling.value = 0;
+                }
+            }
+        })
+
+        document.querySelectorAll('button.sell').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var index = parseInt(elem.parentNode.parentElement.dataset['drug']);
+                var quantity = parseInt(elem.previousElementSibling.previousElementSibling.value);
+                if (self.sell(index, quantity)) {
+                    elem.previousElementSibling.previousElementSibling.value = 0;
+                    elem.parentNode.parentNode.querySelector('td:nth-child(2)').innerText = (self.coat.coins[index]);
+                }
+            }
+        })
+
+        document.querySelectorAll('button.buy-max').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var item_number = parseInt(elem.parentNode.parentElement.dataset['drug']);
+                var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
+                elem.previousElementSibling.value = quantity;
+            }
+        })
+
+        document.querySelectorAll('button.sell-max').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var item_number = parseInt(elem.parentNode.parentElement.dataset['drug']);
+                var quantity = self.coat.coins[item_number] || 0;
+                elem.previousElementSibling.value = quantity;
+            }
+        })
+
+        document.querySelectorAll('a.new-game').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                window.location = '';
+            }
+        })
+
+        document.querySelectorAll('a.new-name').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                self.new_name();
+            }
+        })
+
+        document.querySelectorAll('#modal-cities .cities button[data-city]').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                if (self.game.city.number == elem.dataset['city']) {
+                    return;
+                }
+
+                if (self.game.day == self.game.end) {
+                    self.game_over();
+                } else {
+                    self.news_manager.add(new News(translate('notification-move', {
+                        city: translate('city-' + DataCenter.cities[elem.dataset['city']].name)
+                    }), 'move'));
+
+                    self.game.new_city(elem.dataset['city'], self.news_manager);
+                    self.view.refresh_available_coins(self.game.city.available_coins);
+                    self.view.refresh_news(self.news_manager.news);
+
+                    document.querySelectorAll('button[data-city].current').forEach((elem) => {
+                        elem.classList.remove('current');
+                    })
+                    elem.classList.add('current');
+
+                    document.querySelectorAll('input.number').forEach(function () {
+                        elem.previousElementSibling.value = 0;
+                    });
+
+                    self.view.refresh_news(self.news_manager.news);
+                    self.view.refresh_prices(self.game.city.prices);
+                    self.view.refresh_stats(self.game, self.coat);
+
+                    if (self.game.day == self.game.end) {
+                        document.querySelectorAll('a[data-bs-target="#modal-cities"]').forEach((elem) => {
+                            elem.innerHTML = '<i class="glyphicon glyphicon-stop"></i> ' + translate('end');
+                            elem.attributes['href'] = '#'
+                            let a = elem.onclick; elem.onclick = (ev) => {
+                                if (a) a(ev);
+                                document.querySelector('#modal-cities .cities button[data-city]:not(.current)').click();
+                            }
+                        })
+                    }
+                }
+
+                document.querySelectorAll('.navbar .navbar-collapse').forEach((elem) => {
+                    elem.classList.remove('in')
+                })
+            }
+        })
+
+        document.querySelectorAll('a[data-bs-target="#modal-pawn-shop"]').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                document.querySelectorAll('#modal-pawn-shop .form-group').forEach((elem) => { elem.classList.remove('has-error') });
+                document.querySelectorAll('#modal-pawn-shop .debt').forEach((elem) => { elem.innerText = self.game.debt })
+                document.querySelectorAll('#modal-pawn-shop input').forEach((elem) => { elem.value = 0; })
+            }
+        })
+        console.log("Here?")
+        document.querySelectorAll('a[data-bs-target="#modal-inventory"]').forEach((elem) => {
+            let a = elem.onclick;
+            console.log(elem)
+            elem.onclick = (ev) => {
+                if (a) a(ev);
+                self.view.refresh_inventory(self.coat.coins);
+            }
+        })
+
+        document.querySelectorAll('button[data-bs-target="#modal-inventory"]').forEach((elem) => {
+            let a = elem.onclick
+            elem.onclick = (ev) => {
+                if (a) a(ev);
+                self.view.refresh_inventory(self.coat.coins);
+            }
+        })
+
+        document.querySelectorAll('.depayland').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                let val = elem.parentNode.previousElementSibling.value;
+                console.log(val);
+
+                var amount = parseInt(val);
+                self.coat.cash += amount;
+
+                elem.parentNode.previousElementSibling.value = 0;
+                self.view.refresh_stats(self.game, self.coat);
+            }
+        });
+
+        document.querySelectorAll('#modal-inventory button.land').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var amount = parseInt(elem.parentNode.previousElementSibling.value);
+                self.coat.cash += amount;
+
+                elem.parentNode.previousElementSibling.value = 0;
+                self.view.refresh_stats(self.game, self.coat);
+            }
+        });
+
+        document.querySelectorAll('#modal-inventory button.defi').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var amount = parseInt(elem.parentNode.previousElementSibling.value);
+                self.game.debt += amount;
+                self.coat.cash += amount;
+
+                elem.parentNode.previousElementSibling.value = 0;
+                self.view.refresh_stats(self.game, self.coat);
+            }
+        })
+
+        document.querySelectorAll('#modal-inventory button.paydefi').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
+
+                if (self.coat.cash >= amount) {
+                    self.game.debt -= amount;
+                    self.coat.cash -= amount;
+                    elem.parentNode.previousElementSibling.value = 0;
+
+                    self.view.refresh_stats(self.game, self.coat);
+                } else {
+                    elem.parentNode.parentNode.parentElement.classList.add('has-error')
+                }
+            }
+        })
+
+        document.querySelectorAll('#modal-pawn-shop button.pay').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
+
+                if (self.coat.cash >= amount) {
+                    self.game.debt -= amount;
+                    self.coat.cash -= amount;
+                    elem.parentNode.previousElementSibling.value = 0;
+
+                    self.view.refresh_stats(self.game, self.coat);
+                } else {
+                    elem.parentNode.parentNode.parentElement.classList.add('has-error')
+                }
+            }
+        })
+
+        document.querySelectorAll('#modal-pawn-shop button.land').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var amount = parseInt(elem.parentNode.previousElementSibling.value);
+                self.game.debt += amount;
+                self.coat.cash += amount;
+
+                elem.parentNode.previousElementSibling.value = 0;
+                self.view.refresh_stats(self.game, self.coat);
+            }
+        })
+
+        document.querySelectorAll('#modal-pawn-shop button.pay-max').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                elem.parentNode.previousElementSibling.value = (Math.min(self.coat.cash, self.game.debt));
+            }
+        })
+
+
+
+        document.querySelectorAll('#modal-inventory button.max').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                elem.parentNode.previousElementSibling.value = parseInt(elem.parentNode.parentNode.parentNode.previousElementSibling.innerText)
+            }
+        })
+
+        document.querySelectorAll('#modal-inventory button.consume').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var index = parseInt(elem.parentNode.parentNode.parentElement.dataset['drug']);
+                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
+
+                self.coat.coins[index] -= quantity;
+                self.game.stone_level += quantity;
+
+                self.view.refresh_stone_level(self.game.stone_level);
+                self.view.refresh_inventory(self.coat.coins);
+                self.view.refresh_quantities(self.coat.coins);
+                self.view.refresh_stats(self.game, self.coat);
+
+                elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = 0;
+            }
+        })
+
+        document.querySelectorAll('#modal-inventory button.drop').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                var index = parseInt(elem.parentElement.parentElement.parentElement.dataset['drug']);
+                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
+
+                self.coat.coins[index] -= quantity;
+
+                self.view.refresh_inventory(self.coat.coins);
+                self.view.refresh_quantities(self.coat.coins);
+                self.view.refresh_stats(self.game, self.coat);
+
+                elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = (0);
+            }
+        })
+
+
+
+        document.querySelectorAll('.buy-xs').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                document.querySelector('#modal-transaction input[type="number"]').value = (0);
+
+                document.querySelector('#modal-transaction').classList.remove('sell');
+                document.querySelector('#modal-transaction').classList.add('buy')
+                document.querySelector('#modal-transaction').dataset['drug'] = elem.parentElement.parentElement.dataset['drug'];
+                document.querySelector('#modal-transaction .modal-header h4').innerText = (translate('buy')
+                    + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
+                document.querySelector('#modal-transaction .modal-body .action').innerText = (translate('buy'));
+
+                document.querySelector('#modal-transaction.buy button.max').onclick = (ev) => {
+                    let elem = ev.currentTarget;
+                    var item_number = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
+                    var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
+
+                    elem.parentNode.previousElementSibling.value = (quantity);
+                };
+
+                document.querySelector('#modal-transaction.buy button.action').onclick = (ev) => {
+                    let elem = ev.currentTarget;
+
+                    var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
+
+                    if (self.buy(index, parseInt(elem.parentElement.previousElementSibling.value))) {
+                        elem.removeEventListener('click', elem.onclick);
+                    }
+                };
+            }
+        })
+
+        document.querySelectorAll('.sell-xs').forEach((elem) => {
+            let a = elem.onclick; elem.onclick = (ev) => {
+                if (a) a(ev);
+                document.querySelector('#modal-transaction input[type="number"]').value = (0);
+
+                document.querySelector('#modal-transaction').classList.remove('buy');
+                document.querySelector('#modal-transaction').classList.add('sell')
+                document.querySelector('#modal-transaction').dataset['drug'] = elem.parentElement.parentElement.dataset['drug'];
+                document.querySelector('#modal-transaction .modal-header h4').innerText = (translate('sell')
+                    + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
+                document.querySelector('#modal-transaction .modal-body .action').innerText = (translate('sell'));
+
+                document.querySelector('#modal-transaction.sell button.max').onclick = (ev) => {
+                    // Hmmm... Maybe this isn't the best way to do it...
+                    let elem = ev.currentTarget;
+                    var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
+                    var quantity = self.coat.coins[index] || 0;
+
+                    elem.parentElement.previousElementSibling.value = quantity;
+                };
+
+                document.querySelector('#modal-transaction.sell button.action').onclick = (ev) => {
+                    let elem = ev.currentTarget;
+                    var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
+                    var quantity = parseInt(elem.parentElement.previousElementSibling.value);
+
+                    if (self.sell(index, quantity)) {
+                        elem.removeEventListener('click', elem.onclick);
+                    }
+                };
+            }
+        })
+
+        // document.querySelectorAll('.stats_toggle').click(function () {
+        //     $('.stats').slideToggle();
+        // });
+    }
+
+    Controller.prototype.buy = function (index, quantity) {
+        if (!quantity) {
+            return false;
+        }
+
+        var return_value = true;
+
+        if (this.coat.can_buy(this.game.city.prices[index], quantity)) {
+            this.coat.buy(index, this.game.city.prices[index], quantity);
+
+            this.news_manager.add(new News(translate('notification-bought', {
+                quantity: quantity,
+                drug: translate('dope-' + DataCenter.coins[index].name),
+                price: this.game.city.prices[index]
+            }), 'drug'));
+
+            this.view.refresh_quantities(this.coat.coins);
+            this.view.refresh_stats(this.game, this.coat);
+        } else {
+            this.news_manager.add(new News(translate('notification-need-more-' + (this.coat.available_space() >= quantity ? 'money' : 'space')), 'error'));
+            return_value = false;
+        }
+
+        this.view.refresh_news(this.news_manager.news);
+        return return_value;
+    };
+
+    Controller.prototype.sell = function (index, quantity) {
+        if (!quantity) {
+            return;
+        }
+
+        var return_value = true;
+
+        if (this.coat.can_sell(index, quantity)) {
+            this.coat.sell(index, this.game.city.prices[index], quantity);
+
+            this.news_manager.add(new News(translate('notification-sold', {
+                quantity: quantity,
+                drug: translate('dope-' + DataCenter.coins[index].name),
+                price: this.game.city.prices[index]
+            }), 'drug'));
+            this.view.refresh_stats(this.game, this.coat);
+            this.view.refresh_quantities(this.coat.coins);
+        } else {
+            this.news_manager.add(new News(translate('notification-do-not-own'), 'error'));
+            return_value = false;
+        }
+
+        this.view.refresh_news(this.news_manager.news);
+        return return_value;
+    };
+
+    Controller.prototype.new_name = function () {
+        var name = prompt(translate('prompt-name'));
+
+        window.localStorage.setItem('player_name', name);
+    };
+
+    Controller.prototype.game_over = function () {
+        var score = this.coat.score(this.game, this.game.city.prices);
+
+        var high_score_string = '$' + score + ' by ' + this.game.player_name() + '  on  ' + new Date().toLocaleString() + '</small></span>';
+
+        this.game.add_high_score(high_score_string);
+        this.view.refresh_high_score(this.game.high_score());
+
+        // document.querySelector('#modal-high-score .modal-footer .btn').innerText = (translate('new-game'));
+        // document.querySelector('#modal-high-score .modal-body .final-score').innerHTML = 'FINAL SCORE : $' + score;
+        // document.querySelector('#modal-high-score .modal-body .message').innerHTML = '' + this.game.message(score);
+
+        // document.querySelectorAll('#modal-high-score').on('hide.bs.modal', function () {
+        //     window.location = '';
+        // });
+
+        // document.querySelector('#modal-high-score').classList.add('show.bs.modal');
+    };
+</script>
+
+</html>
