@@ -295,7 +295,7 @@
                         <th>QUANTITY</th>
                         <th>VALUE</th>
                     </tr>
-                    <tr class="template hidden">
+                    <tr class="coinlist hidden">
                         <td></td>
                         <td></td>
                         <td></td>
@@ -305,6 +305,7 @@
                         <td class>$<span class="cash"></span></td>
                         <td>FIAT</td>
                     </tr>
+                    <!--
                     <tr>
                         <td>DEFI</td>
                         <td>- $<span class="debt"></span></td>
@@ -315,11 +316,12 @@
                         <td>0</td>
                         <td>BAYC</td>
                     </tr>
+                    -->
                 </tbody>
             </table>
             <br /><br />
             <label>
-                <input type="number" pattern="[0-9]*" value="1">
+                <input class="hidden" type="number" pattern="[0-9]*" value="1">
                 <span>
                     <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
                     <button class="depayland"
@@ -328,6 +330,7 @@
                 </span>
             </label>
         </div>
+        <!--
         <br />
         <button class="trans mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
             DEFI LENDING
@@ -341,6 +344,7 @@
                 </span>
             </div>
         </div>
+        -->
     </div>
 </div>
 
@@ -579,7 +583,7 @@
                             <th>QUANTITY</th>
                             <th>VALUE</th>
                         </tr>
-                        <tr class="template hidden">
+                        <tr class="coinlist hidden">
                             <td></td>
                             <td></td>
                             <td></td>
@@ -1010,14 +1014,14 @@
         return translateJson[key];
     }
     View.prototype.setup_coins = function () {
-        var row_template = this.coins_container.querySelector('tr[data-drug]');
-        let row_collapse_template = this.coins_container.querySelector('.collapse-transaction');
+        var row_coinlist = this.coins_container.querySelector('tr[data-drug]');
+        let row_collapse_coinlist = this.coins_container.querySelector('.collapse-transaction');
         var coins = DataCenter.coins;
         let i = 0;
-        console.log("Row Collapse Template", row_collapse_template)
+        console.log("Row Collapse coinlist", row_collapse_coinlist)
         for (var drug in coins) {
-            var row = row_template.cloneNode(true);
-            let row_collapse = row_collapse_template.cloneNode(true);
+            var row = row_coinlist.cloneNode(true);
+            let row_collapse = row_collapse_coinlist.cloneNode(true);
             row.dataset['drug'] = drug;
             row.children[0].innerText = translate('dope-' + coins[drug].name);
             row.querySelectorAll('a').forEach((elem) => {
@@ -1030,17 +1034,17 @@
             this.coins_container.append(row);
             this.coins_container.append(row_collapse);
         }
-        row_template.remove();
-        row_collapse_template.remove();
+        row_coinlist.remove();
+        row_collapse_coinlist.remove();
         this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
-        row_template = document.querySelector('#wallet tr.template');
+        row_coinlist = document.querySelector('#wallet tr.coinlist');
         for (var drug in coins) {
-            var row = row_template.cloneNode(true);
-            row.classList.remove('template');
+            var row = row_coinlist.cloneNode(true);
+            row.classList.remove('coinlist');
             row.dataset['drug'] = drug;
             document.querySelector('#wallet tbody').append(row);
         }
-        row_template.remove();
+        row_coinlist.remove();
     };
     function createElementFromHTML(htmlString) {
         var div = document.createElement('div');
