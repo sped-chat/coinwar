@@ -207,20 +207,37 @@
                 <td class="hidden"></td>
                 <td></td>
                 <td>
-                    <a class="buy-xs" data-drug="" data-bs-toggle="collapse" data-bs-target-1="">📈</a>
-                    <a class="sell-xs" data-bs-toggle="collapse" data-bs-target-1="">📉</a>
+                    <a class="buy-sell-xs" data-drug="" data-bs-toggle="collapse" data-bs-target="">📈</a>
                 </td>
             </tr>
             <tr class="collapse-transaction collapse" id="">
                 <td></td>
                 <td class="hidden"></td>
                 <td></td>
-                <td class="text-center py-3">
+                <td class="text-center pt-3 pb-1">
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
-                        <button class="trans max" type="button" data-l10n-id="max">
+                        <button class="trans buy max" type="button" data-l10n-id="max">
+                            MAX
                         </button>
-                        <button data-bs-target="" class="trans action" type="button" data-bs-toggle="collapse">
+                        <button data-bs-target="" class="trans buy action" type="button" data-bs-toggle="collapse">
+                            BUY
+                        </button>
+                    </span>
+                </td>
+            </tr>
+            <tr class="collapse-transaction collapse" id="">
+                <td></td>
+                <td class="hidden"></td>
+                <td></td>
+                <td class="text-center pb-3">
+                    <input type="number" pattern="[0-9]*" value="1">
+                    <span>
+                        <button class="trans sell max" type="button" data-l10n-id="max">
+                            MAX
+                        </button>
+                        <button data-bs-target="" class="trans sell action" type="button" data-bs-toggle="collapse">
+                            SELL
                         </button>
                     </span>
                 </td>
@@ -914,27 +931,30 @@
     }
     View.prototype.setup_coins = function () {
         var row_coinlist = this.coins_container.querySelector('tr[data-drug]');
-        let row_collapse_coinlist = this.coins_container.querySelector('.collapse-transaction');
+        let row_collapse_coinlist = this.coins_container.querySelectorAll('.collapse-transaction');
         var coins = DataCenter.coins;
         let i = 0;
-        console.log("Row Collapse coinlist", row_collapse_coinlist)
+        console.log("Row Collapse Coinlist", row_collapse_coinlist)
         for (var drug in coins) {
             var row = row_coinlist.cloneNode(true);
-            let row_collapse = row_collapse_coinlist.cloneNode(true);
+            let row_collapses = []
+            row_collapse_coinlist.forEach(_ => {
+                row_collapses.push(_.cloneNode(true))
+            });
             row.dataset['drug'] = drug;
             row.children[0].innerText = translate('dope-' + coins[drug].name);
             row.querySelectorAll('a').forEach((elem) => {
                 elem.dataset['drug'] = drug;
-                elem.attributes['data-bs-target-1'].value = "#collapse_transaction_" + i;
+                elem.attributes['data-bs-target'].value = "#collapse_transaction_" + i;
             })
-            row_collapse.id = 'collapse_transaction_' + i;
-            row_collapse.querySelector('button.action').attributes['data-bs-target'].value = "#collapse_transaction_" + i;
+            row_collapses.forEach(_ => _.id = 'collapse_transaction_' + i);
+            row_collapses.forEach(_ => _.querySelector('button.action').attributes['data-bs-target'].value = "#collapse_transaction_" + i);
             i++;
             this.coins_container.append(row);
-            this.coins_container.append(row_collapse);
+            this.coins_container.append(...row_collapses);
         }
         row_coinlist.remove();
-        row_collapse_coinlist.remove();
+        row_collapse_coinlist.forEach(_ => _.remove());
         this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
         row_coinlist = document.querySelector('#wallet tr.coinlist');
         for (var drug in coins) {
@@ -991,7 +1011,7 @@
         document.querySelectorAll('tr[data-drug].hidden').forEach(elem => elem.classList.remove('hidden'));
         for (var drug in available_coins) {
             if (!available_coins[drug]) {
-                document.querySelector('tr[data-drug]:nth-child(' + ((parseInt(drug) * 2) + 2) + ')').classList.add('hidden');
+                document.querySelector('tr[data-drug]:nth-child(' + ((parseInt(drug) * 3) + 2) + ')').classList.add('hidden');
             }
         }
     };
@@ -1490,63 +1510,39 @@
                 elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = (0);
             }
         })
-        document.querySelectorAll('.buy-xs').forEach((elem) => {
+        document.querySelectorAll('.buy-sell-xs').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
-                let queryElem = elem.attributes['data-bs-target-1'].value
-                document.querySelector(queryElem + ' input[type="number"]').value = (0);
-                if (!document.querySelector(queryElem).classList.contains('buy')) {
-                    document.querySelector(queryElem).classList.add('show')
-                } else {
-                    document.querySelector(queryElem).classList.remove('show')
-                    document.querySelector(queryElem).classList.remove('buy')
-                    document.querySelector(queryElem).classList.add('collapse')
-                    return;
-                }
+                let queryElem = elem.attributes['data-bs-target'].value
+                
                 document.querySelector(queryElem).classList.remove('sell');
                 document.querySelector(queryElem).classList.add('buy')
                 document.querySelector(queryElem).dataset['drug'] = elem.dataset['drug'];
-                document.querySelector(queryElem + ' .action').innerText = (translate('buy'));
-                document.querySelector(queryElem + '.buy button.max').onclick = (ev) => {
+
+                document.querySelectorAll(queryElem + ' input').forEach(_ => _.value = 0)
+
+                // document.querySelector(queryElem + ' .action').innerText = (translate('buy'));
+                document.querySelector(queryElem + ' button.max.buy').onclick = (ev) => {
                     let _elem = ev.currentTarget;
                     var item_number = parseInt(elem.dataset['drug']);
                     var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
                     _elem.parentNode.previousElementSibling.value = (quantity);
                 };
-                document.querySelector(queryElem + '.buy button.action').onclick = (ev) => {
+                document.querySelector(queryElem + ' button.max.sell').onclick = (ev) => {
+                    let _elem = ev.currentTarget;
+                    var index = parseInt(elem.dataset['drug']);
+                    var quantity = self.coat.coins[index] || 0;
+                    _elem.parentElement.previousElementSibling.value = quantity;
+                };
+                document.querySelector(queryElem + ' button.action.buy').onclick = (ev) => {
                     let _elem = ev.currentTarget;
                     var index = parseInt(elem.dataset['drug']);
                     if (self.buy(index, parseInt(_elem.parentElement.previousElementSibling.value))) {
                         _elem.removeEventListener('click', _elem.onclick);
                     }
                 };
-            }
-        })
-        document.querySelectorAll('.sell-xs').forEach((elem) => {
-            let a = elem.onclick; elem.onclick = (ev) => {
-                if (a) a(ev);
-                let queryElem = elem.attributes['data-bs-target-1'].value
-                if (!document.querySelector(queryElem).classList.contains('sell')) {
-                    document.querySelector(queryElem).classList.add('show')
-                } else {
-                    document.querySelector(queryElem).classList.remove('show')
-                    document.querySelector(queryElem).classList.remove('sell')
-                    document.querySelector(queryElem).classList.add('collapse')
-                    return;
-                }
-                document.querySelector(queryElem + ' input[type="number"]').value = (0);
-                document.querySelector(queryElem + '').classList.remove('buy');
-                document.querySelector(queryElem + '').classList.add('sell')
-                document.querySelector(queryElem + '').dataset['drug'] = elem.dataset['drug'];
-                document.querySelector(queryElem + ' .action').innerText = (translate('sell'));
-                document.querySelector(queryElem + '.sell button.max').onclick = (ev) => {
-                    let _elem = ev.currentTarget;
-                    var index = parseInt(elem.dataset['drug']);
-                    var quantity = self.coat.coins[index] || 0;
-                    _elem.parentElement.previousElementSibling.value = quantity;
-                };
-
-                document.querySelector(queryElem + '.sell button.action').onclick = (ev) => {
+            
+                document.querySelector(queryElem + ' button.action.sell').onclick = (ev) => {
                     let _elem = ev.currentTarget;
                     var index = parseInt(elem.dataset['drug']);
                     var quantity = parseInt(_elem.parentElement.previousElementSibling.value);
