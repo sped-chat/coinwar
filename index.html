@@ -60,23 +60,6 @@
             text-decoration: none;
         }
 
-        .btn-1 {
-            background-color: #181818;
-            border: none;
-            color: #E31C79;
-            padding: 12px
-        }
-
-        .btn-1:hover {
-            background-color: #141414;
-            color: #3977D4;
-        }
-
-        .btn-1.current {
-            background-color: #141414;
-            color: #3977D4;
-        }
-
         .footer {
             line-height: 2vh;
             position: fixed;
@@ -181,6 +164,23 @@
             width: 25%
         }
 
+        .trans {
+            background-color: #181818;
+            border: none;
+            color: #E31C79;
+            padding: 12px
+        }
+
+        .trans:hover {
+            background-color: #141414;
+            color: #3977D4;
+        }
+
+        .trans.current {
+            background-color: #141414;
+            color: #3977D4;
+        }
+
         .v-center {
             position: relative;
             top: 40%;
@@ -233,9 +233,9 @@
                 <td class="text-center py-3">
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
-                        <button class="btn-1 max" type="button" data-l10n-id="max">
+                        <button class="trans max" type="button" data-l10n-id="max">
                         </button>
-                        <button data-bs-target="" class="btn-1 action" type="button" data-bs-toggle="collapse">
+                        <button data-bs-target="" class="trans action" type="button" data-bs-toggle="collapse">
                         </button>
                     </span>
                 </td>
@@ -331,7 +331,7 @@
             </label>
         </div>
         <br />
-        <button class="btn-1 mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
+        <button class="trans mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
             Pawn Shop
         </button>
         <div class="xs-stats collapse" id="pawn-shop-collapse">
@@ -540,110 +540,6 @@
     </div>
 </div>
 
-<div id="modal-high-score" class="modal">
-    <ul>
-    </ul>
-</div>
-
-<div id="modal-transaction" class="modal">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4><span class="modal-title"></span></h4>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body">
-                    <label>
-                        <div>
-                            <input type="number" pattern="[0-9]*" value="1">
-                            <span>
-                                <button class="btn max" type="button" data-l10n-id="max">
-                                </button>
-                                <button class="btn action" type="button" data-bs-dismiss="modal">
-                                </button>
-                            </span>
-                        </div>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-inventory" class="modal">
-    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
-        <div>
-            <div>
-                <table class="xs-stats">
-                    <tbody>
-                        <tr>
-                            <th>COIN</th>
-                            <th>QUANTITY</th>
-                            <th>VALUE</th>
-                        </tr>
-                        <tr class="template hidden">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>USDC</td>
-                            <td class>$<span class="cash"></span></td>
-                            <td>FIAT</td>
-                        </tr>
-                        <tr>
-                            <td>DEFI</td>
-                            <td>- $<span class="debt"></span></td>
-                            <td>AAVE</td>
-                        </tr>
-                        <tr>
-                            <td>NFT</td>
-                            <td>0</td>
-                            <td>BAYC</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br /><br />
-                <label>
-                    <input type="number" pattern="[0-9]*" value="1">
-                    <span>
-                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
-                        <button class="depayland"
-                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
-                            FIAT</button>
-                    </span>
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-pawn-shop" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body xs-stats">
-            <h1>DEFI LOANS : $<span class="debt"></span></h1>
-            <br />
-            <div>
-                <input type="number" pattern="[0-9]*">
-                <span>
-                    <button class="land" data-bs-dismiss="modal">BORROW</button>
-                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-cities" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body cities">
-        </div>
-        <div class="modal-body xs-stats">
-            <h1>YEAR : <span class="day"></span></h1>
-        </div>
-    </div>
-</div>
-
 <script defer async src="https://integrate.depay.com/widgets/v7.js"></script>
 <script defer>
     var button = document.getElementById("depay1");
@@ -663,356 +559,7 @@
 
 <script>
 
-    // view
-
-
-    function View(coins) {
-        this.news = document.querySelector('.news ul');
-        this.coins_container = document.querySelector('.coins tbody');
-
-        this.setup_coins();
-        this.setup_cities();
-
-        this.refresh_prices([]);
-        this.refresh_quantities([]);
-    }
-
-    let translateJson = {
-        "game": " ",
-        "new-game": " RESET",
-        "change-name": " ALIAS",
-        "high-score": " HISTORY",
-        "about": " ",
-        "move": " SWAP",
-        "pawn-shop": " DEFI LOANS",
-        "inventory": " WEB3 WALLET",
-        "stats": " ",
-        "day": " YEAR",
-        "cash": " DAI",
-        "guns": " Guns",
-        "debt": " DEFI LOAN",
-        "health": " ",
-        "stock": " WALLET",
-        "bank-account": " USD",
-        "coins": " ",
-        "item": " ASSET",
-        "value": " PRICE",
-        "buy": " BUY",
-        "sell": " SELL",
-        "max": " MAX",
-        "borrow": " BORROW",
-        "you-currently-owe": " YOU OWE",
-        "borrow-more-money": " BBORROW",
-        "pay-debt": " PAY",
-        "news": " ",
-        "choose-city": " CHOOSE AN EXCHANGE",
-        "close": " CLOSE",
-        "pay": " PAY",
-        "action": " ",
-        "see-recent-news": " ~~~",
-        "hide": " ",
-        "no-drug-yet": " ... wow such empty ...",
-        "final-score": " FINAL SCORE",
-        "by": " by",
-        "end": " END",
-        "prompt-name": " DEFINE ALIAS",
-        "prompt-name-again": " NO SOUP FOR YOU",
-        "dope-ada": " ADA",
-        "dope-alcx": " ALCX",
-        "dope-aave": " AAVE",
-        "dope-amc": " AMC",
-        "dope-ape": " APE",
-        "dope-atom": " ATOM",
-        "dope-avax": " AVAX",
-        "dope-axs": " AXS",
-        "dope-bnb": " BNB",
-        "dope-btc": " BTC",
-        "dope-boo": " BOO",
-        "dope-cake": " CAKE",
-        "dope-comp": " COMP",
-        "dope-doge": " DOGE",
-        "dope-dot": " DOT",
-        "dope-eth": " ETH",
-        "dope-fil": " FIL",
-        "dope-ftm": " FTM",
-        "dope-ftx": " FTX",
-        "dope-gme": " GME",
-        "dope-icp": " ICP",
-        "dope-link": " LINK",
-        "dope-ltc": " LTC",
-        "dope-mana": " MANA",
-        "dope-matic": " MATIC",
-        "dope-mkr": " MKR",
-        "dope-oath": " OATH",
-        "dope-sand": " SAND",
-        "dope-shib": " SHIB",
-        "dope-sol": " SOL",
-        "dope-tron": " TRON",
-        "dope-uni": " UNI",
-        "dope-xrp": " XRP",
-        "city-binance": " BINANCE",
-        "city-coinbase": " COINBASE",
-        "city-curve": " CURVE",
-        "city-dydx": " DYDX",
-        "city-ftx": " FTX",
-        "city-gemini": " GEMINI",
-        "city-honey": " HONEY",
-        "city-jupiter": " JUPITER",
-        "city-kine": " KINE",
-        "city-kraken": " KRAKEN",
-        "city-kucoin": " KUCOIN",
-        "city-pancake": " PANCAKE",
-        "city-spooky": " SPOOKY",
-        "city-sushi": " SUSHI",
-        "city-traderjoe": " TRADERJOE",
-        "city-uni": " UNI",
-        "notification-welcome": " Obviously, you're not a golfer.",
-        "notification-move": "",
-        "notification-bought": " SWAPPED \{\{quantity}} \{\{drug}} AT $\{\{price}}",
-        "notification-sold": " SWAPPED \{\{quantity}} \{\{drug}} AT $\{\{price}}",
-        "notification-need-more-money": " YOU'RE CASHED OUT",
-        "notification-need-more-space": " ",
-        "notification-do-not-own": " ",
-        "message-100000000": " Life forms from destruction, disorder and chaos.",
-        "message-1000000": " Character is what you are in the dark.",
-        "message-400000": "  We suffer more in imagination than in reality.",
-        "message-300000": " ",
-        "message-200000": " ",
-        "message-100000": " ",
-        "message-50000": " ",
-        "message-10000": " ",
-        "message-5000": " ",
-        "message-1000": " ",
-        "message-0": " Maybe pull out a defi loan?",
-        "message--4050": " Probably should pull out a defi loan?",
-        "message--10000": " You know, it's fairly easy to pull out a defi loan.",
-        "message--99999": " Probably should have pulled out a dfi loan, just sayin'.",
-        "message--100000": " Maybe just reset.",
-        "message-bad": " Ouch",
-        "about-title": " ",
-        "about-text": " ",
-        "about-attribution": " ",
-        "about-privacy-policy": " ",
-        "about-glyphicons": " "
-    }
-
-    function translate(key) {
-        return translateJson[key];
-    }
-
-    View.prototype.setup_coins = function () {
-        var row_template = this.coins_container.querySelector('tr[data-drug]');
-        let row_collapse_template = this.coins_container.querySelector('.collapse-transaction');
-        var coins = DataCenter.coins;
-        let i = 0;
-        console.log("Row Collapse Template", row_collapse_template)
-        for (var drug in coins) {
-            var row = row_template.cloneNode(true);
-            let row_collapse = row_collapse_template.cloneNode(true);
-
-            row.dataset['drug'] = drug;
-
-            row.children[0].innerText = translate('dope-' + coins[drug].name);
-
-            row.querySelectorAll('a').forEach((elem) => {
-                elem.dataset['drug'] = drug;
-                elem.attributes['data-bs-target-1'].value = "#collapse_transaction_" + i;
-            })
-
-            row_collapse.id = 'collapse_transaction_' + i;
-
-            row_collapse.querySelector('button.action').attributes['data-bs-target'].value = "#collapse_transaction_" + i;
-
-            i++;
-
-            this.coins_container.append(row);
-            this.coins_container.append(row_collapse);
-        }
-
-        row_template.remove();
-        row_collapse_template.remove();
-
-        this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
-
-        // Inventory
-        row_template = document.querySelector('#wallet tr.template');
-
-        for (var drug in coins) {
-            var row = row_template.cloneNode(true);
-            row.classList.remove('template');
-
-            row.dataset['drug'] = drug;
-
-            document.querySelector('#wallet tbody').append(row);
-        }
-
-        row_template.remove();
-    };
-
-    function createElementFromHTML(htmlString) {
-        var div = document.createElement('div');
-        div.innerHTML = htmlString.trim();
-
-        // Change this to div.childNodes to support multiple top-level nodes.
-        return div.firstChild;
-    }
-
-    View.prototype.setup_cities = function () {
-        for (var city in DataCenter.cities) {
-            document.querySelector('#offcanvas-cities .cities').append(createElementFromHTML('<button class="btn-1" data-bs-dismiss="offcanvas" data-city="' + city + '">' +
-                translate('city-' + DataCenter.cities[city].name) + '</button> '));
-        }
-        document.querySelector('#offcanvas .cities button.btn')?.classList.add('current');
-    }
-
-    View.prototype.refresh_quantities = function (quantities) {
-        for (var drug = 0; drug < this.coins.length; drug++) {
-            this.coins.item(drug).children[1].innerHTML = quantities[drug] || 0;
-        }
-    };
-
-    View.prototype.refresh_prices = function (prices) {
-        for (var drug = 0; drug < this.coins.length; drug++) {
-            this.coins.item(drug).children[2].innerHTML = '$' + (prices[drug] || 0);
-        }
-    };
-
-    View.prototype.refresh_news = function (notifications) {
-        // this.news.empty();
-        // for (var notification in notifications) {
-        //     this.news.append('<li class="' + notifications[notification].type + '">' + notifications[notification].text + '</li>');
-        // }
-
-        // $('.news.visible-xs').readmore({
-        //     maxHeight: 40,
-        //     moreLink: '<a href="#" style="padding-top: 15px; text-align: center; font-size: small;">' + translate('see-recent-news') + '</a>',
-        //     lessLink: '<a href="#" style="padding-top: 15px; text-align: center; font-size: small;">' + translate('hide') + '</a>',
-        // });
-    };
-
-    function replaceText(selector, text) {
-        let elems = document.querySelectorAll(selector);
-        elems.forEach((elem) => {
-            elem.innerText = text;
-        })
-    }
-
-    View.prototype.refresh_stats = function (game, coat) {
-        replaceText('.stats .city, .xs-stats .city', game.city.city_name);
-        replaceText('.stats .day, .xs-stats .day', game.day);
-        replaceText('.stats .end, .xs-stats .end', game.end);
-        replaceText('.stats .debt, .xs-stats .debt', Math.round(game.debt));
-        replaceText('.stats .bank_deposit', game.bank_deposit);
-
-        replaceText('.stats .cash, .xs-stats .cash', coat.cash);
-        replaceText('.stats .guns', coat.guns.length);
-        replaceText('.stats .health', coat.health);
-        replaceText('.stats .used_space, .xs-stats .used_space', coat.used_space());
-        replaceText('.stats .total_space, .xs-stats .total_space', coat.total_space);
-    };
-
-    View.prototype.refresh_available_coins = function (available_coins) {
-        document.querySelectorAll('tr[data-drug].hidden').forEach(elem => elem.classList.remove('hidden'));
-
-        for (var drug in available_coins) {
-            if (!available_coins[drug]) {
-                document.querySelector('tr[data-drug]:nth-child(' + ((parseInt(drug) * 2) + 2) + ')').classList.add('hidden');
-            }
-        }
-    };
-
-    View.prototype.refresh_high_score = function (high_score) {
-        document.querySelector('#modal-high-score ul').innerHTML = '';
-
-        for (var i in high_score) {
-            if (high_score[i] != 'null' && high_score[i] != null) {
-                document.querySelector('#modal-high-score ul').append('<li>' + high_score[i] + '</li>');
-            }
-        }
-    };
-
-    View.prototype.refresh_stone_level = function (stone_level) {
-        var colors = ['red', 'yellow', 'green', 'blue', 'orange'];
-
-        document.querySelectorAll('body *').forEach(function (elem) {
-            if (rand(0, 100) < stone_level / 2) {
-                elem.style.transform = 'rotate(' + rand(0, stone_level / 4) + 'deg)'
-                elem.style.color = parseInt(rand(0, colors.length - 1))
-                elem.style['background-color'] = colors[parseInt(rand(0, colors.length - 1))]
-                elem.style['letter-spacing'] = ((rand(0, stone_level) > stone_level / 6) ? '-4px' : '0px')
-            }
-        });
-    };
-
-    View.prototype.refresh_inventory = function (coins) {
-        for (var drug in coins) {
-            var row = document.querySelector('#wallet tr:nth-child(' + (parseInt(drug) + 2) + ')')
-            row.classList.remove('hidden');
-
-            row.children[0].innerText = (translate('dope-' + DataCenter.coins[drug].name));
-            row.children[1].innerText = (coins[drug] || 0);
-            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.innerText = coins[drug] || 0;
-            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.attributes['max'] = coins[drug] || 0;
-
-            if ((coins[drug] || 0) == 0) {
-                row.classList.add('hidden');
-            }
-        }
-        let el = document.querySelector('#wallet p')
-        if (array_sum(coins) == 0 && el) {
-            el.innerText = translate('no-drug-yet');
-        } else if (el) {
-            el.innerText = '';
-        }
-    };
-
-    // (function (c) {
-    //     var f = "readmore",
-    //         h = {
-    //             speed: 100,
-    //             maxHeight: 200,
-    //             heightMargin: 16,
-    //             moreLink: '<a href="#">Read More</a>',
-    //             lessLink: '<a href="#">Close</a>',
-    //             embedCSS: !0,
-    //             sectionCSS: "display: block; width: 100%;",
-    //             startOpen: !1,
-    //             expandedClass: "readmore-js-expanded",
-    //             collapsedClass: "readmore-js-collapsed",
-    //             beforeToggle: function () { },
-    //             afterToggle: function () { }
-    //         },
-    //         k = !1;
-    //     c.fn[f] = function (b) {
-    //         var a = arguments;
-    //         if (void 0 === b || "object" === typeof b) return this.each(function () {
-    //             if (c.data(this,
-    //                 "plugin_" + f)) {
-    //                 var a = c.data(this, "plugin_" + f);
-    //                 a.destroy.apply(a)
-    //             }
-    //             c.data(this, "plugin_" + f, new g(this, b))
-    //         });
-    //         if ("string" === typeof b && "_" !== b[0] && "init" !== b) return this.each(function () {
-    //             var d = c.data(this, "plugin_" + f);
-    //             d instanceof g && "function" === typeof d[b] && d[b].apply(d, Array.prototype.slice.call(a, 1))
-    //         })
-    //     }
-    // })(jQuery);
-
-
-
-
-
-
     // data
-
-
-
-
-
-
-
 
     var DataCenter = {
         coins: [
@@ -1265,64 +812,237 @@
                 "min_coins": 18,
                 "max_coins": 19
             },
-        ],
-        messages: [
-            100000000,
-            1000000,
-            400000,
-            300000,
-            200000,
-            100000,
-            50000,
-            10000,
-            5000,
-            1000,
-            0,
-            -4050,
-            -10000,
-            -99999,
-            -100000,
         ]
     };
 
+    // view
 
+    function View(coins) {
+        this.news = document.querySelector('.news ul');
+        this.coins_container = document.querySelector('.coins tbody');
+        this.setup_coins();
+        this.setup_cities();
+        this.refresh_prices([]);
+        this.refresh_quantities([]);
+    }
 
-
-
-
-
-
+    let translateJson = {
+        "new-game": " RESET",
+        "change-name": " ALIAS",
+        "high-score": " HISTORY",
+        "move": " SWAP",
+        "pawn-shop": " DEFI LOANS",
+        "inventory": " WEB3 WALLET",
+        "day": " YEAR",
+        "cash": " DAI",
+        "debt": " DEFI LOAN",
+        "stock": " WALLET",
+        "bank-account": " USD",
+        "item": " ASSET",
+        "value": " PRICE",
+        "buy": " BUY",
+        "sell": " SELL",
+        "max": " MAX",
+        "borrow": " BORROW",
+        "you-currently-owe": " YOU OWE",
+        "borrow-more-money": " BBORROW",
+        "pay-debt": " PAY",
+        "choose-city": " CHOOSE AN EXCHANGE",
+        "close": " CLOSE",
+        "pay": " PAY",
+        "final-score": " FINAL SCORE",
+        "end": " END",
+        "prompt-name": " DEFINE ALIAS",
+        "prompt-name-again": " NO SOUP FOR YOU",
+        "dope-ada": " ADA",
+        "dope-alcx": " ALCX",
+        "dope-aave": " AAVE",
+        "dope-amc": " AMC",
+        "dope-ape": " APE",
+        "dope-atom": " ATOM",
+        "dope-avax": " AVAX",
+        "dope-axs": " AXS",
+        "dope-bnb": " BNB",
+        "dope-btc": " BTC",
+        "dope-boo": " BOO",
+        "dope-cake": " CAKE",
+        "dope-comp": " COMP",
+        "dope-doge": " DOGE",
+        "dope-dot": " DOT",
+        "dope-eth": " ETH",
+        "dope-fil": " FIL",
+        "dope-ftm": " FTM",
+        "dope-ftx": " FTX",
+        "dope-gme": " GME",
+        "dope-icp": " ICP",
+        "dope-link": " LINK",
+        "dope-ltc": " LTC",
+        "dope-mana": " MANA",
+        "dope-matic": " MATIC",
+        "dope-mkr": " MKR",
+        "dope-oath": " OATH",
+        "dope-sand": " SAND",
+        "dope-shib": " SHIB",
+        "dope-sol": " SOL",
+        "dope-tron": " TRON",
+        "dope-uni": " UNI",
+        "dope-xrp": " XRP",
+        "city-binance": " BINANCE",
+        "city-coinbase": " COINBASE",
+        "city-curve": " CURVE",
+        "city-dydx": " DYDX",
+        "city-ftx": " FTX",
+        "city-gemini": " GEMINI",
+        "city-honey": " HONEY",
+        "city-jupiter": " JUPITER",
+        "city-kine": " KINE",
+        "city-kraken": " KRAKEN",
+        "city-kucoin": " KUCOIN",
+        "city-pancake": " PANCAKE",
+        "city-spooky": " SPOOKY",
+        "city-sushi": " SUSHI",
+        "city-traderjoe": " TRADERJOE",
+        "city-uni": " UNI"
+    }
+    function translate(key) {
+        return translateJson[key];
+    }
+    View.prototype.setup_coins = function () {
+        var row_template = this.coins_container.querySelector('tr[data-drug]');
+        let row_collapse_template = this.coins_container.querySelector('.collapse-transaction');
+        var coins = DataCenter.coins;
+        let i = 0;
+        console.log("Row Collapse Template", row_collapse_template)
+        for (var drug in coins) {
+            var row = row_template.cloneNode(true);
+            let row_collapse = row_collapse_template.cloneNode(true);
+            row.dataset['drug'] = drug;
+            row.children[0].innerText = translate('dope-' + coins[drug].name);
+            row.querySelectorAll('a').forEach((elem) => {
+                elem.dataset['drug'] = drug;
+                elem.attributes['data-bs-target-1'].value = "#collapse_transaction_" + i;
+            })
+            row_collapse.id = 'collapse_transaction_' + i;
+            row_collapse.querySelector('button.action').attributes['data-bs-target'].value = "#collapse_transaction_" + i;
+            i++;
+            this.coins_container.append(row);
+            this.coins_container.append(row_collapse);
+        }
+        row_template.remove();
+        row_collapse_template.remove();
+        this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
+        row_template = document.querySelector('#wallet tr.template');
+        for (var drug in coins) {
+            var row = row_template.cloneNode(true);
+            row.classList.remove('template');
+            row.dataset['drug'] = drug;
+            document.querySelector('#wallet tbody').append(row);
+        }
+        row_template.remove();
+    };
+    function createElementFromHTML(htmlString) {
+        var div = document.createElement('div');
+        div.innerHTML = htmlString.trim();
+        return div.firstChild;
+    }
+    View.prototype.setup_cities = function () {
+        for (var city in DataCenter.cities) {
+            document.querySelector('#offcanvas-cities .cities').append(createElementFromHTML('<button class="trans" data-bs-dismiss="offcanvas" data-city="' + city + '">' +
+                translate('city-' + DataCenter.cities[city].name) + '</button> '));
+        }
+        document.querySelector('#offcanvas .cities button.btn')?.classList.add('current');
+    }
+    View.prototype.refresh_quantities = function (quantities) {
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[1].innerHTML = quantities[drug] || 0;
+        }
+    };
+    View.prototype.refresh_prices = function (prices) {
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[2].innerHTML = '$' + (prices[drug] || 0);
+        }
+    };
+    View.prototype.refresh_news = function (notifications) {
+    };
+    function replaceText(selector, text) {
+        let elems = document.querySelectorAll(selector);
+        elems.forEach((elem) => {
+            elem.innerText = text;
+        })
+    }
+    View.prototype.refresh_stats = function (game, coat) {
+        replaceText('.stats .city, .xs-stats .city', game.city.city_name);
+        replaceText('.stats .day, .xs-stats .day', game.day);
+        replaceText('.stats .end, .xs-stats .end', game.end);
+        replaceText('.stats .debt, .xs-stats .debt', Math.round(game.debt));
+        replaceText('.stats .bank_deposit', game.bank_deposit);
+        replaceText('.stats .cash, .xs-stats .cash', coat.cash);
+        replaceText('.stats .guns', coat.guns.length);
+        replaceText('.stats .health', coat.health);
+        replaceText('.stats .used_space, .xs-stats .used_space', coat.used_space());
+        replaceText('.stats .total_space, .xs-stats .total_space', coat.total_space);
+    };
+    View.prototype.refresh_available_coins = function (available_coins) {
+        document.querySelectorAll('tr[data-drug].hidden').forEach(elem => elem.classList.remove('hidden'));
+        for (var drug in available_coins) {
+            if (!available_coins[drug]) {
+                document.querySelector('tr[data-drug]:nth-child(' + ((parseInt(drug) * 2) + 2) + ')').classList.add('hidden');
+            }
+        }
+    };
+    View.prototype.refresh_high_score = function (high_score) {
+        document.querySelector('#modal-high-score ul').innerHTML = '';
+        for (var i in high_score) {
+            if (high_score[i] != 'null' && high_score[i] != null) {
+                document.querySelector('#modal-high-score ul').append('<li>' + high_score[i] + '</li>');
+            }
+        }
+    };
+    View.prototype.refresh_stone_level = function (stone_level) {
+        var colors = ['red', 'yellow', 'green', 'blue', 'orange'];
+        document.querySelectorAll('body *').forEach(function (elem) {
+            if (rand(0, 100) < stone_level / 2) {
+                elem.style.transform = 'rotate(' + rand(0, stone_level / 4) + 'deg)'
+                elem.style.color = parseInt(rand(0, colors.length - 1))
+                elem.style['background-color'] = colors[parseInt(rand(0, colors.length - 1))]
+                elem.style['letter-spacing'] = ((rand(0, stone_level) > stone_level / 6) ? '-4px' : '0px')
+            }
+        });
+    };
+    View.prototype.refresh_inventory = function (coins) {
+        for (var drug in coins) {
+            var row = document.querySelector('#wallet tr:nth-child(' + (parseInt(drug) + 2) + ')')
+            row.classList.remove('hidden');
+            row.children[0].innerText = (translate('dope-' + DataCenter.coins[drug].name));
+            row.children[1].innerText = (coins[drug] || 0);
+            if ((coins[drug] || 0) == 0) {
+                row.classList.add('hidden');
+            }
+        }
+        let el = document.querySelector('#wallet p')
+        if (array_sum(coins) == 0 && el) {
+            el.innerText = translate('no-drug-yet');
+        } else if (el) {
+            el.innerText = '';
+        }
+    };
 
     // models
-
-
-
-
-
-
-
-
 
     function rand(min_rand, max_rand) {
         return min_rand + (Math.random() * 10000 % (max_rand - min_rand));
     }
-
     function shuffle(array) {
         var shuffled = [], index;
-
         for (var i = 0; i < array.length; i++) {
             while ((index = parseInt(rand(0, array.length))) in shuffled);
-
             shuffled[index] = array[i];
         }
-
         return shuffled;
     }
-
     function array_sort(a, b) {
         a = parseInt(a);
         b = parseInt(b);
-
         if (a < b) {
             return -1;
         } else if (a > b) {
@@ -1331,91 +1051,69 @@
             return 0;
         }
     }
-
     function pop_array(array, from_index) {
         var popped = [];
-
         for (var i = 0; i < from_index; i++) {
             popped[i] = array[i];
         }
-
         popped[from_index] = null;
-
         for (var i = from_index + 1; i < array.length; i++) {
             popped[i] = array[i - 1];
         }
-
         return popped;
     }
-
     function array_sum(array) {
         var sum = 0;
-
         for (var i in array) {
             sum += parseInt(array[i] || 0);
         }
-
         return sum;
     }
-
-    // GameManager
     function GameManager() {
         this.day = 2022;
-        this.end = 2036;
+        this.end = 9999;
         this.debt = 42;
         this.bank_deposit = 100000;
         this.stone_level = 0;
         this.city = new City(0);
     }
-
     GameManager.prototype.is_game_over = function () {
         return this.day >= this.end;
     };
-
     GameManager.prototype.new_city = function (number, news_manager) {
         this.city = new City(number, news_manager);
         this.day++;
         this.debt *= 1.29;
         this.debt = Math.round(this.debt);
     };
-
     GameManager.prototype.player_name = function () {
         return window.localStorage.getItem('player_name') || '';
     };
-
     GameManager.prototype.high_score = function () {
         var scores = [];
-
         for (var i = 0; i < 10; i++) {
             scores[i] = window.localStorage.getItem('high-score-' + i);
         }
-
         return scores;
     };
-
     GameManager.prototype.add_high_score = function (score) {
         var scores = this.high_score();
-
         for (var i = 0; i < 10; i++) {
             if (parseInt(scores[i]) < parseInt(score) || scores[i] == 'null' || scores[i] == null) {
                 scores = pop_array(scores, i);
                 scores[i] = score;
-
                 for (var j in scores) {
                     window.localStorage.setItem('high-score-' + j, scores[j]);
                 }
-
                 return;
             }
         }
     };
-
     GameManager.prototype.reset_high_score = function () {
         for (var i = 0; i < 10; i++) {
             window.localStorage.removeItem('high-score-' + i);
         }
     };
-
     GameManager.prototype.message = function (score) {
         for (var i in DataCenter.messages) {
             var max_score = DataCenter.messages[i];
@@ -1425,8 +1123,6 @@
         }
         return translate('message-bad');
     }
-
-    // Coat
     function Coat() {
         this.coins = [];
         this.cash = 42;
@@ -1434,7 +1130,6 @@
         this.health = 100;
         this.total_space = 420;
     }
-
     Coat.prototype.available_space = function () {
         var available_space = this.total_space;
 
@@ -1444,194 +1139,129 @@
 
         return available_space;
     };
-
     Coat.prototype.used_space = function () {
         return this.total_space - this.available_space();
     };
-
     Coat.prototype.add = function (drug, quantity) {
         this.coins[drug] = this.coins[drug] || 0;
         this.coins[drug] += quantity;
     };
-
     Coat.prototype.can_buy = function (price, quantity) {
         return this.available_space() >= quantity && this.cash >= price * quantity;
     };
-
     Coat.prototype.can_sell = function (item, quantity) {
         return this.coins[item] >= quantity;
     };
-
     Coat.prototype.buy = function (item, price, quantity) {
         this.cash -= price * quantity;
         this.add(item, quantity);
     };
-
     Coat.prototype.sell = function (item, price, quantity) {
         this.cash += price * quantity;
         this.coins[item] -= quantity;
     };
-
     Coat.prototype.max_quantity = function (price) {
         return Math.min(this.available_space(), Math.floor(this.cash / price));
     };
-
     Coat.prototype.score = function (game, prices) {
         var score = this.cash - game.debt;
-
         for (var drug in this.coins) {
             score += (this.coins[drug] * prices[drug]) || 0;
         }
-
         return Math.round(score);
     };
-
-    // City
     function City(number, news_manager) {
         this.city_name = translate('city-' + DataCenter.cities[number].name);
         this.is_cop = Math.random() * 100 < DataCenter.cities[number].cops;
         this.prices = [];
         this.number = number;
         this.available_coins = [];
-
-
-        // Available coins
         var max_coins = ('max_coins' in DataCenter.cities[number] ? DataCenter.cities[number].max_coins : DataCenter.coins.length);
-
         var number_of_coins = parseInt(rand(DataCenter.cities[number].min_coins, max_coins));
         for (var i = 0; i < number_of_coins; i++) {
             this.available_coins[i] = true;
         }
-
         for (var i = number_of_coins; i < DataCenter.coins.length; i++) {
             this.available_coins[i] = false;
         }
-
         this.available_coins = shuffle(this.available_coins);
-
-        // Prices
         for (var drug in DataCenter.coins) {
             if (this.available_coins[parseInt(drug)]) {
                 var minimum_price = DataCenter.coins[drug].minimum_price;
                 var maximum_price = DataCenter.coins[drug].maximum_price;
-
                 if ('cheap' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager != null) {
                     minimum_price = DataCenter.coins[drug].cheap.minimum_price;
                     maximum_price = DataCenter.coins[drug].cheap.maximum_price;
-
                     var id = 'dope-' + DataCenter.coins[drug].name + '-cheap';
-
                     news_manager.add(new News(translate(id)));
                 } else if ('expensive' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager) {
                     minimum_price = DataCenter.coins[drug].expensive.minimum_price;
                     maximum_price = DataCenter.coins[drug].expensive.maximum_price;
-
                     var id = 'dope-' + DataCenter.coins[drug].name + '-expensive';
-
                     news_manager.add(new News(translate(id)));
                 }
-
                 this.prices[drug] = Math.round(rand(minimum_price, maximum_price));
             }
         }
-
         console.log("Prices", this.prices)
     }
-
-    // News & NewsManager
     function News(text, type) {
         this.text = text;
         this.type = type || '';
     }
-
     function NewsManager() {
         this.news = [];
         this.limit = 15;
     }
-
     NewsManager.prototype.add = function (news) {
         this.news.reverse();
-
-        // Keep only this.limit news
         if (this.news.length == this.limit) {
             this.news.shift();
         }
-
         this.news.push(news);
-
         this.news.reverse();
     };
 
-
-
     // controller
-    (function (funcName, baseObj) {
-        // The public function name defaults to window.docReady
-        // but you can pass in your own object and own function name and those will be used
-        // if you want to put them in a different namespace
 
-        console.log("Here?3")
+    (function (funcName, baseObj) {
+        console.log("this2")
         funcName = funcName || "docReady";
         baseObj = baseObj || window;
         var readyList = [];
         var readyFired = false;
         var readyEventHandlersInstalled = false;
-
-        // call this when the document is ready
-        // this function protects itself against being called more than once
         function ready() {
             if (!readyFired) {
-                // this must be set to true before we start calling callbacks
                 readyFired = true;
                 for (var i = 0; i < readyList.length; i++) {
-                    // if a callback here happens to add new ready handlers,
-                    // the docReady() function will see that it already fired
-                    // and will schedule the callback to run right after
-                    // this event loop finishes so all handlers will still execute
-                    // in order and no new ones will be added to the readyList
-                    // while we are processing the list
                     readyList[i].fn.call(window, readyList[i].ctx);
                 }
-                // allow any closures held by these functions to free
                 readyList = [];
             }
         }
-
         function readyStateChange() {
             if (document.readyState === "complete") {
                 ready();
             }
         }
-
-        // This is the one public interface
-        // docReady(fn, context);
-        // the context argument is optional - if present, it will be passed
-        // as an argument to the callback
         baseObj[funcName] = function (callback, context) {
             if (typeof callback !== "function") {
                 throw new TypeError("callback for docReady(fn) must be a function");
             }
-            // if ready has already fired, then just schedule the callback
-            // to fire asynchronously, but right away
             if (readyFired) {
                 setTimeout(function () { callback(context); }, 1);
                 return;
             } else {
-                // add the function and context to the list
                 readyList.push({ fn: callback, ctx: context });
             }
-            // if document already ready to go, schedule the ready function to run
             if (document.readyState === "complete") {
                 setTimeout(ready, 1);
             } else if (!readyEventHandlersInstalled) {
-                // otherwise if we don't have event handlers installed, install them
                 if (document.addEventListener) {
-                    // first choice is DOMContentLoaded event
                     document.addEventListener("DOMContentLoaded", ready, false);
-                    // backup is window load event
                     window.addEventListener("load", ready, false);
                 } else {
-                    // must be IE
                     document.attachEvent("onreadystatechange", readyStateChange);
                     window.attachEvent("onload", ready);
                 }
@@ -1639,12 +1269,9 @@
             }
         }
     })("docReady", window);
-
     docReady(function () {
-        console.log("Here?")
-        // Useful when debugging
+        console.log("this")
         navigator.Controller = new Controller();
-
         document.querySelectorAll("button[data-l10n-id]").forEach((elem) => {
             let key = elem.attributes['data-l10n-id'].value;
 
@@ -1653,27 +1280,18 @@
             }
         })
     });
-
     function Controller() {
         var self = this;
-
-
         this.coat = new Coat();
-
         this.view = new View();
-
         this.game = new GameManager();
-
         this.news_manager = new NewsManager();
-
         this.news_manager.add(new News(translate('notification-welcome')));
-
         this.view.refresh_prices(this.game.city.prices);
         this.view.refresh_available_coins(this.game.city.available_coins);
         this.view.refresh_stats(this.game, this.coat);
         this.view.refresh_news(this.news_manager.news);
         this.view.refresh_high_score(self.game.high_score());
-
         document.querySelectorAll('button.buy').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
@@ -1682,7 +1300,6 @@
                 }
             }
         })
-
         document.querySelectorAll('button.sell').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
@@ -1694,7 +1311,6 @@
                 }
             }
         })
-
         document.querySelectorAll('button.buy-max').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
@@ -1703,7 +1319,6 @@
                 elem.previousElementSibling.value = quantity;
             }
         })
-
         document.querySelectorAll('button.sell-max').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
@@ -1712,52 +1327,43 @@
                 elem.previousElementSibling.value = quantity;
             }
         })
-
         document.querySelectorAll('a.new-game').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 window.location = '';
             }
         })
-
         document.querySelectorAll('a.new-name').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 self.new_name();
             }
         })
-
         document.querySelectorAll('#offcanvas-cities .cities button[data-city]').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 if (self.game.city.number == elem.dataset['city']) {
                     return;
                 }
-
                 if (self.game.day == self.game.end) {
                     self.game_over();
                 } else {
                     self.news_manager.add(new News(translate('notification-move', {
                         city: translate('city-' + DataCenter.cities[elem.dataset['city']].name)
                     }), 'move'));
-
                     self.game.new_city(elem.dataset['city'], self.news_manager);
                     self.view.refresh_available_coins(self.game.city.available_coins);
                     self.view.refresh_news(self.news_manager.news);
-
                     document.querySelectorAll('button[data-city].current').forEach((elem) => {
                         elem.classList.remove('current');
                     })
                     elem.classList.add('current');
-
                     document.querySelectorAll('input.number').forEach(function () {
                         elem.previousElementSibling.value = 0;
                     });
-
                     self.view.refresh_news(self.news_manager.news);
                     self.view.refresh_prices(self.game.city.prices);
                     self.view.refresh_stats(self.game, self.coat);
-
                     if (self.game.day == self.game.end) {
                         document.querySelectorAll('a[data-bs-target="#modal-cities"]').forEach((elem) => {
                             elem.innerHTML = '<i class="glyphicon glyphicon-stop"></i> ' + translate('end');
@@ -1769,13 +1375,11 @@
                         })
                     }
                 }
-
                 document.querySelectorAll('.navbar .navbar-collapse').forEach((elem) => {
                     elem.classList.remove('in')
                 })
             }
         })
-
         document.querySelectorAll('a[data-bs-target="#modal-pawn-shop"]').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
@@ -1793,7 +1397,6 @@
                 self.view.refresh_inventory(self.coat.coins);
             }
         })
-
         document.querySelectorAll('button[href="#wallet"]').forEach((elem) => {
             let a = elem.onclick
             elem.onclick = (ev) => {
@@ -1801,212 +1404,164 @@
                 self.view.refresh_inventory(self.coat.coins);
             }
         })
-
         document.querySelectorAll('.depayland').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 let val = elem.parentNode.previousElementSibling.value;
                 console.log(val);
-
                 var amount = parseInt(val);
                 self.coat.cash += amount;
-
                 elem.parentNode.previousElementSibling.value = 0;
                 self.view.refresh_stats(self.game, self.coat);
             }
         });
-
         document.querySelectorAll('#wallet button.land').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var amount = parseInt(elem.parentNode.previousElementSibling.value);
                 self.coat.cash += amount;
-
                 elem.parentNode.previousElementSibling.value = 0;
                 self.view.refresh_stats(self.game, self.coat);
             }
         });
-
         document.querySelectorAll('#wallet button.defi').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var amount = parseInt(elem.parentNode.previousElementSibling.value);
                 self.game.debt += amount;
                 self.coat.cash += amount;
-
                 elem.parentNode.previousElementSibling.value = 0;
                 self.view.refresh_stats(self.game, self.coat);
             }
         })
-
         document.querySelectorAll('#wallet button.paydefi').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
-
                 if (self.coat.cash >= amount) {
                     self.game.debt -= amount;
                     self.coat.cash -= amount;
                     elem.parentNode.previousElementSibling.value = 0;
-
                     self.view.refresh_stats(self.game, self.coat);
                 } else {
                     elem.parentNode.parentNode.parentElement.classList.add('has-error')
                 }
             }
         })
-
         document.querySelectorAll('#pawn-shop-collapse button.pay').forEach((elem) => {
             elem.onclick = (ev) => {
                 var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
-
                 if (self.coat.cash >= amount) {
                     self.game.debt -= amount;
                     self.coat.cash -= amount;
                     elem.parentNode.previousElementSibling.value = 0;
-
                     self.view.refresh_stats(self.game, self.coat);
                 } else {
                     elem.parentNode.parentNode.parentElement.classList.add('has-error')
                 }
             }
         })
-
         document.querySelectorAll('#modal-pawn-shop button.land').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var amount = parseInt(elem.parentNode.previousElementSibling.value);
                 self.game.debt += amount;
                 self.coat.cash += amount;
-
                 elem.parentNode.previousElementSibling.value = 0;
                 self.view.refresh_stats(self.game, self.coat);
             }
         })
-
         document.querySelectorAll('#modal-pawn-shop button.pay-max').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 elem.parentNode.previousElementSibling.value = (Math.min(self.coat.cash, self.game.debt));
             }
         })
-
-
-
         document.querySelectorAll('#wallet button.max').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 elem.parentNode.previousElementSibling.value = parseInt(elem.parentNode.parentNode.parentNode.previousElementSibling.innerText)
             }
         })
-
         document.querySelectorAll('#wallet button.consume').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentNode.parentNode.parentElement.dataset['drug']);
                 var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
-
                 self.coat.coins[index] -= quantity;
                 self.game.stone_level += quantity;
-
                 self.view.refresh_stone_level(self.game.stone_level);
                 self.view.refresh_inventory(self.coat.coins);
                 self.view.refresh_quantities(self.coat.coins);
                 self.view.refresh_stats(self.game, self.coat);
-
                 elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = 0;
             }
         })
-
         document.querySelectorAll('#wallet button.drop').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentElement.parentElement.parentElement.dataset['drug']);
                 var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
-
                 self.coat.coins[index] -= quantity;
-
                 self.view.refresh_inventory(self.coat.coins);
                 self.view.refresh_quantities(self.coat.coins);
                 self.view.refresh_stats(self.game, self.coat);
-
                 elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = (0);
             }
         })
-
-
-
         document.querySelectorAll('.buy-xs').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 let queryElem = elem.attributes['data-bs-target-1'].value
                 document.querySelector(queryElem + ' input[type="number"]').value = (0);
-
                 if (!document.querySelector(queryElem).classList.contains('buy')) {
                     document.querySelector(queryElem).classList.add('show')
                 } else {
                     document.querySelector(queryElem).classList.remove('show')
                     document.querySelector(queryElem).classList.remove('buy')
                     document.querySelector(queryElem).classList.add('collapse')
-
                     return;
                 }
-
                 document.querySelector(queryElem).classList.remove('sell');
                 document.querySelector(queryElem).classList.add('buy')
                 document.querySelector(queryElem).dataset['drug'] = elem.dataset['drug'];
-                // document.querySelector('#' + elem.attributes['data-bs-target'].value + ' .modal-header h4').innerText = (translate('buy')
-                // + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
                 document.querySelector(queryElem + ' .action').innerText = (translate('buy'));
-
                 document.querySelector(queryElem + '.buy button.max').onclick = (ev) => {
                     let _elem = ev.currentTarget;
                     var item_number = parseInt(elem.dataset['drug']);
                     var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
-
                     _elem.parentNode.previousElementSibling.value = (quantity);
                 };
-
                 document.querySelector(queryElem + '.buy button.action').onclick = (ev) => {
                     let _elem = ev.currentTarget;
-
                     var index = parseInt(elem.dataset['drug']);
-
                     if (self.buy(index, parseInt(_elem.parentElement.previousElementSibling.value))) {
                         _elem.removeEventListener('click', _elem.onclick);
                     }
                 };
             }
         })
-
         document.querySelectorAll('.sell-xs').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 let queryElem = elem.attributes['data-bs-target-1'].value
-
                 if (!document.querySelector(queryElem).classList.contains('sell')) {
                     document.querySelector(queryElem).classList.add('show')
                 } else {
                     document.querySelector(queryElem).classList.remove('show')
                     document.querySelector(queryElem).classList.remove('sell')
                     document.querySelector(queryElem).classList.add('collapse')
-
                     return;
                 }
-
                 document.querySelector(queryElem + ' input[type="number"]').value = (0);
-
                 document.querySelector(queryElem + '').classList.remove('buy');
                 document.querySelector(queryElem + '').classList.add('sell')
                 document.querySelector(queryElem + '').dataset['drug'] = elem.dataset['drug'];
                 document.querySelector(queryElem + ' .action').innerText = (translate('sell'));
-
                 document.querySelector(queryElem + '.sell button.max').onclick = (ev) => {
-                    // Hmmm... Maybe this isn't the best way to do it...
                     let _elem = ev.currentTarget;
                     var index = parseInt(elem.dataset['drug']);
                     var quantity = self.coat.coins[index] || 0;
-
                     _elem.parentElement.previousElementSibling.value = quantity;
                 };
 
@@ -2014,53 +1569,39 @@
                     let _elem = ev.currentTarget;
                     var index = parseInt(elem.dataset['drug']);
                     var quantity = parseInt(_elem.parentElement.previousElementSibling.value);
-
                     if (self.sell(index, quantity)) {
                         _elem.removeEventListener('click', _elem.onclick);
                     }
                 };
             }
         })
-
-        // document.querySelectorAll('.stats_toggle').click(function () {
-        //     $('.stats').slideToggle();
-        // });
     }
-
     Controller.prototype.buy = function (index, quantity) {
         if (!quantity) {
             return false;
         }
-
         var return_value = true;
-
         if (this.coat.can_buy(this.game.city.prices[index], quantity)) {
             this.coat.buy(index, this.game.city.prices[index], quantity);
-
             this.news_manager.add(new News(translate('notification-bought', {
                 quantity: quantity,
                 drug: translate('dope-' + DataCenter.coins[index].name),
                 price: this.game.city.prices[index]
             }), 'drug'));
-
             this.view.refresh_quantities(this.coat.coins);
             this.view.refresh_stats(this.game, this.coat);
         } else {
             this.news_manager.add(new News(translate('notification-need-more-' + (this.coat.available_space() >= quantity ? 'money' : 'space')), 'error'));
             return_value = false;
         }
-
         this.view.refresh_news(this.news_manager.news);
         return return_value;
     };
-
     Controller.prototype.sell = function (index, quantity) {
         if (!quantity) {
             return;
         }
-
         var return_value = true;
-
         if (this.coat.can_sell(index, quantity)) {
             this.coat.sell(index, this.game.city.prices[index], quantity);
 
@@ -2075,34 +1616,18 @@
             this.news_manager.add(new News(translate('notification-do-not-own'), 'error'));
             return_value = false;
         }
-
         this.view.refresh_news(this.news_manager.news);
         return return_value;
     };
-
     Controller.prototype.new_name = function () {
         var name = prompt(translate('prompt-name'));
-
         window.localStorage.setItem('player_name', name);
     };
-
     Controller.prototype.game_over = function () {
         var score = this.coat.score(this.game, this.game.city.prices);
-
         var high_score_string = '$' + score + ' by ' + this.game.player_name() + '  on  ' + new Date().toLocaleString() + '</small></span>';
-
         this.game.add_high_score(high_score_string);
         this.view.refresh_high_score(this.game.high_score());
-
-        // document.querySelector('#modal-high-score .modal-footer .btn').innerText = (translate('new-game'));
-        // document.querySelector('#modal-high-score .modal-body .final-score').innerHTML = 'FINAL SCORE : $' + score;
-        // document.querySelector('#modal-high-score .modal-body .message').innerHTML = '' + this.game.message(score);
-
-        // document.querySelectorAll('#modal-high-score').on('hide.bs.modal', function () {
-        //     window.location = '';
-        // });
-
-        // document.querySelector('#modal-high-score').classList.add('show.bs.modal');
     };
 </script>
 
