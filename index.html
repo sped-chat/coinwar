@@ -332,7 +332,7 @@
         </div>
         <br />
         <button class="trans mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
-            Pawn Shop
+            DEFI LENDING
         </button>
         <div class="xs-stats collapse" id="pawn-shop-collapse">
             <div>
@@ -537,6 +537,110 @@
             irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
         <br />
         <p>This policy is effective as of April 20, 2022.</p>
+    </div>
+</div>
+
+<div id="modal-high-score" class="modal">
+    <ul>
+    </ul>
+</div>
+
+<div id="modal-transaction" class="modal">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><span class="modal-title"></span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <label>
+                        <div>
+                            <input type="number" pattern="[0-9]*" value="1">
+                            <span>
+                                <button class="btn max" type="button" data-l10n-id="max">
+                                </button>
+                                <button class="btn action" type="button" data-bs-dismiss="modal">
+                                </button>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-inventory" class="modal">
+    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
+        <div>
+            <div>
+                <table class="xs-stats">
+                    <tbody>
+                        <tr>
+                            <th>COIN</th>
+                            <th>QUANTITY</th>
+                            <th>VALUE</th>
+                        </tr>
+                        <tr class="template hidden">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>USDC</td>
+                            <td class>$<span class="cash"></span></td>
+                            <td>FIAT</td>
+                        </tr>
+                        <tr>
+                            <td>DEFI</td>
+                            <td>- $<span class="debt"></span></td>
+                            <td>AAVE</td>
+                        </tr>
+                        <tr>
+                            <td>NFT</td>
+                            <td>0</td>
+                            <td>BAYC</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br /><br />
+                <label>
+                    <input type="number" pattern="[0-9]*" value="1">
+                    <span>
+                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
+                        <button class="depayland"
+                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                            FIAT</button>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-pawn-shop" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body xs-stats">
+            <h1>DEFI LOANS : $<span class="debt"></span></h1>
+            <br />
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land" data-bs-dismiss="modal">BORROW</button>
+                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-cities" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-body cities">
+        </div>
+        <div class="modal-body xs-stats">
+            <h1>YEAR : <span class="day"></span></h1>
+        </div>
     </div>
 </div>
 
