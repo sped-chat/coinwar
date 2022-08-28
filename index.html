@@ -178,32 +178,19 @@
 <body>
     <nav class="navbar sticky-top">
         <div class="container-fluid">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">🪙</a>
-                        </td>
-                        <td>
-                            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a>
-                        </td>
-                        <td>
-                            <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">💱</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a>
+            <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">💱</a>
         </div>
     </nav>
     <table class="coins">
         <tbody>
-            <tr class="hidden">
+            <tr>
                 <th></th>
                 <th></th>
                 <th></th>
             </tr>
             <tr data-drug="0">
-                <td></td>
+                <td data-bs-toggle="offcanvas" href="#prices" aria-controls="prices"></td>
                 <td class="hidden"></td>
                 <td></td>
                 <td>
@@ -295,9 +282,9 @@
                         <td class>$<span class="cash"></span></td>
                         <td>FIAT</td>
                     </tr>
-                    <!--
                     <tr>
-                        <td>DEFI</td>
+                        <td><a class="trans mx-auto" data-bs-toggle="collapse"
+                                data-bs-target="#pawn-shop-collapse">DEFI</a></td>
                         <td>- $<span class="debt"></span></td>
                         <td>AAVE</td>
                     </tr>
@@ -306,10 +293,19 @@
                         <td>0</td>
                         <td>BAYC</td>
                     </tr>
-                    -->
                 </tbody>
             </table>
-            <br /><br />
+            <div class="xs-stats collapse" id="pawn-shop-collapse">
+                <div>
+                    <input type="number" pattern="[0-9]*">
+                    <br />
+                    <span>
+                        <button class="land">BORROW</button>
+                        <button class="pay">REPAY</button>
+                    </span>
+                    <br /><br />
+                </div>
+            </div>
             <label>
                 <input class="hidden" type="number" pattern="[0-9]*" value="1">
                 <span>
@@ -319,34 +315,6 @@
                         FIAT</button>
                 </span>
             </label>
-        </div>
-        <!--
-        <br />
-        <button class="trans mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
-            DEFI LENDING
-        </button>
-        <div class="xs-stats collapse" id="pawn-shop-collapse">
-            <div>
-                <input type="number" pattern="[0-9]*">
-                <span>
-                    <button class="land">BORROW</button>
-                    <button class="pay">REPAY</button>
-                </span>
-            </div>
-        </div>
-        -->
-        <br />
-        <button class="trans mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
-            DEFI LENDING
-        </button>
-        <div class="xs-stats collapse" id="pawn-shop-collapse">
-            <div>
-                <input type="number" pattern="[0-9]*">
-                <span>
-                    <button class="land">BORROW</button>
-                    <button class="pay">REPAY</button>
-                </span>
-            </div>
         </div>
     </div>
 </div>
