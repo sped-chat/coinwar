@@ -141,7 +141,7 @@
         }
 
         .navbar {
-            background-color: #101010;
+            background-image: var(--bs-gradient);
             height: 7vh
         }
 
@@ -210,7 +210,7 @@
             </table>
         </div>
     </nav>
-    <table class="drugs">
+    <table class="coins">
         <tbody>
             <tr class="hidden">
                 <th></th>
@@ -274,19 +274,15 @@
             </a>
         </a>
         <br />
-        <a data-bs-toggle="offcanvas" data-bs-target="#privacy" aria-controls="privacy" href="./privacy.html"
-            target="_blank">coinwar.app</a>
+        <a data-bs-toggle="offcanvas" data-bs-target="#privacy" aria-controls="privacy" target="_blank">
+            <div class="xs-stats">© <span class="day"></span></div>
+        </a>
     </div>
 </body>
-
-<!--<div class="xs-stats"><span class="day"></span></div>-->
 
 <div id="cycle" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="cycle">
     <div id="offcanvas-cities" class="offcanvas-body">
         <div class="cities">
-        </div>
-        <div class="xs-stats">
-            <h1>YEAR : <span class="day"></span></h1>
         </div>
     </div>
 </div>
@@ -544,9 +540,6 @@
     </div>
 </div>
 
-
-
-
 <div id="modal-high-score" class="modal">
     <ul>
     </ul>
@@ -651,7 +644,6 @@
     </div>
 </div>
 
-
 <script defer async src="https://integrate.depay.com/widgets/v7.js"></script>
 <script defer>
     var button = document.getElementById("depay1");
@@ -674,11 +666,11 @@
     // view
 
 
-    function View(drugs) {
+    function View(coins) {
         this.news = document.querySelector('.news ul');
-        this.drugs_container = document.querySelector('.drugs tbody');
+        this.coins_container = document.querySelector('.coins tbody');
 
-        this.setup_drugs();
+        this.setup_coins();
         this.setup_cities();
 
         this.refresh_prices([]);
@@ -702,7 +694,7 @@
         "health": " ",
         "stock": " WALLET",
         "bank-account": " USD",
-        "drugs": " ",
+        "coins": " ",
         "item": " ASSET",
         "value": " PRICE",
         "buy": " BUY",
@@ -808,19 +800,19 @@
         return translateJson[key];
     }
 
-    View.prototype.setup_drugs = function () {
-        var row_template = this.drugs_container.querySelector('tr[data-drug]');
-        let row_collapse_template = this.drugs_container.querySelector('.collapse-transaction');
-        var drugs = DataCenter.drugs;
+    View.prototype.setup_coins = function () {
+        var row_template = this.coins_container.querySelector('tr[data-drug]');
+        let row_collapse_template = this.coins_container.querySelector('.collapse-transaction');
+        var coins = DataCenter.coins;
         let i = 0;
         console.log("Row Collapse Template", row_collapse_template)
-        for (var drug in drugs) {
+        for (var drug in coins) {
             var row = row_template.cloneNode(true);
             let row_collapse = row_collapse_template.cloneNode(true);
 
             row.dataset['drug'] = drug;
 
-            row.children[0].innerText = translate('dope-' + drugs[drug].name);
+            row.children[0].innerText = translate('dope-' + coins[drug].name);
 
             row.querySelectorAll('a').forEach((elem) => {
                 elem.dataset['drug'] = drug;
@@ -833,19 +825,19 @@
 
             i++;
 
-            this.drugs_container.append(row);
-            this.drugs_container.append(row_collapse);
+            this.coins_container.append(row);
+            this.coins_container.append(row_collapse);
         }
 
         row_template.remove();
         row_collapse_template.remove();
 
-        this.drugs = document.querySelectorAll('.drugs tbody tr[data-drug]');
+        this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
 
         // Inventory
         row_template = document.querySelector('#wallet tr.template');
 
-        for (var drug in drugs) {
+        for (var drug in coins) {
             var row = row_template.cloneNode(true);
             row.classList.remove('template');
 
@@ -874,14 +866,14 @@
     }
 
     View.prototype.refresh_quantities = function (quantities) {
-        for (var drug = 0; drug < this.drugs.length; drug++) {
-            this.drugs.item(drug).children[1].innerHTML = quantities[drug] || 0;
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[1].innerHTML = quantities[drug] || 0;
         }
     };
 
     View.prototype.refresh_prices = function (prices) {
-        for (var drug = 0; drug < this.drugs.length; drug++) {
-            this.drugs.item(drug).children[2].innerHTML = '$' + (prices[drug] || 0);
+        for (var drug = 0; drug < this.coins.length; drug++) {
+            this.coins.item(drug).children[2].innerHTML = '$' + (prices[drug] || 0);
         }
     };
 
@@ -919,11 +911,11 @@
         replaceText('.stats .total_space, .xs-stats .total_space', coat.total_space);
     };
 
-    View.prototype.refresh_available_drugs = function (available_drugs) {
+    View.prototype.refresh_available_coins = function (available_coins) {
         document.querySelectorAll('tr[data-drug].hidden').forEach(elem => elem.classList.remove('hidden'));
 
-        for (var drug in available_drugs) {
-            if (!available_drugs[drug]) {
+        for (var drug in available_coins) {
+            if (!available_coins[drug]) {
                 document.querySelector('tr[data-drug]:nth-child(' + ((parseInt(drug) * 2) + 2) + ')').classList.add('hidden');
             }
         }
@@ -952,22 +944,22 @@
         });
     };
 
-    View.prototype.refresh_inventory = function (drugs) {
-        for (var drug in drugs) {
+    View.prototype.refresh_inventory = function (coins) {
+        for (var drug in coins) {
             var row = document.querySelector('#wallet tr:nth-child(' + (parseInt(drug) + 2) + ')')
             row.classList.remove('hidden');
 
-            row.children[0].innerText = (translate('dope-' + DataCenter.drugs[drug].name));
-            row.children[1].innerText = (drugs[drug] || 0);
-            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.innerText = drugs[drug] || 0;
-            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.attributes['max'] = drugs[drug] || 0;
+            row.children[0].innerText = (translate('dope-' + DataCenter.coins[drug].name));
+            row.children[1].innerText = (coins[drug] || 0);
+            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.innerText = coins[drug] || 0;
+            // row.firstChild.nextSibling.nextSibling.firstChild.firstChild.attributes['max'] = coins[drug] || 0;
 
-            if ((drugs[drug] || 0) == 0) {
+            if ((coins[drug] || 0) == 0) {
                 row.classList.add('hidden');
             }
         }
         let el = document.querySelector('#wallet p')
-        if (array_sum(drugs) == 0 && el) {
+        if (array_sum(coins) == 0 && el) {
             el.innerText = translate('no-drug-yet');
         } else if (el) {
             el.innerText = '';
@@ -1023,7 +1015,7 @@
 
 
     var DataCenter = {
-        drugs: [
+        coins: [
             {
                 "name": "ada",
                 "minimum_price": 1,
@@ -1195,83 +1187,83 @@
         cities: [
             {
                 "name": "binance",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "coinbase",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "curve",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "dydx",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "ftx",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "gemini",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "honey",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "jupiter",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "kine",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "kraken",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "kucoin",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "pancake",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "spooky",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "sushi",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "traderjoe",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
             {
                 "name": "uni",
-                "min_drugs": 18,
-                "max_drugs": 19
+                "min_coins": 18,
+                "max_coins": 19
             },
         ],
         messages: [
@@ -1436,7 +1428,7 @@
 
     // Coat
     function Coat() {
-        this.drugs = [];
+        this.coins = [];
         this.cash = 42;
         this.guns = [];
         this.health = 100;
@@ -1446,8 +1438,8 @@
     Coat.prototype.available_space = function () {
         var available_space = this.total_space;
 
-        for (var i in this.drugs) {
-            available_space -= this.drugs[i];
+        for (var i in this.coins) {
+            available_space -= this.coins[i];
         }
 
         return available_space;
@@ -1458,8 +1450,8 @@
     };
 
     Coat.prototype.add = function (drug, quantity) {
-        this.drugs[drug] = this.drugs[drug] || 0;
-        this.drugs[drug] += quantity;
+        this.coins[drug] = this.coins[drug] || 0;
+        this.coins[drug] += quantity;
     };
 
     Coat.prototype.can_buy = function (price, quantity) {
@@ -1467,7 +1459,7 @@
     };
 
     Coat.prototype.can_sell = function (item, quantity) {
-        return this.drugs[item] >= quantity;
+        return this.coins[item] >= quantity;
     };
 
     Coat.prototype.buy = function (item, price, quantity) {
@@ -1477,7 +1469,7 @@
 
     Coat.prototype.sell = function (item, price, quantity) {
         this.cash += price * quantity;
-        this.drugs[item] -= quantity;
+        this.coins[item] -= quantity;
     };
 
     Coat.prototype.max_quantity = function (price) {
@@ -1487,8 +1479,8 @@
     Coat.prototype.score = function (game, prices) {
         var score = this.cash - game.debt;
 
-        for (var drug in this.drugs) {
-            score += (this.drugs[drug] * prices[drug]) || 0;
+        for (var drug in this.coins) {
+            score += (this.coins[drug] * prices[drug]) || 0;
         }
 
         return Math.round(score);
@@ -1500,41 +1492,41 @@
         this.is_cop = Math.random() * 100 < DataCenter.cities[number].cops;
         this.prices = [];
         this.number = number;
-        this.available_drugs = [];
+        this.available_coins = [];
 
 
-        // Available drugs
-        var max_drugs = ('max_drugs' in DataCenter.cities[number] ? DataCenter.cities[number].max_drugs : DataCenter.drugs.length);
+        // Available coins
+        var max_coins = ('max_coins' in DataCenter.cities[number] ? DataCenter.cities[number].max_coins : DataCenter.coins.length);
 
-        var number_of_drugs = parseInt(rand(DataCenter.cities[number].min_drugs, max_drugs));
-        for (var i = 0; i < number_of_drugs; i++) {
-            this.available_drugs[i] = true;
+        var number_of_coins = parseInt(rand(DataCenter.cities[number].min_coins, max_coins));
+        for (var i = 0; i < number_of_coins; i++) {
+            this.available_coins[i] = true;
         }
 
-        for (var i = number_of_drugs; i < DataCenter.drugs.length; i++) {
-            this.available_drugs[i] = false;
+        for (var i = number_of_coins; i < DataCenter.coins.length; i++) {
+            this.available_coins[i] = false;
         }
 
-        this.available_drugs = shuffle(this.available_drugs);
+        this.available_coins = shuffle(this.available_coins);
 
         // Prices
-        for (var drug in DataCenter.drugs) {
-            if (this.available_drugs[parseInt(drug)]) {
-                var minimum_price = DataCenter.drugs[drug].minimum_price;
-                var maximum_price = DataCenter.drugs[drug].maximum_price;
+        for (var drug in DataCenter.coins) {
+            if (this.available_coins[parseInt(drug)]) {
+                var minimum_price = DataCenter.coins[drug].minimum_price;
+                var maximum_price = DataCenter.coins[drug].maximum_price;
 
-                if ('cheap' in DataCenter.drugs[drug] && rand(0, 100) < 5 && news_manager != null) {
-                    minimum_price = DataCenter.drugs[drug].cheap.minimum_price;
-                    maximum_price = DataCenter.drugs[drug].cheap.maximum_price;
+                if ('cheap' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager != null) {
+                    minimum_price = DataCenter.coins[drug].cheap.minimum_price;
+                    maximum_price = DataCenter.coins[drug].cheap.maximum_price;
 
-                    var id = 'dope-' + DataCenter.drugs[drug].name + '-cheap';
+                    var id = 'dope-' + DataCenter.coins[drug].name + '-cheap';
 
                     news_manager.add(new News(translate(id)));
-                } else if ('expensive' in DataCenter.drugs[drug] && rand(0, 100) < 5 && news_manager) {
-                    minimum_price = DataCenter.drugs[drug].expensive.minimum_price;
-                    maximum_price = DataCenter.drugs[drug].expensive.maximum_price;
+                } else if ('expensive' in DataCenter.coins[drug] && rand(0, 100) < 5 && news_manager) {
+                    minimum_price = DataCenter.coins[drug].expensive.minimum_price;
+                    maximum_price = DataCenter.coins[drug].expensive.maximum_price;
 
-                    var id = 'dope-' + DataCenter.drugs[drug].name + '-expensive';
+                    var id = 'dope-' + DataCenter.coins[drug].name + '-expensive';
 
                     news_manager.add(new News(translate(id)));
                 }
@@ -1677,7 +1669,7 @@
         this.news_manager.add(new News(translate('notification-welcome')));
 
         this.view.refresh_prices(this.game.city.prices);
-        this.view.refresh_available_drugs(this.game.city.available_drugs);
+        this.view.refresh_available_coins(this.game.city.available_coins);
         this.view.refresh_stats(this.game, this.coat);
         this.view.refresh_news(this.news_manager.news);
         this.view.refresh_high_score(self.game.high_score());
@@ -1698,7 +1690,7 @@
                 var quantity = parseInt(elem.previousElementSibling.previousElementSibling.value);
                 if (self.sell(index, quantity)) {
                     elem.previousElementSibling.previousElementSibling.value = 0;
-                    elem.parentNode.parentNode.querySelector('td:nth-child(2)').innerText = (self.coat.drugs[index]);
+                    elem.parentNode.parentNode.querySelector('td:nth-child(2)').innerText = (self.coat.coins[index]);
                 }
             }
         })
@@ -1716,7 +1708,7 @@
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var item_number = parseInt(elem.parentNode.parentElement.dataset['drug']);
-                var quantity = self.coat.drugs[item_number] || 0;
+                var quantity = self.coat.coins[item_number] || 0;
                 elem.previousElementSibling.value = quantity;
             }
         })
@@ -1750,7 +1742,7 @@
                     }), 'move'));
 
                     self.game.new_city(elem.dataset['city'], self.news_manager);
-                    self.view.refresh_available_drugs(self.game.city.available_drugs);
+                    self.view.refresh_available_coins(self.game.city.available_coins);
                     self.view.refresh_news(self.news_manager.news);
 
                     document.querySelectorAll('button[data-city].current').forEach((elem) => {
@@ -1798,7 +1790,7 @@
             console.log(elem)
             elem.onclick = (ev) => {
                 if (a) a(ev);
-                self.view.refresh_inventory(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
             }
         })
 
@@ -1806,7 +1798,7 @@
             let a = elem.onclick
             elem.onclick = (ev) => {
                 if (a) a(ev);
-                self.view.refresh_inventory(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
             }
         })
 
@@ -1912,14 +1904,14 @@
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentNode.parentNode.parentElement.dataset['drug']);
-                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.drugs[index]);
+                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
 
-                self.coat.drugs[index] -= quantity;
+                self.coat.coins[index] -= quantity;
                 self.game.stone_level += quantity;
 
                 self.view.refresh_stone_level(self.game.stone_level);
-                self.view.refresh_inventory(self.coat.drugs);
-                self.view.refresh_quantities(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
+                self.view.refresh_quantities(self.coat.coins);
                 self.view.refresh_stats(self.game, self.coat);
 
                 elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = 0;
@@ -1930,12 +1922,12 @@
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentElement.parentElement.parentElement.dataset['drug']);
-                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.drugs[index]);
+                var quantity = Math.min(parseInt(elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value), self.coat.coins[index]);
 
-                self.coat.drugs[index] -= quantity;
+                self.coat.coins[index] -= quantity;
 
-                self.view.refresh_inventory(self.coat.drugs);
-                self.view.refresh_quantities(self.coat.drugs);
+                self.view.refresh_inventory(self.coat.coins);
+                self.view.refresh_quantities(self.coat.coins);
                 self.view.refresh_stats(self.game, self.coat);
 
                 elem.parentElement.parentElement.previousElementSibling.firstChild.firstChild.value = (0);
@@ -1964,7 +1956,7 @@
                 document.querySelector(queryElem).classList.add('buy')
                 document.querySelector(queryElem).dataset['drug'] = elem.dataset['drug'];
                 // document.querySelector('#' + elem.attributes['data-bs-target'].value + ' .modal-header h4').innerText = (translate('buy')
-                // + ' ' + translate('dope-' + DataCenter.drugs[elem.parentElement.parentElement.dataset['drug']].name));
+                // + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
                 document.querySelector(queryElem + ' .action').innerText = (translate('buy'));
 
                 document.querySelector(queryElem + '.buy button.max').onclick = (ev) => {
@@ -2013,7 +2005,7 @@
                     // Hmmm... Maybe this isn't the best way to do it...
                     let _elem = ev.currentTarget;
                     var index = parseInt(elem.dataset['drug']);
-                    var quantity = self.coat.drugs[index] || 0;
+                    var quantity = self.coat.coins[index] || 0;
 
                     _elem.parentElement.previousElementSibling.value = quantity;
                 };
@@ -2047,11 +2039,11 @@
 
             this.news_manager.add(new News(translate('notification-bought', {
                 quantity: quantity,
-                drug: translate('dope-' + DataCenter.drugs[index].name),
+                drug: translate('dope-' + DataCenter.coins[index].name),
                 price: this.game.city.prices[index]
             }), 'drug'));
 
-            this.view.refresh_quantities(this.coat.drugs);
+            this.view.refresh_quantities(this.coat.coins);
             this.view.refresh_stats(this.game, this.coat);
         } else {
             this.news_manager.add(new News(translate('notification-need-more-' + (this.coat.available_space() >= quantity ? 'money' : 'space')), 'error'));
@@ -2074,11 +2066,11 @@
 
             this.news_manager.add(new News(translate('notification-sold', {
                 quantity: quantity,
-                drug: translate('dope-' + DataCenter.drugs[index].name),
+                drug: translate('dope-' + DataCenter.coins[index].name),
                 price: this.game.city.prices[index]
             }), 'drug'));
             this.view.refresh_stats(this.game, this.coat);
-            this.view.refresh_quantities(this.coat.drugs);
+            this.view.refresh_quantities(this.coat.coins);
         } else {
             this.news_manager.add(new News(translate('notification-do-not-own'), 'error'));
             return_value = false;

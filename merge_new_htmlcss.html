@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description"
         content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@coinwarapp">
     <meta name="twitter:creator" content="@coinwarapp">
@@ -14,22 +15,26 @@
     <meta name="twitter:description"
         content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War.">
     <meta name="twitter:image" content="https://coinwar.app/icons/1024.png">
+
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="COINWAR" />
     <meta property="og:description"
         content="Omicron B.9 eradicated 83% of the population in 2022 resulting in collapse of all fiat currency and the start of The Coin War." />
     <meta property="og:url" content="https://coinwar.app" />
     <meta property="og:image" content="https://coinwar.app/icons/1024.png" />
+
     <link rel="icon" href="/icons/favicon.ico" sizes="any">
     <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#ffc40d">
     <link rel="apple-touch-startup-image" href="/icons/1024.png">
+
     <link rel="manifest" href="./manifest.json">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="COINWAR">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="COINWAR">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
@@ -40,6 +45,7 @@
         const el = document.createElement('pwa-update');
         document.body.appendChild(el);
     </script>
+
     <style>
         body {
             color: #E4CBB6;
@@ -53,6 +59,24 @@
             font-size: 1.7vh;
             text-decoration: none;
         }
+
+        .btn-1 {
+            background-color: #181818;
+            border: none;
+            color: #E31C79;
+            padding: 12px
+        }
+
+        .btn-1:hover {
+            background-color: #141414;
+            color: #3977D4;
+        }
+
+        .btn-1.current {
+            background-color: #141414;
+            color: #3977D4;
+        }
+
 
         .footer {
             line-height: 2vh;
@@ -168,7 +192,7 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top ">
+    <nav class="navbar sticky-top">
         <div class="container-fluid">
             <table>
                 <tbody>
@@ -199,12 +223,27 @@
                 <td class="hidden"></td>
                 <td></td>
                 <td>
-                    <a class="buy-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">📈</a>
-                    <a class="sell-xs" data-bs-toggle="modal" data-bs-target="#modal-transaction">📉</a>
+                    <a class="buy-xs" data-drug="" data-bs-toggle="collapse" data-bs-target-1="">📈</a>
+                    <a class="sell-xs" data-bs-toggle="collapse" data-bs-target-1="">📉</a>
+                </td>
+            </tr>
+            <tr class="collapse-transaction collapse" id="">
+                <td></td>
+                <td class="hidden"></td>
+                <td></td>
+                <td class="text-center py-3">
+                    <input type="number" pattern="[0-9]*" value="1">
+                    <span>
+                        <button class="btn-1 max" type="button" data-l10n-id="max">
+                        </button>
+                        <button data-bs-target="" class="btn-1 action" type="button" data-bs-toggle="collapse">
+                        </button>
+                    </span>
                 </td>
             </tr>
         </tbody>
     </table>
+
     <div class="footer">
         <div class="cycle"><a>🐈</a>
         </div>
@@ -218,7 +257,8 @@
         </a>
         &nbsp;
         <a>
-            <a href="https://metaverse.coinwar.app" target="_blank">
+            <a href="https://hubs.mozilla.com/cMzFjni/?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high"
+                target="_blank">
                 <svg class="bi bi-discord" viewBox="0 0 16 16">
                     <path
                         d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
@@ -235,18 +275,19 @@
             </a>
         </a>
         <br />
-        <a data-bs-toggle="offcanvas" data-bs-target="#privacy" aria-controls="privacy" href="./privacy.html"
-            target="_blank">coinwar.app</a>
+        <a data-bs-toggle="offcanvas" data-bs-target="#privacy" aria-controls="privacy" target="_blank">
+            <div class="xs-stats">© <span class="day"></span></div>
+        </a>
     </div>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-        data-cf-beacon='{"token": "78c4cd65bf1e452ea71651375e17a848"}'></script>
 </body>
 
 <div id="cycle" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="cycle">
-    <div class="offcanvas-body">
-        <div class="cities"></div>
+    <div id="offcanvas-cities" class="offcanvas-body">
+        <div class="cities">
+        </div>
     </div>
 </div>
+
 <div id="wallet" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="wallet">
     <div class="offcanvas-body">
         <div>
@@ -291,17 +332,21 @@
             </label>
         </div>
         <br />
-        <div class="xs-stats">
+        <button class="btn-1 mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
+            Pawn Shop
+        </button>
+        <div class="xs-stats collapse" id="pawn-shop-collapse">
             <div>
                 <input type="number" pattern="[0-9]*">
                 <span>
-                    <button class="land" data-bs-dismiss="modal">BORROW</button>
-                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
+                    <button class="land">BORROW</button>
+                    <button class="pay">REPAY</button>
                 </span>
             </div>
         </div>
     </div>
 </div>
+
 <div id="prices" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="prices">
     <div class="offcanvas-body">
         <div class="v-center">
@@ -355,6 +400,7 @@
         </div>
     </div>
 </div>
+
 <div id="privacy" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="privacy">
     <div class="offcanvas-body small">
         <h1>PRIVACY POLICY</h1>
@@ -494,10 +540,12 @@
         <p>This policy is effective as of April 20, 2022.</p>
     </div>
 </div>
+
 <div id="modal-high-score" class="modal">
     <ul>
     </ul>
 </div>
+
 <div id="modal-transaction" class="modal">
     <div class="modal-dialog ">
         <div class="modal-content">
@@ -522,6 +570,7 @@
         </div>
     </div>
 </div>
+
 <div id="modal-inventory" class="modal">
     <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
         <div>
@@ -569,6 +618,7 @@
         </div>
     </div>
 </div>
+
 <div id="modal-pawn-shop" class="modal">
     <div class="modal-dialog">
         <div class="modal-body xs-stats">
@@ -584,6 +634,7 @@
         </div>
     </div>
 </div>
+
 <div id="modal-cities" class="modal">
     <div class="modal-dialog">
         <div class="modal-body cities">
@@ -593,6 +644,7 @@
         </div>
     </div>
 </div>
+
 <script defer async src="https://integrate.depay.com/widgets/v7.js"></script>
 <script defer>
     var button = document.getElementById("depay1");
@@ -609,6 +661,7 @@
         });
     });
 </script>
+
 <script>
 
     // view
@@ -750,33 +803,48 @@
 
     View.prototype.setup_coins = function () {
         var row_template = this.coins_container.querySelector('tr[data-drug]');
+        let row_collapse_template = this.coins_container.querySelector('.collapse-transaction');
         var coins = DataCenter.coins;
-
-        console.log("coins", coins)
+        let i = 0;
+        console.log("Row Collapse Template", row_collapse_template)
         for (var drug in coins) {
             var row = row_template.cloneNode(true);
+            let row_collapse = row_collapse_template.cloneNode(true);
 
             row.dataset['drug'] = drug;
 
             row.children[0].innerText = translate('dope-' + coins[drug].name);
 
+            row.querySelectorAll('a').forEach((elem) => {
+                elem.dataset['drug'] = drug;
+                elem.attributes['data-bs-target-1'].value = "#collapse_transaction_" + i;
+            })
+
+            row_collapse.id = 'collapse_transaction_' + i;
+
+            row_collapse.querySelector('button.action').attributes['data-bs-target'].value = "#collapse_transaction_" + i;
+
+            i++;
+
             this.coins_container.append(row);
+            this.coins_container.append(row_collapse);
         }
 
         row_template.remove();
+        row_collapse_template.remove();
+
         this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
 
         // Inventory
-        row_template = document.querySelector('#modal-inventory tr.template');
+        row_template = document.querySelector('#wallet tr.template');
 
         for (var drug in coins) {
             var row = row_template.cloneNode(true);
-            console.log(row, row_template)
             row.classList.remove('template');
 
             row.dataset['drug'] = drug;
 
-            document.querySelector('#modal-inventory tbody').append(row);
+            document.querySelector('#wallet tbody').append(row);
         }
 
         row_template.remove();
@@ -792,10 +860,10 @@
 
     View.prototype.setup_cities = function () {
         for (var city in DataCenter.cities) {
-            document.querySelector('#modal-cities .cities').append(createElementFromHTML('<button class="btn" data-bs-dismiss="modal" data-city="' + city + '">' +
+            document.querySelector('#offcanvas-cities .cities').append(createElementFromHTML('<button class="btn-1" data-bs-dismiss="offcanvas" data-city="' + city + '">' +
                 translate('city-' + DataCenter.cities[city].name) + '</button> '));
         }
-        document.querySelector('#modal-cities .cities button.btn')?.classList.add('current');
+        document.querySelector('#offcanvas .cities button.btn')?.classList.add('current');
     }
 
     View.prototype.refresh_quantities = function (quantities) {
@@ -849,7 +917,7 @@
 
         for (var drug in available_coins) {
             if (!available_coins[drug]) {
-                document.querySelector('tr[data-drug]:nth-child(' + (parseInt(drug) + 2) + ')').classList.add('hidden');
+                document.querySelector('tr[data-drug]:nth-child(' + ((parseInt(drug) * 2) + 2) + ')').classList.add('hidden');
             }
         }
     };
@@ -879,7 +947,7 @@
 
     View.prototype.refresh_inventory = function (coins) {
         for (var drug in coins) {
-            var row = document.querySelector('#modal-inventory tr:nth-child(' + (parseInt(drug) + 2) + ')')
+            var row = document.querySelector('#wallet tr:nth-child(' + (parseInt(drug) + 2) + ')')
             row.classList.remove('hidden');
 
             row.children[0].innerText = (translate('dope-' + DataCenter.coins[drug].name));
@@ -891,7 +959,7 @@
                 row.classList.add('hidden');
             }
         }
-        let el = document.querySelector('#modal-inventory p')
+        let el = document.querySelector('#wallet p')
         if (array_sum(coins) == 0 && el) {
             el.innerText = translate('no-drug-yet');
         } else if (el) {
@@ -1660,7 +1728,7 @@
             }
         })
 
-        document.querySelectorAll('#modal-cities .cities button[data-city]').forEach((elem) => {
+        document.querySelectorAll('#offcanvas-cities .cities button[data-city]').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 if (self.game.city.number == elem.dataset['city']) {
@@ -1718,7 +1786,7 @@
             }
         })
         console.log("Here?")
-        document.querySelectorAll('a[data-bs-target="#modal-inventory"]').forEach((elem) => {
+        document.querySelectorAll('a[href="#wallet"]').forEach((elem) => {
             let a = elem.onclick;
             console.log(elem)
             elem.onclick = (ev) => {
@@ -1727,7 +1795,7 @@
             }
         })
 
-        document.querySelectorAll('button[data-bs-target="#modal-inventory"]').forEach((elem) => {
+        document.querySelectorAll('button[href="#wallet"]').forEach((elem) => {
             let a = elem.onclick
             elem.onclick = (ev) => {
                 if (a) a(ev);
@@ -1749,7 +1817,7 @@
             }
         });
 
-        document.querySelectorAll('#modal-inventory button.land').forEach((elem) => {
+        document.querySelectorAll('#wallet button.land').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var amount = parseInt(elem.parentNode.previousElementSibling.value);
@@ -1760,7 +1828,7 @@
             }
         });
 
-        document.querySelectorAll('#modal-inventory button.defi').forEach((elem) => {
+        document.querySelectorAll('#wallet button.defi').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var amount = parseInt(elem.parentNode.previousElementSibling.value);
@@ -1772,7 +1840,7 @@
             }
         })
 
-        document.querySelectorAll('#modal-inventory button.paydefi').forEach((elem) => {
+        document.querySelectorAll('#wallet button.paydefi').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
@@ -1789,9 +1857,8 @@
             }
         })
 
-        document.querySelectorAll('#modal-pawn-shop button.pay').forEach((elem) => {
-            let a = elem.onclick; elem.onclick = (ev) => {
-                if (a) a(ev);
+        document.querySelectorAll('#pawn-shop-collapse button.pay').forEach((elem) => {
+            elem.onclick = (ev) => {
                 var amount = Math.min(parseInt(elem.parentNode.previousElementSibling.value), self.game.debt);
 
                 if (self.coat.cash >= amount) {
@@ -1827,14 +1894,14 @@
 
 
 
-        document.querySelectorAll('#modal-inventory button.max').forEach((elem) => {
+        document.querySelectorAll('#wallet button.max').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 elem.parentNode.previousElementSibling.value = parseInt(elem.parentNode.parentNode.parentNode.previousElementSibling.innerText)
             }
         })
 
-        document.querySelectorAll('#modal-inventory button.consume').forEach((elem) => {
+        document.querySelectorAll('#wallet button.consume').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentNode.parentNode.parentElement.dataset['drug']);
@@ -1852,7 +1919,7 @@
             }
         })
 
-        document.querySelectorAll('#modal-inventory button.drop').forEach((elem) => {
+        document.querySelectorAll('#wallet button.drop').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var index = parseInt(elem.parentElement.parentElement.parentElement.dataset['drug']);
@@ -1873,30 +1940,41 @@
         document.querySelectorAll('.buy-xs').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
-                document.querySelector('#modal-transaction input[type="number"]').value = (0);
+                let queryElem = elem.attributes['data-bs-target-1'].value
+                document.querySelector(queryElem + ' input[type="number"]').value = (0);
 
-                document.querySelector('#modal-transaction').classList.remove('sell');
-                document.querySelector('#modal-transaction').classList.add('buy')
-                document.querySelector('#modal-transaction').dataset['drug'] = elem.parentElement.parentElement.dataset['drug'];
-                document.querySelector('#modal-transaction .modal-header h4').innerText = (translate('buy')
-                    + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
-                document.querySelector('#modal-transaction .modal-body .action').innerText = (translate('buy'));
+                if (!document.querySelector(queryElem).classList.contains('buy')) {
+                    document.querySelector(queryElem).classList.add('show')
+                } else {
+                    document.querySelector(queryElem).classList.remove('show')
+                    document.querySelector(queryElem).classList.remove('buy')
+                    document.querySelector(queryElem).classList.add('collapse')
 
-                document.querySelector('#modal-transaction.buy button.max').onclick = (ev) => {
-                    let elem = ev.currentTarget;
-                    var item_number = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
+                    return;
+                }
+
+                document.querySelector(queryElem).classList.remove('sell');
+                document.querySelector(queryElem).classList.add('buy')
+                document.querySelector(queryElem).dataset['drug'] = elem.dataset['drug'];
+                // document.querySelector('#' + elem.attributes['data-bs-target'].value + ' .modal-header h4').innerText = (translate('buy')
+                // + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
+                document.querySelector(queryElem + ' .action').innerText = (translate('buy'));
+
+                document.querySelector(queryElem + '.buy button.max').onclick = (ev) => {
+                    let _elem = ev.currentTarget;
+                    var item_number = parseInt(elem.dataset['drug']);
                     var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
 
-                    elem.parentNode.previousElementSibling.value = (quantity);
+                    _elem.parentNode.previousElementSibling.value = (quantity);
                 };
 
-                document.querySelector('#modal-transaction.buy button.action').onclick = (ev) => {
-                    let elem = ev.currentTarget;
+                document.querySelector(queryElem + '.buy button.action').onclick = (ev) => {
+                    let _elem = ev.currentTarget;
 
-                    var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
+                    var index = parseInt(elem.dataset['drug']);
 
-                    if (self.buy(index, parseInt(elem.parentElement.previousElementSibling.value))) {
-                        elem.removeEventListener('click', elem.onclick);
+                    if (self.buy(index, parseInt(_elem.parentElement.previousElementSibling.value))) {
+                        _elem.removeEventListener('click', _elem.onclick);
                     }
                 };
             }
@@ -1905,31 +1983,41 @@
         document.querySelectorAll('.sell-xs').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
-                document.querySelector('#modal-transaction input[type="number"]').value = (0);
+                let queryElem = elem.attributes['data-bs-target-1'].value
 
-                document.querySelector('#modal-transaction').classList.remove('buy');
-                document.querySelector('#modal-transaction').classList.add('sell')
-                document.querySelector('#modal-transaction').dataset['drug'] = elem.parentElement.parentElement.dataset['drug'];
-                document.querySelector('#modal-transaction .modal-header h4').innerText = (translate('sell')
-                    + ' ' + translate('dope-' + DataCenter.coins[elem.parentElement.parentElement.dataset['drug']].name));
-                document.querySelector('#modal-transaction .modal-body .action').innerText = (translate('sell'));
+                if (!document.querySelector(queryElem).classList.contains('sell')) {
+                    document.querySelector(queryElem).classList.add('show')
+                } else {
+                    document.querySelector(queryElem).classList.remove('show')
+                    document.querySelector(queryElem).classList.remove('sell')
+                    document.querySelector(queryElem).classList.add('collapse')
 
-                document.querySelector('#modal-transaction.sell button.max').onclick = (ev) => {
+                    return;
+                }
+
+                document.querySelector(queryElem + ' input[type="number"]').value = (0);
+
+                document.querySelector(queryElem + '').classList.remove('buy');
+                document.querySelector(queryElem + '').classList.add('sell')
+                document.querySelector(queryElem + '').dataset['drug'] = elem.dataset['drug'];
+                document.querySelector(queryElem + ' .action').innerText = (translate('sell'));
+
+                document.querySelector(queryElem + '.sell button.max').onclick = (ev) => {
                     // Hmmm... Maybe this isn't the best way to do it...
-                    let elem = ev.currentTarget;
-                    var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
+                    let _elem = ev.currentTarget;
+                    var index = parseInt(elem.dataset['drug']);
                     var quantity = self.coat.coins[index] || 0;
 
-                    elem.parentElement.previousElementSibling.value = quantity;
+                    _elem.parentElement.previousElementSibling.value = quantity;
                 };
 
-                document.querySelector('#modal-transaction.sell button.action').onclick = (ev) => {
-                    let elem = ev.currentTarget;
-                    var index = parseInt(elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.dataset['drug']);
-                    var quantity = parseInt(elem.parentElement.previousElementSibling.value);
+                document.querySelector(queryElem + '.sell button.action').onclick = (ev) => {
+                    let _elem = ev.currentTarget;
+                    var index = parseInt(elem.dataset['drug']);
+                    var quantity = parseInt(_elem.parentElement.previousElementSibling.value);
 
                     if (self.sell(index, quantity)) {
-                        elem.removeEventListener('click', elem.onclick);
+                        _elem.removeEventListener('click', _elem.onclick);
                     }
                 };
             }
