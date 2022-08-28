@@ -167,50 +167,64 @@
         td {
             width: 25%
         }
+
+        button {
+            width: 6em
+        }
+
+        .defi:hover span {
+            display: none
+        }
+
+        .defi:hover:before {
+            content: "BORROW"
+        }
+
+        .stable:hover span {
+            display: none
+        }
+
+        .stable:hover:before {
+            content: "DEPOSIT"
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar">
         <div class="container-fluid">
-            <a class="xs-stats" data-bs-toggle="collapse" data-bs-target="#navwallet" aria-controls="navwallet"
-                aria-expanded="false" aria-label="wallet">COINWAR
+            <a class="xs-stats" data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">COINWAR
                 c.<span class="day"></span></a>
-            <div class="collapse navbar-collapse" id="navwallet">
-                <div>
-                    asdfasdfasdfa
-                </div>
-            </div>
         </div>
     </nav>
 
     <table class="coins">
         <tbody>
-            <tr>
+            <tr class="hidden">
                 <th></th>
                 <th></th>
                 <th></th>
             </tr>
-            <tr data-drug="0">
+            <tr coinlist="0">
                 <td data-bs-toggle="offcanvas" href="#prices" aria-controls="prices"></td>
                 <td class="hidden"></td>
                 <td data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet"></td>
                 <td>
-                    <a class="buy-sell-xs" data-drug="" data-bs-toggle="collapse" data-bs-target="">💰</a>
+                    <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💰</a>
                 </td>
             </tr>
             <tr class="collapse-transaction collapse" id="">
                 <td></td>
                 <td class="hidden"></td>
-                <td></td>
+                <td class="hidden"></td>
                 <td class="text-center pt-3 pb-1">
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
-                        <button class="trans buy max" type="button" data-l10n-id="max">
-                            MAX
-                        </button>
                         <button data-bs-target="" class="trans buy action" type="button" data-bs-toggle="collapse">
                             BUY
+                        </button>
+                        <button class="trans buy max" type="button" maxamount="max">
+                            MAX
                         </button>
                     </span>
                 </td>
@@ -218,15 +232,15 @@
             <tr class="collapse-transaction collapse" id="">
                 <td></td>
                 <td class="hidden"></td>
-                <td></td>
+                <td class="hidden"></td>
                 <td class="text-center pb-3">
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
-                        <button class="trans sell max" type="button" data-l10n-id="max">
-                            MAX
-                        </button>
                         <button data-bs-target="" class="trans sell action" type="button" data-bs-toggle="collapse">
                             SELL
+                        </button>
+                        <button class="trans sell max" type="button" maxamount="max">
+                            MAX
                         </button>
                     </span>
                 </td>
@@ -278,54 +292,67 @@
 
 <div id="wallet" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="wallet">
     <div class="offcanvas-body">
+        <div class="xs-stats collapse" id="pawn-shop-collapse">
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land">BORROW</button>
+                    <button class="pay">REPAY</button>
+                </span>
+                <br /><br />
+            </div>
+        </div>
         <div>
             <table class="xs-stats">
                 <tbody>
                     <tr class="coinlist">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th></th>
+                        <th></th>
+                        <th class="hidden"></th>
+                        <th class="hidden"></th>
                     </tr>
                     <tr>
-                        <td>USDC</td>
+                        <td>
+                            <label>
+                                <input class="hidden" type="number" pattern="[0-9]*" value="1">
+                                <span><a id="depay1" class="depayland">
+                                        <div class="stable">
+                                            <span>STABLECOINS</span>
+                                        </div>
+                                    </a>
+                                    <!--
+                                <button class="depayland"
+                                    onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                                    FIAT</button>
+                                -->
+                                </span>
+                            </label>
+                        </td>
                         <td class>$<span class="cash"></span></td>
-                        <td>FIAT</td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
                     </tr>
                     <tr>
-                        <td><a class="trans mx-auto" data-bs-toggle="collapse"
-                                data-bs-target="#pawn-shop-collapse">DEFI</a></td>
+                        <td>
+                            <a data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
+                                <div class="defi">
+                                    <span>DEFI LOANS</span>
+                                </div>
+                            </a>
+                        </td>
                         <td>- $<span class="debt"></span></td>
-                        <td>AAVE</td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
                     </tr>
                     <tr>
-                        <td>NFT</td>
-                        <td>0</td>
-                        <td>BAYC</td>
+                        <td><a href="https://opensea.io/collection/boredapeyachtclub" target="_blank">NFTS</a></td>
+                        <td>$0</td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
                     </tr>
                 </tbody>
             </table>
-            <div class="xs-stats collapse" id="pawn-shop-collapse">
-                <div>
-                    <input type="number" pattern="[0-9]*">
-                    <span>
-                        <button class="land">BORROW</button>
-                        <button class="pay">REPAY</button>
-                    </span>
-                </div>
-                <br /><br />
-            </div>
-            <label>
-                <input class="hidden" type="number" pattern="[0-9]*" value="1">
-                <span>
-                    <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
-                    <button class="depayland"
-                        onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
-                        FIAT</button>
-                </span>
-            </label>
         </div>
-
-
     </div>
 </div>
 
@@ -892,7 +919,7 @@
         return translateJson[key];
     }
     View.prototype.setup_coins = function () {
-        var row_coinlist = this.coins_container.querySelector('tr[data-drug]');
+        var row_coinlist = this.coins_container.querySelector('tr[coinlist]');
         let row_collapse_coinlist = this.coins_container.querySelectorAll('.collapse-transaction');
         var coins = DataCenter.coins;
         let i = 0;
@@ -917,7 +944,7 @@
         }
         row_coinlist.remove();
         row_collapse_coinlist.forEach(_ => _.remove());
-        this.coins = document.querySelectorAll('.coins tbody tr[data-drug]');
+        this.coins = document.querySelectorAll('.coins tbody tr[coinlist]');
         row_coinlist = document.querySelector('#wallet tr.coinlist');
         for (var drug in coins) {
             var row = row_coinlist.cloneNode(true);
@@ -970,10 +997,10 @@
         replaceText('.stats .total_space, .xs-stats .total_space', coat.total_space);
     };
     View.prototype.refresh_available_coins = function (available_coins) {
-        document.querySelectorAll('tr[data-drug].hidden').forEach(elem => elem.classList.remove('hidden'));
+        document.querySelectorAll('tr[coinlist].hidden').forEach(elem => elem.classList.remove('hidden'));
         for (var drug in available_coins) {
             if (!available_coins[drug]) {
-                document.querySelector('tr[data-drug]:nth-child(' + ((parseInt(drug) * 3) + 2) + ')').classList.add('hidden');
+                document.querySelector('tr[coinlist]:nth-child(' + ((parseInt(drug) * 3) + 2) + ')').classList.add('hidden');
             }
         }
     };
@@ -1253,8 +1280,8 @@
     docReady(function () {
         console.log("this")
         navigator.Controller = new Controller();
-        document.querySelectorAll("button[data-l10n-id]").forEach((elem) => {
-            let key = elem.attributes['data-l10n-id'].value;
+        document.querySelectorAll("button[maxamount]").forEach((elem) => {
+            let key = elem.attributes['maxamount'].value;
 
             if (key) {
                 elem.innerText = translate(key);
