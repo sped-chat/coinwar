@@ -31,7 +31,7 @@
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#ffc40d" target="_blank">
     <link rel="apple-touch-startup-image" href="/icons/1024.png" target="_blank">
-    <link rel="manifest" href="img/manifest.json" target="_blank">
+    <link rel="manifest" href="./img/meta/manifest.json" target="_blank">
     <meta name="apple-mobile-web-app-status-bar-style" content="black" target="_blank">
     <meta name="apple-mobile-web-app-title" content="COINWAR" target="_blank">
     <meta name="apple-mobile-web-app-capable" content="yes" target="_blank">
@@ -48,98 +48,99 @@
         const el = document.createElement('pwa-update');
         document.body.appendChild(el);
     </script>
-
 </head>
 
 <body>
+
+    <!--
     <div id="scenes">
-        <a href="https://hubs.mozilla.com/scenes/ALDsbzA" target="_blank"><img src="img/chania.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/SoYM2sD" target="_blank"><img src="img/galleria.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/mA587Zb" target="_blank"><img src="img/ia_100001428.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/n8YY4m7" target="_blank"><img src="img/ia_100001437.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/rfYecSz" target="_blank"><img src="img/ia_100001441.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/9ojuf8g" target="_blank"><img src="img/ia_100001454.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/M7SpyNc" target="_blank"><img src="img/ia_100000045.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/USM8k7h" target="_blank"><img src="img/ia_100001455.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/qPSddPm" target="_blank"><img src="img/ia_100001458.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/HRGBJLh" target="_blank"><img src="img/ia_100001459.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/Eo2fsJe" target="_blank"><img src="img/ia_100001460.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/SHWtTXj" target="_blank"><img src="img/ia_100001464.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/iHjFLTB" target="_blank"><img src="img/ia_100001461.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/qgbbTCM" target="_blank"><img src="img/ia_100001467.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/v4gz8Pn" target="_blank"><img src="img/ia_100001462.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/honkWgH" target="_blank"><img src="img/ia_100001465.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/GP3HEXX" target="_blank"><img src="img/ia_100001475.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/Uh8TPiu" target="_blank"><img src="img/ia_100001470.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/ZJXNkam" target="_blank"><img src="img/ia_100001471.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/kNaH85P" target="_blank"><img src="img/ia_100001474.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/UGbTQiQ" target="_blank"><img src="img/ia_100001477.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/tm8o9qZ" target="_blank"><img src="img/ia_100001478.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/gVBRJRy" target="_blank"><img src="img/ia_100001482.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/ZUZAUjJ" target="_blank"><img src="img/ia_100001487.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/R5fiWiK" target="_blank"><img src="img/ia_100001479.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/RbEQWMh" target="_blank"><img src="img/ia_100001483.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/aYZ5XL5" target="_blank"><img src="img/ia_100001488.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/8UGPT9g" target="_blank"><img src="img/ia_100001480.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/VZfH7u7" target="_blank"><img src="img/ia_100001485.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/2HryJZF" target="_blank"><img src="img/er.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/xc2fKxU" target="_blank"><img src="img/ia_100001410.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/AT2fxsQ" target="_blank"><img src="img/ia_100001413.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/4tiFpxb" target="_blank"><img src="img/ia_100001416.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/ETg26sY" target="_blank"><img src="img/ia_100001418.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/ugJ4XMb" target="_blank"><img src="img/ia_100001469.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/wvrqcxM" target="_blank"><img src="img/ia_100001472.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/D578sQt" target="_blank"><img src="img/nftmuseum.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/EZTitAA" target="_blank"><img src="img/vault.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/DBpKR9k" target="_blank"><img src="img/studio.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/pvcRbS9" target="_blank"><img src="img/ia_100001407.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/RMQnZ4F" target="_blank"><img src="img/ia_100001408.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/YQi9qsM" target="_blank"><img src="img/ia_100001411.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/FDPxxsQ" target="_blank"><img src="img/ia_100001414.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/BVnAY9r" target="_blank"><img src="img/ia_100001409.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/LxfKpa4" target="_blank"><img src="img/ia_100001412.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/zhZS2eB" target="_blank"><img src="img/ia_100001415.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/BVZsEwg" target="_blank"><img src="img/ia_100001417.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/fCSisCT" target="_blank"><img src="img/ia_100001420.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/zuspWn9" target="_blank"><img src="img/ia_100001424.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/Yj7E9Ke" target="_blank"><img src="img/ia_100000017.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/aVDfj3H" target="_blank"><img src="img/ia_100001427.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/xC3vwyM" target="_blank"><img src="img/ia_100001430.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/c2xDH7o" target="_blank"><img src="img/ia_100001422.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/CkAbh3S" target="_blank"><img src="img/ia_100001426.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/Y5xvipj" target="_blank"><img src="img/ia_100001429.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/oZy5NXt" target="_blank"><img src="img/ia_100001432.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/om4Mk52" target="_blank"><img src="img/ia_100001433.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/7TQ4fYU" target="_blank"><img src="img/ia_100001436.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/FJBX6QB" target="_blank"><img src="img/ia_100001439.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/fK4t25Q" target="_blank"><img src="img/ia_100001434.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/VyZJt3P" target="_blank"><img src="img/ia_100001440.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/ktNh6ap" target="_blank"><img src="img/ia_100001435.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/YK6SHmg" target="_blank"><img src="img/ia_100001438.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/LC69XCv" target="_blank"><img src="img/ia_100001442.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/8fapUXs" target="_blank"><img src="img/ia_100001445.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/6WJzbS2" target="_blank"><img src="img/ia_100001448.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/J4rWeQD" target="_blank"><img src="img/ia_100001443.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/5ESQFnK" target="_blank"><img src="img/ia_100001446.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/rjRcg4f" target="_blank"><img src="img/ia_100001449.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/eoaWrjs" target="_blank"><img src="img/ia_100001444.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/dU6t7KY" target="_blank"><img src="img/ia_100001447.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/D6KvK8d" target="_blank"><img src="img/ia_100001450.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/CXGsVGm" target="_blank"><img src="img/ia_100001451.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/cdrJYPM" target="_blank"><img src="img/ia_100001457.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/P7ZbyqU" target="_blank"><img src="img/ia_100001453.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/bQrvhtj" target="_blank"><img src="img/ia_100001456.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/XGxB9JF" target="_blank"><img src="img/ia_100001463.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/2JmxhX7" target="_blank"><img src="img/ia_100001466.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/KdvnJcm" target="_blank"><img src="img/ia_100001468.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/qyj9VSx" target="_blank"><img src="img/ia_100001473.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/xDEBwon" target="_blank"><img src="img/ia_100001476.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/roPSuvB" target="_blank"><img src="img/ia_100001484.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/H7RSqQK" target="_blank"><img src="img/ia_100001489.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/p42BRCZ" target="_blank"><img src="img/ia_100001481.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/CvGZ8cs" target="_blank"><img src="img/yips.webp"></a>
-        <a href="https://hubs.mozilla.com/vGxGjes" target="_blank"><img src="img/grock.webp"></a>
-        <a href="https://hubs.mozilla.com/scenes/B4Qp6AC" target="_blank"><img src="img/ia_100001490.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/ALDsbzA" target="_blank"><img src="./img/meta/chania.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/SoYM2sD" target="_blank"><img src="./img/meta/galleria.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/mA587Zb" target="_blank"><img src="./img/meta/ia_100001428.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/n8YY4m7" target="_blank"><img src="./img/meta/ia_100001437.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/rfYecSz" target="_blank"><img src="./img/meta/ia_100001441.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/9ojuf8g" target="_blank"><img src="./img/meta/ia_100001454.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/M7SpyNc" target="_blank"><img src="./img/meta/ia_100000045.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/USM8k7h" target="_blank"><img src="./img/meta/ia_100001455.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/qPSddPm" target="_blank"><img src="./img/meta/ia_100001458.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/HRGBJLh" target="_blank"><img src="./img/meta/ia_100001459.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/Eo2fsJe" target="_blank"><img src="./img/meta/ia_100001460.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/SHWtTXj" target="_blank"><img src="./img/meta/ia_100001464.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/iHjFLTB" target="_blank"><img src="./img/meta/ia_100001461.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/qgbbTCM" target="_blank"><img src="./img/meta/ia_100001467.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/v4gz8Pn" target="_blank"><img src="./img/meta/ia_100001462.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/honkWgH" target="_blank"><img src="./img/meta/ia_100001465.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/GP3HEXX" target="_blank"><img src="./img/meta/ia_100001475.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/Uh8TPiu" target="_blank"><img src="./img/meta/ia_100001470.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/ZJXNkam" target="_blank"><img src="./img/meta/ia_100001471.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/kNaH85P" target="_blank"><img src="./img/meta/ia_100001474.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/UGbTQiQ" target="_blank"><img src="./img/meta/ia_100001477.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/tm8o9qZ" target="_blank"><img src="./img/meta/ia_100001478.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/gVBRJRy" target="_blank"><img src="./img/meta/ia_100001482.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/ZUZAUjJ" target="_blank"><img src="./img/meta/ia_100001487.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/R5fiWiK" target="_blank"><img src="./img/meta/ia_100001479.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/RbEQWMh" target="_blank"><img src="./img/meta/ia_100001483.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/aYZ5XL5" target="_blank"><img src="./img/meta/ia_100001488.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/8UGPT9g" target="_blank"><img src="./img/meta/ia_100001480.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/VZfH7u7" target="_blank"><img src="./img/meta/ia_100001485.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/2HryJZF" target="_blank"><img src="./img/meta/er.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/xc2fKxU" target="_blank"><img src="./img/meta/ia_100001410.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/AT2fxsQ" target="_blank"><img src="./img/meta/ia_100001413.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/4tiFpxb" target="_blank"><img src="./img/meta/ia_100001416.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/ETg26sY" target="_blank"><img src="./img/meta/ia_100001418.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/ugJ4XMb" target="_blank"><img src="./img/meta/ia_100001469.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/wvrqcxM" target="_blank"><img src="./img/meta/ia_100001472.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/D578sQt" target="_blank"><img src="./img/meta/nftmuseum.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/EZTitAA" target="_blank"><img src="./img/meta/vault.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/DBpKR9k" target="_blank"><img src="./img/meta/studio.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/pvcRbS9" target="_blank"><img src="./img/meta/ia_100001407.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/RMQnZ4F" target="_blank"><img src="./img/meta/ia_100001408.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/YQi9qsM" target="_blank"><img src="./img/meta/ia_100001411.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/FDPxxsQ" target="_blank"><img src="./img/meta/ia_100001414.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/BVnAY9r" target="_blank"><img src="./img/meta/ia_100001409.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/LxfKpa4" target="_blank"><img src="./img/meta/ia_100001412.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/zhZS2eB" target="_blank"><img src="./img/meta/ia_100001415.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/BVZsEwg" target="_blank"><img src="./img/meta/ia_100001417.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/fCSisCT" target="_blank"><img src="./img/meta/ia_100001420.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/zuspWn9" target="_blank"><img src="./img/meta/ia_100001424.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/Yj7E9Ke" target="_blank"><img src="./img/meta/ia_100000017.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/aVDfj3H" target="_blank"><img src="./img/meta/ia_100001427.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/xC3vwyM" target="_blank"><img src="./img/meta/ia_100001430.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/c2xDH7o" target="_blank"><img src="./img/meta/ia_100001422.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/CkAbh3S" target="_blank"><img src="./img/meta/ia_100001426.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/Y5xvipj" target="_blank"><img src="./img/meta/ia_100001429.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/oZy5NXt" target="_blank"><img src="./img/meta/ia_100001432.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/om4Mk52" target="_blank"><img src="./img/meta/ia_100001433.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/7TQ4fYU" target="_blank"><img src="./img/meta/ia_100001436.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/FJBX6QB" target="_blank"><img src="./img/meta/ia_100001439.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/fK4t25Q" target="_blank"><img src="./img/meta/ia_100001434.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/VyZJt3P" target="_blank"><img src="./img/meta/ia_100001440.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/ktNh6ap" target="_blank"><img src="./img/meta/ia_100001435.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/YK6SHmg" target="_blank"><img src="./img/meta/ia_100001438.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/LC69XCv" target="_blank"><img src="./img/meta/ia_100001442.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/8fapUXs" target="_blank"><img src="./img/meta/ia_100001445.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/6WJzbS2" target="_blank"><img src="./img/meta/ia_100001448.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/J4rWeQD" target="_blank"><img src="./img/meta/ia_100001443.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/5ESQFnK" target="_blank"><img src="./img/meta/ia_100001446.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/rjRcg4f" target="_blank"><img src="./img/meta/ia_100001449.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/eoaWrjs" target="_blank"><img src="./img/meta/ia_100001444.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/dU6t7KY" target="_blank"><img src="./img/meta/ia_100001447.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/D6KvK8d" target="_blank"><img src="./img/meta/ia_100001450.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/CXGsVGm" target="_blank"><img src="./img/meta/ia_100001451.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/cdrJYPM" target="_blank"><img src="./img/meta/ia_100001457.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/P7ZbyqU" target="_blank"><img src="./img/meta/ia_100001453.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/bQrvhtj" target="_blank"><img src="./img/meta/ia_100001456.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/XGxB9JF" target="_blank"><img src="./img/meta/ia_100001463.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/2JmxhX7" target="_blank"><img src="./img/meta/ia_100001466.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/KdvnJcm" target="_blank"><img src="./img/meta/ia_100001468.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/qyj9VSx" target="_blank"><img src="./img/meta/ia_100001473.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/xDEBwon" target="_blank"><img src="./img/meta/ia_100001476.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/roPSuvB" target="_blank"><img src="./img/meta/ia_100001484.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/H7RSqQK" target="_blank"><img src="./img/meta/ia_100001489.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/p42BRCZ" target="_blank"><img src="./img/meta/ia_100001481.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/CvGZ8cs" target="_blank"><img src="./img/meta/yips.webp"></a>
+        <a href="https://hubs.mozilla.com/vGxGjes" target="_blank"><img src="./img/meta/grock.webp"></a>
+        <a href="https://hubs.mozilla.com/scenes/B4Qp6AC" target="_blank"><img src="./img/meta/ia_100001490.webp"></a>
     </div>
     <div id="working" style="display: none !important">
         <div id="scenes">
@@ -233,320 +234,959 @@
         </div>
 
         <div id="rooms">
-            <a href="https://hubs.mozilla.com/vGxGjes?vr_entry_type=2d_now"><img src="./img/grock.webp"
+            <a href="https://hubs.mozilla.com/vGxGjes?vr_entry_type=2d_now"><img src="./img/meta/grock.webp"
                     alt="SHLONG"></a>
-            <a href="https://hubs.mozilla.com/rP5iTJJ"><img src="./img/ia_100001407.webp" alt="FOYER"></a>
-            <a href="https://hubs.mozilla.com/K2Ror8Q"><img src="./img/ia_100001410.webp" alt="KERONE"></a>
-            <a href="https://hubs.mozilla.com/zHWvKQ8"><img src="./img/ia_100001413.webp" alt="EDEN PRAIRIE CENTER"></a>
-            <a href="https://hubs.mozilla.com/3UuJgVR"><img src="./img/ia_100001408.webp" alt="ANTELOPE CANYON"></a>
-            <a href="https://hubs.mozilla.com/4Sa2EKr"><img src="./img/ia_100001411.webp" alt="THE LIGHT HOUSE"></a>
-            <a href="https://hubs.mozilla.com/WDxkbGr"><img src="./img/ia_100001414.webp" alt="CUNY"></a>
-            <a href="https://hubs.mozilla.com/7uzBQ4F"><img src="./img/ia_100001409.webp" alt="CAMP"></a>
-            <a href="https://hubs.mozilla.com/r49uvjC"><img src="./img/ia_100001412.webp" alt="JRE"></a>
-            <a href="https://hubs.mozilla.com/yowKD78"><img src="./img/ia_100001415.webp" alt="DONN'S"></a>
-            <a href="https://hubs.mozilla.com/TrkzqHz"><img src="./img/ia_100001416.webp" alt="MALIBU GALLERY"></a>
+            <a href="https://hubs.mozilla.com/rP5iTJJ"><img src="./img/meta/ia_100001407.webp" alt="FOYER"></a>
+            <a href="https://hubs.mozilla.com/K2Ror8Q"><img src="./img/meta/ia_100001410.webp" alt="KERONE"></a>
+            <a href="https://hubs.mozilla.com/zHWvKQ8"><img src="./img/meta/ia_100001413.webp" alt="EDEN PRAIRIE CENTER"></a>
+            <a href="https://hubs.mozilla.com/3UuJgVR"><img src="./img/meta/ia_100001408.webp" alt="ANTELOPE CANYON"></a>
+            <a href="https://hubs.mozilla.com/4Sa2EKr"><img src="./img/meta/ia_100001411.webp" alt="THE LIGHT HOUSE"></a>
+            <a href="https://hubs.mozilla.com/WDxkbGr"><img src="./img/meta/ia_100001414.webp" alt="CUNY"></a>
+            <a href="https://hubs.mozilla.com/7uzBQ4F"><img src="./img/meta/ia_100001409.webp" alt="CAMP"></a>
+            <a href="https://hubs.mozilla.com/r49uvjC"><img src="./img/meta/ia_100001412.webp" alt="JRE"></a>
+            <a href="https://hubs.mozilla.com/yowKD78"><img src="./img/meta/ia_100001415.webp" alt="DONN'S"></a>
+            <a href="https://hubs.mozilla.com/TrkzqHz"><img src="./img/meta/ia_100001416.webp" alt="MALIBU GALLERY"></a>
 
-            <a href="https://hubs.mozilla.com/qD5FRze"><img src="./img/ia_100001418.webp" alt="MANHATTAN GALLERY"></a>
+            <a href="https://hubs.mozilla.com/qD5FRze"><img src="./img/meta/ia_100001418.webp" alt="MANHATTAN GALLERY"></a>
 
-            <a href="https://hubs.mozilla.com/yzYuMzj"><img src="./img/ia_100001419.webp" alt="LIGHTHOUSE GALLERY">
+            <a href="https://hubs.mozilla.com/yzYuMzj"><img src="./img/meta/ia_100001419.webp" alt="LIGHTHOUSE GALLERY">
 
-                <a href="https://hubs.mozilla.com/xvKLSip"><img src="./img/ia_100001417.webp" alt="CHAPEL"></a>
+                <a href="https://hubs.mozilla.com/xvKLSip"><img src="./img/meta/ia_100001417.webp" alt="CHAPEL"></a>
 
-                <a href="https://hubs.mozilla.com/H8i7ofY"><img src="./img/ia_100001420.webp" alt="CONCERTO">
+                <a href="https://hubs.mozilla.com/H8i7ofY"><img src="./img/meta/ia_100001420.webp" alt="CONCERTO">
 
-                    <a href="https://hubs.mozilla.com/PXLJiqx"><img src="./img/ia_100001424.webp" alt="">
+                    <a href="https://hubs.mozilla.com/PXLJiqx"><img src="./img/meta/ia_100001424.webp" alt="">
 
-                        <a href="https://hubs.mozilla.com/AmqAXT3"><img src="./img/ia_100000017.webp" alt="">
+                        <a href="https://hubs.mozilla.com/AmqAXT3"><img src="./img/meta/ia_100000017.webp" alt="">
 
-                            <a href="https://hubs.mozilla.com/4yUqmuv"><img src="./img/ia_100001427.webp" alt="">
+                            <a href="https://hubs.mozilla.com/4yUqmuv"><img src="./img/meta/ia_100001427.webp" alt="">
 
-                                <a href="https://hubs.mozilla.com/eAnWMGo"> <img src="./img/ia_100001430.webp" alt="">
+                                <a href="https://hubs.mozilla.com/eAnWMGo"> <img src="./img/meta/ia_100001430.webp" alt="">
 
-                                    <img src="./img/ia_100001422.webp" alt=""><a
+                                    <img src="./img/meta/ia_100001422.webp" alt=""><a
                                         href="https://hubs.mozilla.com/WExg5iw">Family
                                         Guy
 
-                                        <img src="./img/ia_100001428.webp" alt=""><a
+                                        <img src="./img/meta/ia_100001428.webp" alt=""><a
                                             href="https://hubs.mozilla.com/KVfbt8S">Animal
                                             Crossing
 
-                                            <img src="./img/ia_100001426.webp" alt=""><a
+                                            <img src="./img/meta/ia_100001426.webp" alt=""><a
                                                 href="https://hubs.mozilla.com/rnPbwmc">Throne
                                                 Room
 
-                                                <img src="./img/ia_100001429.webp" alt=""><a
+                                                <img src="./img/meta/ia_100001429.webp" alt=""><a
                                                     href="https://hubs.mozilla.com/hjTNb2L">Simpsons
 
-                                                    <img src="./img/ia_100001432.webp" alt=""><a
+                                                    <img src="./img/meta/ia_100001432.webp" alt=""><a
                                                         href="https://hubs.mozilla.com/AvKeUvy">Futurama
 
-                                                        <img src="./img/ia_100001433.webp" alt=""><a
+                                                        <img src="./img/meta/ia_100001433.webp" alt=""><a
                                                             href="https://hubs.mozilla.com/XCvnjFf">Chess^3
 
-                                                            <img src="./img/ia_100001436.webp" alt=""><a
+                                                            <img src="./img/meta/ia_100001436.webp" alt=""><a
                                                                 href="https://hubs.mozilla.com/9HPzLir">Pokemon
                                                                 Center
 
-                                                                <img src="./img/ia_100001439.webp" alt=""><a
+                                                                <img src="./img/meta/ia_100001439.webp" alt=""><a
                                                                     href="https://hubs.mozilla.com/r4AFswz">Van
                                                                     Gogh
 
-                                                                    <img src="./img/ia_100001434.webp" alt=""><a
+                                                                    <img src="./img/meta/ia_100001434.webp" alt=""><a
                                                                         href="https://hubs.mozilla.com/WsYmJAi">Synth
 
-                                                                        <img src="./img/ia_100001437.webp" alt=""><a
+                                                                        <img src="./img/meta/ia_100001437.webp" alt=""><a
                                                                             href="https://hubs.mozilla.com/dv3meeU">Rick's
                                                                             Living<br>Room
 
-                                                                            <img src="./img/ia_100001440.webp" alt=""><a
+                                                                            <img src="./img/meta/ia_100001440.webp" alt=""><a
                                                                                 href="https://hubs.mozilla.com/NoZhoHw">Dreamboat
 
-                                                                                <img src="./img/ia_100001435.webp"
+                                                                                <img src="./img/meta/ia_100001435.webp"
                                                                                     alt=""><a
                                                                                     href="https://hubs.mozilla.com/VThrGmi">Quiet
 
-                                                                                    <img src="./img/ia_100001438.webp"
+                                                                                    <img src="./img/meta/ia_100001438.webp"
                                                                                         alt=""><a
                                                                                         href="https://hubs.mozilla.com/TG3ueyD">Star
                                                                                         Wars<br>Bridge
 
-                                                                                        <img src="./img/ia_100001441.webp"
+                                                                                        <img src="./img/meta/ia_100001441.webp"
                                                                                             alt=""><a
                                                                                             href="https://hubs.mozilla.com/UGerrsN">Cave
 
-                                                                                            <img src="./img/ia_100001442.webp"
+                                                                                            <img src="./img/meta/ia_100001442.webp"
                                                                                                 alt=""><a
                                                                                                 href="https://hubs.mozilla.com/PLQ58fP">Doc's
                                                                                                 Garage
 
-                                                                                                <img src="./img/ia_100001445.webp"
+                                                                                                <img src="./img/meta/ia_100001445.webp"
                                                                                                     alt=""><a
                                                                                                     href="https://hubs.mozilla.com/B9JLZhp">Cabin
 
-                                                                                                    <img src="./img/ia_100001448.webp"
+                                                                                                    <img src="./img/meta/ia_100001448.webp"
                                                                                                         alt=""><a
                                                                                                         href="https://hubs.mozilla.com/N9DorSB">Boneworks
 
-                                                                                                        <img src="./img/ia_100001443.webp"
+                                                                                                        <img src="./img/meta/ia_100001443.webp"
                                                                                                             alt=""><a
                                                                                                             href="https://hubs.mozilla.com/3mJV7Gm">The
                                                                                                             Matrix
 
-                                                                                                            <img src="./img/ia_100001446.webp"
+                                                                                                            <img src="./img/meta/ia_100001446.webp"
                                                                                                                 alt=""><a
                                                                                                                 href="https://hubs.mozilla.com/wVvsj7s">Holodeck
 
-                                                                                                                <img src="./img/ia_100001449.webp"
+                                                                                                                <img src="./img/meta/ia_100001449.webp"
                                                                                                                     alt=""><a
                                                                                                                     href="https://hubs.mozilla.com/JqS9FxS">Portal
 
-                                                                                                                    <img src="./img/ia_100001444.webp"
+                                                                                                                    <img src="./img/meta/ia_100001444.webp"
                                                                                                                         alt=""><a
                                                                                                                         href="https://hubs.mozilla.com/teyn9zk">Stargate
 
-                                                                                                                        <img src="./img/ia_100001447.webp"
+                                                                                                                        <img src="./img/meta/ia_100001447.webp"
                                                                                                                             alt=""><a
                                                                                                                             href="https://hubs.mozilla.com/Hq8wJFz">Wanderers
 
-                                                                                                                            <img src="./img/ia_100001450.webp"
+                                                                                                                            <img src="./img/meta/ia_100001450.webp"
                                                                                                                                 alt=""><a
                                                                                                                                 href="https://hubs.mozilla.com/PMoxm6e">Rancor
                                                                                                                                 Pit
 
-                                                                                                                                <img src="./img/ia_100001451.webp"
+                                                                                                                                <img src="./img/meta/ia_100001451.webp"
                                                                                                                                     alt=""><a
                                                                                                                                     href="https://hubs.mozilla.com/5csZxA4">Hideout
 
-                                                                                                                                    <img src="./img/ia_100001454.webp"
+                                                                                                                                    <img src="./img/meta/ia_100001454.webp"
                                                                                                                                         alt=""><a
                                                                                                                                         href="https://hubs.mozilla.com/g3C76vU">Honey,
                                                                                                                                         I
                                                                                                                                         Shrunk<br>the
                                                                                                                                         Kids
 
-                                                                                                                                        <img src="./img/ia_100001457.webp"
+                                                                                                                                        <img src="./img/meta/ia_100001457.webp"
                                                                                                                                             alt=""><a
                                                                                                                                             href="https://hubs.mozilla.com/4v5PqHj">Metroid
 
-                                                                                                                                            <img src="./img/ia_100000045.webp"
+                                                                                                                                            <img src="./img/meta/ia_100000045.webp"
                                                                                                                                                 alt=""><a
                                                                                                                                                 href="https://hubs.mozilla.com/nUgNeEb">Trench
                                                                                                                                                 Run
 
-                                                                                                                                                <img src="./img/ia_100001455.webp"
+                                                                                                                                                <img src="./img/meta/ia_100001455.webp"
                                                                                                                                                     alt=""><a
                                                                                                                                                     href="https://hubs.mozilla.com/Vf2csUz">Sushi
 
-                                                                                                                                                    <img src="./img/ia_100001458.webp"
+                                                                                                                                                    <img src="./img/meta/ia_100001458.webp"
                                                                                                                                                         alt=""><a
                                                                                                                                                         href="https://hubs.mozilla.com/Zsrofnb">Peach's
 
-                                                                                                                                                        <img src="./img/ia_100001453.webp"
+                                                                                                                                                        <img src="./img/meta/ia_100001453.webp"
                                                                                                                                                             alt=""><a
                                                                                                                                                             href="https://hubs.mozilla.com/aX86gz9">Stonehenge
 
-                                                                                                                                                            <img src="./img/ia_100001456.webp"
+                                                                                                                                                            <img src="./img/meta/ia_100001456.webp"
                                                                                                                                                                 alt=""><a
                                                                                                                                                                 href="https://hubs.mozilla.com/Qso7nk4">Underway
 
-                                                                                                                                                                <img src="./img/ia_100001459.webp"
+                                                                                                                                                                <img src="./img/meta/ia_100001459.webp"
                                                                                                                                                                     alt=""><a
                                                                                                                                                                     href="https://hubs.mozilla.com/ducp6FV">Mirror's
                                                                                                                                                                     Edge
 
-                                                                                                                                                                    <img src="./img/ia_100001460.webp"
+                                                                                                                                                                    <img src="./img/meta/ia_100001460.webp"
                                                                                                                                                                         alt=""><a
                                                                                                                                                                         href="https://hubs.mozilla.com/XpTRG9o">Space
                                                                                                                                                                         Pod
 
-                                                                                                                                                                        <img src="./img/ia_100001463.webp"
+                                                                                                                                                                        <img src="./img/meta/ia_100001463.webp"
                                                                                                                                                                             alt=""><a
                                                                                                                                                                             href="https://hubs.mozilla.com/BNHVaoJ">Mars
                                                                                                                                                                             One
 
-                                                                                                                                                                            <img src="./img/ia_100001466.webp"
+                                                                                                                                                                            <img src="./img/meta/ia_100001466.webp"
                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                 href="https://hubs.mozilla.com/tjqsnCq">Friends
 
-                                                                                                                                                                                <img src="./img/ia_100001461.webp"
+                                                                                                                                                                                <img src="./img/meta/ia_100001461.webp"
                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                     href="https://hubs.mozilla.com/Jh4Hads">The
                                                                                                                                                                                     Lantern<br>Room
 
-                                                                                                                                                                                    <img src="./img/ia_100001464.webp"
+                                                                                                                                                                                    <img src="./img/meta/ia_100001464.webp"
                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                         href="https://hubs.mozilla.com/vW2jHCU">Bedroom
 
-                                                                                                                                                                                        <img src="./img/ia_100001467.webp"
+                                                                                                                                                                                        <img src="./img/meta/ia_100001467.webp"
                                                                                                                                                                                             alt=""><a
                                                                                                                                                                                             href="https://hubs.mozilla.com/etHKtek">Stage
 
-                                                                                                                                                                                            <img src="./img/ia_100001462.webp"
+                                                                                                                                                                                            <img src="./img/meta/ia_100001462.webp"
                                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                                 href="https://hubs.mozilla.com/ZSc2xH8">Alien
                                                                                                                                                                                                 Forest
 
-                                                                                                                                                                                                <img src="./img/ia_100001465.webp"
+                                                                                                                                                                                                <img src="./img/meta/ia_100001465.webp"
                                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                                     href="https://hubs.mozilla.com/KM8YBVC">Panic
                                                                                                                                                                                                     Room
 
-                                                                                                                                                                                                    <img src="./img/ia_100001468.webp"
+                                                                                                                                                                                                    <img src="./img/meta/ia_100001468.webp"
                                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                                         href="https://hubs.mozilla.com/jksqSru">Flynn's
 
-                                                                                                                                                                                                        <img src="./img/ia_100001469.webp"
+                                                                                                                                                                                                        <img src="./img/meta/ia_100001469.webp"
                                                                                                                                                                                                             alt=""><a
                                                                                                                                                                                                             href="https://hubs.mozilla.com/gbXdk6w">360
                                                                                                                                                                                                             Video
 
-                                                                                                                                                                                                            <img src="./img/ia_100001472.webp"
+                                                                                                                                                                                                            <img src="./img/meta/ia_100001472.webp"
                                                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                                                 href="https://hubs.mozilla.com/EPigxD6">360
                                                                                                                                                                                                                 Photo
 
-                                                                                                                                                                                                                <img src="./img/ia_100001475.webp"
+                                                                                                                                                                                                                <img src="./img/meta/ia_100001475.webp"
                                                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                                                     href="https://hubs.mozilla.com/rAcW76n">FTM
 
-                                                                                                                                                                                                                    <img src="./img/ia_100001470.webp"
+                                                                                                                                                                                                                    <img src="./img/meta/ia_100001470.webp"
                                                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                                                         href="https://hubs.mozilla.com/aE8se2a">The
                                                                                                                                                                                                                         Deep
 
-                                                                                                                                                                                                                        <img src="./img/ia_100001473.webp"
+                                                                                                                                                                                                                        <img src="./img/meta/ia_100001473.webp"
                                                                                                                                                                                                                             alt=""><a
                                                                                                                                                                                                                             href="https://hubs.mozilla.com/ZDu2SkC">Classroom
 
-                                                                                                                                                                                                                            <img src="./img/ia_100001476.webp"
+                                                                                                                                                                                                                            <img src="./img/meta/ia_100001476.webp"
                                                                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                                                                 href="https://hubs.mozilla.com/BbuC4Zs">Debate
 
-                                                                                                                                                                                                                                <img src="./img/ia_100001471.webp"
+                                                                                                                                                                                                                                <img src="./img/meta/ia_100001471.webp"
                                                                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                                                                     href="https://hubs.mozilla.com/x4HhANA">Treehouses
 
-                                                                                                                                                                                                                                    <img src="./img/ia_100001474.webp"
+                                                                                                                                                                                                                                    <img src="./img/meta/ia_100001474.webp"
                                                                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                                                                         href="https://hubs.mozilla.com/ZLRUXCi">80's
                                                                                                                                                                                                                                         Room
 
-                                                                                                                                                                                                                                        <img src="./img/ia_100001477.webp"
+                                                                                                                                                                                                                                        <img src="./img/meta/ia_100001477.webp"
                                                                                                                                                                                                                                             alt=""><a
                                                                                                                                                                                                                                             href="https://hubs.mozilla.com/HM5vVoe">814
                                                                                                                                                                                                                                             Kelly
                                                                                                                                                                                                                                             Road
 
-                                                                                                                                                                                                                                            <img src="./img/ia_100001478.webp"
+                                                                                                                                                                                                                                            <img src="./img/meta/ia_100001478.webp"
                                                                                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                                                                                 href="https://hubs.mozilla.com/TDNCUMG">Level
                                                                                                                                                                                                                                                 1
 
-                                                                                                                                                                                                                                                <img src="./img/ia_100001482.webp"
+                                                                                                                                                                                                                                                <img src="./img/meta/ia_100001482.webp"
                                                                                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                                                                                     href="https://hubs.mozilla.com/QuiLcjf">Rooftop
 
-                                                                                                                                                                                                                                                    <img src="./img/ia_100001487.webp"
+                                                                                                                                                                                                                                                    <img src="./img/meta/ia_100001487.webp"
                                                                                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                                                                                         href="https://hubs.mozilla.com/Hyqt2Dk">Big
                                                                                                                                                                                                                                                         Bang
                                                                                                                                                                                                                                                         Theory
 
-                                                                                                                                                                                                                                                        <img src="./img/ia_100001479.webp"
+                                                                                                                                                                                                                                                        <img src="./img/meta/ia_100001479.webp"
                                                                                                                                                                                                                                                             alt=""><a
                                                                                                                                                                                                                                                             href="https://hubs.mozilla.com/tLUHTCx">Skyscraper
 
-                                                                                                                                                                                                                                                            <img src="./img/ia_100001483.webp"
+                                                                                                                                                                                                                                                            <img src="./img/meta/ia_100001483.webp"
                                                                                                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                                                                                                 href="https://hubs.mozilla.com/Vdscuxn">Coffee
                                                                                                                                                                                                                                                                 Shop
 
-                                                                                                                                                                                                                                                                <img src="./img/ia_100001488.webp"
+                                                                                                                                                                                                                                                                <img src="./img/meta/ia_100001488.webp"
                                                                                                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                                                                                                     href="https://hubs.mozilla.com/Lngx4so">Doom
 
-                                                                                                                                                                                                                                                                    <img src="./img/ia_100001480.webp"
+                                                                                                                                                                                                                                                                    <img src="./img/meta/ia_100001480.webp"
                                                                                                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                                                                                                         href="https://hubs.mozilla.com/GpFxGjJ">Chutes
                                                                                                                                                                                                                                                                         &
                                                                                                                                                                                                                                                                         Ladders
 
-                                                                                                                                                                                                                                                                        <img src="./img/ia_100001484.webp"
+                                                                                                                                                                                                                                                                        <img src="./img/meta/ia_100001484.webp"
                                                                                                                                                                                                                                                                             alt=""><a
                                                                                                                                                                                                                                                                             href="https://hubs.mozilla.com/X9g6r9U">Island
 
-                                                                                                                                                                                                                                                                            <img src="./img/ia_100001489.webp"
+                                                                                                                                                                                                                                                                            <img src="./img/meta/ia_100001489.webp"
                                                                                                                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                                                                                                                 href="https://hubs.mozilla.com/9hteV6o">Verzasca
 
-                                                                                                                                                                                                                                                                                <img src="./img/ia_100001481.webp"
+                                                                                                                                                                                                                                                                                <img src="./img/meta/ia_100001481.webp"
                                                                                                                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                                                                                                                     href="https://hubs.mozilla.com/Rmgt6qM">Abandoned
 
-                                                                                                                                                                                                                                                                                    <img src="./img/ia_100001490.webp"
+                                                                                                                                                                                                                                                                                    <img src="./img/meta/ia_100001490.webp"
                                                                                                                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                                                                                                                         href="https://hubs.mozilla.com/KWEqB5L">Avengers
 
-                                                                                                                                                                                                                                                                                        <img src="./img/er.webp"
+                                                                                                                                                                                                                                                                                        <img src="./img/meta/er.webp"
                                                                                                                                                                                                                                                                                             alt=""><a
                                                                                                                                                                                                                                                                                             href="https://hubs.mozilla.com/scenes/2HryJZF">Escape
 
-                                                                                                                                                                                                                                                                                            <img src="./img/contact.webp"
+                                                                                                                                                                                                                                                                                            <img src="./img/meta/contact.webp"
                                                                                                                                                                                                                                                                                                 alt=""><a
                                                                                                                                                                                                                                                                                                 href="nft.html">NFTS
 
-                                                                                                                                                                                                                                                                                                <img src="./img/vault.webp"
+                                                                                                                                                                                                                                                                                                <img src="./img/meta/vault.webp"
                                                                                                                                                                                                                                                                                                     alt=""><a
                                                                                                                                                                                                                                                                                                     href="https://hubs.mozilla.com/6kXtonf/">Vault
                                                                                                                                                                                                                                                                                                     of
                                                                                                                                                                                                                                                                                                     Coin
 
-                                                                                                                                                                                                                                                                                                    <img src="./img/nftmuseum.webp"
+                                                                                                                                                                                                                                                                                                    <img src="./img/meta/nftmuseum.webp"
                                                                                                                                                                                                                                                                                                         alt=""><a
                                                                                                                                                                                                                                                                                                         href="https://hubs.mozilla.com/dY9UE5o/">NFT
                                                                                                                                                                                                                                                                                                         Museum
         </div>
     </div>
-</body>
+    -->
 
-</html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        var cards = $(".container-content .items .item");
+        for (var i = 0; i < cards.length; i++) {
+            var target = Math.floor(Math.random() * cards.length - 1) + 1;
+            var target2 = Math.floor(Math.random() * cards.length - 1) + 1;
+            cards.eq(target).before(cards.eq(target2));
+        }
+
+        var url = $('.item a:first').attr('href');
+
+        var delay = 42000;
+        var timeoutID = setTimeout(function () {
+            window.location.href = "https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high";
+        }, delay);
+    </script>
+
+    <style>
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url(./font/HelveticaNeue.ttf);
+        }
+
+        @font-face {
+            font-family: proxima-nova-regul;
+            src: url(./font/Proxima-Nova-Regul.otf);
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            margin: 0;
+        }
+
+        .mt_50 {
+            margin-top: 5rem;
+        }
+
+        .container-content {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .items {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            width: 36rem;
+            height: 36rem;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item a {
+            position: absolute;
+            z-index: 9;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid #fff;
+            background-color: rgba(0, 0, 0, .69);
+            font-size: 1.7rem;
+            font-style: normal;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 3px;
+            text-align: center;
+            font-family: 'proxima-nova-regul';
+            transition: .3s;
+            padding: 17px 41px;
+            width: max-content;
+        }
+
+        .overlay:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: black;
+            opacity: .2;
+        }
+
+        .item a:hover {
+            background-color: rgba(0, 0, 0, .50);
+        }
+
+        .footer ul li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .footer ul li a {
+            color: #8a8a8a;
+            font-size: 1.6rem;
+            font-family: proxima-nova-regul;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .footer ul li span {
+            padding: 0 5px;
+        }
+
+        .footer ul li p {
+            color: #8a8a8a;
+            font-size: 1.6rem;
+            font-family: proxima-nova-regul;
+        }
+
+        .footer ul li a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            html {
+                font-size: 58%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            html {
+                font-size: 58%;
+            }
+
+            .container-content {
+                width: 750px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            html {
+                font-size: 58%;
+            }
+
+            .container-content {
+                width: 100%;
+                padding: 0 10px;
+                margin-bottom: 50px;
+            }
+
+            .item {
+                margin-bottom: 2rem;
+                width: 100%;
+            }
+
+            .footer ul {
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 400px) and (max-width: 767px) {
+            .container-content {
+                width: 400px;
+            }
+
+            .item {
+                width: 36rem;
+            }
+        }
+    </style>
+
+    <div class=" container-content">
+        <div class="items mt_50">
+            <div class="item overlay">
+                <img src="./img/meta/grock.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/vGxGjes?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">SHLONG
+                    PARTY</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001407.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/rP5iTJJ?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Foyer</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001410.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/K2Ror8Q?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Kerone</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001413.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/zHWvKQ8?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Eden
+                    Prairie Center</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001408.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/3UuJgVR?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Antelope
+                    Canyon</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001411.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/4Sa2EKr?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">The
+                    Light House</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001414.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/WDxkbGr?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">CUNY</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001409.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/7uzBQ4F?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Camp</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001412.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/r49uvjC?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">The
+                    JRE</a>
+            </div>
+            <div class="item overlay ">
+                <img src="./img/meta/ia_100001415.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/yowKD78?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Donn's
+                    Depot</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001416.webp" alt="">
+                <a href="https://hubs.mozilla.com/TrkzqHz/">Malibu Gallery</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001418.webp" alt="">
+                <a href="https://hubs.mozilla.com/qD5FRze">Manhattan <br> Gallery</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001419.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/yzYuMzj?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Lighthouse
+                    <br> Gallery</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001417.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/xvKLSip?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Chapel</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001420.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/H8i7ofY?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Concerto</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001424.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/PXLJiqx?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Robert's</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100000017.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/AmqAXT3?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Star
+                    Trek</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001427.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/4yUqmuv?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Shrine
+                    of <br> Resurrection</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001430.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/eAnWMGo?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Rick's
+                    Garage</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001422.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/WExg5iw?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Family
+                    Guy</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001428.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/KVfbt8S?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Animal
+                    Crossing</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001426.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/rnPbwmc?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Throne
+                    Room</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001429.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/hjTNb2L?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Simpsons</a>
+            </div>
+            <div class="item overlay ">
+                <img src="./img/meta/ia_100001432.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/AvKeUvy?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Futurama</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001433.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/XCvnjFf?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Chess^3</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001436.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/9HPzLir?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Pokemon
+                    Center</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001439.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/r4AFswz?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Van
+                    Gogh</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001434.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/WsYmJAi?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Synth</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001437.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/dv3meeU?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Rick's
+                    Living <br> Room</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001440.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/NoZhoHw?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Dreamboat</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001435.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/VThrGmi?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Quiet</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001438.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/TG3ueyD?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Star
+                    Wars <br> Bridge</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001441.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/UGerrsN?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Cave</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001442.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/PLQ58fP?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Doc's
+                    Garage</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001445.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/B9JLZhp?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Cabin</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001448.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/N9DorSB?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Boneworks</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001443.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/3mJV7Gm?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">The
+                    Matrix</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001446.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/wVvsj7s?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Holodeck</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001449.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/JqS9FxS?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Portal</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001444.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/teyn9zk?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Stargate</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001447.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Hq8wJFz?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Wanderers</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001450.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/PMoxm6e?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Rancor
+                    Pit</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001451.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/5csZxA4?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Hideout</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001454.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/g3C76vU?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Honey,
+                    I Shrunk <br> the Kids</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001457.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/4v5PqHj?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Metroid</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100000045.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/nUgNeEb?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Trench
+                    Run</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001455.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Vf2csUz?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Sushi</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001458.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Zsrofnb?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Peach's</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001453.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/aX86gz9?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Stonehenge</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001456.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Qso7nk4?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Underway</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001459.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/ducp6FV?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Mirror's
+                    Edge</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001460.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/XpTRG9o?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Space
+                    Pod</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001463.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/BNHVaoJ?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Mars
+                    One</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001466.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/tjqsnCq?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Friends</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001461.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Jh4Hads?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">The
+                    Lantern <br> Room</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001464.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/vW2jHCU?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Bedroom</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001467.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/etHKtek?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Stage</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001462.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/ZSc2xH8?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Alien
+                    Forest</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001465.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/KM8YBVC?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Panic
+                    Room</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001468.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/jksqSru?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Flynn's</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001469.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/gbXdk6w?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">360
+                    Video</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001472.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/EPigxD6?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">360
+                    Photo</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001475.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/rAcW76n?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">FTM</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001470.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/aE8se2a?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">The
+                    Deep</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001473.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/ZDu2SkC?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Classroom</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001476.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/BbuC4Zs?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Debate</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001471.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/x4HhANA?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Treehouses</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001474.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/ZLRUXCi?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">80's
+                    Room</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001477.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/HM5vVoe?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">814
+                    Kelly Road</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001478.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/TDNCUMG?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Level
+                    1</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001482.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/QuiLcjf?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Rooftop</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001487.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Hyqt2Dk?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Big
+                    Bang Theory</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001479.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/tLUHTCx?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Skyscraper</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001483.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Vdscuxn?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Coffee
+                    Shop</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001488.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Lngx4so?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Doom</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001480.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/GpFxGjJ?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Chutes
+                    & Ladders</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001484.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/X9g6r9U?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Island</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001489.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/9hteV6o?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Verzasca</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001481.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/Rmgt6qM?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Abandoned</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/ia_100001490.webp" alt="">
+                <a
+                    href="https://hubs.mozilla.com/KWEqB5L?vr_entry_type=2d_now&default_material_quality=highdefault_mobile_material_quality=high">Avengers</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/er.webp" alt="">
+                <a href="https://hubs.mozilla.com/scenes/2HryJZF">Escape</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/contact.webp" alt="">
+                <a href="nft.html">NFTS</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/vault.webp" alt="">
+                <a href="https://hubs.mozilla.com/6kXtonf/">Vault of Coin</a>
+            </div>
+            <div class="item overlay">
+                <img src="./img/meta/nftmuseum.webp" alt="">
+                <a href="https://hubs.mozilla.com/dY9UE5o/">NFT Museum</a>
+            </div>
+        </div>
+    </div>
+
+</body>
