@@ -71,9 +71,7 @@
                 0 0 3vh #f3ec78
         }
 
-        .coins {
-            margin-top: 7vh;
-        }
+        .coins {}
 
         .footer {
             line-height: 2.5vh;
@@ -142,7 +140,7 @@
         }
 
         .navbar {
-            background-color: black;
+            background-image: var(--bs-gradient);
             height: 7vh
         }
 
@@ -178,11 +176,23 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top">
-        <div class="container justify-content-around">
-            <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">🪙</a>
-            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a>
-            <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">💱</a>
+    <nav class="navbar sticky-top">
+        <div class="container-fluid">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">🪙</a>
+                        </td>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a>
+                        </td>
+                        <td>
+                            <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">💱</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </nav>
     <table class="coins">
@@ -203,7 +213,9 @@
             </tr>
             <tr class="collapse-transaction collapse" id="">
                 <td></td>
-                <td>
+                <td class="hidden"></td>
+                <td></td>
+                <td class="text-center py-3">
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
                         <button class="trans max" type="button" data-l10n-id="max">
@@ -212,10 +224,10 @@
                         </button>
                     </span>
                 </td>
-                <td></td>
             </tr>
         </tbody>
     </table>
+
     <div class="footer">
         <div class="corndog"><a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">🐈</a></div>
         <a>
@@ -250,6 +262,11 @@
         </a>
     </div>
 </body>
+
+<div id="modal-high-score" class="modal">
+    <ul>
+    </ul>
+</div>
 
 <div id="cycle" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="cycle">
     <div id="offcanvas-cities" class="offcanvas-body">
@@ -318,6 +335,19 @@
             </div>
         </div>
         -->
+        <br />
+        <button class="trans mx-auto" data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
+            DEFI LENDING
+        </button>
+        <div class="xs-stats collapse" id="pawn-shop-collapse">
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land">BORROW</button>
+                    <button class="pay">REPAY</button>
+                </span>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -512,110 +542,6 @@
             irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
         <br />
         <p>This policy is effective as of April 20, 2022.</p>
-    </div>
-</div>
-
-<div id="modal-high-score" class="modal">
-    <ul>
-    </ul>
-</div>
-
-<div id="modal-transaction" class="modal">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4><span class="modal-title"></span></h4>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body">
-                    <label>
-                        <div>
-                            <input type="number" pattern="[0-9]*" value="1">
-                            <span>
-                                <button class="btn max" type="button" data-l10n-id="max">
-                                </button>
-                                <button class="btn action" type="button" data-bs-dismiss="modal">
-                                </button>
-                            </span>
-                        </div>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-inventory" class="modal">
-    <div class="modal-dialog modal-content modal-body modal-inventory xs-stats">
-        <div>
-            <div>
-                <table class="xs-stats">
-                    <tbody>
-                        <tr>
-                            <th>COIN</th>
-                            <th>QUANTITY</th>
-                            <th>VALUE</th>
-                        </tr>
-                        <tr class="coinlist hidden">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>USDC</td>
-                            <td class>$<span class="cash"></span></td>
-                            <td>FIAT</td>
-                        </tr>
-                        <tr>
-                            <td>DEFI</td>
-                            <td>- $<span class="debt"></span></td>
-                            <td>AAVE</td>
-                        </tr>
-                        <tr>
-                            <td>NFT</td>
-                            <td>0</td>
-                            <td>BAYC</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br /><br />
-                <label>
-                    <input type="number" pattern="[0-9]*" value="1">
-                    <span>
-                        <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
-                        <button class="depayland"
-                            onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
-                            FIAT</button>
-                    </span>
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-pawn-shop" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body xs-stats">
-            <h1>DEFI LOANS : $<span class="debt"></span></h1>
-            <br />
-            <div>
-                <input type="number" pattern="[0-9]*">
-                <span>
-                    <button class="land" data-bs-dismiss="modal">BORROW</button>
-                    <button class="pay" data-bs-dismiss="modal">REPAY</button>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-cities" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-body cities">
-        </div>
-        <div class="modal-body xs-stats">
-            <h1>YEAR : <span class="day"></span></h1>
-        </div>
     </div>
 </div>
 
@@ -1443,31 +1369,12 @@
                     self.view.refresh_news(self.news_manager.news);
                     self.view.refresh_prices(self.game.city.prices);
                     self.view.refresh_stats(self.game, self.coat);
-                    if (self.game.day == self.game.end) {
-                        document.querySelectorAll('a[data-bs-target="#modal-cities"]').forEach((elem) => {
-                            elem.innerHTML = '<i class="glyphicon glyphicon-stop"></i> ' + translate('end');
-                            elem.attributes['href'] = '#'
-                            let a = elem.onclick; elem.onclick = (ev) => {
-                                if (a) a(ev);
-                                document.querySelector('#modal-cities .cities button[data-city]:not(.current)').click();
-                            }
-                        })
-                    }
                 }
                 document.querySelectorAll('.navbar .navbar-collapse').forEach((elem) => {
                     elem.classList.remove('in')
                 })
             }
         })
-        document.querySelectorAll('a[data-bs-target="#modal-pawn-shop"]').forEach((elem) => {
-            let a = elem.onclick; elem.onclick = (ev) => {
-                if (a) a(ev);
-                document.querySelectorAll('#modal-pawn-shop .form-group').forEach((elem) => { elem.classList.remove('has-error') });
-                document.querySelectorAll('#modal-pawn-shop .debt').forEach((elem) => { elem.innerText = self.game.debt })
-                document.querySelectorAll('#modal-pawn-shop input').forEach((elem) => { elem.value = 0; })
-            }
-        })
-        console.log("Here?")
         document.querySelectorAll('a[href="#wallet"]').forEach((elem) => {
             let a = elem.onclick;
             console.log(elem)
@@ -1540,20 +1447,15 @@
                 }
             }
         })
-        document.querySelectorAll('#modal-pawn-shop button.land').forEach((elem) => {
+        document.querySelectorAll('#pawn-shop-collapse button.land').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
-                if (a) a(ev);
                 var amount = parseInt(elem.parentNode.previousElementSibling.value);
                 self.game.debt += amount;
                 self.coat.cash += amount;
                 elem.parentNode.previousElementSibling.value = 0;
                 self.view.refresh_stats(self.game, self.coat);
-            }
-        })
-        document.querySelectorAll('#modal-pawn-shop button.pay-max').forEach((elem) => {
-            let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
-                elem.parentNode.previousElementSibling.value = (Math.min(self.coat.cash, self.game.debt));
+
             }
         })
         document.querySelectorAll('#wallet button.max').forEach((elem) => {
