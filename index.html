@@ -60,29 +60,15 @@
             text-decoration: none;
         }
 
-        .footer {
-            line-height: 2vh;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            padding-bottom: 3vh
+        .cycle {
+            margin-top: -5vh
         }
 
-        .footer a {
-            font-size: 1vh;
-            color: inherit
-        }
-
-        .footer .cycle {
-            margin-bottom: 4vh
-        }
-
-        .footer .cycle a {
+        .cycle a {
             font-size: 7vh
         }
 
-        .footer .cycle:hover a {
+        .cycle:hover a {
             font-size: 7.7vh;
             background-image: linear-gradient(45deg, #f3ec78, #af4261, #f3ec78);
             background-size: auto auto;
@@ -99,6 +85,20 @@
             to {
                 background-position: 200% center;
             }
+        }
+
+        .footer {
+            line-height: 2vh;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding-bottom: 3vh
+        }
+
+        .footer a {
+            font-size: 1vh;
+            color: inherit
         }
 
         .footer svg {
@@ -242,10 +242,8 @@
             </tr>
         </tbody>
     </table>
-
+    <div class="cycle"><a>🐈</a></div>
     <div class="footer">
-        <div class="cycle"><a>🐈</a>
-        </div>
         <a>
             <a href="https://twitter.com/coinwarapp" target="_blank">
                 <svg class="bi bi-twitter" viewBox="0 0 16 16">
