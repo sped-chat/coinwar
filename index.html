@@ -280,11 +280,6 @@
     </div>
 </body>
 
-<div id="modal-high-score" class="modal">
-    <ul>
-    </ul>
-</div>
-
 <div id="cycle" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="cycle">
     <div id="offcanvas-cities" class="offcanvas-body">
         <div class="cities">
@@ -1016,12 +1011,6 @@
         }
     };
     View.prototype.refresh_high_score = function (high_score) {
-        document.querySelector('#modal-high-score ul').innerHTML = '';
-        for (var i in high_score) {
-            if (high_score[i] != 'null' && high_score[i] != null) {
-                document.querySelector('#modal-high-score ul').append('<li>' + high_score[i] + '</li>');
-            }
-        }
     };
     View.prototype.refresh_stone_level = function (stone_level) {
         var colors = ['red', 'yellow', 'green', 'blue', 'orange'];
