@@ -71,8 +71,6 @@
                 0 0 3vh #f3ec78
         }
 
-        .coins {}
-
         .footer {
             line-height: 2.5vh;
             position: fixed;
@@ -140,12 +138,7 @@
         }
 
         .navbar {
-            background-image: var(--bs-gradient);
-            height: 7vh
-        }
-
-        .navbar a {
-            font-size: 5vh
+            background: #101010
         }
 
         .offcanvas {
@@ -176,12 +169,69 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a>
-            <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">💱</a>
+            <a class="navbar-toggler xs-stats" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">COINWAR
+                c.<span class="day"></span></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div>
+                    <table class="xs-stats">
+                        <tbody>
+                            <tr>
+                                <th>COIN</th>
+                                <th>QUANTITY</th>
+                                <th>VALUE</th>
+                            </tr>
+                            <tr class="coinlist hidden">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>USDC</td>
+                                <td class>$<span class="cash"></span></td>
+                                <td>FIAT</td>
+                            </tr>
+                            <tr>
+                                <td><a class="trans mx-auto" data-bs-toggle="collapse"
+                                        data-bs-target="#pawn-shop-collapse">DEFI</a></td>
+                                <td>- $<span class="debt"></span></td>
+                                <td>AAVE</td>
+                            </tr>
+                            <tr>
+                                <td>NFT</td>
+                                <td>0</td>
+                                <td>BAYC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="xs-stats collapse" id="pawn-shop-collapse">
+                        <div>
+                            <input type="number" pattern="[0-9]*">
+                            <br />
+                            <span>
+                                <button class="land">BORROW</button>
+                                <button class="pay">REPAY</button>
+                            </span>
+                            <br /><br />
+                        </div>
+                    </div>
+                    <label>
+                        <input class="hidden" type="number" pattern="[0-9]*" value="1">
+                        <span>
+                            <button id="depay1" class="depayland">DEPOSIT TOKEN</button>
+                            <button class="depayland"
+                                onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                                FIAT</button>
+                        </span>
+                    </label>
+                </div>
+            </div>
         </div>
     </nav>
+
     <table class="coins">
         <tbody>
             <tr>
@@ -192,10 +242,10 @@
             <tr data-drug="0">
                 <td data-bs-toggle="offcanvas" href="#prices" aria-controls="prices"></td>
                 <td class="hidden"></td>
-                <td></td>
+                <td data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet"></td>
                 <td>
-                    <a class="buy-xs" data-drug="" data-bs-toggle="collapse" data-bs-target-1="">📈</a>
-                    <a class="sell-xs" data-bs-toggle="collapse" data-bs-target-1="">📉</a>
+                    <a class="buy-xs" data-drug="" data-bs-toggle="collapse" data-bs-target-1="">💰</a>
+                    <a class="sell-xs" data-bs-toggle="collapse" data-bs-target-1="">💰</a>
                 </td>
             </tr>
             <tr class="collapse-transaction collapse" id="">
@@ -376,9 +426,10 @@
 <div id="privacy" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="privacy">
     <div class="offcanvas-body small">
         <h1>PRIVACY POLICY</h1>
-        <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot; (hereafter
-            referred to as The Corporation).
+        <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot;
             <br />
+            (hereafter referred to as The Corporation).
+            <br /><br />
             By using this service, you agree to the following:
         </p>
         <br />
