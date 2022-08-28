@@ -12,18 +12,18 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/icons/512.png",
+            "src": "/img/512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "/icons/512-maskable.png",
+            "src": "/img/512-maskable.png",
             "sizes": "196x196",
             "type": "image/png",
             "purpose": "maskable"
         },
         {
-            "src": "/icons/favicon.svg",
+            "src": "/img/favicon.svg",
             "purpose": "maskable any",
             "sizes": "any"
         }
