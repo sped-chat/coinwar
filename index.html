@@ -926,7 +926,6 @@
         let row_collapse_coinlist = this.coins_container.querySelectorAll('.collapse-transaction');
         var coins = DataCenter.coins;
         let i = 0;
-        console.log("Row Collapse Coinlist", row_collapse_coinlist)
         for (var coin in coins) {
             var row = row_coinlist.cloneNode(true);
             let row_collapses = []
@@ -1214,7 +1213,6 @@
                 this.prices[coin] = Math.round(rand(minimum_price, maximum_price));
             }
         }
-        console.log("Prices", this.prices)
     }
     function News(text, type) {
         this.text = text;
@@ -1236,7 +1234,6 @@
     // controller
 
     (function (funcName, baseObj) {
-        console.log("this2")
         funcName = funcName || "docReady";
         baseObj = baseObj || window;
         var readyList = [];
@@ -1281,7 +1278,6 @@
         }
     })("docReady", window);
     docReady(function () {
-        console.log("this")
         navigator.Controller = new Controller();
         document.querySelectorAll("button[maxamount]").forEach((elem) => {
             let key = elem.attributes['maxamount'].value;
@@ -1383,7 +1379,6 @@
         })
         document.querySelectorAll('a[href="#wallet"]').forEach((elem) => {
             let a = elem.onclick;
-            console.log(elem)
             elem.onclick = (ev) => {
                 if (a) a(ev);
                 self.view.refresh_inventory(self.coat.coins);
@@ -1592,6 +1587,7 @@
         this.game.add_high_score(high_score_string);
         this.view.refresh_high_score(this.game.high_score());
     };
+    console.log("What ya doin' in my waters?")
 </script>
 
 </html>
