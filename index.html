@@ -262,6 +262,7 @@
             </tr>
         </tbody>
     </table>
+
     <div class="footer">
         <div class="corndog"><a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">🐈</a></div>
         <a>
@@ -316,14 +317,17 @@
                 <br /><br />
             </div>
         </div>
+
         <div>
-            <table class="table table-borderless">
+            <table class="xs-stats table table-borderless">
                 <tbody>
-                    <tr coinlist="0" class="coinlist">
-                        <th></th>
-                        <th></th>
+                    <tr class="coinlist hidden">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                    <tr class="xs-stats">
+                    <tr>
                         <td>
                             <label>
                                 <input class="hidden" type="number" pattern="[0-9]*" value="1">
@@ -337,7 +341,7 @@
                         </td>
                         <td class>$<span class="cash"></span></td>
                     </tr>
-                    <tr class="xs-stats">
+                    <tr>
                         <td>
                             <a data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
                                 <div class="defi">
