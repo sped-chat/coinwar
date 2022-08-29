@@ -1389,6 +1389,13 @@
                 self.view.refresh_inventory(self.coat.coins);
             }
         })
+        document.querySelectorAll('td[href="#wallet"]').forEach((elem) => {
+            let a = elem.onclick;
+            elem.onclick = (ev) => {
+                if (a) a(ev);
+                self.view.refresh_inventory(self.coat.coins);
+            }
+        })
         document.querySelectorAll('button[href="#wallet"]').forEach((elem) => {
             let a = elem.onclick
             elem.onclick = (ev) => {
