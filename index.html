@@ -67,22 +67,12 @@
         a:hover {
             color: inherit;
             text-shadow: 0 0 1vh #ffffff,
-                0 0 3vh #f3ec78
+                0 0 3vh #956137
         }
 
         button {
             border: none;
             background-color: transparent
-        }
-
-        table button {
-            padding: .5vh;
-            color: #E4CBB6
-        }
-
-        table button:hover {
-            text-shadow: 0 0 1vh #ffffff,
-                0 0 3vh #f3ec78
         }
 
         .buy-sell-xs {
@@ -104,7 +94,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            padding-bottom: 2.5vh
+            padding-bottom: 1vh
         }
 
         .footer a {
@@ -169,7 +159,9 @@
         }
 
         .navbar {
-            background-image: linear-gradient(to bottom, #0E0E0E, #101010)
+            background-image: linear-gradient(to bottom, #181818, #0E0E0E);
+            font-size: 2.3vh;
+            color: #F9F4F0
         }
 
         .offcanvas {
@@ -195,15 +187,25 @@
             display: none;
         }
 
+        table button {
+            padding: .5vh;
+            color: #E4CBB6
+        }
+
+        table button:hover {
+            text-shadow: 0 0 1vh #ffffff,
+                0 0 3vh #f3ec78
+        }
+
         .table {
-            color: #DCDCDC;
+            color: #EEDFD2;
             line-height: 1.5vh;
             cursor: pointer
         }
 
         .table-hover tbody tr:hover td {
             background: #202020;
-            color: #F5F5F5
+            color: #F9F5F1
         }
 
         .table td {
@@ -321,7 +323,7 @@
 </div>
 
 <div id="wallet" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="wallet">
-    <div class="offcanvas-body d-flex align-items-center">
+    <div class="offcanvas-body">
         <div class="xs-stats collapse" id="pawn-shop-collapse">
             <div>
                 <input type="number" pattern="[0-9]*">
@@ -333,14 +335,14 @@
             </div>
         </div>
 
-        <div>
+        <div class="d-flex align-items-center">
             <table class="xs-stats table table-borderless">
                 <tbody>
                     <tr class="coinlist hidden">
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="coinlist hidden"></td>
+                        <td class="hidden"></td>
                     </tr>
                     <tr>
                         <td>
@@ -355,6 +357,8 @@
                             </label>
                         </td>
                         <td class>$<span class="cash"></span></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
                     </tr>
                     <tr>
                         <td>
@@ -365,11 +369,15 @@
                             </a>
                         </td>
                         <td>- $<span class="debt"></span></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
                     </tr>
                     <tr>
                         <td><a href="https://opensea.io/collection/boredapeyachtclub" target="_blank">NFTS</a>
                         </td>
                         <td>$0<span class="bank_deposit"></span></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
                         <!--
                                 <button class="depayland"
                                     onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
