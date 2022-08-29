@@ -233,8 +233,8 @@
                 </td>
             </tr>
             <tr class="collapse-transaction collapse" id="">
-                <td class="hidden"></td>
-                <td class="text-center pt-3 pb-1">
+                <td></td>
+                <td>
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
                         <button data-bs-target="" class="trans buy action" type="button" data-bs-toggle="collapse">
@@ -245,11 +245,10 @@
                         </button>
                     </span>
                 </td>
-                <td class="hidden"></td>
             </tr>
             <tr class="collapse-transaction collapse" id="">
-                <td class="hidden"></td>
-                <td class="text-center pb-3">
+                <td></td>
+                <td>
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
                         <button data-bs-target="" class="trans sell action" type="button" data-bs-toggle="collapse">
@@ -260,7 +259,6 @@
                         </button>
                     </span>
                 </td>
-                <td class="hidden"></td>
             </tr>
         </tbody>
     </table>
@@ -319,15 +317,13 @@
             </div>
         </div>
         <div>
-            <table class="xs-stats table table-borderless">
+            <table class="table table-borderless">
                 <tbody>
-                    <tr class="coinlist hidden">
+                    <tr coinlist="0" class="coinlist">
                         <th></th>
                         <th></th>
-                        <th class="hidden"></th>
-                        <th class="hidden"></th>
                     </tr>
-                    <tr>
+                    <tr class="xs-stats">
                         <td>
                             <label>
                                 <input class="hidden" type="number" pattern="[0-9]*" value="1">
@@ -336,19 +332,12 @@
                                             <span>STABLECOINS</span>
                                         </div>
                                     </a>
-                                    <!--
-                                <button class="depayland"
-                                    onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
-                                    FIAT</button>
-                                -->
                                 </span>
                             </label>
                         </td>
                         <td class>$<span class="cash"></span></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
                     </tr>
-                    <tr>
+                    <tr class="xs-stats">
                         <td>
                             <a data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
                                 <div class="defi">
@@ -357,14 +346,16 @@
                             </a>
                         </td>
                         <td>- $<span class="debt"></span></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
                     </tr>
                     <tr>
-                        <td><a href="https://opensea.io/collection/boredapeyachtclub" target="_blank">NFTS</a></td>
-                        <td>$0</td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
+                        <td><a href="https://opensea.io/collection/boredapeyachtclub" target="_blank">NFTS</a>
+                        </td>
+                        <td>$0<span class="bank_deposit"></span></td>
+                        <!--
+                                <button class="depayland"
+                                    onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
+                                    FIAT</button>
+                                -->
                     </tr>
                 </tbody>
             </table>
