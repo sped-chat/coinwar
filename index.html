@@ -72,8 +72,17 @@
 
         button {
             border: none;
-            padding: 2vh;
             background-color: transparent
+        }
+
+        table button {
+            padding: .5vh;
+            color: #E4CBB6
+        }
+
+        table button:hover {
+            text-shadow: 0 0 1vh #ffffff,
+                0 0 3vh #f3ec78
         }
 
         .buy-sell-xs {
@@ -95,7 +104,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            padding-bottom: 3vh
+            padding-bottom: 2.5vh
         }
 
         .footer a {
@@ -115,7 +124,7 @@
         }
 
         .footer .corndog {
-            margin-bottom: 1.2vh
+            margin-bottom: .7vh
         }
 
         .footer .corndog a {
@@ -155,21 +164,21 @@
             font-size: 125%
         }
 
-        .navbar {
-            background-image: linear-gradient(to bottom, #202020, #101010)
-        }
-
         .logo {
             color: inherit;
         }
 
+        .navbar {
+            background-image: linear-gradient(to bottom, #0E0E0E, #101010)
+        }
+
         .offcanvas {
-            background: #101010
+            background: #303030
         }
 
         .offcanvas.offcanvas-bottom,
         .offcanvas.offcanvas-top {
-            height: 90%
+            height: 85%
         }
 
         .offcanvas .table {
@@ -179,7 +188,11 @@
         .offcanvas.offcanvas-top a {
             font-size: 4vh;
             padding: 2vh;
-            line-height: 8vh;
+            line-height: 10vh
+        }
+
+        .overflow-auto::-webkit-scrollbar {
+            display: none;
         }
 
         .table {
@@ -209,7 +222,7 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top shadow">
+    <nav class="navbar sticky-top shadow-lg">
         <div class="container-fluid justify-content-around">
             <a class="xs-stats align-text-top" data-bs-toggle="offcanvas" href="#cycle"
                 aria-controls="cycle">EXCHANGE&nbsp;&nbsp;:&nbsp;&nbsp;<span class="dex"></span></a>
@@ -245,6 +258,7 @@
                         </button>
                     </span>
                 </td>
+                <td></td>
             </tr>
             <tr class="collapse-transaction collapse" id="">
                 <td></td>
@@ -259,6 +273,7 @@
                         </button>
                     </span>
                 </td>
+                <td></td>
             </tr>
         </tbody>
     </table>
@@ -299,14 +314,14 @@
 </body>
 
 <div id="cycle" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="cycle">
-    <div id="offcanvas-exchanges" class="offcanvas-body">
+    <div id="offcanvas-exchanges" class="offcanvas-body d-flex align-items-center">
         <div class="exchanges">
         </div>
     </div>
 </div>
 
 <div id="wallet" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="wallet">
-    <div class="offcanvas-body">
+    <div class="offcanvas-body d-flex align-items-center">
         <div class="xs-stats collapse" id="pawn-shop-collapse">
             <div>
                 <input type="number" pattern="[0-9]*">
@@ -419,7 +434,7 @@
 </div>
 
 <div id="privacy" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="privacy">
-    <div class="offcanvas-body small">
+    <div class="offcanvas-body small overflow-auto">
         <h1>PRIVACY POLICY</h1>
         <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot;
             <br />
