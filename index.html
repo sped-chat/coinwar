@@ -57,7 +57,6 @@
         a {
             color: inherit;
             text-decoration: none;
-            /*transition*/
             -webkit-transition: 0.5s all ease;
             -moz-transition: 0.5s all ease;
             -o-transition: 0.5s all ease;
@@ -72,11 +71,13 @@
         }
 
         button {
-            width: 6em
+            border: none;
+            padding: 2vh;
+            background-color: transparent
         }
 
         .buy-sell-xs {
-            font-size: 3.1vh;
+            font-size: 3vh;
             color: inherit
         }
 
@@ -155,17 +156,30 @@
         }
 
         .navbar {
-            background: #101010
+            background-image: linear-gradient(to bottom, #202020, #101010)
+        }
+
+        .logo {
+            color: inherit;
         }
 
         .offcanvas {
-            background: #303030;
-            line-height: 2.2vh
+            background: #101010
         }
 
         .offcanvas.offcanvas-bottom,
         .offcanvas.offcanvas-top {
-            height: 85%
+            height: 90%
+        }
+
+        .offcanvas .table {
+            line-height: 2.3vh
+        }
+
+        .offcanvas.offcanvas-top a {
+            font-size: 4vh;
+            padding: 2vh;
+            line-height: 8vh;
         }
 
         .table {
@@ -195,10 +209,10 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top">
-        <div class="container-fluid d-flex justify-content-center">
-            <a class="xs-stats" data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">THE COIN WAR c. <span
-                    class="day"></span></a>
+    <nav class="navbar sticky-top shadow">
+        <div class="container-fluid justify-content-around">
+            <a class="xs-stats align-text-top" data-bs-toggle="offcanvas" href="#cycle"
+                aria-controls="cycle">EXCHANGE&nbsp;&nbsp;:&nbsp;&nbsp;<span class="dex"></span></a>
         </div>
     </nav>
 
@@ -250,7 +264,6 @@
             </tr>
         </tbody>
     </table>
-
     <div class="footer">
         <div class="corndog"><a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">🐈</a></div>
         <a>
@@ -281,19 +294,19 @@
         </a>
         <br />
         <a data-bs-toggle="offcanvas" data-bs-target="#privacy" aria-controls="privacy" target="_blank">
-            <div class="xs-stats">© <span class="day"></span></div>
+            <div class="xs-stats">© <span class="year"></span></div>
         </a>
     </div>
 </body>
 
-<div id="cycle" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="cycle">
-    <div id="offcanvas-cities" class="offcanvas-body">
-        <div class="cities">
+<div id="cycle" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="cycle">
+    <div id="offcanvas-exchanges" class="offcanvas-body">
+        <div class="exchanges">
         </div>
     </div>
 </div>
 
-<div id="wallet" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="wallet">
+<div id="wallet" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="wallet">
     <div class="offcanvas-body">
         <div class="xs-stats collapse" id="pawn-shop-collapse">
             <div>
@@ -361,55 +374,52 @@
 
 <div id="prices" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="prices">
     <div class="offcanvas-body">
-        <div>
-            <h1>HISTORICAL MARKET DATA</h1>
-            <br /><br />
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            ADA<br />$1 - $2<br /><br />
-                            ALCX<br />$20 - $2K<br /><br />
-                            AAVE<br />$28 - $632<br /><br />
-                            AMC<br />$2 - $59<br /><br />
-                            APE<br />$3 - $26<br /><br />
-                            ATOM<br />$2 - $45<br /><br />
-                            AVAX<br />$3 - $134<br /><br />
-                            AXS<br />$1 - $160<br /><br />
-                            BNB<br />$10 - $700<br /><br />
-                            BTC<br />$5K - $69K<br /><br />
-                            BOO<br />$1 - $10
-                        </td>
-                        <td>
-                            CAKE<br />$1 - $42<br /><br />
-                            COMP<br />$27 - $854<br /><br />
-                            DOGE<br />$69 - $420<br /><br />
-                            DOT<br />$1 - $54<br /><br />
-                            ETH<br />$100 - $5K<br /><br />
-                            FIL<br />$5 - $188<br /><br />
-                            FTM<br />$1 - $13<br /><br />
-                            FTX<br />$2 - $80<br /><br />
-                            GME<br />$4 - $325<br /><br />
-                            ICP<br />$5 - $364<br /><br />
-                            LINK<br />$2 - $53
-                        </td>
-                        <td>
-                            LTC<br />$2 - $278<br /><br />
-                            MANA<br />$1 - $6<br /><br />
-                            MATIC<br />$1 - $11<br /><br />
-                            MKR<br />$206 - $6K<br /><br />
-                            OATH<br />$1 - $10<br /><br />
-                            SAND<br />$1 - $9<br /><br />
-                            SHIB<br />$1 - $7<br /><br />
-                            SOL<br />$1 - $260<br /><br />
-                            TRON<br />$1 - $9<br /><br />
-                            UNI<br />$2 - $43<br /><br />
-                            XRP<br />$1 - $4
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <h1>HISTORICAL MARKET DATA</h1>
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>
+                        ADA<br />$1 - $2<br /><br />
+                        ALCX<br />$20 - $2K<br /><br />
+                        AAVE<br />$28 - $632<br /><br />
+                        AMC<br />$2 - $59<br /><br />
+                        APE<br />$3 - $26<br /><br />
+                        ATOM<br />$2 - $45<br /><br />
+                        AVAX<br />$3 - $134<br /><br />
+                        AXS<br />$1 - $160<br /><br />
+                        BNB<br />$10 - $700<br /><br />
+                        BTC<br />$5K - $69K<br /><br />
+                        BOO<br />$1 - $10
+                    </td>
+                    <td>
+                        CAKE<br />$1 - $42<br /><br />
+                        COMP<br />$27 - $854<br /><br />
+                        DOGE<br />$69 - $420<br /><br />
+                        DOT<br />$1 - $54<br /><br />
+                        ETH<br />$100 - $5K<br /><br />
+                        FIL<br />$5 - $188<br /><br />
+                        FTM<br />$1 - $13<br /><br />
+                        FTX<br />$2 - $80<br /><br />
+                        GME<br />$4 - $325<br /><br />
+                        ICP<br />$5 - $364<br /><br />
+                        LINK<br />$2 - $53
+                    </td>
+                    <td>
+                        LTC<br />$2 - $278<br /><br />
+                        MANA<br />$1 - $6<br /><br />
+                        MATIC<br />$1 - $11<br /><br />
+                        MKR<br />$206 - $6K<br /><br />
+                        OATH<br />$1 - $10<br /><br />
+                        SAND<br />$1 - $9<br /><br />
+                        SHIB<br />$1 - $7<br /><br />
+                        SOL<br />$1 - $260<br /><br />
+                        TRON<br />$1 - $9<br /><br />
+                        UNI<br />$2 - $43<br /><br />
+                        XRP<br />$1 - $4
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -745,7 +755,7 @@
 
 
         ],
-        cities: [
+        exchanges: [
             {
                 "name": "binance",
                 "min_coins": 19,
@@ -835,7 +845,7 @@
         this.news = document.querySelector('.news ul');
         this.coins_container = document.querySelector('.coins tbody');
         this.setup_coins();
-        this.setup_cities();
+        this.setup_exchanges();
         this.refresh_prices([]);
         this.refresh_quantities([]);
     }
@@ -847,7 +857,7 @@
         "move": " SWAP",
         "pawn-shop": " DEFI LOANS",
         "inventory": " WEB3 WALLET",
-        "day": " YEAR",
+        "year": " YEAR",
         "cash": " DAI",
         "debt": " DEFI LOAN",
         "stock": " WALLET",
@@ -861,7 +871,7 @@
         "you-currently-owe": " YOU OWE",
         "borrow-more-money": " BBORROW",
         "pay-debt": " PAY",
-        "choose-city": " CHOOSE AN EXCHANGE",
+        "choose-dex": " CHOOSE AN EXCHANGE",
         "close": " CLOSE",
         "pay": " PAY",
         "final-score": " FINAL SCORE",
@@ -901,22 +911,22 @@
         "dope-tron": " TRON",
         "dope-uni": " UNI",
         "dope-xrp": " XRP",
-        "city-binance": " BINANCE",
-        "city-coinbase": " COINBASE",
-        "city-curve": " CURVE",
-        "city-dydx": " DYDX",
-        "city-ftx": " FTX",
-        "city-gemini": " GEMINI",
-        "city-honey": " HONEY",
-        "city-jupiter": " JUPITER",
-        "city-kine": " KINE",
-        "city-kraken": " KRAKEN",
-        "city-kucoin": " KUCOIN",
-        "city-pancake": " PANCAKE",
-        "city-spooky": " SPOOKY",
-        "city-sushi": " SUSHI",
-        "city-traderjoe": " TRADERJOE",
-        "city-uni": " UNI"
+        "dex-binance": " BINANCE",
+        "dex-coinbase": " COINBASE",
+        "dex-curve": " CURVE",
+        "dex-dydx": " DYDX",
+        "dex-ftx": " FTX",
+        "dex-gemini": " GEMINI",
+        "dex-honey": " HONEY",
+        "dex-jupiter": " JUPITER",
+        "dex-kine": " KINE",
+        "dex-kraken": " KRAKEN",
+        "dex-kucoin": " KUCOIN",
+        "dex-pancake": " PANCAKE",
+        "dex-spooky": " SPOOKY",
+        "dex-sushi": " SUSHI",
+        "dex-traderjoe": " TRADERJOE",
+        "dex-uni": " UNI"
     }
     function translate(key) {
         return translateJson[key];
@@ -961,12 +971,12 @@
         div.innerHTML = htmlString.trim();
         return div.firstChild;
     }
-    View.prototype.setup_cities = function () {
-        for (var city in DataCenter.cities) {
-            document.querySelector('#offcanvas-cities .cities').append(createElementFromHTML('<button class="trans" data-bs-dismiss="offcanvas" data-city="' + city + '">' +
-                translate('city-' + DataCenter.cities[city].name) + '</button> '));
+    View.prototype.setup_exchanges = function () {
+        for (var dex in DataCenter.exchanges) {
+            document.querySelector('#offcanvas-exchanges .exchanges').append(createElementFromHTML('<a class="trans" data-bs-dismiss="offcanvas" data-dex="' + dex + '">' +
+                translate('dex-' + DataCenter.exchanges[dex].name) + '</a> '));
         }
-        document.querySelector('#offcanvas .cities button.btn')?.classList.add('current');
+        document.querySelector('#offcanvas .exchanges')?.classList.add('current');
     }
     View.prototype.refresh_quantities = function (quantities) {
         for (var coin = 0; coin < this.coins.length; coin++) {
@@ -987,8 +997,8 @@
         })
     }
     View.prototype.refresh_stats = function (game, coat) {
-        replaceText('.stats .city, .xs-stats .city', game.city.city_name);
-        replaceText('.stats .day, .xs-stats .day', game.day);
+        replaceText('.stats .dex, .xs-stats .dex', game.dex.dex_name);
+        replaceText('.stats .year, .xs-stats .year', game.year);
         replaceText('.stats .end, .xs-stats .end', game.end);
         replaceText('.stats .debt, .xs-stats .debt', Math.round(game.debt));
         replaceText('.stats .bank_deposit', game.bank_deposit);
@@ -1080,19 +1090,19 @@
         return sum;
     }
     function GameManager() {
-        this.day = 2022;
+        this.year = 2022;
         this.end = 9999;
         this.debt = 42;
         this.bank_deposit = 100000;
         this.stone_level = 0;
-        this.city = new City(0);
+        this.dex = new dex(0);
     }
     GameManager.prototype.is_game_over = function () {
-        return this.day >= this.end;
+        return this.year >= this.end;
     };
-    GameManager.prototype.new_city = function (number, news_manager) {
-        this.city = new City(number, news_manager);
-        this.day++;
+    GameManager.prototype.new_dex = function (number, news_manager) {
+        this.dex = new dex(number, news_manager);
+        this.year++;
         this.debt *= 1.29;
         this.debt = Math.round(this.debt);
     };
@@ -1180,14 +1190,14 @@
         }
         return Math.round(score);
     };
-    function City(number, news_manager) {
-        this.city_name = translate('city-' + DataCenter.cities[number].name);
-        this.is_cop = Math.random() * 100 < DataCenter.cities[number].cops;
+    function dex(number, news_manager) {
+        this.dex_name = translate('dex-' + DataCenter.exchanges[number].name);
+        this.is_cop = Math.random() * 100 < DataCenter.exchanges[number].cops;
         this.prices = [];
         this.number = number;
         this.available_coins = [];
-        var max_coins = ('max_coins' in DataCenter.cities[number] ? DataCenter.cities[number].max_coins : DataCenter.coins.length);
-        var number_of_coins = parseInt(rand(DataCenter.cities[number].min_coins, max_coins));
+        var max_coins = ('max_coins' in DataCenter.exchanges[number] ? DataCenter.exchanges[number].max_coins : DataCenter.coins.length);
+        var number_of_coins = parseInt(rand(DataCenter.exchanges[number].min_coins, max_coins));
         for (var i = 0; i < number_of_coins; i++) {
             this.available_coins[i] = true;
         }
@@ -1294,8 +1304,8 @@
         this.game = new GameManager();
         this.news_manager = new NewsManager();
         this.news_manager.add(new News(translate('notification-welcome')));
-        this.view.refresh_prices(this.game.city.prices);
-        this.view.refresh_available_coins(this.game.city.available_coins);
+        this.view.refresh_prices(this.game.dex.prices);
+        this.view.refresh_available_coins(this.game.dex.available_coins);
         this.view.refresh_stats(this.game, this.coat);
         this.view.refresh_news(this.news_manager.news);
         this.view.refresh_high_score(self.game.high_score());
@@ -1322,7 +1332,7 @@
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
                 var item_number = parseInt(elem.parentNode.parentElement.dataset['coin']);
-                var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
+                var quantity = self.coat.max_quantity(self.game.dex.prices[item_number]);
                 elem.previousElementSibling.value = quantity;
             }
         })
@@ -1346,22 +1356,22 @@
                 self.new_name();
             }
         })
-        document.querySelectorAll('#offcanvas-cities .cities button[data-city]').forEach((elem) => {
+        document.querySelectorAll('#offcanvas-exchanges .exchanges [data-dex]').forEach((elem) => {
             let a = elem.onclick; elem.onclick = (ev) => {
                 if (a) a(ev);
-                if (self.game.city.number == elem.dataset['city']) {
+                if (self.game.dex.number == elem.dataset['dex']) {
                     return;
                 }
-                if (self.game.day == self.game.end) {
+                if (self.game.year == self.game.end) {
                     self.game_over();
                 } else {
                     self.news_manager.add(new News(translate('notification-move', {
-                        city: translate('city-' + DataCenter.cities[elem.dataset['city']].name)
+                        dex: translate('dex-' + DataCenter.exchanges[elem.dataset['dex']].name)
                     }), 'move'));
-                    self.game.new_city(elem.dataset['city'], self.news_manager);
-                    self.view.refresh_available_coins(self.game.city.available_coins);
+                    self.game.new_dex(elem.dataset['dex'], self.news_manager);
+                    self.view.refresh_available_coins(self.game.dex.available_coins);
                     self.view.refresh_news(self.news_manager.news);
-                    document.querySelectorAll('button[data-city].current').forEach((elem) => {
+                    document.querySelectorAll('button[data-dex].current').forEach((elem) => {
                         elem.classList.remove('current');
                     })
                     elem.classList.add('current');
@@ -1369,7 +1379,7 @@
                         elem.previousElementSibling.value = 0;
                     });
                     self.view.refresh_news(self.news_manager.news);
-                    self.view.refresh_prices(self.game.city.prices);
+                    self.view.refresh_prices(self.game.dex.prices);
                     self.view.refresh_stats(self.game, self.coat);
                 }
                 document.querySelectorAll('.navbar .navbar-collapse').forEach((elem) => {
@@ -1506,7 +1516,7 @@
                 document.querySelector(queryElem + ' button.max.buy').onclick = (ev) => {
                     let _elem = ev.currentTarget;
                     var item_number = parseInt(elem.dataset['coin']);
-                    var quantity = self.coat.max_quantity(self.game.city.prices[item_number]);
+                    var quantity = self.coat.max_quantity(self.game.dex.prices[item_number]);
                     _elem.parentNode.previousElementSibling.value = (quantity);
                 };
                 document.querySelector(queryElem + ' button.max.sell').onclick = (ev) => {
@@ -1539,12 +1549,12 @@
             return false;
         }
         var return_value = true;
-        if (this.coat.can_buy(this.game.city.prices[index], quantity)) {
-            this.coat.buy(index, this.game.city.prices[index], quantity);
+        if (this.coat.can_buy(this.game.dex.prices[index], quantity)) {
+            this.coat.buy(index, this.game.dex.prices[index], quantity);
             this.news_manager.add(new News(translate('notification-bought', {
                 quantity: quantity,
                 coin: translate('dope-' + DataCenter.coins[index].name),
-                price: this.game.city.prices[index]
+                price: this.game.dex.prices[index]
             }), 'coin'));
             this.view.refresh_quantities(this.coat.coins);
             this.view.refresh_stats(this.game, this.coat);
@@ -1561,12 +1571,12 @@
         }
         var return_value = true;
         if (this.coat.can_sell(index, quantity)) {
-            this.coat.sell(index, this.game.city.prices[index], quantity);
+            this.coat.sell(index, this.game.dex.prices[index], quantity);
 
             this.news_manager.add(new News(translate('notification-sold', {
                 quantity: quantity,
                 coin: translate('dope-' + DataCenter.coins[index].name),
-                price: this.game.city.prices[index]
+                price: this.game.dex.prices[index]
             }), 'coin'));
             this.view.refresh_stats(this.game, this.coat);
             this.view.refresh_quantities(this.coat.coins);
@@ -1582,7 +1592,7 @@
         window.localStorage.setItem('player_name', name);
     };
     Controller.prototype.game_over = function () {
-        var score = this.coat.score(this.game, this.game.city.prices);
+        var score = this.coat.score(this.game, this.game.dex.prices);
         var high_score_string = '$' + score + ' by ' + this.game.player_name() + '  on  ' + new Date().toLocaleString() + '</small></span>';
         this.game.add_high_score(high_score_string);
         this.view.refresh_high_score(this.game.high_score());
