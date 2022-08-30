@@ -49,7 +49,7 @@
     <style>
         body {
             color: #E4CBB6;
-            background-color: #202020;
+            background-color: #323234;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             text-align: center;
         }
@@ -65,6 +65,7 @@
         }
 
         a:hover {
+            cursor: pointer;
             color: inherit;
             text-shadow: 0 0 1vh #ffffff,
                 0 0 3vh #956137
@@ -72,13 +73,31 @@
 
         button {
             border: none;
-            background-color: transparent
+            background-color: transparent;
+            padding: .5vh;
+            color: inherit
         }
+
+        button:hover {
+            text-shadow: 0 0 1vh #ffffff,
+                0 0 3vh #f3ec78
+        }
+
 
         .buy-sell-xs {
             font-size: 3vh;
             color: inherit
         }
+
+
+        .collapsing {
+            background: #252526;
+        }
+
+        .collapse {
+            background: #1E1E1F;
+        }
+
 
         .defi:hover span {
             display: none
@@ -113,16 +132,16 @@
             text-shadow: inherit
         }
 
-        .footer .corndog {
+        .coinbag {
             margin-bottom: .7vh
         }
 
-        .footer .corndog a {
+        .coinbag a {
             font-size: 7vh;
             cursor: grab;
         }
 
-        .footer .corndog:hover a {
+        .coinbag:hover a {
             background-image: linear-gradient(45deg, #f3ec78, #af4261, #f3ec78);
             background-size: auto auto;
             background-clip: border-box;
@@ -159,17 +178,16 @@
         }
 
         .navbar {
-            background-image: linear-gradient(to bottom, #181818, #0E0E0E);
+            background-image: linear-gradient(to bottom, #252526, #1E1E1F);
             font-size: 2.3vh;
-            color: #F9F4F0
+            color: #E0E0E0
         }
 
         .offcanvas {
-            background: #303030
+            background: #252526
         }
 
-        .offcanvas.offcanvas-bottom,
-        .offcanvas.offcanvas-top {
+        .offcanvas.offcanvas-bottom {
             height: 85%
         }
 
@@ -177,35 +195,23 @@
             line-height: 2.3vh
         }
 
-        .offcanvas.offcanvas-top a {
-            font-size: 4vh;
-            padding: 2vh;
-            line-height: 10vh
+        .offcanvas.offcanvas-top {
+            font-size: 17vh
         }
 
         .overflow-auto::-webkit-scrollbar {
             display: none;
         }
 
-        table button {
-            padding: .5vh;
-            color: #E4CBB6
-        }
-
-        table button:hover {
-            text-shadow: 0 0 1vh #ffffff,
-                0 0 3vh #f3ec78
-        }
-
         .table {
-            color: #EEDFD2;
+            color: #CBCBCB;
             line-height: 1.5vh;
             cursor: pointer
         }
 
         .table-hover tbody tr:hover td {
-            background: #202020;
-            color: #F9F5F1
+            background: #252526;
+            color: #EBEBEB
         }
 
         .table td {
@@ -224,10 +230,10 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top shadow-lg">
-        <div class="container-fluid justify-content-around">
-            <a class="xs-stats align-text-top" data-bs-toggle="offcanvas" href="#cycle"
-                aria-controls="cycle">EXCHANGE&nbsp;&nbsp;:&nbsp;&nbsp;<span class="dex"></span></a>
+    <nav class="navbar sticky-top shadow-sm">
+        <div class="container-fluid justify-content-center">
+            <a class="xs-stats align-text-top" data-bs-toggle="offcanvas" href="#wallet"
+                aria-controls="wallet">DEX&nbsp;&nbsp;:&nbsp;<span class="dex"></span></a>
         </div>
     </nav>
 
@@ -239,15 +245,16 @@
                 <th></th>
                 <th></th>
             </tr>
+
             <tr coinlist="0">
-                <td data-bs-toggle="offcanvas" href="#prices" aria-controls="prices"></td>
+                <td></td>
                 <td class="hidden"></td>
-                <td data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet"></td>
+                <td></td>
                 <td>
-                    <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💰</a>
+                    <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💱</a>
                 </td>
             </tr>
-            <tr class="collapse-transaction collapse" id="">
+            <tr class="collapse-transaction collapse shadow-sm" id="">
                 <td></td>
                 <td>
                     <input type="number" pattern="[0-9]*" value="1">
@@ -262,7 +269,7 @@
                 </td>
                 <td></td>
             </tr>
-            <tr class="collapse-transaction collapse" id="">
+            <tr class="collapse-transaction collapse shadow-sm" id="">
                 <td></td>
                 <td>
                     <input type="number" pattern="[0-9]*" value="1">
@@ -281,7 +288,7 @@
     </table>
 
     <div class="footer">
-        <div class="corndog"><a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">🐈</a></div>
+        <div class="coinbag"><a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">💰</a></div>
         <a>
             <a href="https://twitter.com/coinwarapp" target="_blank">
                 <svg class="bi bi-twitter" viewBox="0 0 16 16">
@@ -316,9 +323,14 @@
 </body>
 
 <div id="cycle" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="cycle">
-    <div id="offcanvas-exchanges" class="offcanvas-body d-flex align-items-center">
-        <div class="exchanges">
-        </div>
+    <div class="offcanvas-body d-flex justify-content-center">
+        <label>
+            <input class="hidden" type="number" pattern="[0-9]*" value="1000000">
+            <span>
+                <a href="https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high"
+                    target="_blank" class="depayland">🐈</a>
+            </span>
+        </label>
     </div>
 </div>
 
@@ -387,12 +399,23 @@
                 </tbody>
             </table>
         </div>
+        <br /><br />
+        <div id="offcanvas-exchanges">
+            <div class="exchanges">
+            </div>
+        </div>
+        <br /><br /><br /><br />
+        <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">HISTORICAL MARKET
+            DATA
+        </a>
     </div>
 </div>
 
 <div id="prices" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="prices">
-    <div class="offcanvas-body">
-        <h1>HISTORICAL MARKET DATA</h1>
+    <div class="offcanvas-body" data-bs-toggle="offcanvas">
+        <h3>HISTORICAL MARKET
+            DATA
+        </h3>
         <table class="table table-borderless">
             <tbody>
                 <tr>
@@ -412,7 +435,8 @@
                     <td>
                         CAKE<br />$1 - $42<br /><br />
                         COMP<br />$27 - $854<br /><br />
-                        DOGE<br />$69 - $420<br /><br />
+                        <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">DOGE</a><br />$69 -
+                        $420<br /><br />
                         DOT<br />$1 - $54<br /><br />
                         ETH<br />$100 - $5K<br /><br />
                         FIL<br />$5 - $188<br /><br />
