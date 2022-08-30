@@ -83,28 +83,9 @@
                 0 0 3vh #f3ec78
         }
 
-
-        .buy-sell-xs {
-            font-size: 3vh;
-            color: inherit
-        }
-
-
-        .collapsing {
-            background: #252526;
-        }
-
+        .collapsing,
         .collapse {
-            background: #1E1E1F;
-        }
-
-
-        .defi:hover span {
-            display: none
-        }
-
-        .defi:hover:before {
-            content: "BORROW"
+            background: #252526;
         }
 
         .footer {
@@ -132,16 +113,16 @@
             text-shadow: inherit
         }
 
-        .coinbag {
+        .footer .coinbag {
             margin-bottom: .7vh
         }
 
-        .coinbag a {
+        .footer .coinbag a {
             font-size: 7vh;
             cursor: grab;
         }
 
-        .coinbag:hover a {
+        .footer .coinbag:hover a {
             background-image: linear-gradient(45deg, #f3ec78, #af4261, #f3ec78);
             background-size: auto auto;
             background-clip: border-box;
@@ -187,12 +168,33 @@
             background: #252526
         }
 
-        .offcanvas.offcanvas-bottom {
-            height: 85%
+        .offcanvas.offcanvas-end .defi:hover span {
+            display: none
         }
 
-        .offcanvas .table {
-            line-height: 2.3vh
+        .offcanvas.offcanvas-end .defi:hover:before {
+            content: "BORROW"
+        }
+
+        .offcanvas.offcanvas-end .stable:hover span {
+            display: none
+        }
+
+        .offcanvas.offcanvas-end .stable:hover:before {
+            content: "DEPOSIT"
+        }
+
+        .offcanvas.offcanvas-end .table {
+            line-height: .1vh
+        }
+
+        .offcanvas.offcanvas-start .table {
+            line-height: 2.2vh
+        }
+
+        .offcanvas.offcanvas-bottom,
+        .offcanvas.offcanvas-top {
+            height: 85%
         }
 
         .offcanvas.offcanvas-top {
@@ -205,7 +207,7 @@
 
         .table {
             color: #CBCBCB;
-            line-height: 1.5vh;
+            line-height: 1.2vh;
             cursor: pointer
         }
 
@@ -217,14 +219,6 @@
         .table td {
             padding-top: 1.3vh;
             width: 33%
-        }
-
-        .stable:hover span {
-            display: none
-        }
-
-        .stable:hover:before {
-            content: "DEPOSIT"
         }
     </style>
 </head>
@@ -299,7 +293,7 @@
         </a>
         &nbsp;
         <a>
-            <a href="meta.html" target="_blank">
+            <a <a data-bs-toggle="offcanvas" href="#metaverse" aria-controls="metaverse">
                 <svg class="bi bi-discord" viewBox="0 0 16 16">
                     <path
                         d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
@@ -321,18 +315,6 @@
         </a>
     </div>
 </body>
-
-<div id="cycle" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="cycle">
-    <div class="offcanvas-body d-flex justify-content-center">
-        <label>
-            <input class="hidden" type="number" pattern="[0-9]*" value="1000000">
-            <span>
-                <a href="https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high"
-                    target="_blank" class="depayland">🐈</a>
-            </span>
-        </label>
-    </div>
-</div>
 
 <div id="wallet" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="wallet">
     <div class="offcanvas-body">
@@ -435,8 +417,7 @@
                     <td>
                         CAKE<br />$1 - $42<br /><br />
                         COMP<br />$27 - $854<br /><br />
-                        <a data-bs-toggle="offcanvas" href="#cycle" aria-controls="cycle">DOGE</a><br />$69 -
-                        $420<br /><br />
+                        DOGE<br />$69 - $420<br /><br />
                         DOT<br />$1 - $54<br /><br />
                         ETH<br />$100 - $5K<br /><br />
                         FIL<br />$5 - $188<br /><br />
@@ -603,6 +584,194 @@
             irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
         <br />
         <p>This policy is effective as of April 20, 2022.</p>
+    </div>
+</div>
+
+<div id="metaverse" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="metaverse">
+    <div class="offcanvas-body overflow-auto">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/ALDsbzA" target="_blank"><img
+                            class="img-fluid" src="./img/meta/chania.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/SoYM2sD" target="_blank"><img
+                            class="img-fluid" src="./img/meta/galleria.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/mA587Zb" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001428.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/n8YY4m7" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001437.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/rfYecSz" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001441.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/9ojuf8g" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001454.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/M7SpyNc" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100000045.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/USM8k7h" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001455.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/qPSddPm" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001458.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/HRGBJLh" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001459.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/Eo2fsJe" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001460.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/SHWtTXj" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001464.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/iHjFLTB" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001461.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/qgbbTCM" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001467.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/v4gz8Pn" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001462.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/honkWgH" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001465.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/GP3HEXX" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001475.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/Uh8TPiu" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001470.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/ZJXNkam" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001471.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/kNaH85P" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001474.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/UGbTQiQ" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001477.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/tm8o9qZ" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001478.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/gVBRJRy" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001482.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/ZUZAUjJ" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001487.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/R5fiWiK" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001479.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/RbEQWMh" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001483.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/aYZ5XL5" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001488.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/8UGPT9g" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001480.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/2HryJZF" target="_blank"><img
+                            class="img-fluid" src="./img/meta/er.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/xc2fKxU" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001410.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/AT2fxsQ" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001413.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/4tiFpxb" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001416.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/ETg26sY" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001418.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/ugJ4XMb" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001469.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/wvrqcxM" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001472.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/D578sQt" target="_blank"><img
+                            class="img-fluid" src="./img/meta/nftmuseum.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/EZTitAA" target="_blank"><img
+                            class="img-fluid" src="./img/meta/vault.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/DBpKR9k" target="_blank"><img
+                            class="img-fluid" src="./img/meta/studio.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/RMQnZ4F" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001408.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/YQi9qsM" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001411.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/FDPxxsQ" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001414.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/BVnAY9r" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001409.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/LxfKpa4" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001412.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/zhZS2eB" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001415.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/BVZsEwg" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001417.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/fCSisCT" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001420.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/zuspWn9" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001424.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/Yj7E9Ke" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100000017.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/aVDfj3H" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001427.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/xC3vwyM" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001430.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/c2xDH7o" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001422.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/CkAbh3S" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001426.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/Y5xvipj" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001429.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/oZy5NXt" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001432.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/om4Mk52" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001433.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/7TQ4fYU" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001436.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/FJBX6QB" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001439.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/fK4t25Q" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001434.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/VyZJt3P" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001440.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/ktNh6ap" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001435.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/YK6SHmg" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001438.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/LC69XCv" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001442.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/8fapUXs" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001445.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/6WJzbS2" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001448.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/J4rWeQD" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001443.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/5ESQFnK" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001446.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/rjRcg4f" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001449.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/eoaWrjs" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001444.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/dU6t7KY" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001447.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/D6KvK8d" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001450.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/CXGsVGm" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001451.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/cdrJYPM" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001457.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/P7ZbyqU" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001453.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/bQrvhtj" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001456.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/XGxB9JF" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001463.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/2JmxhX7" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001466.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/KdvnJcm" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001468.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/qyj9VSx" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001473.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/xDEBwon" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001476.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/roPSuvB" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001484.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/H7RSqQK" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001489.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/p42BRCZ" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001481.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/CvGZ8cs" target="_blank"><img
+                            class="img-fluid" src="./img/meta/yips.webp"></a></div>
+                <div class="col mt-3"><a href="https://hubs.mozilla.com/scenes/B4Qp6AC" target="_blank"><img
+                            class="img-fluid" src="./img/meta/ia_100001490.webp"></a></div>
+                <div class="col mt-3"></div>
+                <div class="col mt-3">
+                    <label>
+                        <input class="hidden" type="number" pattern="[0-9]*" value="1000000">
+                        <span>
+                            <a href="https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high"
+                                target="_blank" class="depayland">🐈</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="col mt-3"></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -800,83 +969,83 @@
         exchanges: [
             {
                 "name": "binance",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "coinbase",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "curve",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "dydx",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "ftx",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "gemini",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "honey",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "jupiter",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "kine",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "kraken",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "kucoin",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "pancake",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "spooky",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "sushi",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "traderjoe",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
             {
                 "name": "uni",
-                "min_coins": 18,
-                "max_coins": 19
+                "min_coins": 17,
+                "max_coins": 18
             },
         ]
     };
