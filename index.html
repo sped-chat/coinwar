@@ -245,7 +245,7 @@
                 <td class="hidden"></td>
                 <td></td>
                 <td>
-                    <a class="buy-sell-xs" class="coin-row">💱</a>
+                    <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💱</a>
                 </td>
             </tr>
             <tr class="collapse-transaction collapse shadow-sm" id="">
@@ -2408,13 +2408,6 @@
                         _elem.removeEventListener('click', _elem.onclick);
                     }
                 };
-            }
-        })
-
-        document.querySelectorAll(".coin-row").forEach(elem => {
-            elem.onclick = function () {
-                let a = elem.querySelector('.buy-sell-xs')
-                a.click()
             }
         })
     }
