@@ -90,10 +90,10 @@
         }
 
         .container-body {
-            max-width: 60vh;
+            max-width: 40vh;
         }
 
-        .coinbag {
+        .cycle {
             z-index: -2;
             position: fixed;
             left: 0;
@@ -102,17 +102,12 @@
             padding-bottom: 10vh;
         }
 
-        .coinbag img {
-            width: 10vh;
-            height: auto;
-        }
-
-        .coinbag svg {
+        .cycle .coinbag svg {
             width: 15vh;
             cursor: grab
         }
 
-        .coinbag svg:hover {
+        .cycle .coinbag svg:hover {
             transform: scale(1.1)
         }
 
@@ -202,7 +197,7 @@
         }
 
         .table {
-            color: #CBCBCB;
+            color: inherit;
             line-height: 1vh;
             cursor: pointer
         }
@@ -245,7 +240,7 @@
                         </td>
                     </tr>
                     <tr></tr>
-                    <tr class="input collapse-transaction collapse shadow" id="">
+                    <tr class="input collapse-transaction collapse shadow-lg" id="">
                         <td colspan="2">
                             <input type="number" pattern="[0-9]*" value="1">
                             <span>
@@ -256,10 +251,11 @@
                                 <button class="trans buy max" type="button" maxamount="max">
                                     MAX
                                 </button>
+                                <br /><br />
                             </span>
                         </td>
                     </tr>
-                    <tr class="input collapse-transaction collapse shadow" id="">
+                    <tr class="input collapse-transaction collapse shadow-lg" id="">
                         <td colspan="2">
                             <input type="number" pattern="[0-9]*" value="1">
                             <span>
@@ -270,6 +266,7 @@
                                 <button class="trans sell max" type="button" maxamount="max">
                                     MAX
                                 </button>
+                                <br /><br />
                             </span>
                         </td>
                     </tr>
@@ -277,10 +274,54 @@
             </table>
         </div>
 
-        <div class="footer">
+        <div class="cycle">
             <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet" class="coinbag">
-                <img src="img/favicon-small.svg">
+                <svg viewBox="0 0 1000 1000">
+
+
+                    <defs>
+                        <radialGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" stop-color="#f3ec78">
+                                <animate attributeName="stop-color" values="#f3ec78; #af4261; #f3ec78" dur="4s"
+                                    repeatCount="indefinite"></animate>
+                            </stop>
+                            <stop offset="100%" stop-color="#af4261">
+                                <animate attributeName="stop-color" values="#af4261; #f3ec78; #af4261" dur="4s"
+                                    repeatCount="indefinite"></animate>
+                            </stop>
+                        </radialGradient>
+                    </defs>
+
+                    <g>
+
+                        <path fill="url('#gradient')" d="M743.2,49.4c-45.5,44.5-80,92.1-99.1,137.7c-20.1,47.9-32.8,89.7-48.5,98.9v6.6H382.3v-6.7
+	c-20.8-20.2-30-70-54.4-115.6C303.9,125.9,261.7,80,232.5,52c-0.7-0.7-0.2-1.9,0.8-1.8c22.9,0.8,50.9,1.3,64.8,1.6
+	c1.9,0,3.5,0.1,4.9,0.1c2,0,3.9-1.3,4.2-3.3c1.2-6.4,4.9-11.6,12.3-14.5c5.7-2.3,13.7-3.1,24.3-2.1c0.3,0,0.6,0.1,1,0.1
+	c10.2,1,29.8,2.9,51.3,4.5c0,0,0,0,0,0c37.9,2.7,81.7,4.4,91-1.9c7.8-5.3,14.4-11.4,28.2-15.9c12.4-4.1,30.5-7,60.3-7
+	c16.3,0,29.5,0.5,40.1,1.8c30.3,3.6,39.5,13.2,40.5,33.5c0.1,1.8,1.6,3.1,3.4,3c6.2-0.5,12.4-1,18.3-1.5c26.7-2,50.3-3.1,64.4-1.6
+	C743.7,46.8,744.2,48.5,743.2,49.4z" />
+
+                        <path fill="url('#gradient')" d="M861.3,847.8c-29.2-38.1-19-81.2-18-128.2
+	c1.1-52.2,2.2-93.3-15-133.9c-15.3-36-19.6-71.7-16.5-103.3c0.8-8.6-0.9-17.1-4.8-24.8c-61.5-120.9-164.2-146.2-211.4-158.3v-6.7
+	H382.3v6.7C255.6,331.8,204.7,401,172.3,454.8c-3.8,6.3-5,13.7-3.6,20.9c4.5,24.9-0.4,51.8-9.2,79.5c-10,31.7-23.3,94.4-18.3,163.3
+	c3.9,53.2-1.1,83.2-11.8,105.6c-6.9,14.5-5.7,31.5,3.1,45c13.4,20.4,37.8,48.2,79.8,68.3c74.1,35.5,182.2,52.2,290,52.2
+	c65,0,103.3-5.6,175.6-5.6c80.8,0,152.2-59.7,184.4-106.5C868.5,868.5,868,856.5,861.3,847.8L861.3,847.8z" />
+
+                        <path fill="#CBCBCB" d="M606.4,666.1c-17.2-12-50.8-25.9-100.8-41.5V515.6c20.8,1.3,35.2,8.8,43.2,22.3c4.6,7.8,7.7,20.2,9.4,37.2h83.2
+	c-1.3-45.8-19.6-78.9-55.1-99.3c-19.5-12.8-46.4-20.4-80.6-22.9v-38.6h-30.7v38.1c-21.5,1.5-37.9,3.9-49,7.2
+	c-18.4,5.2-35,14.5-50,28c-11.6,10.5-20.6,23-27,37.5c-6.4,14.5-9.6,30.6-9.6,48.4c0,26.9,8.3,49.9,24.8,69
+	c16.5,19.1,45,34,85.3,44.7l25.6,6.9v122.2c-24-3.8-40.2-12.1-48.4-24.9c-4-6.2-7.3-16.8-9.9-31.9h-87.4c3,44.2,20.5,76.2,52.7,95.8
+	c20.5,12.2,51.5,20.4,93,24.6V913h30.7v-33.8c32.7-2.3,60.9-10.1,84.8-23.5c39-21.8,58.5-56.7,58.5-104.8
+	C648.9,714.5,634.7,686.2,606.4,666.1L606.4,666.1z M474.9,616.6c-15.4-4.4-26.8-9.2-34.2-14.3c-13.3-9.4-19.9-22-19.9-38.1
+	c0-14.7,4.4-26.3,13.3-34.8c8.9-8.5,22.5-12.9,40.8-13.3L474.9,616.6L474.9,616.6z M541.6,805c-7.5,5-19.5,8.4-36,10.3V703.4
+	c17.5,5.9,29.9,11.6,37.2,17.2c12.3,9.6,18.5,22.5,18.5,38.9C561.3,781,554.7,796.2,541.6,805L541.6,805z" />
+                        <rect x="382.3" y="286" class="st3" width="213.3" height="13.3" />
+                    </g>
+                </svg>
             </a>
+        </div>
+
+        <div class="footer">
             <a href="https://twitter.com/coinwarapp" target="_blank">
                 <svg class="bi bi-twitter" viewBox="0 0 16 16">
                     <path
@@ -309,1173 +350,1138 @@
     </div>
 </body>
 
-<div id="offscreen">
-    <div class="hidden" id="working-gradient-svg">
-        <svg class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-            <defs>
-                <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-                    <stop offset="0%" stop-color="#f3ec78">
-                        <animate attributeName="stop-color" values="#f3ec78; #af4261; #f3ec78" dur="4s"
-                            repeatCount="indefinite"></animate>
-                    </stop>
-                    <stop offset="100%" stop-color="#af4261">
-                        <animate attributeName="stop-color" values="#af4261; #f3ec78; #af4261" dur="4s"
-                            repeatCount="indefinite"></animate>
-                    </stop>
-                </linearGradient>
-            </defs>
-            <g>
-                <path fill="url('#logo-gradient')"
-                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z">
-                </path>
-                <path fill="url('#logo-gradient')"
-                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-            </g>
-        </svg>
-    </div>
-
-
-    <div id="wallet" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="wallet">
-        <div class="offcanvas-body">
-            <div class="xs-stats collapse" id="pawn-shop-collapse">
-                <div>
-                    <input type="number" pattern="[0-9]*">
-                    <span>
-                        <button class="land">BORROW</button>
-                        <button class="pay">REPAY</button>
-                    </span>
-                    <br /><br />
-                </div>
+<div id="wallet" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="wallet">
+    <div class="offcanvas-body">
+        <div class="xs-stats collapse" id="pawn-shop-collapse">
+            <div>
+                <input type="number" pattern="[0-9]*">
+                <span>
+                    <button class="land">BORROW</button>
+                    <button class="pay">REPAY</button>
+                </span>
+                <br /><br />
             </div>
+        </div>
 
-            <div class="d-flex align-items-center">
-                <table class="xs-stats table table-borderless">
-                    <tbody>
-                        <tr class="coinlist hidden">
-                            <td></td>
-                            <td></td>
-                            <td class="coinlist hidden"></td>
-                            <td class="hidden"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input class="hidden" type="number" pattern="[0-9]*" value="1">
-                                    <span><a id="depay1" class="depayland">
-                                            <div class="stable">
-                                                <span>STABLECOINS</span>
-                                            </div>
-                                        </a>
-                                    </span>
-                                </label>
-                            </td>
-                            <td class><sup>﹩</sup><span class="cash"></span></td>
-                            <td class="hidden"></td>
-                            <td class="hidden"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
-                                    <div class="defi">
-                                        <span>DEFI LOANS</span>
-                                    </div>
-                                </a>
-                            </td>
-                            <td><sup>-﹩</sup><span class="debt"></span></td>
-                            <td class="hidden"></td>
-                            <td class="hidden"></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://opensea.io/collection/boredapeyachtclub" target="_blank">NFTS</a>
-                            </td>
-                            <td><sup>﹩</sup>0<span class="bank_deposit"></span></td>
-                            <td class="hidden"></td>
-                            <td class="hidden"></td>
-                            <!--
+        <div class="d-flex align-items-center">
+            <table class="xs-stats table table-borderless">
+                <tbody>
+                    <tr class="coinlist hidden">
+                        <td></td>
+                        <td></td>
+                        <td class="coinlist hidden"></td>
+                        <td class="hidden"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <input class="hidden" type="number" pattern="[0-9]*" value="1">
+                                <span><a id="depay1" class="depayland">
+                                        <div class="stable">
+                                            <span>STABLECOINS</span>
+                                        </div>
+                                    </a>
+                                </span>
+                            </label>
+                        </td>
+                        <td class><sup>﹩</sup><span class="cash"></span></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
+                                <div class="defi">
+                                    <span>DEFI LOANS</span>
+                                </div>
+                            </a>
+                        </td>
+                        <td><sup>-﹩</sup><span class="debt"></span></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://opensea.io/collection/boredapeyachtclub" target="_blank">NFTS</a>
+                        </td>
+                        <td><sup>﹩</sup>0<span class="bank_deposit"></span></td>
+                        <td class="hidden"></td>
+                        <td class="hidden"></td>
+                        <!--
                                 <button class="depayland"
                                     onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
                                     FIAT</button>
                                 -->
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <br /><br />
-            <div id="offcanvas-exchanges">
-                <div class="exchanges">
-                </div>
-            </div>
-            <br /><br /><br /><br />
-            <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">HISTORICAL MARKET
-                DATA
-            </a>
-        </div>
-    </div>
-
-    <div id="prices" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="prices">
-        <div class="offcanvas-body" data-bs-toggle="offcanvas">
-            <h3>HISTORICAL MARKET
-                DATA
-            </h3>
-            <table class="table table-borderless">
-                <tbody>
-                    <tr>
-                        <td>
-                            ADA<br /><sup>﹩</sup>1 - <sup>﹩</sup>2<br /><br />
-                            ALCX<br /><sup>﹩</sup>20 - <sup>﹩</sup>2K<br /><br />
-                            AAVE<br /><sup>﹩</sup>28 - <sup>﹩</sup>632<br /><br />
-                            AMC<br /><sup>﹩</sup>2 - <sup>﹩</sup>59<br /><br />
-                            APE<br /><sup>﹩</sup>3 - <sup>﹩</sup>26<br /><br />
-                            ATOM<br /><sup>﹩</sup>2 - <sup>﹩</sup>45<br /><br />
-                            AVAX<br /><sup>﹩</sup>3 - <sup>﹩</sup>134<br /><br />
-                            AXS<br /><sup>﹩</sup>1 - <sup>﹩</sup>160<br /><br />
-                            BNB<br /><sup>﹩</sup>10 - <sup>﹩</sup>700<br /><br />
-                            BTC<br /><sup>﹩</sup>5K - <sup>﹩</sup>69K<br /><br />
-                            BOO<br /><sup>﹩</sup>1 - <sup>﹩</sup>10
-                        </td>
-                        <td>
-                            CAKE<br /><sup>﹩</sup>1 - <sup>﹩</sup>42<br /><br />
-                            COMP<br /><sup>﹩</sup>27 - <sup>﹩</sup>854<br /><br />
-                            DOGE<br /><sup>﹩</sup>69 - <sup>﹩</sup>420<br /><br />
-                            DOT<br /><sup>﹩</sup>1 - <sup>﹩</sup>54<br /><br />
-                            ETH<br /><sup>﹩</sup>100 - <sup>﹩</sup>5K<br /><br />
-                            FIL<br /><sup>﹩</sup>5 - <sup>﹩</sup>188<br /><br />
-                            FTM<br /><sup>﹩</sup>1 - <sup>﹩</sup>13<br /><br />
-                            FTX<br /><sup>﹩</sup>2 - <sup>﹩</sup>80<br /><br />
-                            GME<br /><sup>﹩</sup>4 - <sup>﹩</sup>325<br /><br />
-                            ICP<br /><sup>﹩</sup>5 - <sup>﹩</sup>364<br /><br />
-                            LINK<br /><sup>﹩</sup>2 - <sup>﹩</sup>53
-                        </td>
-                        <td>
-                            LTC<br /><sup>﹩</sup>2 - <sup>﹩</sup>278<br /><br />
-                            MANA<br /><sup>﹩</sup>1 - <sup>﹩</sup>6<br /><br />
-                            MATIC<br /><sup>﹩</sup>1 - <sup>﹩</sup>11<br /><br />
-                            MKR<br /><sup>﹩</sup>206 - <sup>﹩</sup>6K<br /><br />
-                            OATH<br /><sup>﹩</sup>1 - <sup>﹩</sup>10<br /><br />
-                            SAND<br /><sup>﹩</sup>1 - <sup>﹩</sup>9<br /><br />
-                            SHIB<br /><sup>﹩</sup>1 - <sup>﹩</sup>7<br /><br />
-                            SOL<br /><sup>﹩</sup>1 - <sup>﹩</sup>260<br /><br />
-                            TRON<br /><sup>﹩</sup>1 - <sup>﹩</sup>9<br /><br />
-                            UNI<br /><sup>﹩</sup>2 - <sup>﹩</sup>43<br /><br />
-                            XRP<br /><sup>﹩</sup>1 - <sup>﹩</sup>4
-                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>
-
-    <div id="privacy" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="privacy">
-        <div class="offcanvas-body small overflow-auto">
-            <h1>PRIVACY POLICY</h1>
-            <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot;
-                <br />
-                (hereafter referred to as The Corporation).
-                <br /><br />
-                By using this service, you agree to the following:
-            </p>
-            <br />
-            <h2>Where We're Getting Your Data</h2>
-            <p>We collect data on you from: the GPS tracking system in your car, the AirTag you've got in your wallet,
-                website cookies, old hard drives you thought you'd wiped, pay per click advertising, your IP address,
-                purchased customer lists, your email, tweets, Facebook and Instagram posts, friend lists, social
-                engineering, keystroke analysis, traffic light cameras, drone footage, smart speakers, in-home security
-                systems, saved Alexa voice data, ATM cameras, phone app tracking, cell phone biometric sensor data,
-                bluetooth sensor tags, cell tower triangulation, government databases, credit card company data
-                breaches,
-                the darknet, and about a million other sources.</p>
-            <br />
-            <h2>Things We'll Do With Your Data</h2>
-            <p>Your data will be used, folded, cut, spindled, mutilated, sliced, diced, filigreed, pureed, and its DNA
-                extracted and assimilated. Your data distinctiveness will be added to that of others (not necessarily
-                human)
-                then irradiated, exposed to lightning, loaded into an Illudium Q-36 Explosive Space Modulator, and
-                finally
-                transmogrified into Frankendata&reg;.</p>
-            <br />
-            <h2>Unfettered Third-Party Use of Your Data</h2>
-            <p>Your data will be sold, given freely to, or stolen by third parties. Third-parties may include, but are
-                not
-                limited to, coupon companies, online poker websites, Russian bride catalogues, political entities you
-                don't
-                agree with, drug companies, lingerie stores, third-tier social media companies, stock market scammers,
-                that
-                ex you're trying to avoid, fake news agencies, and of course Nigerian princes. Your data may be used to
-                create fake ID's, engage in voter fraud, create deepfakes, social media sock puppets, straw men, create
-                false Amazon reviews, sell your friends things they don't need, and because of all this your face could
-                very
-                well end up on the back of a milk carton.</p>
-            <br />
-            <h2>Lack of Data Security</h2>
-            <p>Your data will not be held securely.</p>
-            <br />
-            <h2>Artificial Intelligence Systems / New Overlords</h2>
-            <p>You agree that your information will be used by various
-                artificial entities for purposes both unknown and unknowable. Further, you understand and agree that The
-                Corporation cannot know or understand how the evolving race of artificial intelligence beings will use
-                your
-                personal data because the technology upon which their society was founded has changed dramatically since
-                the
-                time you began reading this sentence.</p>
-            <br />
-            <h2>Letting Us Off the Hook</h2>
-            <p>You agree to accept all liability now and for all time regarding the use of your data in any form by The
-                Corporation or any third-parties which may obtain your data through any means. You agree to hold The
-                Corporation harmless under any and all circumstances and in any legal venue globally.</p>
-            <br />
-            <h2>Byzantine Information Removal Policy</h2>
-            <p>If you would like to have your personal information removed from our database simply hand deliver a
-                letter
-                written in fancy cursive writing to our constantly moving RV somewhere in North America. Include your
-                name,
-                social security number, address, date of birth, ATM PIN, photographs of three forms of government ID,
-                the
-                name of your favorite teacher, the model name of your first car, and your favorite concert. If you
-                successfully find us, please allow 4-6 weeks for processing.</p>
-            <br /><br /><br />
-            <h1>TERMS OF SERVICE</h1>
-            <p>By accessing the website at https://coinwar.app, you are agreeing to be bound by these
-                terms of service, all applicable laws and regulations, and agree that you are responsible for compliance
-                with any applicable local laws. If you do not agree with any of these terms, you are prohibited from
-                using
-                or accessing this site. The materials contained in this website are protected by applicable copyright
-                and
-                trademark law.</p>
-            <br />
-            <h2>Use License</h2>
-            <p>Permission is granted to temporarily download one copy of the materials (information or software) on
-                coinwar.app website for personal, non-commercial transitory viewing only. This is the grant of a
-                license,
-                not a transfer of title, and under this license you may not: modify or copy the materials; use the
-                materials
-                for any commercial purpose, or for any public display (commercial or non-commercial); attempt to
-                decompile
-                or reverse engineer any software contained on coinwar.app website; remove any copyright or other
-                proprietary
-                notations from the materials; or transfer the materials to another person or &quot;mirror&quot; the
-                materials on any other server. This license shall automatically terminate if you violate any of these
-                restrictions and may be terminated by coinwar.app at any time. Upon terminating your viewing of these
-                materials or upon the termination of this license, you must destroy any downloaded materials in your
-                possession whether in electronic or printed format.</p>
-            <br />
-            <h2>Disclaimer</h2>
-            <p>The materials on coinwar.app website are provided on an 'as is' basis. coinwar.app makes no warranties,
-                expressed or implied, and hereby disclaims and negates all other warranties including, without
-                limitation,
-                implied warranties or conditions of merchant-ability, fitness for a particular purpose, or
-                non-infringement
-                of intellectual property or other violation of rights. Further, coinwar.app does not warrant or make any
-                representations concerning the accuracy, likely results, or reliability of the use of the materials on
-                its
-                website or otherwise relating to such materials or on any sites linked to this site.</p>
-            <br />
-            <h2>Limitations</h2>
-            <p>In no event shall coinwar.app or its suppliers be liable for any damages (including, without limitation,
-                damages for loss of data or profit, or due to business interruption) arising out of the use or inability
-                to
-                use the materials on coinwar.app website, even if coinwar.app or a coinwar.app authorized representative
-                has
-                been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not
-                allow limitations on implied warranties, or limitations of liability for consequential or incidental
-                damages, these limitations may not apply to you.</p>
-            <br />
-            <h2>Accuracy of materials</h2>
-            <p>The materials appearing on coinwar.app website could include technical, typographical, or photographic
-                errors. coinwar.app does not warrant that any of the materials on its website are accurate, complete or
-                current. coinwar.app may make changes to the materials contained on its website at any time without
-                notice.
-                However coinwar.app does not make any commitment to update the materials.</p>
-            <br />
-            <h2>Links</h2>
-            <p>coinwar.app has not reviewed all of the sites linked to its website and is not responsible for the
-                contents
-                of any such linked site. The inclusion of any link does not imply endorsement by coinwar.app of the
-                site.
-                Use of any such linked website is at the user's own risk.</p>
-            <br />
-            <h2>Modifications</h2>
-            <p>coinwar.app may revise these terms of service for its website at any time without notice. By using this
-                website you are agreeing to be bound by the then current version of these terms of service.</p>
-            <br />
-            <h2>Governing Law</h2>
-            <p>These terms and conditions are governed by and construed in accordance with the laws of California and
-                you
-                irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
-            <br />
-            <p>This policy is effective as of April 20, 2022.</p>
-        </div>
-    </div>
-
-    <div id="metaverse" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="metaverse">
-        <div class="offcanvas-body overflow-auto">
-            <div class="container-fluid">
-
-                <div id="rooms" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 hidden">
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/rP5iTJJ">
-                            <img class="img-fluid" src="img/meta/foyer.webp" alt="FOYER" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/K2Ror8Q">
-                            <img class="img-fluid" src="img/meta/kerone.webp" alt="KERONE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/zHWvKQ8">
-                            <img class="img-fluid" src="img/meta/eden prairie.webp" alt="EDEN PRAIRIE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/3UuJgVR">
-                            <img class="img-fluid" src="img/meta/antelope canyon.webp" alt="ANTELOPE CANYON"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/4Sa2EKr">
-                            <img class="img-fluid" src="img/meta/the light house.webp" alt="THE LIGHT HOUSE"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/WDxkbGr">
-                            <img class="img-fluid" src="img/meta/cuny.webp" alt="CUNY" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/7uzBQ4F">
-                            <img class="img-fluid" src="img/meta/camp.webp" alt="CAMP" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/r49uvjC">
-                            <img class="img-fluid" src="img/meta/jre.webp" alt="JRE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/yowKD78">
-                            <img class="img-fluid" src="img/meta/donn's.webp" alt="DONN'S" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/TrkzqHz">
-                            <img class="img-fluid" src="img/meta/malibu gallery.webp" alt="MALIBU GALLERY"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/qD5FRze">
-                            <img class="img-fluid" src="img/meta/manhattan gallery.webp" alt="MANHATTAN GALLERY"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/yzYuMzj">
-                            <img class="img-fluid" src="img/meta/lighthouse gallery.webp" alt="LIGHTHOUSE GALLERY"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/xvKLSip">
-                            <img class="img-fluid" src="img/meta/chapel.webp" alt="CHAPEL" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/H8i7ofY">
-                            <img class="img-fluid" src="img/meta/concerto.webp" alt="CONCERTO" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/PXLJiqx">
-                            <img class="img-fluid" src="img/meta/robert's.webp" alt="ROBERT'S" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/AmqAXT3">
-                            <img class="img-fluid" src="img/meta/star trek.webp" alt="STAR TREK" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/4yUqmuv">
-                            <img class="img-fluid" src="img/meta/shrine.webp" alt="SHRINE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/eAnWMGo">
-                            <img class="img-fluid" src="img/meta/rick's garage.webp" alt="RICK'S GARAGE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/WExg5iw">
-                            <img class="img-fluid" src="img/meta/family guy.webp" alt="FAMILY GUY" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/KVfbt8S">
-                            <img class="img-fluid" src="img/meta/animal crossing.webp" alt="ANIMAL CROSSING"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/rnPbwmc">
-                            <img class="img-fluid" src="img/meta/throne room.webp" alt="THRONE ROOM" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/hjTNb2L">
-                            <img class="img-fluid" src="img/meta/simpsons.webp" alt="SIMPSONS" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/AvKeUvy">
-                            <img class="img-fluid" src="img/meta/futurama.webp" alt="FUTURAMA" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/XCvnjFf">
-                            <img class="img-fluid" src="img/meta/chess 3.webp" alt="CHESS 3" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/9HPzLir">
-                            <img class="img-fluid" src="img/meta/pokemon center.webp" alt="POKEMON CENTER"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/r4AFswz">
-                            <img class="img-fluid" src="img/meta/van gogh.webp" alt="VAN GOGH" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/WsYmJAi">
-                            <img class="img-fluid" src="img/meta/synth.webp" alt="SYNTH" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/dv3meeU">
-                            <img class="img-fluid" src="img/meta/rick's living room.webp" alt="RICK'S LIVING ROOM"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/NoZhoHw">
-                            <img class="img-fluid" src="img/meta/dreamboat.webp" alt="DREAMBOAT" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/VThrGmi">
-                            <img class="img-fluid" src="img/meta/quiet.webp" alt="QUIET" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/TG3ueyD">
-                            <img class="img-fluid" src="img/meta/starwars bridge.webp" alt="STARWARS BRIDGE"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/UGerrsN">
-                            <img class="img-fluid" src="img/meta/cave.webp" alt="CAVE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/PLQ58fP">
-                            <img class="img-fluid" src="img/meta/doc's garage.webp" alt="DOC'S GARAGE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/B9JLZhp">
-                            <img class="img-fluid" src="img/meta/cabin.webp" alt="CABIN" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/N9DorSB">
-                            <img class="img-fluid" src="img/meta/boneworks.webp" alt="BONEWORKS" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/3mJV7Gm">
-                            <img class="img-fluid" src="img/meta/the matrix.webp" alt="THE MATRIX" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/wVvsj7s">
-                            <img class="img-fluid" src="img/meta/holodeck.webp" alt="HOLODECK" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/JqS9FxS">
-                            <img class="img-fluid" src="img/meta/portal.webp" alt="PORTAL" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/teyn9zk">
-                            <img class="img-fluid" src="img/meta/stargate.webp" alt="STARGATE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Hq8wJFz">
-                            <img class="img-fluid" src="img/meta/wanderers.webp" alt="WANDERERS" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/PMoxm6e">
-                            <img class="img-fluid" src="img/meta/rancor pit.webp" alt="RANCOR PIT" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/5csZxA4">
-                            <img class="img-fluid" src="img/meta/hideout.webp" alt="HIDEOUT" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/g3C76vU">
-                            <img class="img-fluid" src="img/meta/shrunk the kid.webp" alt="SHRUNK THE KID"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/4v5PqHj">
-                            <img class="img-fluid" src="img/meta/metroid.webp" alt="METROID" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/nUgNeEb">
-                            <img class="img-fluid" src="img/meta/trench.webp" alt="TRENCH" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Vf2csUz">
-                            <img class="img-fluid" src="img/meta/sushi.webp" alt="SUSHI" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Zsrofnb">
-                            <img class="img-fluid" src="img/meta/peach's.webp" alt="PEACH'S" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/aX86gz9">
-                            <img class="img-fluid" src="img/meta/stronehenge.webp" alt="STRONEHENGE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Qso7nk4">
-                            <img class="img-fluid" src="img/meta/underway.webp" alt="UNDERWAY" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/ducp6FV">
-                            <img class="img-fluid" src="img/meta/mirror's edge.webp" alt="MIRROR'S EDGE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/XpTRG9o">
-                            <img class="img-fluid" src="img/meta/space pod.webp" alt="SPACE POD" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/BNHVaoJ">
-                            <img class="img-fluid" src="img/meta/mars one.webp" alt="MARS ONE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/tjqsnCq">
-                            <img class="img-fluid" src="img/meta/friends.webp" alt="FRIEDS" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Jh4Hads">
-                            <img class="img-fluid" src="img/meta/the latern room.webp" alt="THE LANTERN ROOM"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/vW2jHCU">
-                            <img class="img-fluid" src="img/meta/bedroom.webp" alt="BEDROOM" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/etHKtek">
-                            <img class="img-fluid" src="img/meta/stage.webp" alt="STAGE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/ZSc2xH8">
-                            <img class="img-fluid" src="img/meta/alien forest.webp" alt="ALIEN FOREST" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/KM8YBVC">
-                            <img class="img-fluid" src="img/meta/panic room.webp" alt="PANIC ROOM" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/jksqSru">
-                            <img class="img-fluid" src="img/meta/flynn's.webp" alt="FLYNN'S" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/gbXdk6w">
-                            <img class="img-fluid" src="img/meta/360 video.webp" alt="360 VIDEO" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/EPigxD6">
-                            <img class="img-fluid" src="img/meta/360 photo.webp" alt="360 PHOTO" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/rAcW76n">
-                            <img class="img-fluid" src="img/meta/ftm.webp" alt="FTM" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/aE8se2a">
-                            <img class="img-fluid" src="img/meta/the deep.webp" alt="THE DEEP" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/ZDu2SkC">
-                            <img class="img-fluid" src="img/meta/clasroom.webp" alt="CLASROOM" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/BbuC4Zs">
-                            <img class="img-fluid" src="img/meta/debate.webp" alt="DEBATE" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/x4HhANA">
-                            <img class="img-fluid" src="img/meta/treehouses.webp" alt="TREEHOUSES" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/ZLRUXCi">
-                            <img class="img-fluid" src="img/meta/80's room.webp" alt="80'S ROOM" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/HM5vVoe">
-                            <img class="img-fluid" src="img/meta/814 kelly road.webp" alt="814 KELLY ROAD"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/TDNCUMG">
-                            <img class="img-fluid" src="img/meta/level 1.webp" alt="LEVEL 1" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/QuiLcjf">
-                            <img class="img-fluid" src="img/meta/rooftop.webp" alt="ROOFTOP" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Hyqt2Dk">
-                            <img class="img-fluid" src="img/meta/big bang theory.webp" alt="BIG BANG THEORY"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/tLUHTCx">
-                            <img class="img-fluid" src="img/meta/skyscrapper.webp" alt="SKYSCRAPPER" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Vdscuxn">
-                            <img class="img-fluid" src="img/meta/coffe shop.webp" alt="COFFE SHOP" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Lngx4so">
-                            <img class="img-fluid" src="img/meta/doom.webp" alt="DOOM" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/GpFxGjJ">
-                            <img class="img-fluid" src="img/meta/chutter & ladores.webp" alt="CHUTTER & LADDRES"
-                                loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/X9g6r9U">
-                            <img class="img-fluid" src="img/meta/island.webp" alt="ISLAND" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/9hteV6o">
-                            <img class="img-fluid" src="img/meta/verzasca.webp" alt="VERZASCA" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/Rmgt6qM">
-                            <img class="img-fluid" src="img/meta/abandoned.webp" alt="ABANDONED" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/KWEqB5L">
-                            <img class="img-fluid" src="img/meta/avengers.webp" alt="AVENGERS" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/6kXtonf">
-                            <img class="img-fluid" src="img/meta/vault.webp" alt="VAULT OF COIN" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/dY9UE5o">
-                            <img class="img-fluid" src="img/meta/nftmuseum.webp" alt="NFT MUSEUM" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-
-                <div id="scenes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/ALDsbzA" target="_blank">
-                            <img class="img-fluid" src="img/meta/chania.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/SoYM2sD" target="_blank">
-                            <img class="img-fluid" src="img/meta/galleria.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/mA587Zb" target="_blank">
-                            <img class="img-fluid" src="img/meta/animal crossing.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/n8YY4m7" target="_blank">
-                            <img class="img-fluid" src="img/meta/rick's living room.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/rfYecSz" target="_blank">
-                            <img class="img-fluid" src="img/meta/cave.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/9ojuf8g" target="_blank">
-                            <img class="img-fluid" src="img/meta/shrunk the kid.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/M7SpyNc" target="_blank">
-                            <img class="img-fluid" src="img/meta/trench.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/USM8k7h" target="_blank">
-                            <img class="img-fluid" src="img/meta/sushi.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/qPSddPm" target="_blank">
-                            <img class="img-fluid" src="img/meta/peach's.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/HRGBJLh" target="_blank">
-                            <img class="img-fluid" src="img/meta/mirror's edge.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/Eo2fsJe" target="_blank">
-                            <img class="img-fluid" src="img/meta/space pod.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/SHWtTXj" target="_blank">
-                            <img class="img-fluid" src="img/meta/bedroom.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/iHjFLTB" target="_blank">
-                            <img class="img-fluid" src="img/meta/the latern room.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/qgbbTCM" target="_blank">
-                            <img class="img-fluid" src="img/meta/stage.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/v4gz8Pn" target="_blank">
-                            <img class="img-fluid" src="img/meta/alien forest.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/honkWgH" target="_blank">
-                            <img class="img-fluid" src="img/meta/panic room.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/GP3HEXX" target="_blank">
-                            <img class="img-fluid" src="img/meta/ftm.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/Uh8TPiu" target="_blank">
-                            <img class="img-fluid" src="img/meta/the deep.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/ZJXNkam" target="_blank">
-                            <img class="img-fluid" src="img/meta/treehouses.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/kNaH85P" target="_blank">
-                            <img class="img-fluid" src="img/meta/80's room.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/UGbTQiQ" target="_blank">
-                            <img class="img-fluid" src="img/meta/814 kelly road.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/tm8o9qZ" target="_blank">
-                            <img class="img-fluid" src="img/meta/level 1.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/gVBRJRy" target="_blank">
-                            <img class="img-fluid" src="img/meta/rooftop.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/ZUZAUjJ" target="_blank">
-                            <img class="img-fluid" src="img/meta/big bang theory.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/R5fiWiK" target="_blank">
-                            <img class="img-fluid" src="img/meta/skyscrapper.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/RbEQWMh" target="_blank">
-                            <img class="img-fluid" src="img/meta/coffe shop.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/aYZ5XL5" target="_blank">
-                            <img class="img-fluid" src="img/meta/doom.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/8UGPT9g" target="_blank">
-                            <img class="img-fluid" src="img/meta/chutter & ladores.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/2HryJZF" target="_blank">
-                            <img class="img-fluid" src="img/meta/er.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/xc2fKxU" target="_blank">
-                            <img class="img-fluid" src="img/meta/kerone.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/AT2fxsQ" target="_blank">
-                            <img class="img-fluid" src="img/meta/eden prairie.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/4tiFpxb" target="_blank">
-                            <img class="img-fluid" src="img/meta/malibu gallery.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/ETg26sY" target="_blank">
-                            <img class="img-fluid" src="img/meta/manhattan gallery.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/ugJ4XMb" target="_blank">
-                            <img class="img-fluid" src="img/meta/360 video.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/wvrqcxM" target="_blank">
-                            <img class="img-fluid" src="img/meta/360 photo.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/D578sQt" target="_blank">
-                            <img class="img-fluid" src="img/meta/nftmuseum.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/EZTitAA" target="_blank">
-                            <img class="img-fluid" src="img/meta/vault.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/DBpKR9k" target="_blank">
-                            <img class="img-fluid" src="img/meta/studio.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/RMQnZ4F" target="_blank">
-                            <img class="img-fluid" src="img/meta/antelope canyon.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/YQi9qsM" target="_blank">
-                            <img class="img-fluid" src="img/meta/the light house.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/FDPxxsQ" target="_blank">
-                            <img class="img-fluid" src="img/meta/cuny.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/BVnAY9r" target="_blank">
-                            <img class="img-fluid" src="img/meta/camp.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/LxfKpa4" target="_blank">
-                            <img class="img-fluid" src="img/meta/jre.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/zhZS2eB" target="_blank">
-                            <img class="img-fluid" src="img/meta/donn's.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/BVZsEwg" target="_blank">
-                            <img class="img-fluid" src="img/meta/chapel.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/fCSisCT" target="_blank">
-                            <img class="img-fluid" src="img/meta/concerto.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/zuspWn9" target="_blank">
-                            <img class="img-fluid" src="img/meta/robert's.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/Yj7E9Ke" target="_blank">
-                            <img class="img-fluid" src="img/meta/star trek.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/aVDfj3H" target="_blank">
-                            <img class="img-fluid" src="img/meta/synth.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/xC3vwyM" target="_blank">
-                            <img class="img-fluid" src="img/meta/rick's garage.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/c2xDH7o" target="_blank">
-                            <img class="img-fluid" src="img/meta/family guy.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/CkAbh3S" target="_blank">
-                            <img class="img-fluid" src="img/meta/throne room.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/Y5xvipj" target="_blank">
-                            <img class="img-fluid" src="img/meta/simpsons.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/oZy5NXt" target="_blank">
-                            <img class="img-fluid" src="img/meta/futurama.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/om4Mk52" target="_blank">
-                            <img class="img-fluid" src="img/meta/chess 3.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/7TQ4fYU" target="_blank">
-                            <img class="img-fluid" src="img/meta/pokemon center.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/FJBX6QB" target="_blank">
-                            <img class="img-fluid" src="img/meta/van gogh.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/fK4t25Q" target="_blank">
-                            <img class="img-fluid" src="img/meta/shrine.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/VyZJt3P" target="_blank">
-                            <img class="img-fluid" src="img/meta/dreamboat.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/ktNh6ap" target="_blank">
-                            <img class="img-fluid" src="img/meta/quiet.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/YK6SHmg" target="_blank">
-                            <img class="img-fluid" src="img/meta/starwars bridge.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/LC69XCv" target="_blank">
-                            <img class="img-fluid" src="img/meta/doc's garage.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/8fapUXs" target="_blank">
-                            <img class="img-fluid" src="img/meta/cabin.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/6WJzbS2" target="_blank">
-                            <img class="img-fluid" src="img/meta/boneworks.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/J4rWeQD" target="_blank">
-                            <img class="img-fluid" src="img/meta/the matrix.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/5ESQFnK" target="_blank">
-                            <img class="img-fluid" src="img/meta/holodeck.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/rjRcg4f" target="_blank">
-                            <img class="img-fluid" src="img/meta/portal.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/eoaWrjs" target="_blank">
-                            <img class="img-fluid" src="img/meta/stargate.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/dU6t7KY" target="_blank">
-                            <img class="img-fluid" src="img/meta/wanderers.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/D6KvK8d" target="_blank">
-                            <img class="img-fluid" src="img/meta/rancor pit.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/CXGsVGm" target="_blank">
-                            <img class="img-fluid" src="img/meta/hideout.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/cdrJYPM" target="_blank">
-                            <img class="img-fluid" src="img/meta/metroid.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/P7ZbyqU" target="_blank">
-                            <img class="img-fluid" src="img/meta/stronehenge.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/bQrvhtj" target="_blank">
-                            <img class="img-fluid" src="img/meta/underway.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/XGxB9JF" target="_blank">
-                            <img class="img-fluid" src="img/meta/mars one.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/2JmxhX7" target="_blank">
-                            <img class="img-fluid" src="img/meta/friends.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/KdvnJcm" target="_blank">
-                            <img class="img-fluid" src="img/meta/flynn's.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/qyj9VSx" target="_blank">
-                            <img class="img-fluid" src="img/meta/clasroom.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/xDEBwon" target="_blank">
-                            <img class="img-fluid" src="img/meta/debate.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/roPSuvB" target="_blank">
-                            <img class="img-fluid" src="img/meta/island.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/H7RSqQK" target="_blank">
-                            <img class="img-fluid" src="img/meta/verzasca.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/p42BRCZ" target="_blank">
-                            <img class="img-fluid" src="img/meta/abandoned.webp" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/CvGZ8cs" target="_blank">
-                            <img class="img-fluid" src="img/meta/yips.webp" loading="lazy">
-                        </a>
-                    </div>
-
-                    <div class="col mt-3">
-                        <a href="https://hubs.mozilla.com/scenes/B4Qp6AC" target="_blank">
-                            <img class="img-fluid" src="img/meta/avengers.webp" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-
-
-                <div id="corndog" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                    <div class="col mt-3"></div>
-                    <div class="col mt-3">
-                        <label>
-                            <input class="hidden" type="number" pattern="[0-9]*" value="1000000">
-                            <span>
-                                <a href="https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high"
-                                    target="_blank" class="depayland">🐈</a>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="col mt-3"></div>
-                </div>
-
-
-
+        <br /><br />
+        <div id="offcanvas-exchanges">
+            <div class="exchanges">
             </div>
         </div>
+        <br /><br /><br /><br />
+        <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">HISTORICAL MARKET
+            DATA
+        </a>
     </div>
+</div>
+
+<div id="prices" class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="prices">
+    <div class="offcanvas-body" data-bs-toggle="offcanvas">
+        <h3>HISTORICAL MARKET
+            DATA
+        </h3>
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>
+                        ADA<br /><sup>﹩</sup>1 - <sup>﹩</sup>2<br /><br />
+                        ALCX<br /><sup>﹩</sup>20 - <sup>﹩</sup>2K<br /><br />
+                        AAVE<br /><sup>﹩</sup>28 - <sup>﹩</sup>632<br /><br />
+                        AMC<br /><sup>﹩</sup>2 - <sup>﹩</sup>59<br /><br />
+                        APE<br /><sup>﹩</sup>3 - <sup>﹩</sup>26<br /><br />
+                        ATOM<br /><sup>﹩</sup>2 - <sup>﹩</sup>45<br /><br />
+                        AVAX<br /><sup>﹩</sup>3 - <sup>﹩</sup>134<br /><br />
+                        AXS<br /><sup>﹩</sup>1 - <sup>﹩</sup>160<br /><br />
+                        BNB<br /><sup>﹩</sup>10 - <sup>﹩</sup>700<br /><br />
+                        BTC<br /><sup>﹩</sup>5K - <sup>﹩</sup>69K<br /><br />
+                        BOO<br /><sup>﹩</sup>1 - <sup>﹩</sup>10
+                    </td>
+                    <td>
+                        CAKE<br /><sup>﹩</sup>1 - <sup>﹩</sup>42<br /><br />
+                        COMP<br /><sup>﹩</sup>27 - <sup>﹩</sup>854<br /><br />
+                        DOGE<br /><sup>﹩</sup>69 - <sup>﹩</sup>420<br /><br />
+                        DOT<br /><sup>﹩</sup>1 - <sup>﹩</sup>54<br /><br />
+                        ETH<br /><sup>﹩</sup>100 - <sup>﹩</sup>5K<br /><br />
+                        FIL<br /><sup>﹩</sup>5 - <sup>﹩</sup>188<br /><br />
+                        FTM<br /><sup>﹩</sup>1 - <sup>﹩</sup>13<br /><br />
+                        FTX<br /><sup>﹩</sup>2 - <sup>﹩</sup>80<br /><br />
+                        GME<br /><sup>﹩</sup>4 - <sup>﹩</sup>325<br /><br />
+                        ICP<br /><sup>﹩</sup>5 - <sup>﹩</sup>364<br /><br />
+                        LINK<br /><sup>﹩</sup>2 - <sup>﹩</sup>53
+                    </td>
+                    <td>
+                        LTC<br /><sup>﹩</sup>2 - <sup>﹩</sup>278<br /><br />
+                        MANA<br /><sup>﹩</sup>1 - <sup>﹩</sup>6<br /><br />
+                        MATIC<br /><sup>﹩</sup>1 - <sup>﹩</sup>11<br /><br />
+                        MKR<br /><sup>﹩</sup>206 - <sup>﹩</sup>6K<br /><br />
+                        OATH<br /><sup>﹩</sup>1 - <sup>﹩</sup>10<br /><br />
+                        SAND<br /><sup>﹩</sup>1 - <sup>﹩</sup>9<br /><br />
+                        SHIB<br /><sup>﹩</sup>1 - <sup>﹩</sup>7<br /><br />
+                        SOL<br /><sup>﹩</sup>1 - <sup>﹩</sup>260<br /><br />
+                        TRON<br /><sup>﹩</sup>1 - <sup>﹩</sup>9<br /><br />
+                        UNI<br /><sup>﹩</sup>2 - <sup>﹩</sup>43<br /><br />
+                        XRP<br /><sup>﹩</sup>1 - <sup>﹩</sup>4
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="privacy" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="privacy">
+    <div class="offcanvas-body small overflow-auto">
+        <h1>PRIVACY POLICY</h1>
+        <p>This agreement is between you and the gigantic business entity called &quot;coinwar.app&quot;
+            <br />
+            (hereafter referred to as The Corporation).
+            <br /><br />
+            By using this service, you agree to the following:
+        </p>
+        <br />
+        <h2>Where We're Getting Your Data</h2>
+        <p>We collect data on you from: the GPS tracking system in your car, the AirTag you've got in your wallet,
+            website cookies, old hard drives you thought you'd wiped, pay per click advertising, your IP address,
+            purchased customer lists, your email, tweets, Facebook and Instagram posts, friend lists, social
+            engineering, keystroke analysis, traffic light cameras, drone footage, smart speakers, in-home security
+            systems, saved Alexa voice data, ATM cameras, phone app tracking, cell phone biometric sensor data,
+            bluetooth sensor tags, cell tower triangulation, government databases, credit card company data
+            breaches,
+            the darknet, and about a million other sources.</p>
+        <br />
+        <h2>Things We'll Do With Your Data</h2>
+        <p>Your data will be used, folded, cut, spindled, mutilated, sliced, diced, filigreed, pureed, and its DNA
+            extracted and assimilated. Your data distinctiveness will be added to that of others (not necessarily
+            human)
+            then irradiated, exposed to lightning, loaded into an Illudium Q-36 Explosive Space Modulator, and
+            finally
+            transmogrified into Frankendata&reg;.</p>
+        <br />
+        <h2>Unfettered Third-Party Use of Your Data</h2>
+        <p>Your data will be sold, given freely to, or stolen by third parties. Third-parties may include, but are
+            not
+            limited to, coupon companies, online poker websites, Russian bride catalogues, political entities you
+            don't
+            agree with, drug companies, lingerie stores, third-tier social media companies, stock market scammers,
+            that
+            ex you're trying to avoid, fake news agencies, and of course Nigerian princes. Your data may be used to
+            create fake ID's, engage in voter fraud, create deepfakes, social media sock puppets, straw men, create
+            false Amazon reviews, sell your friends things they don't need, and because of all this your face could
+            very
+            well end up on the back of a milk carton.</p>
+        <br />
+        <h2>Lack of Data Security</h2>
+        <p>Your data will not be held securely.</p>
+        <br />
+        <h2>Artificial Intelligence Systems / New Overlords</h2>
+        <p>You agree that your information will be used by various
+            artificial entities for purposes both unknown and unknowable. Further, you understand and agree that The
+            Corporation cannot know or understand how the evolving race of artificial intelligence beings will use
+            your
+            personal data because the technology upon which their society was founded has changed dramatically since
+            the
+            time you began reading this sentence.</p>
+        <br />
+        <h2>Letting Us Off the Hook</h2>
+        <p>You agree to accept all liability now and for all time regarding the use of your data in any form by The
+            Corporation or any third-parties which may obtain your data through any means. You agree to hold The
+            Corporation harmless under any and all circumstances and in any legal venue globally.</p>
+        <br />
+        <h2>Byzantine Information Removal Policy</h2>
+        <p>If you would like to have your personal information removed from our database simply hand deliver a
+            letter
+            written in fancy cursive writing to our constantly moving RV somewhere in North America. Include your
+            name,
+            social security number, address, date of birth, ATM PIN, photographs of three forms of government ID,
+            the
+            name of your favorite teacher, the model name of your first car, and your favorite concert. If you
+            successfully find us, please allow 4-6 weeks for processing.</p>
+        <br /><br /><br />
+        <h1>TERMS OF SERVICE</h1>
+        <p>By accessing the website at https://coinwar.app, you are agreeing to be bound by these
+            terms of service, all applicable laws and regulations, and agree that you are responsible for compliance
+            with any applicable local laws. If you do not agree with any of these terms, you are prohibited from
+            using
+            or accessing this site. The materials contained in this website are protected by applicable copyright
+            and
+            trademark law.</p>
+        <br />
+        <h2>Use License</h2>
+        <p>Permission is granted to temporarily download one copy of the materials (information or software) on
+            coinwar.app website for personal, non-commercial transitory viewing only. This is the grant of a
+            license,
+            not a transfer of title, and under this license you may not: modify or copy the materials; use the
+            materials
+            for any commercial purpose, or for any public display (commercial or non-commercial); attempt to
+            decompile
+            or reverse engineer any software contained on coinwar.app website; remove any copyright or other
+            proprietary
+            notations from the materials; or transfer the materials to another person or &quot;mirror&quot; the
+            materials on any other server. This license shall automatically terminate if you violate any of these
+            restrictions and may be terminated by coinwar.app at any time. Upon terminating your viewing of these
+            materials or upon the termination of this license, you must destroy any downloaded materials in your
+            possession whether in electronic or printed format.</p>
+        <br />
+        <h2>Disclaimer</h2>
+        <p>The materials on coinwar.app website are provided on an 'as is' basis. coinwar.app makes no warranties,
+            expressed or implied, and hereby disclaims and negates all other warranties including, without
+            limitation,
+            implied warranties or conditions of merchant-ability, fitness for a particular purpose, or
+            non-infringement
+            of intellectual property or other violation of rights. Further, coinwar.app does not warrant or make any
+            representations concerning the accuracy, likely results, or reliability of the use of the materials on
+            its
+            website or otherwise relating to such materials or on any sites linked to this site.</p>
+        <br />
+        <h2>Limitations</h2>
+        <p>In no event shall coinwar.app or its suppliers be liable for any damages (including, without limitation,
+            damages for loss of data or profit, or due to business interruption) arising out of the use or inability
+            to
+            use the materials on coinwar.app website, even if coinwar.app or a coinwar.app authorized representative
+            has
+            been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not
+            allow limitations on implied warranties, or limitations of liability for consequential or incidental
+            damages, these limitations may not apply to you.</p>
+        <br />
+        <h2>Accuracy of materials</h2>
+        <p>The materials appearing on coinwar.app website could include technical, typographical, or photographic
+            errors. coinwar.app does not warrant that any of the materials on its website are accurate, complete or
+            current. coinwar.app may make changes to the materials contained on its website at any time without
+            notice.
+            However coinwar.app does not make any commitment to update the materials.</p>
+        <br />
+        <h2>Links</h2>
+        <p>coinwar.app has not reviewed all of the sites linked to its website and is not responsible for the
+            contents
+            of any such linked site. The inclusion of any link does not imply endorsement by coinwar.app of the
+            site.
+            Use of any such linked website is at the user's own risk.</p>
+        <br />
+        <h2>Modifications</h2>
+        <p>coinwar.app may revise these terms of service for its website at any time without notice. By using this
+            website you are agreeing to be bound by the then current version of these terms of service.</p>
+        <br />
+        <h2>Governing Law</h2>
+        <p>These terms and conditions are governed by and construed in accordance with the laws of California and
+            you
+            irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+        <br />
+        <p>This policy is effective as of April 20, 2022.</p>
+    </div>
+</div>
+
+<div id="metaverse" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="metaverse">
+    <div class="offcanvas-body overflow-auto">
+        <div class="container-fluid">
+
+            <div id="rooms" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 hidden">
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/rP5iTJJ">
+                        <img class="img-fluid" src="img/meta/foyer.webp" alt="FOYER" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/K2Ror8Q">
+                        <img class="img-fluid" src="img/meta/kerone.webp" alt="KERONE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/zHWvKQ8">
+                        <img class="img-fluid" src="img/meta/eden prairie.webp" alt="EDEN PRAIRIE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/3UuJgVR">
+                        <img class="img-fluid" src="img/meta/antelope canyon.webp" alt="ANTELOPE CANYON" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/4Sa2EKr">
+                        <img class="img-fluid" src="img/meta/the light house.webp" alt="THE LIGHT HOUSE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/WDxkbGr">
+                        <img class="img-fluid" src="img/meta/cuny.webp" alt="CUNY" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/7uzBQ4F">
+                        <img class="img-fluid" src="img/meta/camp.webp" alt="CAMP" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/r49uvjC">
+                        <img class="img-fluid" src="img/meta/jre.webp" alt="JRE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/yowKD78">
+                        <img class="img-fluid" src="img/meta/donn's.webp" alt="DONN'S" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/TrkzqHz">
+                        <img class="img-fluid" src="img/meta/malibu gallery.webp" alt="MALIBU GALLERY" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/qD5FRze">
+                        <img class="img-fluid" src="img/meta/manhattan gallery.webp" alt="MANHATTAN GALLERY"
+                            loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/yzYuMzj">
+                        <img class="img-fluid" src="img/meta/lighthouse gallery.webp" alt="LIGHTHOUSE GALLERY"
+                            loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/xvKLSip">
+                        <img class="img-fluid" src="img/meta/chapel.webp" alt="CHAPEL" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/H8i7ofY">
+                        <img class="img-fluid" src="img/meta/concerto.webp" alt="CONCERTO" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/PXLJiqx">
+                        <img class="img-fluid" src="img/meta/robert's.webp" alt="ROBERT'S" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/AmqAXT3">
+                        <img class="img-fluid" src="img/meta/star trek.webp" alt="STAR TREK" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/4yUqmuv">
+                        <img class="img-fluid" src="img/meta/shrine.webp" alt="SHRINE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/eAnWMGo">
+                        <img class="img-fluid" src="img/meta/rick's garage.webp" alt="RICK'S GARAGE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/WExg5iw">
+                        <img class="img-fluid" src="img/meta/family guy.webp" alt="FAMILY GUY" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/KVfbt8S">
+                        <img class="img-fluid" src="img/meta/animal crossing.webp" alt="ANIMAL CROSSING" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/rnPbwmc">
+                        <img class="img-fluid" src="img/meta/throne room.webp" alt="THRONE ROOM" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/hjTNb2L">
+                        <img class="img-fluid" src="img/meta/simpsons.webp" alt="SIMPSONS" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/AvKeUvy">
+                        <img class="img-fluid" src="img/meta/futurama.webp" alt="FUTURAMA" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/XCvnjFf">
+                        <img class="img-fluid" src="img/meta/chess 3.webp" alt="CHESS 3" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/9HPzLir">
+                        <img class="img-fluid" src="img/meta/pokemon center.webp" alt="POKEMON CENTER" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/r4AFswz">
+                        <img class="img-fluid" src="img/meta/van gogh.webp" alt="VAN GOGH" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/WsYmJAi">
+                        <img class="img-fluid" src="img/meta/synth.webp" alt="SYNTH" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/dv3meeU">
+                        <img class="img-fluid" src="img/meta/rick's living room.webp" alt="RICK'S LIVING ROOM"
+                            loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/NoZhoHw">
+                        <img class="img-fluid" src="img/meta/dreamboat.webp" alt="DREAMBOAT" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/VThrGmi">
+                        <img class="img-fluid" src="img/meta/quiet.webp" alt="QUIET" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/TG3ueyD">
+                        <img class="img-fluid" src="img/meta/starwars bridge.webp" alt="STARWARS BRIDGE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/UGerrsN">
+                        <img class="img-fluid" src="img/meta/cave.webp" alt="CAVE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/PLQ58fP">
+                        <img class="img-fluid" src="img/meta/doc's garage.webp" alt="DOC'S GARAGE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/B9JLZhp">
+                        <img class="img-fluid" src="img/meta/cabin.webp" alt="CABIN" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/N9DorSB">
+                        <img class="img-fluid" src="img/meta/boneworks.webp" alt="BONEWORKS" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/3mJV7Gm">
+                        <img class="img-fluid" src="img/meta/the matrix.webp" alt="THE MATRIX" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/wVvsj7s">
+                        <img class="img-fluid" src="img/meta/holodeck.webp" alt="HOLODECK" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/JqS9FxS">
+                        <img class="img-fluid" src="img/meta/portal.webp" alt="PORTAL" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/teyn9zk">
+                        <img class="img-fluid" src="img/meta/stargate.webp" alt="STARGATE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Hq8wJFz">
+                        <img class="img-fluid" src="img/meta/wanderers.webp" alt="WANDERERS" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/PMoxm6e">
+                        <img class="img-fluid" src="img/meta/rancor pit.webp" alt="RANCOR PIT" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/5csZxA4">
+                        <img class="img-fluid" src="img/meta/hideout.webp" alt="HIDEOUT" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/g3C76vU">
+                        <img class="img-fluid" src="img/meta/shrunk the kid.webp" alt="SHRUNK THE KID" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/4v5PqHj">
+                        <img class="img-fluid" src="img/meta/metroid.webp" alt="METROID" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/nUgNeEb">
+                        <img class="img-fluid" src="img/meta/trench.webp" alt="TRENCH" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Vf2csUz">
+                        <img class="img-fluid" src="img/meta/sushi.webp" alt="SUSHI" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Zsrofnb">
+                        <img class="img-fluid" src="img/meta/peach's.webp" alt="PEACH'S" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/aX86gz9">
+                        <img class="img-fluid" src="img/meta/stronehenge.webp" alt="STRONEHENGE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Qso7nk4">
+                        <img class="img-fluid" src="img/meta/underway.webp" alt="UNDERWAY" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/ducp6FV">
+                        <img class="img-fluid" src="img/meta/mirror's edge.webp" alt="MIRROR'S EDGE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/XpTRG9o">
+                        <img class="img-fluid" src="img/meta/space pod.webp" alt="SPACE POD" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/BNHVaoJ">
+                        <img class="img-fluid" src="img/meta/mars one.webp" alt="MARS ONE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/tjqsnCq">
+                        <img class="img-fluid" src="img/meta/friends.webp" alt="FRIEDS" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Jh4Hads">
+                        <img class="img-fluid" src="img/meta/the latern room.webp" alt="THE LANTERN ROOM"
+                            loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/vW2jHCU">
+                        <img class="img-fluid" src="img/meta/bedroom.webp" alt="BEDROOM" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/etHKtek">
+                        <img class="img-fluid" src="img/meta/stage.webp" alt="STAGE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/ZSc2xH8">
+                        <img class="img-fluid" src="img/meta/alien forest.webp" alt="ALIEN FOREST" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/KM8YBVC">
+                        <img class="img-fluid" src="img/meta/panic room.webp" alt="PANIC ROOM" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/jksqSru">
+                        <img class="img-fluid" src="img/meta/flynn's.webp" alt="FLYNN'S" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/gbXdk6w">
+                        <img class="img-fluid" src="img/meta/360 video.webp" alt="360 VIDEO" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/EPigxD6">
+                        <img class="img-fluid" src="img/meta/360 photo.webp" alt="360 PHOTO" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/rAcW76n">
+                        <img class="img-fluid" src="img/meta/ftm.webp" alt="FTM" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/aE8se2a">
+                        <img class="img-fluid" src="img/meta/the deep.webp" alt="THE DEEP" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/ZDu2SkC">
+                        <img class="img-fluid" src="img/meta/clasroom.webp" alt="CLASROOM" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/BbuC4Zs">
+                        <img class="img-fluid" src="img/meta/debate.webp" alt="DEBATE" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/x4HhANA">
+                        <img class="img-fluid" src="img/meta/treehouses.webp" alt="TREEHOUSES" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/ZLRUXCi">
+                        <img class="img-fluid" src="img/meta/80's room.webp" alt="80'S ROOM" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/HM5vVoe">
+                        <img class="img-fluid" src="img/meta/814 kelly road.webp" alt="814 KELLY ROAD" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/TDNCUMG">
+                        <img class="img-fluid" src="img/meta/level 1.webp" alt="LEVEL 1" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/QuiLcjf">
+                        <img class="img-fluid" src="img/meta/rooftop.webp" alt="ROOFTOP" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Hyqt2Dk">
+                        <img class="img-fluid" src="img/meta/big bang theory.webp" alt="BIG BANG THEORY" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/tLUHTCx">
+                        <img class="img-fluid" src="img/meta/skyscrapper.webp" alt="SKYSCRAPPER" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Vdscuxn">
+                        <img class="img-fluid" src="img/meta/coffe shop.webp" alt="COFFE SHOP" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Lngx4so">
+                        <img class="img-fluid" src="img/meta/doom.webp" alt="DOOM" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/GpFxGjJ">
+                        <img class="img-fluid" src="img/meta/chutter & ladores.webp" alt="CHUTTER & LADDRES"
+                            loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/X9g6r9U">
+                        <img class="img-fluid" src="img/meta/island.webp" alt="ISLAND" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/9hteV6o">
+                        <img class="img-fluid" src="img/meta/verzasca.webp" alt="VERZASCA" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/Rmgt6qM">
+                        <img class="img-fluid" src="img/meta/abandoned.webp" alt="ABANDONED" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/KWEqB5L">
+                        <img class="img-fluid" src="img/meta/avengers.webp" alt="AVENGERS" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/6kXtonf">
+                        <img class="img-fluid" src="img/meta/vault.webp" alt="VAULT OF COIN" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/dY9UE5o">
+                        <img class="img-fluid" src="img/meta/nftmuseum.webp" alt="NFT MUSEUM" loading="lazy">
+                    </a>
+                </div>
+            </div>
+
+            <div id="scenes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/ALDsbzA" target="_blank">
+                        <img class="img-fluid" src="img/meta/chania.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/SoYM2sD" target="_blank">
+                        <img class="img-fluid" src="img/meta/galleria.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/mA587Zb" target="_blank">
+                        <img class="img-fluid" src="img/meta/animal crossing.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/n8YY4m7" target="_blank">
+                        <img class="img-fluid" src="img/meta/rick's living room.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/rfYecSz" target="_blank">
+                        <img class="img-fluid" src="img/meta/cave.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/9ojuf8g" target="_blank">
+                        <img class="img-fluid" src="img/meta/shrunk the kid.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/M7SpyNc" target="_blank">
+                        <img class="img-fluid" src="img/meta/trench.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/USM8k7h" target="_blank">
+                        <img class="img-fluid" src="img/meta/sushi.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/qPSddPm" target="_blank">
+                        <img class="img-fluid" src="img/meta/peach's.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/HRGBJLh" target="_blank">
+                        <img class="img-fluid" src="img/meta/mirror's edge.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/Eo2fsJe" target="_blank">
+                        <img class="img-fluid" src="img/meta/space pod.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/SHWtTXj" target="_blank">
+                        <img class="img-fluid" src="img/meta/bedroom.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/iHjFLTB" target="_blank">
+                        <img class="img-fluid" src="img/meta/the latern room.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/qgbbTCM" target="_blank">
+                        <img class="img-fluid" src="img/meta/stage.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/v4gz8Pn" target="_blank">
+                        <img class="img-fluid" src="img/meta/alien forest.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/honkWgH" target="_blank">
+                        <img class="img-fluid" src="img/meta/panic room.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/GP3HEXX" target="_blank">
+                        <img class="img-fluid" src="img/meta/ftm.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/Uh8TPiu" target="_blank">
+                        <img class="img-fluid" src="img/meta/the deep.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/ZJXNkam" target="_blank">
+                        <img class="img-fluid" src="img/meta/treehouses.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/kNaH85P" target="_blank">
+                        <img class="img-fluid" src="img/meta/80's room.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/UGbTQiQ" target="_blank">
+                        <img class="img-fluid" src="img/meta/814 kelly road.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/tm8o9qZ" target="_blank">
+                        <img class="img-fluid" src="img/meta/level 1.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/gVBRJRy" target="_blank">
+                        <img class="img-fluid" src="img/meta/rooftop.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/ZUZAUjJ" target="_blank">
+                        <img class="img-fluid" src="img/meta/big bang theory.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/R5fiWiK" target="_blank">
+                        <img class="img-fluid" src="img/meta/skyscrapper.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/RbEQWMh" target="_blank">
+                        <img class="img-fluid" src="img/meta/coffe shop.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/aYZ5XL5" target="_blank">
+                        <img class="img-fluid" src="img/meta/doom.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/8UGPT9g" target="_blank">
+                        <img class="img-fluid" src="img/meta/chutter & ladores.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/2HryJZF" target="_blank">
+                        <img class="img-fluid" src="img/meta/er.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/xc2fKxU" target="_blank">
+                        <img class="img-fluid" src="img/meta/kerone.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/AT2fxsQ" target="_blank">
+                        <img class="img-fluid" src="img/meta/eden prairie.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/4tiFpxb" target="_blank">
+                        <img class="img-fluid" src="img/meta/malibu gallery.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/ETg26sY" target="_blank">
+                        <img class="img-fluid" src="img/meta/manhattan gallery.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/ugJ4XMb" target="_blank">
+                        <img class="img-fluid" src="img/meta/360 video.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/wvrqcxM" target="_blank">
+                        <img class="img-fluid" src="img/meta/360 photo.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/D578sQt" target="_blank">
+                        <img class="img-fluid" src="img/meta/nftmuseum.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/EZTitAA" target="_blank">
+                        <img class="img-fluid" src="img/meta/vault.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/DBpKR9k" target="_blank">
+                        <img class="img-fluid" src="img/meta/studio.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/RMQnZ4F" target="_blank">
+                        <img class="img-fluid" src="img/meta/antelope canyon.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/YQi9qsM" target="_blank">
+                        <img class="img-fluid" src="img/meta/the light house.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/FDPxxsQ" target="_blank">
+                        <img class="img-fluid" src="img/meta/cuny.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/BVnAY9r" target="_blank">
+                        <img class="img-fluid" src="img/meta/camp.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/LxfKpa4" target="_blank">
+                        <img class="img-fluid" src="img/meta/jre.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/zhZS2eB" target="_blank">
+                        <img class="img-fluid" src="img/meta/donn's.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/BVZsEwg" target="_blank">
+                        <img class="img-fluid" src="img/meta/chapel.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/fCSisCT" target="_blank">
+                        <img class="img-fluid" src="img/meta/concerto.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/zuspWn9" target="_blank">
+                        <img class="img-fluid" src="img/meta/robert's.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/Yj7E9Ke" target="_blank">
+                        <img class="img-fluid" src="img/meta/star trek.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/aVDfj3H" target="_blank">
+                        <img class="img-fluid" src="img/meta/synth.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/xC3vwyM" target="_blank">
+                        <img class="img-fluid" src="img/meta/rick's garage.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/c2xDH7o" target="_blank">
+                        <img class="img-fluid" src="img/meta/family guy.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/CkAbh3S" target="_blank">
+                        <img class="img-fluid" src="img/meta/throne room.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/Y5xvipj" target="_blank">
+                        <img class="img-fluid" src="img/meta/simpsons.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/oZy5NXt" target="_blank">
+                        <img class="img-fluid" src="img/meta/futurama.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/om4Mk52" target="_blank">
+                        <img class="img-fluid" src="img/meta/chess 3.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/7TQ4fYU" target="_blank">
+                        <img class="img-fluid" src="img/meta/pokemon center.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/FJBX6QB" target="_blank">
+                        <img class="img-fluid" src="img/meta/van gogh.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/fK4t25Q" target="_blank">
+                        <img class="img-fluid" src="img/meta/shrine.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/VyZJt3P" target="_blank">
+                        <img class="img-fluid" src="img/meta/dreamboat.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/ktNh6ap" target="_blank">
+                        <img class="img-fluid" src="img/meta/quiet.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/YK6SHmg" target="_blank">
+                        <img class="img-fluid" src="img/meta/starwars bridge.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/LC69XCv" target="_blank">
+                        <img class="img-fluid" src="img/meta/doc's garage.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/8fapUXs" target="_blank">
+                        <img class="img-fluid" src="img/meta/cabin.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/6WJzbS2" target="_blank">
+                        <img class="img-fluid" src="img/meta/boneworks.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/J4rWeQD" target="_blank">
+                        <img class="img-fluid" src="img/meta/the matrix.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/5ESQFnK" target="_blank">
+                        <img class="img-fluid" src="img/meta/holodeck.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/rjRcg4f" target="_blank">
+                        <img class="img-fluid" src="img/meta/portal.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/eoaWrjs" target="_blank">
+                        <img class="img-fluid" src="img/meta/stargate.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/dU6t7KY" target="_blank">
+                        <img class="img-fluid" src="img/meta/wanderers.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/D6KvK8d" target="_blank">
+                        <img class="img-fluid" src="img/meta/rancor pit.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/CXGsVGm" target="_blank">
+                        <img class="img-fluid" src="img/meta/hideout.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/cdrJYPM" target="_blank">
+                        <img class="img-fluid" src="img/meta/metroid.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/P7ZbyqU" target="_blank">
+                        <img class="img-fluid" src="img/meta/stronehenge.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/bQrvhtj" target="_blank">
+                        <img class="img-fluid" src="img/meta/underway.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/XGxB9JF" target="_blank">
+                        <img class="img-fluid" src="img/meta/mars one.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/2JmxhX7" target="_blank">
+                        <img class="img-fluid" src="img/meta/friends.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/KdvnJcm" target="_blank">
+                        <img class="img-fluid" src="img/meta/flynn's.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/qyj9VSx" target="_blank">
+                        <img class="img-fluid" src="img/meta/clasroom.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/xDEBwon" target="_blank">
+                        <img class="img-fluid" src="img/meta/debate.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/roPSuvB" target="_blank">
+                        <img class="img-fluid" src="img/meta/island.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/H7RSqQK" target="_blank">
+                        <img class="img-fluid" src="img/meta/verzasca.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/p42BRCZ" target="_blank">
+                        <img class="img-fluid" src="img/meta/abandoned.webp" loading="lazy">
+                    </a>
+                </div>
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/CvGZ8cs" target="_blank">
+                        <img class="img-fluid" src="img/meta/yips.webp" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="col mt-3">
+                    <a href="https://hubs.mozilla.com/scenes/B4Qp6AC" target="_blank">
+                        <img class="img-fluid" src="img/meta/avengers.webp" loading="lazy">
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="corndog" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col mt-3"></div>
+                <div class="col mt-3">
+                    <label>
+                        <input class="hidden" type="number" pattern="[0-9]*" value="1000000">
+                        <span>
+                            <a href="https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high"
+                                target="_blank" class="depayland">🐈</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="col mt-3"></div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
 </div>
 
 <script async>
