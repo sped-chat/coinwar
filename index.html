@@ -216,9 +216,14 @@
             color: #EBEBEB
         }
 
-        .table td {
+        .table .td {
             padding-top: 1.3vh;
             width: 33%
+        }
+
+        .table .input td{
+            margin: auto;
+            padding-top: 1.3vh;
         }
     </style>
 </head>
@@ -234,17 +239,17 @@
     <table class="coins table table-hover table-borderless">
         <tbody>
             <tr coinlist="0" class="coin-row">
-                <td></td>
-                <td class="hidden"></td>
-                <td></td>
-                <td class="hidden">
+                <td class="td"></td>
+                <td class="hidden td"></td>
+                <td class="td"></td>
+                <td class="hidden td">
                     <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💱</a>
                 </td>
             </tr>
             <tr></tr>
 
-            <tr class="collapse-transaction collapse shadow-sm" id="">
-                <td>
+            <tr class="input collapse-transaction collapse shadow-sm" id="">
+                <td colspan="2">
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
                         <button data-bs-target="" class="trans buy action" type="button" data-bs-toggle="collapse">
@@ -255,11 +260,11 @@
                         </button>
                     </span>
                 </td>
-                <td></td>
+
             </tr>
 
-            <tr class="collapse-transaction collapse shadow-sm" id="">
-                <td>
+            <tr class="input collapse-transaction collapse shadow-sm" id="">
+                <td colspan="2">
                     <input type="number" pattern="[0-9]*" value="1">
                     <span>
                         <button data-bs-target="" class="trans sell action" type="button" data-bs-toggle="collapse">
@@ -270,7 +275,6 @@
                         </button>
                     </span>
                 </td>
-                <td></td>
             </tr>
         </tbody>
     </table>
