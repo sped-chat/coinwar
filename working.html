@@ -49,7 +49,7 @@
     <style>
         body {
             color: #CBCBCB;
-            background-color: #323234;
+            background-color: #000;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 1.6vh;
             text-align: center;
@@ -84,13 +84,23 @@
                 0 0 3vh #f3ec78
         }
 
+        h1 {
+            font-size: 150%
+        }
+
+        h2 {
+            font-size: 125%
+        }
+
         .collapsing,
         .collapse {
             background: #252526;
         }
 
-        .container-body {
-            max-width: 40vh;
+        .bg-323234 {
+            max-width: 52vh;
+            padding: 0;
+            background-color: #323234
         }
 
         .cycle {
@@ -99,16 +109,47 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            padding-bottom: 10vh;
+            padding-bottom: 7vh;
+            transform-origin: center center;
+            transform-box: fill-box;
         }
 
-        .cycle .coinbag svg {
-            width: 15vh;
+        .cycle .st0 {
+            fill: url(#SVGID_1_);
+        }
+
+        .cycle .st1 {
+            fill: url(#SVGID_00000079479262848878650000000004176338908097552528_);
+        }
+
+        .cycle .st2 {
+            fill: #4B3F3A;
+        }
+
+        .cycle .st3 {
+            fill: #3A1A01;
+        }
+
+        .cycle svg {
+            width: 10vh;
             cursor: grab
         }
 
-        .cycle .coinbag svg:hover {
-            transform: scale(1.1)
+        .cycle svg:hover {
+            transform: scale(1.01);
+        }
+
+        .cycle .bag {
+            position: absolute
+        }
+
+        .cycle .bag :hover {
+            display: none !important
+        }
+
+        .cycle .bag-glo :hover {
+            filter: url(#dropshadow);
+            stroke-width: 2px
         }
 
         .footer {
@@ -119,7 +160,7 @@
             bottom: 0;
             width: 100%;
             padding-bottom: 1vh;
-            color: #E4CBB6;
+            color: #E4CBB6
         }
 
         .footer a {
@@ -139,18 +180,6 @@
 
         .hidden {
             display: none !important
-        }
-
-        h1 {
-            font-size: 150%
-        }
-
-        h2 {
-            font-size: 125%
-        }
-
-        .logo {
-            color: inherit;
         }
 
         .navbar {
@@ -220,7 +249,8 @@
 </head>
 
 <body>
-    <div class="container container-body">
+
+    <div class="container bg-323234">
         <nav class="navbar sticky-top shadow-sm">
             <div class="container-fluid justify-content-center">
                 <a class="xs-stats align-text-top" data-bs-toggle="offcanvas" href="#wallet"
@@ -228,86 +258,85 @@
             </div>
         </nav>
 
-        <div>
-            <table class="coins table table-hover table-borderless">
-                <tbody>
-                    <tr coinlist="0" class="coin-row">
-                        <td class="td"></td>
-                        <td class="hidden td"></td>
-                        <td class="td"></td>
-                        <td class="hidden td">
-                            <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💱</a>
-                        </td>
-                    </tr>
-                    <tr></tr>
-                    <tr class="input collapse-transaction collapse shadow-lg" id="">
-                        <td colspan="2">
-                            <input type="number" pattern="[0-9]*" value="1">
-                            <span>
-                                <button data-bs-target="" class="trans buy action" type="button"
-                                    data-bs-toggle="collapse">
-                                    BUY
-                                </button>
-                                <button class="trans buy max" type="button" maxamount="max">
-                                    MAX
-                                </button>
-                                <br /><br />
-                            </span>
-                        </td>
-                    </tr>
-                    <tr class="input collapse-transaction collapse shadow-lg" id="">
-                        <td colspan="2">
-                            <input type="number" pattern="[0-9]*" value="1">
-                            <span>
-                                <button data-bs-target="" class="trans sell action" type="button"
-                                    data-bs-toggle="collapse">
-                                    SELL
-                                </button>
-                                <button class="trans sell max" type="button" maxamount="max">
-                                    MAX
-                                </button>
-                                <br /><br />
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <table class="coins table table-hover table-borderless">
+            <tbody>
+                <tr coinlist="0" class="coin-row">
+                    <td class="td"></td>
+                    <td class="hidden td"></td>
+                    <td class="td"></td>
+                    <td class="hidden td">
+                        <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💱</a>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr class="input collapse-transaction collapse shadow-lg" id="">
+                    <td colspan="2">
+                        <input type="number" pattern="[0-9]*" value="1">
+                        <span>
+                            <button data-bs-target="" class="trans buy action" type="button" data-bs-toggle="collapse">
+                                BUY
+                            </button>
+                            <button class="trans buy max" type="button" maxamount="max">
+                                MAX
+                            </button>
+                            <br /><br />
+                        </span>
+                    </td>
+                </tr>
+                <tr class="input collapse-transaction collapse shadow-lg" id="">
+                    <td colspan="2">
+                        <input type="number" pattern="[0-9]*" value="1">
+                        <span>
+                            <button data-bs-target="" class="trans sell action" type="button" data-bs-toggle="collapse">
+                                SELL
+                            </button>
+                            <button class="trans sell max" type="button" maxamount="max">
+                                MAX
+                            </button>
+                            <br /><br />
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="cycle">
-            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet" class="coinbag">
-                <svg viewBox="0 0 1000 1000">
+            <a data-bs-toggle="offcanvas" href="#wallet" aria-controls="wallet">
 
-
-                    <defs>
-                        <radialGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-                            <stop offset="0%" stop-color="#f3ec78">
-                                <animate attributeName="stop-color" values="#f3ec78; #af4261; #f3ec78" dur="4s"
-                                    repeatCount="indefinite"></animate>
-                            </stop>
-                            <stop offset="100%" stop-color="#af4261">
-                                <animate attributeName="stop-color" values="#af4261; #f3ec78; #af4261" dur="4s"
-                                    repeatCount="indefinite"></animate>
-                            </stop>
-                        </radialGradient>
-                    </defs>
-
-                    <g>
-
-                        <path fill="url('#gradient')" d="M743.2,49.4c-45.5,44.5-80,92.1-99.1,137.7c-20.1,47.9-32.8,89.7-48.5,98.9v6.6H382.3v-6.7
+                <span class="bag">
+                    <svg viewBox="0 0 1000 1000">
+                        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="488.9928" y1="-284.0245"
+                            x2="483.2481" y2="4.3585" gradientTransform="matrix(1 0 0 1 0 280)">
+                            <stop offset="0" style="stop-color:#D8C89E" />
+                            <stop offset="0.4946" style="stop-color:#C8AA61" />
+                            <stop offset="0.6901" style="stop-color:#AA8547" />
+                            <stop offset="0.8891" style="stop-color:#916631" />
+                            <stop offset="1" style="stop-color:#875A29" />
+                        </linearGradient>
+                        <path class="st0" d="M743.2,49.4c-45.5,44.5-80,92.1-99.1,137.7c-20.1,47.9-32.8,89.7-48.5,98.9v6.6H382.3v-6.7
 	c-20.8-20.2-30-70-54.4-115.6C303.9,125.9,261.7,80,232.5,52c-0.7-0.7-0.2-1.9,0.8-1.8c22.9,0.8,50.9,1.3,64.8,1.6
 	c1.9,0,3.5,0.1,4.9,0.1c2,0,3.9-1.3,4.2-3.3c1.2-6.4,4.9-11.6,12.3-14.5c5.7-2.3,13.7-3.1,24.3-2.1c0.3,0,0.6,0.1,1,0.1
 	c10.2,1,29.8,2.9,51.3,4.5c0,0,0,0,0,0c37.9,2.7,81.7,4.4,91-1.9c7.8-5.3,14.4-11.4,28.2-15.9c12.4-4.1,30.5-7,60.3-7
 	c16.3,0,29.5,0.5,40.1,1.8c30.3,3.6,39.5,13.2,40.5,33.5c0.1,1.8,1.6,3.1,3.4,3c6.2-0.5,12.4-1,18.3-1.5c26.7-2,50.3-3.1,64.4-1.6
 	C743.7,46.8,744.2,48.5,743.2,49.4z" />
-
-                        <path fill="url('#gradient')" d="M861.3,847.8c-29.2-38.1-19-81.2-18-128.2
+                        <radialGradient id="SVGID_00000023256900630641142730000008962954149156627105_" cx="494.264"
+                            cy="365.7429" r="401.8877" gradientTransform="matrix(1 0 0 1 0 280)"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" style="stop-color:#EED276" />
+                            <stop offset="0.323" style="stop-color:#ECD074" />
+                            <stop offset="0.4815" style="stop-color:#E6C86F" />
+                            <stop offset="0.6041" style="stop-color:#DBBB66" />
+                            <stop offset="0.7083" style="stop-color:#CCA859" />
+                            <stop offset="0.8009" style="stop-color:#B89048" />
+                            <stop offset="0.8839" style="stop-color:#A07334" />
+                            <stop offset="0.9171" style="stop-color:#95652A" />
+                        </radialGradient>
+                        <path style="fill:url(#SVGID_00000023256900630641142730000008962954149156627105_);" d="M861.3,847.8c-29.2-38.1-19-81.2-18-128.2
 	c1.1-52.2,2.2-93.3-15-133.9c-15.3-36-19.6-71.7-16.5-103.3c0.8-8.6-0.9-17.1-4.8-24.8c-61.5-120.9-164.2-146.2-211.4-158.3v-6.7
 	H382.3v6.7C255.6,331.8,204.7,401,172.3,454.8c-3.8,6.3-5,13.7-3.6,20.9c4.5,24.9-0.4,51.8-9.2,79.5c-10,31.7-23.3,94.4-18.3,163.3
 	c3.9,53.2-1.1,83.2-11.8,105.6c-6.9,14.5-5.7,31.5,3.1,45c13.4,20.4,37.8,48.2,79.8,68.3c74.1,35.5,182.2,52.2,290,52.2
 	c65,0,103.3-5.6,175.6-5.6c80.8,0,152.2-59.7,184.4-106.5C868.5,868.5,868,856.5,861.3,847.8L861.3,847.8z" />
-
-                        <path fill="#CBCBCB" d="M606.4,666.1c-17.2-12-50.8-25.9-100.8-41.5V515.6c20.8,1.3,35.2,8.8,43.2,22.3c4.6,7.8,7.7,20.2,9.4,37.2h83.2
+                        <path class="st2" d="M606.4,666.1c-17.2-12-50.8-25.9-100.8-41.5V515.6c20.8,1.3,35.2,8.8,43.2,22.3c4.6,7.8,7.7,20.2,9.4,37.2h83.2
 	c-1.3-45.8-19.6-78.9-55.1-99.3c-19.5-12.8-46.4-20.4-80.6-22.9v-38.6h-30.7v38.1c-21.5,1.5-37.9,3.9-49,7.2
 	c-18.4,5.2-35,14.5-50,28c-11.6,10.5-20.6,23-27,37.5c-6.4,14.5-9.6,30.6-9.6,48.4c0,26.9,8.3,49.9,24.8,69
 	c16.5,19.1,45,34,85.3,44.7l25.6,6.9v122.2c-24-3.8-40.2-12.1-48.4-24.9c-4-6.2-7.3-16.8-9.9-31.9h-87.4c3,44.2,20.5,76.2,52.7,95.8
@@ -316,8 +345,56 @@
 	c0-14.7,4.4-26.3,13.3-34.8c8.9-8.5,22.5-12.9,40.8-13.3L474.9,616.6L474.9,616.6z M541.6,805c-7.5,5-19.5,8.4-36,10.3V703.4
 	c17.5,5.9,29.9,11.6,37.2,17.2c12.3,9.6,18.5,22.5,18.5,38.9C561.3,781,554.7,796.2,541.6,805L541.6,805z" />
                         <rect x="382.3" y="286" class="st3" width="213.3" height="13.3" />
-                    </g>
-                </svg>
+                    </svg>
+                </span>
+
+
+                <span class="bag-glo">
+                    <svg viewBox="0 0 1000 1000">
+                        <defs>
+                            <filter id="dropshadow" y="-20%" height="250%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+                                <feOffset dx="0" dy="0" result="offsetblur" />
+                                <feMerge>
+                                    <feMergeNode />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                            <radialGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#f3ec78">
+                                    <animate attributeName="stop-color" values="#f3ec78; #af4261; #f3ec78" dur="4s"
+                                        repeatCount="indefinite"></animate>
+                                </stop>
+                                <stop offset="100%" stop-color="#af4261">
+                                    <animate attributeName="stop-color" values="#af4261; #f3ec78; #af4261" dur="4s"
+                                        repeatCount="indefinite"></animate>
+                                </stop>
+                            </radialGradient>
+                        </defs>
+                        <g>
+                            <path fill="url('#gradient')" d="M743.2,49.4c-45.5,44.5-80,92.1-99.1,137.7c-20.1,47.9-32.8,89.7-48.5,98.9v6.6H382.3v-6.7
+	c-20.8-20.2-30-70-54.4-115.6C303.9,125.9,261.7,80,232.5,52c-0.7-0.7-0.2-1.9,0.8-1.8c22.9,0.8,50.9,1.3,64.8,1.6
+	c1.9,0,3.5,0.1,4.9,0.1c2,0,3.9-1.3,4.2-3.3c1.2-6.4,4.9-11.6,12.3-14.5c5.7-2.3,13.7-3.1,24.3-2.1c0.3,0,0.6,0.1,1,0.1
+	c10.2,1,29.8,2.9,51.3,4.5c0,0,0,0,0,0c37.9,2.7,81.7,4.4,91-1.9c7.8-5.3,14.4-11.4,28.2-15.9c12.4-4.1,30.5-7,60.3-7
+	c16.3,0,29.5,0.5,40.1,1.8c30.3,3.6,39.5,13.2,40.5,33.5c0.1,1.8,1.6,3.1,3.4,3c6.2-0.5,12.4-1,18.3-1.5c26.7-2,50.3-3.1,64.4-1.6
+	C743.7,46.8,744.2,48.5,743.2,49.4z" />
+                            <path fill="url('#gradient')" d="M861.3,847.8c-29.2-38.1-19-81.2-18-128.2
+	c1.1-52.2,2.2-93.3-15-133.9c-15.3-36-19.6-71.7-16.5-103.3c0.8-8.6-0.9-17.1-4.8-24.8c-61.5-120.9-164.2-146.2-211.4-158.3v-6.7
+	H382.3v6.7C255.6,331.8,204.7,401,172.3,454.8c-3.8,6.3-5,13.7-3.6,20.9c4.5,24.9-0.4,51.8-9.2,79.5c-10,31.7-23.3,94.4-18.3,163.3
+	c3.9,53.2-1.1,83.2-11.8,105.6c-6.9,14.5-5.7,31.5,3.1,45c13.4,20.4,37.8,48.2,79.8,68.3c74.1,35.5,182.2,52.2,290,52.2
+	c65,0,103.3-5.6,175.6-5.6c80.8,0,152.2-59.7,184.4-106.5C868.5,868.5,868,856.5,861.3,847.8L861.3,847.8z" />
+                            <path fill="#454545" d="M606.4,666.1c-17.2-12-50.8-25.9-100.8-41.5V515.6c20.8,1.3,35.2,8.8,43.2,22.3c4.6,7.8,7.7,20.2,9.4,37.2h83.2
+	c-1.3-45.8-19.6-78.9-55.1-99.3c-19.5-12.8-46.4-20.4-80.6-22.9v-38.6h-30.7v38.1c-21.5,1.5-37.9,3.9-49,7.2
+	c-18.4,5.2-35,14.5-50,28c-11.6,10.5-20.6,23-27,37.5c-6.4,14.5-9.6,30.6-9.6,48.4c0,26.9,8.3,49.9,24.8,69
+	c16.5,19.1,45,34,85.3,44.7l25.6,6.9v122.2c-24-3.8-40.2-12.1-48.4-24.9c-4-6.2-7.3-16.8-9.9-31.9h-87.4c3,44.2,20.5,76.2,52.7,95.8
+	c20.5,12.2,51.5,20.4,93,24.6V913h30.7v-33.8c32.7-2.3,60.9-10.1,84.8-23.5c39-21.8,58.5-56.7,58.5-104.8
+	C648.9,714.5,634.7,686.2,606.4,666.1L606.4,666.1z M474.9,616.6c-15.4-4.4-26.8-9.2-34.2-14.3c-13.3-9.4-19.9-22-19.9-38.1
+	c0-14.7,4.4-26.3,13.3-34.8c8.9-8.5,22.5-12.9,40.8-13.3L474.9,616.6L474.9,616.6z M541.6,805c-7.5,5-19.5,8.4-36,10.3V703.4
+	c17.5,5.9,29.9,11.6,37.2,17.2c12.3,9.6,18.5,22.5,18.5,38.9C561.3,781,554.7,796.2,541.6,805L541.6,805z" />
+                            <rect x="382.3" y="286" class="st3" width="213.3" height="13.3" />
+                        </g>
+                    </svg>
+                </span>
             </a>
         </div>
 
