@@ -53,7 +53,7 @@
 
         body {
             color: rgb(203, 203, 203);
-            background-color: rgb(53, 53, 54);
+            background-color: rgb(71, 71, 72);
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 1.6vh;
             text-align: center;
@@ -101,34 +101,10 @@
             background: rgb(37, 37, 38)
         }
 
-        .bg-323234 {
+        .mamabear {
             max-width: 52vh;
             padding: 0;
             background-color: rgb(50, 50, 52)
-        }
-
-        .cycle {
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            transform-origin: center center;
-            transform-box: fill-box;
-        }
-
-        .cycle .st0 {
-            fill: url(#SVGID_1_);
-        }
-
-        .cycle .st1 {
-            fill: url(#SVGID_00000079479262848878650000000004176338908097552528_);
-        }
-
-        .cycle .st2 {
-            fill: rgb(75, 63, 58);
-        }
-
-        .cycle .st3 {
-            fill: rgb(58, 26, 1);
         }
 
         .cycle svg {
@@ -137,7 +113,7 @@
         }
 
         .cycle svg:hover {
-            transform: scale(1.01);
+            transform: scale(1.1);
         }
 
         .cycle .bag {
@@ -151,6 +127,30 @@
         .cycle .bag-glo :hover {
             filter: url(#dropshadow);
             stroke-width: 2px
+        }
+
+        .cycle .bag .st0 {
+            fill: url(#SVGID_1_);
+        }
+
+        .cycle .bag .st1 {
+            fill: url(#SVGID_00000079479262848878650000000004176338908097552528_);
+        }
+
+        .cycle .bag .st2 {
+            fill: rgb(75, 63, 58);
+        }
+
+        .cycle .bag .st3 {
+            fill: rgb(58, 26, 1);
+        }
+
+        .defi:hover span {
+            display: none
+        }
+
+        .defi:hover:before {
+            content: "LOAN"
         }
 
         .footer {
@@ -184,46 +184,48 @@
         .navbar {
             background-image: linear-gradient(to bottom, rgb(37, 37, 38), rgb(30, 30, 31));
             font-size: 2.3vh;
-            color: rgb(224, 224, 224)
+            color: rgb(224, 224, 224);
+        }
+
+        .navbar-collapse {
+            background: inherit;
+            padding: 3vh;
+            color: #C8AA61;
+            font-size: 2vh;
         }
 
         .offcanvas {
             background: rgb(37, 37, 38)
         }
 
-        .offcanvas.offcanvas-top table {
-            line-height: 2.5vh;
+        .offcanvas .table {
+            line-height: 2vh
         }
 
-        .offcanvas.offcanvas-top .defi:hover span {
-            display: none
-        }
-
-        .offcanvas.offcanvas-top .defi:hover:before {
-            content: "BORROW"
-        }
-
-        .offcanvas.offcanvas-top .stable:hover span {
-            display: none
-        }
-
-        .offcanvas.offcanvas-top .stable:hover:before {
-            content: "DEPOSIT"
-        }
-
-        .offcanvas.offcanvas-bottom,
-        .offcanvas.offcanvas-top {
+        .offcanvas.offcanvas-bottom {
             height: 85%;
         }
 
+        .offcanvas.offcanvas-top {
+            height: 50%
+        }
+
+        .stable:hover span {
+            display: none
+        }
+
+        .stable:hover:before {
+            content: "DEPOSIT"
+        }
+
         .table {
-            background-color: rgb(50, 50, 52);
             color: inherit;
             line-height: 1vh;
             cursor: pointer;
         }
 
-        .table-hover tbody tr:hover td {
+        .table-hover tbody tr:hover td,
+        .table-hover tbody tr:hover th {
             background: rgb(37, 37, 38);
             color: rgb(235, 235, 235)
         }
@@ -241,26 +243,89 @@
 </head>
 
 <body>
-    <div class="container bg-323234 min-vh-100 position-relative shadow-lg">
-        <div class="bg-323234 position-absolute w-100">
+    <div class="container mamabear min-vh-100 position-relative shadow">
+        <div class="mamabear position-absolute w-100">
             <nav class="navbar sticky-top shadow-sm w-100">
                 <div class="container-fluid justify-content-center">
-                    <a class="xs-stats align-text-top" data-bs-toggle="offcanvas" href="#wallet"
-                        aria-controls="wallet">DEX&nbsp;&nbsp;:&nbsp;<span class="dex"></span></a>
+                    <a class="xs-stats align-text-top" data-bs-toggle="collapse" data-bs-target="#babybear"
+                        aria-controls="babybear" aria-expanded="false"
+                        aria-label="exchanges">DEX&nbsp;&nbsp;:&nbsp;<span class="dex"></span></a>
+                    <div class="collapse navbar-collapse" id="babybear">
+                        <div id="offcanvas-exchanges">
+                            <div class="exchanges">
+                            </div>
+                        </div>
+                        <div id="wallet">
+                            <table class="xs-stats">
+                                <tbody>
+                                    <tr class="coinlist hidden">
+                                        <td></td>
+                                        <td></td>
+                                        <td class="coinlist hidden"></td>
+                                        <td class="hidden"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </nav>
+
             <div class="mb-auto w-100">
+                <table class="table table-hover table-borderless">
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <label>
+                                    <input class="hidden" type="number" pattern="[0-9]*" value="0">
+                                    <span><a id="depay1" class="depayland">
+                                            <div class="stable">
+                                                <span>USD</span>
+                                            </div>
+                                        </a>
+                                    </span>
+                                </label>
+                            </td>
+                            <td class="xs-stats"><sup>﹩</sup><span class="cash"></span></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
+                                    <div class="defi">
+                                        <span>DEFI</span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td class="xs-stats"><sup>﹩-</sup><span class="debt"></span></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                        </tr>
+                        <div class="xs-stats collapse" id="pawn-shop-collapse">
+                            <div>
+                                <input type="number" pattern="[0-9]*">
+                                <span>
+                                    <button class="land">BORROW</button>
+                                    <button class="pay">REPAY</button>
+                                </span>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </tbody>
+                </table>
                 <table class="coins table table-hover table-borderless">
                     <tbody>
+                        <tr></tr>
                         <tr coinlist="0" class="coin-row">
                             <td class="td"></td>
                             <td class="hidden td"></td>
                             <td class="td"></td>
                             <td class="hidden td">
-                                <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target="">💱</a>
+                                <a class="buy-sell-xs" data-bs-toggle="collapse" data-bs-target=""></a>
                             </td>
                         </tr>
-                        <tr></tr>
                         <tr class="input collapse-transaction collapse shadow-lg" id="">
                             <td colspan="2">
                                 <input type="number" pattern="[0-9]*" value="1">
@@ -287,7 +352,14 @@
                                     <button class="trans sell max" type="button" maxamount="max">
                                         MAX
                                     </button>
-                                    <br /><br />
+                                    <br /><br /><br />
+                                    <div class="xs-stats">
+                                        <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices"><span
+                                                class="year"></span> MARKET
+                                            AVERAGES
+                                        </a>
+                                    </div>
+                                    <br />
                                 </span>
                             </td>
                         </tr>
@@ -420,85 +492,6 @@
         </div>
     </div>
 </body>
-
-<div id="wallet" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="wallet">
-    <div class="offcanvas-body">
-        <div class="xs-stats collapse" id="pawn-shop-collapse">
-            <div>
-                <input type="number" pattern="[0-9]*">
-                <span>
-                    <button class="land">BORROW</button>
-                    <button class="pay">REPAY</button>
-                </span>
-                <br /><br />
-            </div>
-        </div>
-
-        <div class="d-flex align-items-center">
-            <table class="xs-stats table table-borderless">
-                <tbody>
-                    <tr class="coinlist hidden">
-                        <td></td>
-                        <td></td>
-                        <td class="coinlist hidden"></td>
-                        <td class="hidden"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                                <input class="hidden" type="number" pattern="[0-9]*" value="1">
-                                <span><a id="depay1" class="depayland">
-                                        <div class="stable">
-                                            <span>STABLECOINS</span>
-                                        </div>
-                                    </a>
-                                </span>
-                            </label>
-                        </td>
-                        <td class><sup>﹩</sup><span class="cash"></span></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a data-bs-toggle="collapse" data-bs-target="#pawn-shop-collapse">
-                                <div class="defi">
-                                    <span>DEFI LOANS</span>
-                                </div>
-                            </a>
-                        </td>
-                        <td><sup>﹩-</sup><span class="debt"></span></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://opensea.io/collection/boredapeyachtclub" target="_blank">NFTS</a>
-                        </td>
-                        <td><sup>﹩</sup>0<span class="bank_deposit"></span></td>
-                        <td class="hidden"></td>
-                        <td class="hidden"></td>
-                        <!--
-                                <button class="depayland"
-                                    onclick="window.open('https://donate.stripe.com/dR6bMc4Aa2Oy8BWcMM')">DEPOSIT
-                                    FIAT</button>
-                                -->
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <br /><br />
-        <div id="offcanvas-exchanges">
-            <div class="exchanges">
-            </div>
-        </div>
-        <br /><br /><br /><br />
-        <div class="xs-stats">
-            <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices"><span class="year"></span> MARKET
-                AVERAGES
-            </a>
-        </div>
-    </div>
-</div>
 
 <script defer async src="https://integrate.depay.com/widgets/v7.js"></script>
 <script async>
@@ -1576,58 +1569,55 @@
         <h3 class="xs-stats"><span class="xs-stats year"></span> MARKET AVERAGES</h3>
         <table class="table table-borderless">
             <tbody>
-                <th></th>
                 <tr>
-                    1
+                    <td>ADA<br />😭</td>
+                    <td>AAVE<br /><sup>﹩</sup>330</td>
+                    <td>ALCX<br /><sup>﹩</sup>1,010</td>
+                    <td>AMC<br /><sup>﹩</sup>30</td>
+                    <td>APE<br /><sup>﹩</sup>14</td>
                 </tr>
                 <tr>
-                    2
+                    <td>ATOM<br /><sup>﹩</sup>23</td>
+                    <td>AVAX<br /><sup>﹩</sup>68</td>
+                    <td>AXS<br /><sup>﹩</sup>80</td>
+                    <td>BNB<br /><sup>﹩</sup>355</td>
+                    <td>BTC<br /><sup>﹩</sup>37K</td>
                 </tr>
                 <tr>
-                    3
+                    <td>BOO<br /><sup>﹩</sup>5</td>
+                    <td>CAKE<br /><sup>﹩</sup>21</td>
+                    <td>COMP<br /><sup>﹩</sup>440</td>
+                    <td>DOGE<br /><sup>﹩</sup>244</td>
+                    <td>DOT<br /><sup>﹩</sup>27</td>
                 </tr>
                 <tr>
-                    4
+                    <td>ETH<br /><sup>﹩</sup>2550</td>
+                    <td>FIL<br /><sup>﹩</sup>96</td>
+                    <td>FTM<br /><sup>﹩</sup>7</td>
+                    <td>FTX<br /><sup>﹩</sup>41</td>
+                    <td>GME<br /><sup>﹩</sup>164</td>
                 </tr>
                 <tr>
-                    5
+                    <td>ICP<br /><sup>﹩</sup>184</td>
+                    <td>LINK<br /><sup>﹩</sup>27</td>
+                    <td>LTC<br /><sup>﹩</sup>140</td>
+                    <td>MANA<br /><sup>﹩</sup>3</td>
+                    <td>MATIC<br /><sup>﹩</sup>6</td>
                 </tr>
                 <tr>
-                    6
+                    <td>MKR<br /><sup>﹩</sup>3K</td>
+                    <td>OATH<br /><sup>﹩</sup>5</td>
+                    <td>SAND<br /><sup>﹩</sup>4</td>
+                    <td>SHIB<br /><sup>﹩</sup>3</td>
+                    <td>SOL<br /><sup>﹩</sup>130</td>
                 </tr>
-                <td>ADA<br />😭</td>
-                <td>AAVE<br /><sup>﹩</sup>330</td>
-                <td>ALCX<br /><sup>﹩</sup>1,010</td>
-                <td>AMC<br /><sup>﹩</sup>30</td>
-                <td>APE<br /><sup>﹩</sup>14</td>
-                <td>ATOM<br /><sup>﹩</sup>23</td>
-                <td>AVAX<br /><sup>﹩</sup>68</td>
-                <td>AXS<br /><sup>﹩</sup>80</td>
-                <td>BNB<br /><sup>﹩</sup>355</td>
-                <td>BTC<br /><sup>﹩</sup>37K</td>
-                <td>BOO<br /><sup>﹩</sup>5</td>
-                <td>CAKE<br /><sup>﹩</sup>21</td>
-                <td>COMP<br /><sup>﹩</sup>440</td>
-                <td>DOGE<br /><sup>﹩</sup>244</td>
-                <td>DOT<br /><sup>﹩</sup>27</td>
-                <td>ETH<br /><sup>﹩</sup>2550</td>
-                <td>FIL<br /><sup>﹩</sup>96</td>
-                <td>FTM<br /><sup>﹩</sup>7</td>
-                <td>FTX<br /><sup>﹩</sup>41</td>
-                <td>GME<br /><sup>﹩</sup>164</td>
-                <td>ICP<br /><sup>﹩</sup>184</td>
-                <td>LINK<br /><sup>﹩</sup>27</td>
-                <td>LTC<br /><sup>﹩</sup>140</td>
-                <td>MANA<br /><sup>﹩</sup>3</td>
-                <td>MATIC<br /><sup>﹩</sup>6</td>
-                <td>MKR<br /><sup>﹩</sup>3K</td>
-                <td>OATH<br /><sup>﹩</sup>5</td>
-                <td>SAND<br /><sup>﹩</sup>4</td>
-                <td>SHIB<br /><sup>﹩</sup>3</td>
-                <td>SOL<br /><sup>﹩</sup>130</td>
-                <td>TRON<br /><sup>﹩</sup>4</td>
-                <td>UNI<br /><sup>﹩</sup>22</td>
-                <td>XRP<br /><sup>﹩</sup>2</td>
+                <tr>
+                    <td>TRON<br /><sup>﹩</sup>4</td>
+                    <td>UNI<br /><sup>﹩</sup>22</td>
+                    <td>USDC<br /><sup>﹩</sup>1</td>
+                    <td>WAR<br /><sup>﹩</sup>99K</td>
+                    <td>XRP<br /><sup>﹩</sup>2</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -1772,7 +1762,6 @@
         <br />
         <p>This policy is effective as of April 20, 2022.</p>
         <br />
-
         <label>
             <input class="hidden" type="number" pattern="[0-9]*" value="69">
             <span>
@@ -1782,10 +1771,9 @@
     </div>
 </div>
 
-<div id="metaverse" class="offcanvas offcanvas-top" tabindex="-1" aria-labelledby="metaverse">
+<div id="metaverse" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="metaverse">
     <div class="offcanvas-body overflow-auto">
         <div class="container-fluid">
-
             <div id="rooms" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
                 <div class="col mt-3">
                     <a href="https://hubs.mozilla.com/rP5iTJJ">
@@ -2621,7 +2609,6 @@
                         <img class="img-fluid" src="img/meta/yips.webp" loading="lazy">
                     </a>
                 </div>
-
                 <div class="col mt-3">
                     <a href="https://hubs.mozilla.com/scenes/B4Qp6AC" target="_blank">
                         <img class="img-fluid" src="img/meta/avengers.webp" loading="lazy">
