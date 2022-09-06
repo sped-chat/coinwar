@@ -183,6 +183,10 @@
             display: none !important
         }
 
+        .invert img {
+            filter: invert(100%);
+        }
+
         .mamabear {
             max-width: 52vh;
             min-height: 100vh;
@@ -488,7 +492,7 @@
             </svg>
         </a>
         &nbsp;
-        <a data-bs-toggle="offcanvas" href="#metaverse" aria-controls="metaverse">
+        <a data-bs-toggle="offcanvas" data-bs-target="#rooms" aria-controls="rooms">
             <svg class="bi bi-discord" viewBox="0 0 16 16">
                 <path
                     d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
@@ -1581,13 +1585,13 @@
 
     // shuffle #metaverse
     window.addEventListener('load', function () {
-        let cards = document.querySelectorAll("#metaverse a img");
+        let cards = document.querySelectorAll("#rooms a img");
         for (let i = 0; i < cards.length; i++) {
             let target = Math.floor(Math.random() * cards.length - 1) + 1;
             let target2 = Math.floor(Math.random() * cards.length - 1) + 1;
             cards[target].parentElement.parentElement.before(cards[target2].parentElement.parentElement);
         }
-        let url = document.querySelectorAll("#metaverse a")[0].getAttribute('href');
+        let url = document.querySelectorAll("#rooms a")[0].getAttribute('href');
         let delay = 600000;
         let timeoutID = setTimeout(function () {
             window.location.href = 'https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high';
@@ -1692,7 +1696,17 @@
                     <td>BOO<br /><sup>﹩</sup>5</td>
                     <td>CAKE<br /><sup>﹩</sup>21</td>
                     <td>COMP<br /><sup>﹩</sup>440</td>
-                    <td>DOGE<br /><sup>﹩</sup>244</td>
+                    <td>
+                        <label>
+                            <input class="hidden" type="number" pattern="[0-9]*" value="42">
+                            <span>
+                                DOGE<br />
+                                <a href="https://hubs.mozilla.com/cMzFjni?vr_entry_type=2d_now&default_material_quality=high&default_mobile_material_quality=high"
+                                    target="_blank" class="depayland">
+                                    🐈</a>
+                            </span>
+                        </label>
+                    </td>
                     <td>DOT<br /><sup>﹩</sup>27</td>
                 </tr>
                 <tr>
@@ -1867,19 +1881,15 @@
         <br />
         <p>This policy is effective as of April 20, 2022.</p>
         <br />
-        <label>
-            <input class="hidden" type="number" pattern="[0-9]*" value="69">
-            <span>
-                <a data-bs-toggle="offcanvas" data-bs-target="#scenes" aria-controls="scenes" class="depayland">🐈</a>
-            </span>
-        </label>
+        <p>Do you like <s>Baileys</s> <a href="https://23mjo-tyaaa-aaaad-qdt5a-cai.ic.fleek.co/"
+                target="_blank">ICP</a>?</p>
     </div>
 </div>
 
-<div id="metaverse" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="metaverse">
+<div id="rooms" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="rooms">
     <div class="offcanvas-body overflow-auto">
         <div class="container-fluid">
-            <div id="rooms" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
                 <div class="col mt-3">
                     <a href="https://hubs.mozilla.com/rP5iTJJ">
                         <img class="img-fluid" src="img/meta/foyer.webp" alt="FOYER" loading="lazy">
@@ -2149,7 +2159,7 @@
                     </a>
                 </div>
                 <div class="col mt-3">
-                    <a href="https://hubs.mozilla.com/Jh4Hads">
+                    <a data-bs-toggle="offcanvas" data-bs-target="#scenes" aria-controls="scenes">
                         <img class="img-fluid" src="img/meta/the-latern-room.webp" alt="THE LANTERN ROOM"
                             loading="lazy">
                     </a>
@@ -2297,8 +2307,8 @@
 
 <div id="scenes" class="offcanvas offcanvas-bottom" tabindex="-1" aria-labelledby="scenes">
     <div class="offcanvas-body overflow-auto">
-        <div class="container-fluid">
-            <div id="scenes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <div class="container-fluid invert">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
                 <div class="col mt-3">
                     <a href="https://hubs.mozilla.com/scenes/ALDsbzA" target="_blank">
                         <img class="img-fluid" src="img/meta/chania.webp" loading="lazy">
