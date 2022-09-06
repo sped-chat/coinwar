@@ -101,14 +101,6 @@
             background: rgb(37, 37, 38)
         }
 
-        .mamabear {
-            max-width: 52vh;
-            min-height: 100vh;
-            padding: 0;
-            background-color: rgb(50, 50, 52);
-            position: relative;
-        }
-
         .cycle {
             position: fixed;
             left: 0;
@@ -157,6 +149,11 @@
             fill: rgb(58, 26, 1);
         }
 
+        .exchanges {
+            margin-left: 37%;
+            margin-right: 37%
+        }
+
         .footer {
             line-height: 2.5vh;
             position: fixed;
@@ -184,6 +181,14 @@
 
         .hidden {
             display: none !important
+        }
+
+        .mamabear {
+            max-width: 52vh;
+            min-height: 100vh;
+            padding: 0;
+            background-color: rgb(50, 50, 52);
+            position: relative;
         }
 
         .navbar {
@@ -302,7 +307,7 @@
                         <label>
                             <input class="hidden" type="number" pattern="[0-9]*" value="0">
                             <span>
-                                <a id="depay1" class="depayland" data-bs-toggle="collapse"
+                                <a id="depay-pay" class="depayland" data-bs-toggle="collapse"
                                     data-bs-target="deficollapse">
                                     <span>USD</span>
                                 </a>
@@ -313,7 +318,24 @@
                     <th><sup>﹩</sup>1</th>
                     <th class="hidden"></th>
                 </tr>
-
+                <!--WARCOIN
+                <tr>
+                    <td>
+                        <label>
+                            <input class="hidden" type="number" pattern="[0-9]*" value="0">
+                            <span>
+                                <a id="depay-sell" class="depayland" data-bs-toggle="collapse"
+                                    data-bs-target="deficollapse">
+                                    <span>WAR</span>
+                                </a>
+                            </span>
+                        </label>
+                    </td>
+                    <td class="xs-stats"><sup>﹩</sup><span class="cash"></span></td>
+                    <td><sup>﹩</sup>1</td>
+                    <td class="hidden"></td>
+                </tr>
+                -->
                 <tr coinlist="0" class="coin-row">
                     <td class="td"></td>
                     <td class="td"></td>
@@ -1573,19 +1595,75 @@
     });
 
     // depay
-    var button = document.getElementById("depay1");
+    var button = document.getElementById("depay-pay");
     button.addEventListener("click", function (e) {
         DePayWidgets.Payment({
-            integration: '60e2c7c1-0c18-4e34-80c0-2ad0a3ba1681',
+            integration: '7430a68d-ca9d-4a6d-8be6-d40d0dd0463b',
             accept: [
                 {
                     blockchain: 'ethereum',
                     token: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
                     receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'polygon',
+                    token: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'ethereum',
+                    token: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'polygon',
+                    token: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'bsc',
+                    token: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'ethereum',
+                    token: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'polygon',
+                    token: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'bsc',
+                    token: '0x55d398326f99059fF775485246999027B3197955',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'bsc',
+                    token: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'polygon',
+                    token: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'ethereum',
+                    token: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
+                }, {
+                    blockchain: 'polygon',
+                    token: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+                    receiver: '0xa9af33023e47d4f6ac3dc222573d61514e067436'
                 }
             ]
-        });
+        })
     });
+    /*
+    var button = document.getElementById("depay-sell");
+    button.addEventListener("click", function (e) {
+        DePayWidgets.Sale({
+            tokenImage: 'img/1024.png',
+            sell: {
+                'polygon': '0xe87c2deb370231729e7248386a65420f9282d2bb',
+                'ethereum': '0xe87c2deb370231729e7248386a65420f9282d2bb'
+            }
+        })
+    });
+    */
 
     // greg
     console.log("What ya doin' in my waters?")
