@@ -1,0 +1,76 @@
+.cycle {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 7vh;
+    transform-origin: center center;
+    transform-box: fill-box;
+    z-index: 1000;
+}
+
+.cycle svg {
+    width: 10vh;
+    cursor: grab
+}
+
+.cycle svg:hover {
+    transform: scale(1.1);
+}
+
+.cycle .bag {
+    position: absolute
+}
+
+.cycle .bag :hover {
+    display: none !important
+}
+
+.cycle .bag-glo :hover {
+    filter: url(#dropshadow);
+    stroke-width: 2px
+}
+
+
+.cycle .bag .st1 {
+    fill: url('#SVG_ID_BAG');
+}
+
+.cycle .bag .st2 {
+    fill: rgb(75, 63, 58);
+}
+
+.cycle .bag .st3 {
+    fill: rgb(58, 26, 1);
+}
+
+.exchanges {
+    margin-left: 37%;
+    margin-right: 37%
+}
+
+.footer {
+    line-height: 2.5vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 1vh;
+    color: rgb(228, 203, 182);
+    z-index: 1001;
+}
+
+.footer a {
+    font-size: 1vh;
+    text-shadow: none
+}
+
+.footer svg {
+    width: 1.7vh;
+    fill: currentColor
+}
+
+.footer svg:hover {
+    transform: scale(1.7);
+    text-shadow: inherit
+}
