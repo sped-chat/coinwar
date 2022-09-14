@@ -1,0 +1,92 @@
+.bg-323234 {
+  max-width: 52vh;
+  padding: 0;
+  background-color: #323234;
+  z-index: 2;
+}
+
+.hidden {
+  display: none !important
+}
+
+
+a {
+  color: #CBCBCB !important;
+  text-decoration: none;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  cursor: pointer
+}
+
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-shadow: 0 0 1vh #ffffff,
+    0 0 3vh #956137
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: .5vh;
+  color: inherit
+}
+
+button:hover {
+  text-shadow: 0 0 1vh #ffffff,
+    0 0 3vh #f3ec78
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  cursor: pointer
+}
+
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-shadow: 0 0 1vh #ffffff,
+    0 0 3vh #956137
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: .5vh;
+  color: inherit
+}
+
+button:hover {
+  text-shadow: 0 0 1vh #ffffff,
+    0 0 3vh #f3ec78
+}
+
+body {
+  color: rgb(203, 203, 203) !important;
+  background-color: rgb(71, 71, 72) !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.6vh !important;
+  text-align: center;
+}
+
+h1 {
+  font-size: 150%
+}
+
+h2 {
+  font-size: 125%
+}
+
+.bg-323234 {
+  max-width: 52vh;
+  padding: 0;
+  background-color: #323234;
+  z-index: 2;
+}

@@ -1,0 +1,29 @@
+.coin-header {
+    font-weight: 700;
+}
+
+.coin-header span {
+    font-weight: 700 !important;
+}
+
+.coin-row:hover {
+    background: rgb(37, 37, 38);
+    color: rgb(235, 235, 235)
+}
+
+.coin-row {
+    cursor: pointer;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: .8vh;
+    text-align: center;
+}
+
+.coin-row .col {
+    text-align: center;
+    padding-top: 0.8vh !important;
+    padding-bottom: calc(0.5rem - 0.4vh) !important;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
