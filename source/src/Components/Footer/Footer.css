@@ -73,3 +73,15 @@
     transform: scale(1.7);
     text-shadow: inherit
 }
+
+.a-button {
+    border: none;
+    background-color: transparent;
+    padding: .5vh;
+    color: inherit !important
+}
+
+.a-button:hover {
+    text-shadow: 0 0 1vh #ffffff,
+        0 0 3vh #f3ec78
+}
