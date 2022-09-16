@@ -5,10 +5,10 @@ import Nav from './Nav/Nav';
 
 function Body() {
     return (
-        <div className="bg-323234 position-absolute w-100">
+        <>
             <Nav />
             <CurrentMarket />
-        </div>
+        </>
     )
 }
 

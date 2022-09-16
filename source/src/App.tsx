@@ -21,11 +21,13 @@ function App() {
 
 
   return (
-    <div className="container bg-323234 min-vh-100 position-relative">
+    <>
       <OffCanvas />
-      <Body />
-      <Footer />
-    </div>
+      <div className="container mamabear shadow app-container">
+        <Body />
+        <Footer />
+      </div>
+    </>
   );
 }
 

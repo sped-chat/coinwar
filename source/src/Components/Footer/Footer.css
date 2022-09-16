@@ -1,12 +1,12 @@
-.cycle {
-    position: fixed;
-    left: 0;
+.bag-container {
     bottom: 0;
+    left: 0;
+}
+
+.cycle {
     width: 100%;
-    padding-bottom: 7vh;
     transform-origin: center center;
     transform-box: fill-box;
-    z-index: 1000;
 }
 
 .cycle svg {
@@ -31,9 +31,12 @@
     stroke-width: 2px
 }
 
+.cycle .bag .st0 {
+    fill: url(#SVGID_1_);
+}
 
 .cycle .bag .st1 {
-    fill: url('#SVG_ID_BAG');
+    fill: url(#SVGID_00000079479262848878650000000004176338908097552528_);
 }
 
 .cycle .bag .st2 {
@@ -51,13 +54,9 @@
 
 .footer {
     line-height: 2.5vh;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     padding-bottom: 1vh;
-    color: rgb(228, 203, 182);
-    z-index: 1001;
+    color: rgb(228, 203, 182)
 }
 
 .footer a {
