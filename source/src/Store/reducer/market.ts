@@ -31,7 +31,7 @@ export const marketSlice = createSlice({
         refreshMarket: (state, data: PayloadAction<IExchange>) => {
             let available_coins: boolean[] = [];
             let prices: number[] = [];
-            var number_of_coins = Math.round(rand(data.payload.min_coins, data.payload.max_coins));
+            var number_of_coins = Math.floor(rand(data.payload.min_coins, data.payload.max_coins));
             for (let i = 0; i < number_of_coins; i++) {
                 available_coins[i] = true;
             }

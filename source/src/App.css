@@ -90,3 +90,22 @@ h2 {
   background-color: #323234;
   z-index: 2;
 }
+
+.mamabear {
+  min-height: 100%;
+  padding: 0;
+  background-color: rgb(50, 50, 52);
+  position: absolute !important;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media screen and (min-width: 576px) {
+  .mamabear {
+    max-width: 52vh;
+  }
+}
+
+.app-container {
+  padding-bottom: 20vh;
+}
