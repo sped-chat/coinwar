@@ -2,7 +2,7 @@
   "name": "COINWAR",
   "short_name": "COINWAR",
   "id": "index.html",
-  "start_url": "/?standalone=true",
+  "start_url": "index.html",
   "display": "standalone",
   "description": "Obviously, you're not a golfer.",
   "lang": "en-US",
@@ -36,15 +36,11 @@
     },
     {
       "name": "METAVERSE",
-      "url": "/meta.html"
-    }
+      "url": "meta.html"
+    },
     {
       "name": "GITHUB",
       "url": "https://github.com/coinwar-app"
-    },
-    {
-      "name": "New reminder",
-      "url": "/create/reminder"
     }
   ],
   "categories": ["crypto", "simulator", "game"],
