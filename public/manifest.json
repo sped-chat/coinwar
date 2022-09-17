@@ -2,8 +2,8 @@
   "name": "COINWAR",
   "short_name": "COINWAR",
   "id": "index.html",
-  "start_url": "index.html",
-  "display": "fullscreen",
+  "start_url": "/?standalone=true",
+  "display": "standalone",
   "description": "Obviously, you're not a golfer.",
   "lang": "en-US",
   "dir": "auto",
@@ -26,6 +26,42 @@
       "src": "assets/img/favicon.svg",
       "purpose": "maskable any",
       "sizes": "any"
+    }
+  ],
+  "shortcuts" : [
+    {
+      "name": "COINWAR",
+      "url": "/index.html",
+      "description": "Obviously, you're not a golfer."
+    },
+    {
+      "name": "METAVERSE",
+      "url": "/meta.html"
+    }
+    {
+      "name": "GITHUB",
+      "url": "https://github.com/coinwar-app"
+    },
+    {
+      "name": "New reminder",
+      "url": "/create/reminder"
+    }
+  ],
+  "categories": ["crypto", "simulator", "game"],
+  "screenshots" : [
+    {
+      "src": "assets/img/screenshot_portrait.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "COINWAR"
+    },
+    {
+      "src": "assets/img/screenshot_landscape.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "COINWAR"
     }
   ]
 }
