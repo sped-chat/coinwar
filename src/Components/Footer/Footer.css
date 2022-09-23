@@ -4,7 +4,6 @@
 }
 
 .cycle {
-    width: 100%;
     transform-origin: center center;
     transform-box: fill-box;
 }
@@ -45,11 +44,6 @@
 
 .cycle .bag .st3 {
     fill: rgb(58, 26, 1);
-}
-
-.exchanges {
-    margin-left: 37%;
-    margin-right: 37%
 }
 
 .footer {
