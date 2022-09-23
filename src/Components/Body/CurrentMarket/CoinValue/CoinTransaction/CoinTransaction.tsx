@@ -58,7 +58,7 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
 
     return (
         <>
-            <div className="w-100 buy-sell-container">
+            <div className="w-100 buy-sell-container pt-4 p-2">
                 <input onChange={(ev) => { setBuyValue(parseInt(ev.currentTarget.value)) }} type="number" pattern="[0-9]*" value={buyValue} />
                 <span>
                     <button onClick={buy} data-bs-target="" type="button" data-bs-toggle="collapse">
@@ -69,7 +69,7 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
                     </button>
                 </span>
             </div>
-            <div className="w-100 buy-sell-container">
+            <div className="w-100 buy-sell-container p-2">
                 <input onChange={(ev) => { setSellValue(parseInt(ev.currentTarget.value)) }} type="number" pattern="[0-9]*" value={sellValue} />
                 <span>
                     <button onClick={sell} data-bs-target="" type="button" data-bs-toggle="collapse">
@@ -86,7 +86,6 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
                             MARKET AVERAGES
                         </a>
                     </div>
-                    <br />
                 </span>
             </div>
         </>

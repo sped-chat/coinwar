@@ -27,3 +27,9 @@
     padding-left: .5rem;
     padding-right: .5rem;
 }
+
+.accordion-item {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+}

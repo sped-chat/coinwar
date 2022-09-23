@@ -196,9 +196,12 @@ const AllCoins = [
         "minimum_price": 1,
         "maximum_price": 4,
         "average": 1
-    },
-
-
-]
+    }
+].map(coin => {
+    return {
+        ...coin,
+        average: (coin.minimum_price + coin.maximum_price) / 2
+    }
+})
 
 export default AllCoins

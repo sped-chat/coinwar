@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <OffCanvas />
-      <div className="container mamabear shadow app-container">
+      <div className="container mamabear shadow app-container px-0 pt-0 position-absolute start-50">
         <Body />
         <Footer />
       </div>

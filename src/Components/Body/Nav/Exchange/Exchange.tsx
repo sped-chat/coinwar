@@ -10,10 +10,23 @@ const Exchange = () => {
 
     const dispatch = useDispatch();
 
+    const collapseExchange = () => {
+        document.getElementById('babybear')?.classList.remove('show');
+        document.getElementById('babybear')?.classList.add('collapse');
+    }
+
+    document.addEventListener('click', (ev: any) => {
+        let isShown = document.getElementById('babybear')?.classList.contains('show');
+        if (ev.currentTarget.id !== 'babybear' && isShown) {
+            collapseExchange();
+        }
+    })
+
     const changeExchange = (exchange: IExchange) => {
         dispatch(refreshMarket(exchange));
         dispatch(selectExchange({ exchange }));
 
+        collapseExchange();
     }
 
     const generateListOfExchanges = () => {
@@ -22,7 +35,7 @@ const Exchange = () => {
                 <a
                     onClick={() => { changeExchange(exchange) }}
                     key={i}
-                    className="trans"
+                    className="w-100"
                     data-bs-dismiss="offcanvas"
                     data-dex={i}
                 >
@@ -33,7 +46,7 @@ const Exchange = () => {
     }
 
     return (
-        <div className='exchanges text-center'>
+        <div className='w-100 d-flex flex-wrap'>
             {generateListOfExchanges()}
         </div>
     );
