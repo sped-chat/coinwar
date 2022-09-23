@@ -30,7 +30,7 @@ function CurrentMarket() {
     // console.log("Coins1", coins)
 
     return (
-        <div id="market" className="coins w-100">
+        <div id="market" className="coins accordion accordion-flush w-100">
             <CoinValue
                 key={-1}
                 coin={usdCoin}

@@ -6,6 +6,7 @@ import translate from '../../../../Store/Translations';
 import CoinTransaction from './CoinTransaction/CoinTransaction';
 import './CoinValue.css';
 import DePayWidgets from '@depay/widgets';
+import AllCoins from '../../../../Store/AllCoins';
 
 interface ICoinValueParam {
     coin: ICoinValue,
@@ -14,6 +15,8 @@ interface ICoinValueParam {
 
 const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
     const { name, value } = coin;
+
+    const coinAve = AllCoins.find(coin => coin.name == name);
 
     const { assets, cash } = useSelector(
         (root: RootState) => root.wallet
@@ -86,7 +89,7 @@ const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
     }
 
     return (
-        <>
+        <div className='accordion-item'>
             <div
                 onClick={openDepay}
                 data-bs-target={'#' + collapseId}
@@ -97,15 +100,25 @@ const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
                     <span>
                         <button data-bs-toggle="collapse"
                             data-bs-target={'#' + collapseId}>
-                            <span>{translate('dope-' + name)}</span>
+                            <span>
+                                {translate('dope-' + name)}
+                                <span
+                                    style={{
+                                        marginTop: '-5px'
+                                    }}
+                                    className="ms-1 position-absolute badge bg-secondary"
+                                >
+                                    {coinAsset}
+                                </span>
+                            </span>
                         </button>
                     </span>
                 </div>
                 <div className="col xs-stats">
                     <button>
-                        {isUSD && <sup>﹩</sup>}
+                        <sup>﹩</sup>
                         <span className="cash">
-                            {coinAsset}
+                            {isUSD ? '1' : coinAve?.average}
                         </span>
                     </button>
                 </div>
@@ -117,13 +130,18 @@ const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
                 </div>
             </div>
             {
-                !isUSD && <div className="collapse-transaction collapse shadow-lg" id={collapseId}>
+                !isUSD &&
+                <div
+                    data-bs-parent="#market"
+                    className="accordion-collapse collapse shadow-lg"
+                    id={collapseId}
+                >
                     <CoinTransaction
                         coin={coin}
                     />
                 </div>
             }
-        </>
+        </div>
     )
 }
 

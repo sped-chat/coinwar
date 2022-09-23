@@ -21,7 +21,7 @@ function Footer() {
 
     return (
         <div className="w-100 position-absolute bag-container">
-            <div className="cycle">
+            <div className="cycle w-100">
                 <button onClick={randomizeExchange} className="random-exchange" aria-controls="wallet">
                     <span className="bag">
                         <svg viewBox="0 0 1000 1000">
@@ -81,12 +81,12 @@ function Footer() {
                                     </feMerge>
                                 </filter>
                                 <radialGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-                                    <stop offset="0%" stop-color="#f3ec78">
-                                        <animate attributeName="stop-color" values="#f3ec78; #af4261; #f3ec78" dur="4s"
+                                    <stop offset="0%" stopColor="#f3ec78">
+                                        <animate attributeName="stopColor" values="#f3ec78; #af4261; #f3ec78" dur="4s"
                                             repeatCount="indefinite"></animate>
                                     </stop>
-                                    <stop offset="100%" stop-color="#af4261">
-                                        <animate attributeName="stop-color" values="#af4261; #f3ec78; #af4261" dur="4s"
+                                    <stop offset="100%" stopColor="#af4261">
+                                        <animate attributeName="stopColor" values="#af4261; #f3ec78; #af4261" dur="4s"
                                             repeatCount="indefinite"></animate>
                                     </stop>
                                 </radialGradient>
