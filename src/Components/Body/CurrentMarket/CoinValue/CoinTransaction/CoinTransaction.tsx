@@ -16,75 +16,68 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
         (root: RootState) => root.wallet
     )
 
-    const [buyValue, setBuyValue] = useState(0);
-    const [sellValue, setSellValue] = useState(0);
-
-    const { year } = useSelector(
-        (root: RootState) => root.game
-    );
+    const [value, setValue] = useState(0);
 
     const dispatch = useDispatch();
 
-    const currentYear = year;
-
     const maxBuy = () => {
-        setBuyValue(calculateMaxBuy(coin, wallet));
+        setValue(calculateMaxBuy(coin, wallet));
     }
 
     const maxSell = () => {
         const currentAsset = wallet.assets[coin.name] || 0;
-        setSellValue(currentAsset)
+        setValue(currentAsset)
     }
 
     const buy = () => {
         dispatch(wallet_buy({
             coin: coin,
-            quantity: buyValue
+            quantity: value
         }))
 
-        setBuyValue(0);
-        setSellValue(0);
+        setValue(0);
     }
 
     const sell = () => {
         dispatch(wallet_sell({
             coin: coin,
-            quantity: sellValue
+            quantity: value
         }))
 
-        setBuyValue(0);
-        setSellValue(0);
+        setValue(0);
     }
 
     return (
         <>
-            <div className="w-100 buy-sell-container pt-4 p-2">
-                <input onChange={(ev) => { setBuyValue(parseInt(ev.currentTarget.value)) }} type="number" pattern="[0-9]*" value={buyValue} />
-                <span>
-                    <button onClick={buy} data-bs-target="" type="button" data-bs-toggle="collapse">
-                        BUY
-                    </button>
-                    <button onClick={maxBuy} type="button">
-                        MAX
-                    </button>
-                </span>
-            </div>
-            <div className="w-100 buy-sell-container p-2">
-                <input onChange={(ev) => { setSellValue(parseInt(ev.currentTarget.value)) }} type="number" pattern="[0-9]*" value={sellValue} />
-                <span>
-                    <button onClick={sell} data-bs-target="" type="button" data-bs-toggle="collapse">
-                        SELL
-                    </button>
-                    <button onClick={maxSell} type="button">
-                        MAX
-                    </button>
-                    <br />
-                    <br />
-                    <div>
-                        <a data-bs-toggle="offcanvas" href="#prices" aria-controls="prices">
-                            <span>{currentYear}</span>&nbsp;
-                            MARKET AVERAGES
-                        </a>
+            <div className="w-100 row ms-0 buy-sell-container pt-4 p-2">
+                <div className="col-6 d-flex">
+                    <input
+                        className="my-auto ms-auto"
+                        onChange={(ev) => { setValue(parseInt(ev.currentTarget.value)) }}
+                        type="number"
+                        pattern="[0-9]*"
+                        value={value}
+                    />
+
+                </div>
+                <span className="col">
+                    <div className="w-100 text-start">
+                        <div className="w-100">
+                            <button onClick={buy} data-bs-target="" type="button" data-bs-toggle="collapse">
+                                BUY
+                            </button>
+                            <button onClick={maxBuy} type="button">
+                                MAX
+                            </button>
+                        </div>
+                        <div className="w-100">
+                            <button onClick={sell} data-bs-target="" type="button" data-bs-toggle="collapse">
+                                SELL
+                            </button>
+                            <button onClick={maxSell} type="button">
+                                MAX
+                            </button>
+                        </div>
                     </div>
                 </span>
             </div>
