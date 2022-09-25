@@ -49,7 +49,7 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
 
     return (
         <>
-            <div className="w-100 row ms-0 buy-sell-container pt-4 p-2">
+            <div className="w-100 row ms-0 buy-sell-container py-3 p-2">
                 <div className="col-6 d-flex">
                     <input
                         className="my-auto ms-auto"
@@ -60,8 +60,8 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
                     />
 
                 </div>
-                <span className="col">
-                    <div className="w-100 text-start">
+                <span className="col d-flex">
+                    <div className="w-100 my-auto text-start">
                         <div className="w-100">
                             <button onClick={buy} data-bs-target="" type="button" data-bs-toggle="collapse">
                                 BUY
@@ -69,8 +69,6 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
                             <button onClick={maxBuy} type="button">
                                 MAX
                             </button>
-                        </div>
-                        <div className="w-100">
                             <button onClick={sell} data-bs-target="" type="button" data-bs-toggle="collapse">
                                 SELL
                             </button>
