@@ -1,3 +1,5 @@
+const formatter = Intl.NumberFormat('en', { notation: 'compact' })
+
 const AllCoins = [
     {
         "name": "ada",
@@ -200,7 +202,7 @@ const AllCoins = [
 ].map(coin => {
     return {
         ...coin,
-        average: (coin.minimum_price + coin.maximum_price) / 2
+        average: formatter.format(Math.ceil((coin.minimum_price + coin.maximum_price) / 2))
     }
 })
 
