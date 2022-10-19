@@ -11,10 +11,10 @@ function Nav() {
     )
 
     return (
-        <nav className="navbar sticky-top shadow-sm w-100">
+        <nav className="navbar sticky-top shadow-sm w-100 py-0">
             <div className="container-fluid justify-content-center">
                 <a href="#" className="xs-stats align-text-top" data-bs-toggle="collapse" data-bs-target="#babybear"
-                    aria-controls="babybear" aria-expanded="false" aria-label="exchanges">DEX&nbsp;&nbsp;:&nbsp;<span
+                    aria-controls="babybear" aria-expanded="false" aria-label="exchanges"><span
                         className="dex">{translate('dex-' + currentExchage.name)}</span></a>
                 <div className="collapse navbar-collapse" id="babybear">
                     <Exchange />
