@@ -18,7 +18,7 @@ const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
     const formatter = Intl.NumberFormat('en', { notation: 'compact' })
 
 
-    const coinAve = AllCoins.find(coin => coin.name == name);
+    const coinAve = AllCoins.find(coin => coin.name === name);
 
     const { assets, cash } = useSelector(
         (root: RootState) => root.wallet
@@ -143,7 +143,7 @@ const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
                 !isUSD &&
                 <div
                     data-bs-parent="#market"
-                    className="accordion-collapse collapse shadow-lg"
+                    className="accordion-collapse coin-transaction collapse shadow-lg"
                     id={collapseId}
                 >
                     <CoinTransaction

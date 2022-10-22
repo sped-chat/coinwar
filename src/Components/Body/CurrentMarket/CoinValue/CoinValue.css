@@ -19,10 +19,14 @@
     line-height: .8vh;
     text-align: center;
     background-color: #3C3C3C;
+    box-shadow: rgb(92, 92, 94) 0 0 3px 3px;
+    position: relative;
+    z-index: 100000;
 }
 
 .coin-row.collapsed {
     background-color: inherit;
+    box-shadow: none;
 }
 
 .coin-row .col {
@@ -49,4 +53,9 @@
     padding-bottom: .2em;
     padding-left: .5em;
     padding-right: .5em;
+}
+
+.coin-transaction {
+    z-index: 1;
+    position: relative;
 }
