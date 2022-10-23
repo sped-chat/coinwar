@@ -48,40 +48,38 @@ const CoinTransaction = ({ coin }: ICoinTransactionProps) => {
     }
 
     return (
-        <>
-            <div className="w-100 row ms-0 buy-sell-container py-3 p-2">
-                <div className="col-6 d-flex">
-                    <input
-                        className="my-auto ms-auto"
-                        onChange={(ev) => { setValue(parseInt(ev.currentTarget.value)) }}
-                        type="number"
-                        pattern="[0-9]*"
-                        value={value}
-                    />
+        <div className="w-100 row ms-0 buy-sell-container py-3 p-2">
+            <div className="col-6 d-flex">
+                <input
+                    className="my-auto ms-auto"
+                    onChange={(ev) => { setValue(parseInt(ev.currentTarget.value)) }}
+                    type="number"
+                    pattern="[0-9]*"
+                    value={value}
+                />
 
-                </div>
-                <span className="col d-flex">
-                    <div className="w-100 my-auto ms-4 text-start">
-                        <div className="w-100">
-                            <button onClick={buy} data-bs-target="" type="button" data-bs-toggle="collapse">
-                                BUY
-                            </button>
-                            <button onClick={maxBuy} type="button">
-                                MAX
-                            </button>
-                        </div>
-                        <div className="w-100">
-                            <button onClick={sell} data-bs-target="" type="button" data-bs-toggle="collapse">
-                                SELL
-                            </button>
-                            <button onClick={maxSell} type="button">
-                                MAX
-                            </button>
-                        </div>
-                    </div>
-                </span>
             </div>
-        </>
+            <span className="col d-flex">
+                <div className="w-100 my-auto ms-4 text-start">
+                    <div className="w-100">
+                        <button onClick={buy} data-bs-target="" type="button" data-bs-toggle="collapse">
+                            BUY
+                        </button>
+                        <button onClick={maxBuy} type="button">
+                            MAX
+                        </button>
+                    </div>
+                    <div className="w-100">
+                        <button onClick={sell} data-bs-target="" type="button" data-bs-toggle="collapse">
+                            SELL
+                        </button>
+                        <button onClick={maxSell} type="button">
+                            MAX
+                        </button>
+                    </div>
+                </div>
+            </span>
+        </div>
     );
 }
 
