@@ -19,9 +19,13 @@
     line-height: .8vh;
     text-align: center;
     background-color: #3C3C3C;
-    box-shadow: rgb(92, 92, 94) 0 0 3px 3px;
+    box-shadow: rgb(43, 43, 44) 0 0 3px 3px;
     position: relative;
     z-index: 100000;
+}
+
+.coin-row-n-plus-1 {
+    box-shadow: rgb(92, 92, 94) 0 -3px 3px 0px;
 }
 
 .coin-row.collapsed {

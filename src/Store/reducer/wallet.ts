@@ -46,10 +46,27 @@ export const walletSlice = createSlice({
                 state.cash += coin.value * quantity;
                 state.assets[coin.name] -= quantity;
             }
+        },
+        wallet_borrow: (state, data: PayloadAction<{ quantity: number }>) => {
+            const { quantity } = data.payload;
+
+            state.cash += quantity;
+            state.debt += quantity;
+        },
+        wallet_repay: (state, data: PayloadAction<{ quantity: number }>) => {
+            let { quantity } = data.payload;
+
+            if (state.cash >= quantity) {
+                if (state.debt < quantity) {
+                    quantity = state.debt
+                }
+                state.cash -= quantity;
+                state.debt -= quantity;
+            }
         }
     }
 })
 
-export const { wallet_buy, wallet_sell } = walletSlice.actions;
+export const { wallet_buy, wallet_sell, wallet_borrow, wallet_repay } = walletSlice.actions;
 
 export default walletSlice.reducer

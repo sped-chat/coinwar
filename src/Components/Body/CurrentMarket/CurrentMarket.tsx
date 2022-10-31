@@ -31,6 +31,17 @@ function CurrentMarket() {
 
     return (
         <div id="market" className="coins accordion accordion-flush w-100">
+            <div className='row market-header m-0 w-100'>
+                <div className="col text-center">
+                    COIN
+                </div>
+                <div className="col text-center">
+                    MARKET AVG
+                </div>
+                <div className="col text-center">
+                    VALUE
+                </div>
+            </div>
             <CoinValue
                 key={-1}
                 coin={usdCoin}
