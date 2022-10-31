@@ -46,7 +46,7 @@ const Exchange = () => {
     }
 
     return (
-        <div className='w-100 d-flex flex-wrap'>
+        <div className='w-100 nav-exchanges d-flex flex-wrap'>
             {generateListOfExchanges()}
         </div>
     );
