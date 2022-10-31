@@ -18,7 +18,7 @@
     margin-right: 0;
     line-height: .8vh;
     text-align: center;
-    background-color: #3C3C3C;
+    background-color: rgb(37, 37, 38);
     box-shadow: rgb(43, 43, 44) 0 0 3px 3px;
     position: relative;
     z-index: 100000;
