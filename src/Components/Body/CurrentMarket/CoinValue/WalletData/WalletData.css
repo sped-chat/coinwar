@@ -1,0 +1,18 @@
+.buy-sell-container {
+    background: rgb(37, 37, 38) !important;
+    z-index: 1000;
+    position: relative;
+}
+
+.coinlist {
+    color: white
+}
+
+.wallet-header {
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.defi {
+    font-size: 2vh;
+}

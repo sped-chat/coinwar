@@ -1,3 +1,9 @@
 .coins {
     margin-top: 6px;
 }
+
+.market-header {
+    color: #dfdddd;
+    font-size: 2vh;
+    font-weight: 700;
+}

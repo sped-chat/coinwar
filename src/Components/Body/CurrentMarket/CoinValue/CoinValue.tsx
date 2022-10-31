@@ -7,6 +7,7 @@ import CoinTransaction from './CoinTransaction/CoinTransaction';
 import './CoinValue.css';
 import DePayWidgets from '@depay/widgets';
 import AllCoins from '../../../../Store/AllCoins';
+import WalletData from './WalletData/WalletData';
 
 interface ICoinValueParam {
     coin: ICoinValue,
@@ -93,7 +94,6 @@ const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
     return (
         <div className='accordion-item'>
             <div
-                onClick={openDepay}
                 data-bs-target={'#' + collapseId}
                 data-bs-toggle="collapse"
                 className={"row coin-row collapsed " + (isUSD ? 'coin-header' : '')}
@@ -139,18 +139,20 @@ const CoinValue = ({ coin, isUSD }: ICoinValueParam) => {
                     </button>
                 </div>
             </div>
-            {
-                !isUSD &&
-                <div
-                    data-bs-parent="#market"
-                    className="accordion-collapse coin-transaction collapse shadow-lg"
-                    id={collapseId}
-                >
-                    <CoinTransaction
-                        coin={coin}
-                    />
-                </div>
-            }
+            <div
+                data-bs-parent="#market"
+                className="accordion-collapse coin-transaction collapse shadow-lg"
+                id={collapseId}
+            >
+                {
+                    !isUSD ?
+                        <CoinTransaction
+                            coin={coin}
+                        />
+                        :
+                        <WalletData />
+                }
+            </div>
         </div>
     )
 }

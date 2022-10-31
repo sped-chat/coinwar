@@ -72,6 +72,8 @@
     border: none;
     background-color: transparent;
     padding: .5vh;
+    padding-top: 0 !important;
+    margin-top: 0;
     color: inherit !important
 }
 
